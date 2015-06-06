@@ -1,0 +1,104 @@
+/* 顶部logo 和search */
+#logo,
+#search{
+	padding: 30px 0;
+}
+.container{
+	width: 980px;
+}
+/* 导航菜单 */
+.navbar-nav > .active a,
+.navbar-nav > li > a:hover,
+.navbar-nav > li > a:focus{
+	color: #555555;
+	border-bottom: 3px solid #009571;
+	text-decoration: none;
+	background-color: #fff;
+	box-shadow: none;
+
+}
+
+#navigation{
+	border-bottom: 1px solid #d7d7d7;
+}
+
+/* 内容盒子 */
+.thumbnails > article{
+	padding: 10px 10px 0 0;
+}
+.content-box{
+	padding: 10px;
+	border: 1px solid #d7d7d7;
+	border-top: none;
+	margin-bottom: 20px;
+}
+
+.content-box > h2{
+	font-size: 15px;
+	margin-top: 0px;
+	line-height: 30px;
+}
+
+.content-meta > time,
+.content-meta > span
+{
+	color: #828282;
+	margin-right: 10px;
+	font-size: 12px;
+}
+.content-meta > span > img{
+	width: 32px;
+}
+
+#main-content{
+	margin: 20px 0;
+}
+.media-box{
+	height: 260px;
+	overflow: hidden;
+}
+.media-box > img{
+	width: 100%;
+}
+
+/* 首页面包屑导航 */
+.breadcrumbs .breadcrumb{
+	background-color: #fff;
+	border-bottom: 1px solid #d7d7d7;
+}
+.icon-bow{
+	display: block;
+	width: 32px;
+	height: 21px;
+	background: #fff url(../images/bow.png) no-repeat 50% 50%;
+	margin: 0 auto;
+	margin-top: -30px;
+	padding: 0 10px;
+}
+
+/* footer */
+.footer{
+	background: #009571 url(../images/emerald.png); 
+	color: #fff;
+	text-shadow:1px 1px 1px #048465;
+	height: 200px;
+	
+}
+.footer .footer-moon{
+	background: url(../images/semicircle.png) repeat-x;
+	padding: 20px 0;
+}
+.footer h3{
+	background: url(../images/dashed-h.png) repeat-x 0 50%;
+	font-size: 22px;
+}
+.footer h3 span{
+	background: url(../images/emerald.png);
+	padding-right: 10px;
+}
+.emerald-footer{
+	background: #009571 url(../images/emerald-footer.png) repeat-x;
+	padding: 20px 0 10px 0;
+	color: #064536;
+	text-shadow:1px 1px 1px #009581;
+}
