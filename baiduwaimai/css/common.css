@@ -1,0 +1,66 @@
+/* 公用的一些css */
+body{
+	background-color: #EEF0F2;
+	font-family: "微软雅黑";
+	font-size: 14px;
+	margin: 0;
+	padding: 0;
+}
+a,a:link,a:hover,a:active,a:visited{
+	color: #636363;
+	text-decoration:none;
+}
+ul.soft ,li.soft{
+	list-style-type:none;
+}
+.glyphicon{
+	color: #fff;
+}
+/*颜色*/
+.back-red{
+	background: none repeat scroll 0% 0% #FF2E4B;
+}
+.red{
+	color: #FF2E4B;
+}
+.gray{
+	color: gray;
+}
+/*
+ * header
+ */
+body.area .container,body.search-area .container{
+	width: 100%;
+	position: absolute;
+}
+
+/*地区选择头部*/
+header.common-header{
+	height: 50px;
+	width: 100%;
+}
+/*头部的logo*/
+header.common-header .header-left{
+	position: absolute;
+	line-height: 50px;
+	float: left;
+	padding-left: 10px;
+}
+.header-left > img{
+	width: 81px;
+	height: 18px;
+}
+/*头部的标题*/
+header .header-middle{
+	text-align: center;
+	line-height: 50px;
+}
+header .header-middle > span{
+	font-size: 18px;
+	color: #fff;
+}
+
+/*header的右侧*/
+header .header-right{
+
+}
