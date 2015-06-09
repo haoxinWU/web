@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+	<head>
+		<title>端午祝福推广任务中心</title>
+		<meta charset="utf-8">
+		<meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+		<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="css/common.css">
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<script src="bootstrap/js/jquery-2.1.3.min.js"></script>
+		<script src="bootstrap/js/bootstrap.min.js"></script>
+		<script src="js/center.js"></script>
+	</head>
+	<body>
+        <!-- 头部-->
+        <header class="common-header back-red">
+            <div class="container">
+                <div class="row">
+                    <!-- title -->
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                        <div class="header-middle">
+                            <span>上海滩论坛端午祝福推广任务中心</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- 主体 -->
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-6 col-md-6 col-lg-6 col-sm-6">
+                    <div class="circle bg-blue center-block" data-toggle="modal" data-target="#make_web_app">
+                        <a href="javascript:void(0);" >制作页面</a>
+                    </div>
+                </div>
+                <div class="col-xs-6 col-md-6 col-lg-6 col-sm-6">
+                    <div class="circle bg-red center-block" data-toggle="modal" data-target="#my_share">
+                        <a href="javascript:void(0);">我的推广</a>
+                    </div>
+                </div>
+                <div class="col-xs-6 col-md-6 col-lg-6 col-sm-6" >
+                    <div class="circle bg-gray center-block" data-toggle="modal" data-target="#rank">
+                        <a href="javascript:void(0);">推广排名</a>
+                    </div>
+                </div>
+                <div class="col-xs-6 col-md-6 col-lg-6 col-sm-6" >
+                    <div class="circle bg-green center-block" data-toggle="modal" data-target="#gift">
+                        <a href="javascript:void(0);">积分商城</a>
+                    </div>
+                </div>
+            </div>  
+        </div>
+
+
+        <!--modals-->
+        <!-- 制作页面的模态框 -->
+        <div class="modal fade modal-middle" id="make_web_app" tabindex="-1" role="dialog" 
+           aria-labelledby="make_web_app_label" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" 
+                           data-dismiss="modal" aria-hidden="true">
+                              &times;
+                        </button>
+                        <h4 class="modal-title" id="make_web_app_label">
+                           您好，请输入您的姓名
+                        </h4>
+                    </div>
+                    <div class="modal-body">
+                        <input type="text" class="form-control input-lg" name="name" placeholder="请输入您的姓名" required="不能为空">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" 
+                           data-dismiss="modal">关闭
+                        </button>
+                        <button type="button" class="btn btn-success make">
+                           提交制作
+                        </button>
+                    </div>     
+                </div>
+            </div>
+        </div>
+
+        <!-- 我的推广 -->
+        <div class="modal fade" id="my_share" tabindex="-1" role="dialog" 
+           aria-labelledby="my_share_lable" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                          &times;
+                        </button>
+                        <h4 class="modal-title" id="my_share_lable">
+                           我的推广
+                        </h4>
+                    </div>
+                    <!--
+                    <div class="mybarcode">
+                        <div class="col-xs-6 col-md-6 col-lg-6 col-sm-6 center-block">
+                            <img class="qrcode img-responsive" src="images/erweima.jpeg">
+                        </div>
+                    </div>
+                    -->
+                    <div class="mybarcode">
+                        <img class="qrcode img-responsive" src="images/qrcode.jpeg">
+                        <p>长按上面二维码识别、或扫描此二维码关注***微信平台</p>
+                    </div>
+                    <div class="modal-body">
+                        <table class="table">
+                            <caption>您的积分:<span class="font-red">598</span></caption>
+                            
+                            <tbody>
+                            <tr>
+                                <td>共推广人数</td>
+                                <th><span class="font-red">380</span></th>
+                            </tr>
+                            <tr>
+                                <td>取消关注人数</td>
+                                <th><span class="font-red">62</span></th>
+                            </tr>
+                            <tr>
+                                <td>下级推广人</td>
+                                <th><span class="font-red">12</span></th>
+                            </tr>
+                            </tbody>
+                        </table>
+                        
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" 
+                           data-dismiss="modal">关闭
+                        </button>
+                        <button type="button" class="btn btn-success convert">
+                           兑换礼品
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 推广排名 -->
+        <div class="modal fade" id="rank" tabindex="-1" role="dialog" 
+           aria-labelledby="rank_lable" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                          &times;
+                        </button>
+                        <h4 class="modal-title" id="rank_lable">
+                           推广排名
+                        </h4>
+                    </div>
+                    <div class="modal-body">
+                        您目前共推广<span class="font-red">5</span>名粉丝，排名为<span class="font-red">5</span>
+                        <table class="table">
+                            <caption>仅显示前20名</caption>
+                            <thead>
+                              <tr>
+                                 <th>姓名</th>
+                                 <th>推广人数</th>
+                                 <th>排名</th>
+                                 <th>积分</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>Tanmay</td>
+                                <td>181/5</td>
+                                <th><span class="font-red">1</span></th>
+                                <th><span class="font-red">9871</span></th>
+                            </tr>
+                            <tr>
+                                <td>Sachin</td>
+                                <td>160/2</td>
+                                <th><span class="font-red">2</span></th>
+                                <th><span class="font-red">9812</span></th>
+                            </tr>
+                            <tr>
+                                <td>Tanmay</td>
+                                <td>130/121</td>
+                                <th><span class="font-red">3</span></th>
+                                <th><span class="font-red">8771</span></th>
+                            </tr>
+                            <tr class="success">
+                                <td>Sachin</td>
+                                <td>99/2</td>
+                                <th><span class="font-green">4</span></th>
+                                <th><span class="font-red">6771</span></th>
+                            </tr>
+                            <tr>
+                                <td>Tanmay</td>
+                                <td>88/2</td>
+                                <th><span class="font-green">5</span></th>
+                            </tr>
+                            <tr>
+                                <td>Sachin</td>
+                                <td>21/8</td>
+                                <th><span class="font-green">6</span></th>
+                            </tr>
+                            <tr>
+                                <td>Tanmay</td>
+                                <td>9/1</td>
+                                <th><span class="font-green">7</span></th>
+                            </tr>
+                            <tr>
+                                <td>Sachin</td>
+                                <td>8/2</td>
+                                <th><span class="font-green">8</span></th>
+                            </tr>
+                            <tr>
+                                <td>Tanmay</td>
+                                <td>3/0</td>
+                                <th><span class="font-green">9</span></th>
+                            </tr>
+                            <tr>
+                                <td>Sachin</td>
+                                <td>1/0</td>
+                                <th><span class="font-green">10</span></th>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" 
+                           data-dismiss="modal">关闭
+                        </button>
+                        <button type="button" class="btn btn-success">
+                           兑换礼品
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- 积分商城 -->
+        <div class="modal fade" id="gift" tabindex="-1" role="dialog" 
+           aria-labelledby="gift_lable" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                          &times;
+                        </button>
+                        <h4 class="modal-title" id="gift_lable">
+                           积分商城
+                        </h4>
+                    </div>
+                    <div class="modal-body">
+                        <table class="table table-striped gift">
+                        <caption>
+                            <span>您的积分: <span class="font-red">5</span></span>
+                            <span><button class="btn btn-warning btn-sm history-gift">兑换记录</button></span>
+
+                        </caption>
+                        
+                        <thead>
+                          <tr>
+                             <th width="50%">礼品</th>
+                             <th width="20%">所需积分</th>
+                             <th width="20%"></th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                             <td>十元话费</td>
+                             <td>100</td>
+                             <td><button class="btn btn-success btn-sm">兑换</button></td>
+                          </tr>
+                          <tr>
+                             <td>20元微信红包</td>
+                             <td>200</td>
+                             <td><button class="btn btn-success btn-sm">兑换</button></td>
+                          </tr>
+                          <tr>
+                             <td>30元话费</td>
+                             <td>300</td>
+                             <td><button class="btn btn-success btn-sm">兑换</button></td>
+                          </tr>
+                        </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 兑换记录 -->
+        <div class="modal fade" id="history-gift" tabindex="-1" role="dialog" 
+           aria-labelledby="history-gift_lable" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                          &times;
+                        </button>
+                        <h4 class="modal-title" id="history-gift_lable">
+                           兑换记录
+                        </h4>
+                    </div>
+                    <div class="modal-body">
+                        <table class="table table-striped gift">
+                        <caption>
+                            <span>您共兑换过 <span class="font-red">5</span>次，其中<span class="font-red">2</span>次成功</span>
+                            <span><button class="btn btn-warning btn-sm return－gift">积分商城</button></span>
+
+                        </caption>
+                        
+                        <thead>
+                          <tr>
+                             <th width="30%">礼品</th>
+                             <th width="20%">兑换时间</th>
+                             <th width="20%">状态</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                             <td>十元话费</td>
+                             <td>2014-08-11</td>
+                             <td><span>成功</span></td>
+                          </tr>
+                          <tr class="warning">
+                             <td>20元微信红包</td>
+                             <td>2014-11-12</td>
+                             <td><span>失败</span></td>
+                          </tr>
+                          <tr class="success">
+                             <td>30元话费</td>
+                             <td>2015-03-11</td>
+                             <td><span>进行中...</span></td>
+                          </tr>
+                        </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+	</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
