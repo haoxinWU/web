@@ -13,6 +13,9 @@
 		<script src="js/center.js"></script>
 	</head>
 	<body>
+        <span id="prepare-data">
+            <input type="hidden" name="no_reg" value="0">
+        </span>
         <!-- 头部-->
         <header class="common-header back-red">
             <div class="container">
@@ -30,12 +33,12 @@
         <div class="container">
             <div class="row">
                 <div class="col-xs-6 col-md-6 col-lg-6 col-sm-6">
-                    <div class="circle bg-blue center-block" data-toggle="modal" data-target="#make_web_app">
-                        <a href="javascript:void(0);" >制作页面</a>
+                    <div class="circle bg-blue center-block" data-toggle="modal" data-target="#reg-share-man">
+                        <a href="javascript:void(0);" >推广页面</a>
                     </div>
                 </div>
                 <div class="col-xs-6 col-md-6 col-lg-6 col-sm-6">
-                    <div class="circle bg-red center-block" data-toggle="modal" data-target="#my_share">
+                    <div class="circle bg-red center-block" data-toggle="modal" data-target="#ucenter">
                         <a href="javascript:void(0);">我的推广</a>
                     </div>
                 </div>
@@ -45,7 +48,7 @@
                     </div>
                 </div>
                 <div class="col-xs-6 col-md-6 col-lg-6 col-sm-6" >
-                    <div class="circle bg-green center-block" data-toggle="modal" data-target="#gift">
+                    <div class="circle bg-green center-block" data-toggle="modal" data-target="#gift-modal">
                         <a href="javascript:void(0);">积分商城</a>
                     </div>
                 </div>
@@ -54,9 +57,9 @@
 
 
         <!--modals-->
-        <!-- 制作页面的模态框 -->
-        <div class="modal fade modal-middle" id="make_web_app" tabindex="-1" role="dialog" 
-           aria-labelledby="make_web_app_label" aria-hidden="true">
+        <!-- 推广页面 -->
+        <div class="modal fade modal-middle" id="reg-share-man" tabindex="-1" role="dialog" 
+           aria-labelledby="reg-share-man_label" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -64,35 +67,61 @@
                            data-dismiss="modal" aria-hidden="true">
                               &times;
                         </button>
-                        <h4 class="modal-title" id="make_web_app_label">
-                           您好，请输入您的姓名
+                        <h4 class="modal-title" id="reg-share-man_label">
+                           姓名登记
                         </h4>
                     </div>
                     <div class="modal-body">
-                        <input type="text" class="form-control input-lg" name="name" placeholder="请输入您的姓名" required="不能为空">
+                        <input type="text" class="form-control input-lg" name="name" placeholder="请输入您的姓名" required>
+                        <span class="help-block">推广积分记录只按照此姓名登记，一次确定后请勿修改，建议使用姓名</span>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-default" 
                            data-dismiss="modal">关闭
                         </button>
-                        <button type="button" class="btn btn-success make">
-                           提交制作
+                        <button type="submit" class="btn btn-success submit-regist">
+                           提交登记
                         </button>
                     </div>     
                 </div>
             </div>
         </div>
-
+        <!-- 生成我的推广 -->
+        <div class="modal fade modal-middle" id="myshare_web" tabindex="-1" role="dialog" 
+           aria-labelledby="myshare_web_label" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" 
+                           data-dismiss="modal" aria-hidden="true">
+                              &times;
+                        </button>
+                        <h4 class="modal-title" id="myshare_web_label">
+                           我的推广页面
+                        </h4>
+                    </div>
+                    <div class="modal-body">
+                        <p>你好，*** ,您的推广页面已经生成,点击这里查看,</p>
+                        <p>你可以将生成的页面分享至朋友圈，或者发送给微信好友，当好友扫描您的推广页面上的二维码关注本微信平台后，您将得到一定的奖励</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" 
+                           data-dismiss="modal">关闭
+                        </button>
+                    </div>     
+                </div>
+            </div>
+        </div>
         <!-- 我的推广 -->
-        <div class="modal fade" id="my_share" tabindex="-1" role="dialog" 
-           aria-labelledby="my_share_lable" aria-hidden="true">
+        <div class="modal fade" id="ucenter" tabindex="-1" role="dialog" 
+           aria-labelledby="ucenter_lable" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
                           &times;
                         </button>
-                        <h4 class="modal-title" id="my_share_lable">
+                        <h4 class="modal-title" id="ucenter_lable">
                            我的推广
                         </h4>
                     </div>
@@ -188,37 +217,43 @@
                                 <td>Sachin</td>
                                 <td>99/2</td>
                                 <th><span class="font-green">4</span></th>
-                                <th><span class="font-red">6771</span></th>
+                                <th><span class="font-green">6771</span></th>
                             </tr>
                             <tr>
                                 <td>Tanmay</td>
                                 <td>88/2</td>
                                 <th><span class="font-green">5</span></th>
+                                <th><span class="font-green">3871</span></th>
                             </tr>
                             <tr>
                                 <td>Sachin</td>
                                 <td>21/8</td>
                                 <th><span class="font-green">6</span></th>
+                                <th><span class="font-green">2181</span></th>
                             </tr>
                             <tr>
                                 <td>Tanmay</td>
                                 <td>9/1</td>
                                 <th><span class="font-green">7</span></th>
+                                <th><span class="font-green">998</span></th>
                             </tr>
                             <tr>
                                 <td>Sachin</td>
                                 <td>8/2</td>
                                 <th><span class="font-green">8</span></th>
+                                <th><span class="font-green">876</span></th>
                             </tr>
                             <tr>
                                 <td>Tanmay</td>
                                 <td>3/0</td>
                                 <th><span class="font-green">9</span></th>
+                                <th><span class="font-green">123</span></th>
                             </tr>
                             <tr>
                                 <td>Sachin</td>
                                 <td>1/0</td>
                                 <th><span class="font-green">10</span></th>
+                                <th><span class="font-green">12</span></th>
                             </tr>
                             </tbody>
                         </table>
@@ -237,15 +272,15 @@
 
 
         <!-- 积分商城 -->
-        <div class="modal fade" id="gift" tabindex="-1" role="dialog" 
-           aria-labelledby="gift_lable" aria-hidden="true">
+        <div class="modal fade" id="gift-modal" tabindex="-1" role="dialog" 
+           aria-labelledby="gift-modal-lable" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
                           &times;
                         </button>
-                        <h4 class="modal-title" id="gift_lable">
+                        <h4 class="modal-title" id="gift-modal-lable">
                            积分商城
                         </h4>
                     </div>
@@ -268,17 +303,17 @@
                           <tr>
                              <td>十元话费</td>
                              <td>100</td>
-                             <td><button class="btn btn-success btn-sm">兑换</button></td>
+                             <td><button class="btn btn-success btn-sm buy-gift">兑换</button></td>
                           </tr>
                           <tr>
                              <td>20元微信红包</td>
                              <td>200</td>
-                             <td><button class="btn btn-success btn-sm">兑换</button></td>
+                             <td><button class="btn btn-success btn-sm buy-gift">兑换</button></td>
                           </tr>
                           <tr>
                              <td>30元话费</td>
                              <td>300</td>
-                             <td><button class="btn btn-success btn-sm">兑换</button></td>
+                             <td><button class="btn btn-success btn-sm buy-gift">兑换</button></td>
                           </tr>
                         </tbody>
                         </table>
@@ -333,6 +368,87 @@
                         </tbody>
                         </table>
                     </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- 商城兑换按钮 -->
+        <div class="modal fade modal" id="buy-info-modal" tabindex="-1" role="dialog" 
+           aria-labelledby="buy-info-modal-label" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" 
+                           data-dismiss="modal" aria-hidden="true">
+                              &times;
+                        </button>
+                        <h4 class="modal-title" id="buy-info-modal-label">
+                           兑换信息填写
+                        </h4>
+                    </div>
+                    <div class="modal-body">
+                        <form class="form-horizontal">
+                            <div class="form-group">
+                                <label for="inputEmail3" class="col-sm-2 control-label">姓名</label>
+                                <div class="col-sm-10">
+                                    <input type="name" class="form-control" id="inputEmail3" placeholder="请输入真实姓名">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="inputPassword3" class="col-sm-2 control-label">手机号码</label>
+                                <div class="col-sm-10">
+                                    <input type="mobile" class="form-control" id="inputPassword3" placeholder="请输入手机号码">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="inputPassword3" class="col-sm-2 control-label">目标账户</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" placeholder="请输入兑换礼品的账号" aria-describedby="target-id-block">
+                                </div>
+                            </div>
+                            <span id="target-id-block" class="help-block">此账户将是您领取礼品的目标对象，如果您领取的礼品是现金，则填写支付宝账号，如果是话费，则填写手机号码，如果是QQ币，则填写QQ号码，依此类推.</span>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" 
+                           data-dismiss="modal">关闭
+                        </button>
+                        <button type="button" class="btn btn-success submit-buy-info">
+                           提交兑换
+                        </button>
+                    </div>     
+                </div>
+            </div>
+        </div>
+
+
+        <!-- 免责条款 -->
+        <div class="modal fade modal-middle" id="duty－free" tabindex="-1" role="dialog" 
+           aria-labelledby="duty－free－label" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" 
+                           data-dismiss="modal" aria-hidden="true">
+                              &times;
+                        </button>
+                        <h4 class="modal-title" id="duty－free－label">
+                           免责声明
+                        </h4>
+                    </div>
+                    <div class="modal-body">
+                        <p>你好，*** ,您的推广页面已经生成,点击这里查看,</p>
+                        <p>你可以将生成的页面分享至朋友圈，或者发送给微信好友，当好友扫描您的推广页面上的二维码关注本微信平台后，您将得到一定的奖励</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" 
+                           data-dismiss="modal">关闭
+                        </button>
+                        <button type="button" class="btn btn-success agree-duty">
+                           同意
+                        </button>
+                    </div>     
                 </div>
             </div>
         </div>
