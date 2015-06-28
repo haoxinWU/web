@@ -1,0 +1,32 @@
+.container{
+	margin-top: 10px;	
+}
+.coupon{
+	width: 100%;
+	height: 80px;
+	border: 2px solid #EEF0F2;/*#EEF0F2*/
+	border-radius:10px;
+	
+}
+.coupon img{
+	width: 60px;
+	height: 60px;
+	margin: 9px 0 9px 10px;
+	padding-bottom: 2px;
+}
+.coupon .middle > h2{
+	width: 90%;
+	color: #fff;
+	font-size: 16px;
+	padding-top: 10px;
+	height: 50px;
+	text-overflow:ellipsis; white-space:nowrap; overflow:hidden;
+}
+.coupon .right{
+	border-left: 1px dashed;
+	height: 76px;
+	padding-right: 5px;
+	padding-top: 18px;
+	font-size: 14px;
+	color: #FFF;
+}
