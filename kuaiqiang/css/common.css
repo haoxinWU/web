@@ -1,0 +1,29 @@
+/* 公用的一些css */
+body{
+	background-color: #EEF0F2;
+	font-family: "微软雅黑";
+	font-size: 14px;
+	margin: 0;
+	padding: 0;
+	width: 100%;
+}
+a,a:link,a:hover,a:active,a:visited{
+	color: #636363;
+	text-decoration:none;
+}
+ul.soft ,li.soft{
+	list-style-type:none;
+}
+.glyphicon{
+	color: #fff;
+}
+/*颜色*/
+.back-red{
+	background: none repeat scroll 0% 0% #FF2E4B;
+}
+.red{
+	color: #FF2E4B;
+}
+.gray{
+	color: gray;
+}
