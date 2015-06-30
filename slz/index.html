@@ -1,0 +1,290 @@
+<!DOCTYPE <html>
+<html>
+ <head> 
+  <meta charset="UTF-8" /> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" /> 
+  <meta name="apple-mobile-web-app-capable" content="yes" /> 
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" /> 
+  <meta property="qc:admins" content="155122665566142116375" /> 
+  <link href="css/common.css" rel="stylesheet" type="text/css" /> 
+  <link href="css/index.css?v=2" rel="stylesheet" type="text/css" /> 
+  <title>龙舟赛万福，端阳乐邮礼</title> 
+  <script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script> 
+  <script type="text/javascript">
+        wx.config({
+				    debug: false,
+				    appId: 'wx7e42d968508d9c7d',  //微信的appid需要在公众平台生成
+    				    timestamp: '1434383295', //这是由php部分生成的
+    				    nonceStr: '2n5rQwRK1m7r7S84', //这是由php部分生成的
+    				    signature: '068dd9dd2d8d16b1a821ba7fa4f14555481a3901', //这是由php部分生成的
+    				    jsApiList: [
+    				    'onMenuShareTimeline',
+    				    'onMenuShareAppMessage',
+    				    'onMenuShareQQ',
+    				    'onMenuShareWeibo',
+    				    ]
+	    });    </script> 
+  <script src="js/base.js?v=1"></script> 
+ </head> 
+ <body> 
+  <!--活动规则弹窗--> 
+  <div id="activityRuleBox" class="alertBox"> 
+   <div class="alertBoxContent"> 
+    <div class="ruleBoxContentF"> 
+     <div class="ruleContent_Slz"> 
+      <div class="leftDragentBtn" onclick="ruleDetail('dragent');">
+       <span>赛龙舟</span>
+      </div> 
+      <div class="rightFumaLotteryBtn" onclick="ruleDetail('fumaLottery');">
+       <span>福码抽奖</span>
+      </div> 
+      <div class="mainSlzContent"> 
+       <div style="padding-right:5%;">
+         1.赛龙舟活动时间：
+        <br /> 2015年6月6日-2015年6月30日；
+        <br /> 2.用户通过关注邮储银行福建省分行官方微信公众号【psbc_fj】进入手机端活动页面参与游戏；
+        <br /> 3.用户使用QQ授权登陆参与游戏；
+        <br /> 4.赛龙舟互动游戏中，用户每天有3次赛龙舟机会，用户需在规定的时间内躲避障碍物，行驶500米完成即可获得抽奖机会，每日最多3次抽奖机会；
+        <br /> 5.用户中奖后，需如实填写中奖信息，以便于活动奖品发放，每个手机号码最多可中奖3次，以最高中奖纪录计算；
+        <br /> 6. 如因错填、漏填信息造成奖品无法发放的，责任自行承担；
+        <br /> 7.活动所有中奖用户必须为福建省内厦门除外的用户（以填写的手机号码归属地判别），其他地区用户中奖无效；
+        <br /> 8. 活动结束后，大闽网工作人员将于7月20日前审核参赛用户中奖记录，核实无误后将公布中奖名单；
+        <br /> 9. 中奖名单将在本活动页面公布，并于8月15日前完成发放；
+        <br /> 10. 本次活动奖品不提供发票，奖品的退换及售后等事宜均由相关供应商负责；
+        <br /> 11.本活动（含赛龙舟及福码抽奖互动）单个人（对应身份证）中奖奖品总价值不得超过5000元。
+        <br /> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="ruleContent_Fuma"> 
+      <div class="leftDragentBtn" onclick="ruleDetail('dragent');">
+       <span>赛龙舟</span>
+      </div> 
+      <div class="rightFumaLotteryBtn" onclick="ruleDetail('fumaLottery');">
+       <span>福码抽奖</span>
+      </div> 
+      <div class="mainFumaContent"> 
+       <div style="padding-right:5%;">
+         1. 福码抽奖活动时间：
+        <br /> 2015年6月6日-2015年7月15日；
+        <br /> 2.用户通过邮储银行福建省分行官方微信公众号【psbc_fj】或大闽网专题进入手机端活动页面参与游戏；
+        <br /> 3.用户使用QQ授权登陆参与游戏；
+        <br /> 4.用户进入游戏页面后，可直接参与“福码抽奖”线上互动；
+        <br /> 5.用户需使用“福码”方可获取抽奖资格，每个“福码”可抽奖3次，“福码”不可重复使用，使用1次即失效；
+        <br /> 6.6月6日至6月30日用户至邮储营业网点办理以下业务，获取“福码”即可参与抽奖：
+        <br /> 
+        <span style="font-size:5vw;">业务1</span>：首次发放VIP卡（金卡、白金卡、钻石卡）;
+        <br /> 
+        <span style="font-size:5vw;">业务2</span>：代收代付客户首次成为邮储银行价值客户（价值客户详询各邮储网点）;
+        <br /> 
+        <span style="font-size:5vw;">业务3</span>：开办个人POS、生意通、商易通的客户（内部职工除外）每受理个人POS收单、生意通收单及转账、商易通收单及转账的客户数（以客户身份证号归并，一个客户多张卡视同一卡）达3笔；
+        <br /> 7.用户办理以上业务后，邮储银行将在一周内【业务2于7月10日前】通过邮储银行福建省分行短信号段（10635900095580），发送“福码”至用户手机，用户收到“福码”后即可参与抽奖；抽奖截至7月15日。
+        <br /> 8.用户中奖后，需如实填写中奖信息，以便于活动后奖品发放，每个手机号码最多可中奖3次，以最高中奖纪录计算；
+        <br /> 9. 如因错填、漏填信息造成奖品无法发放的，责任自行承担；
+        <br /> 10.活动所有中奖用户须为福建省内厦门除外的用户（以填写的手机号码归属地判别），其他地区用户中奖无效；
+        <br /> 11.活动结束后，大闽网工作人员将于7月20日前审核参赛用户中奖记录，核实无误后将公布中奖名单；
+        <br /> 12.中奖名单将在本活动页面公布，并于8月15日前完成发放；
+        <br /> 13.本次活动奖品不提供发票，奖品的退换及售后等事宜均由相关供应商负责；
+        <br /> 14. 本活动（含赛龙舟及福码抽奖互动）单个人（对应身份证）中奖奖品总价值不得超过5000元。
+        <br /> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="footCloseBtn" onclick="closeBox('rule');">
+      <span>*</span>
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <!--活动奖品弹窗--> 
+  <div id="activityGiftBox" class="alertBox"> 
+   <div class="alertBoxContent"> 
+    <div class="giftBoxContentF"> 
+     <div class="giftContent"> 
+      <div class="leftDragentBtn" onclick="giftDetail('dragent');">
+       <span>赛龙舟</span>
+      </div> 
+      <div class="rightFumaLotteryBtn" onclick="giftDetail('fumaLottery');">
+       <span>福码抽奖</span>
+      </div> 
+      <div class="mainSlzContent"> 
+       <div class="firstWatch"> 
+        <div class="firstWatchLeft"> 
+        </div> 
+        <div class="firstWatchRight"> 
+         <label>苹果手表(Apple Watch)</label> 
+         <li class="value">价值3000元</li> 
+         <li class="lotteryNum">奖品数量：<span>1</span></li> 
+         <li class="restNum">剩余数量：<span>1</span></li> 
+        </div> 
+       </div> 
+       <div class="secondRechargeCard"> 
+        <div class="lineFirst"> 
+         <div class="num"> 
+          <li class="lotteryNum">奖品数量：<span>20</span></li> 
+          <li class="restNum">剩余数量：<span>3</span></li> 
+         </div> 
+        </div> 
+        <div class="lineSecond"> 
+         <div class="num"> 
+          <li class="lotteryNum">奖品数量：<span>56</span></li> 
+          <li class="restNum">剩余数量：<span>10</span></li> 
+         </div> 
+        </div> 
+        <div class="lineThird"> 
+         <div class="num"> 
+          <li class="lotteryNum">奖品数量：<span>100</span></li> 
+          <li class="restNum">剩余数量：<span>43</span></li> 
+         </div> 
+        </div> 
+        <div class="lineForth"> 
+         <div class="num"> 
+          <li class="lotteryNum">奖品数量：<span>500</span></li> 
+          <li class="restNum">剩余数量：<span>187</span></li> 
+         </div> 
+        </div> 
+       </div> 
+       <div class="thirdMyPrizes"> 
+        <div class="thirdHead"> 
+        </div> 
+        <div class="prizesList"> 
+         <table> 
+          <thead align="center"> 
+           <tr>
+            <th width="30%">类型</th> 
+            <th width="30%">中奖时间</th> 
+            <th width="40%">奖品</th> 
+           </tr>
+          </thead> 
+          <tbody align="center"> 
+          </tbody> 
+         </table> 
+        </div> 
+       </div> 
+      </div> 
+      <div class="mainFumaContent"> 
+       <div class="firstWatch"> 
+        <div class="firstWatchLeft"> 
+        </div> 
+        <div class="firstWatchRight"> 
+         <label>苹果手表(Apple Watch)</label> 
+         <li class="value">价值3000元</li> 
+         <li class="lotteryNum">奖品数量：<span>10</span></li> 
+         <li class="restNum">剩余数量：<span>10</span></li> 
+        </div> 
+       </div> 
+       <div class="secondRechargeCard"> 
+        <div class="firstLineLeft"> 
+         <div class="num"> 
+          <li class="lotteryNum">奖品数量：<span>50</span></li> 
+          <li class="restNum">剩余数量：<span>49</span></li> 
+         </div> 
+        </div> 
+        <div class="firstLineCenter"> 
+         <div class="num"> 
+          <li class="lotteryNum">奖品数量：<span>100</span></li> 
+          <li class="restNum">剩余数量：<span>100</span></li> 
+         </div> 
+        </div> 
+        <div class="firstLineRight"> 
+         <div class="num"> 
+          <li class="lotteryNum">奖品数量：<span>200</span></li> 
+          <li class="restNum">剩余数量：<span>199</span></li> 
+         </div> 
+        </div> 
+        <div class="secondLineLeft"> 
+         <div class="num"> 
+          <li class="lotteryNum">奖品数量：<span>400</span></li> 
+          <li class="restNum">剩余数量：<span>396</span></li> 
+         </div> 
+        </div> 
+        <div class="secondLineRight"> 
+         <div class="num"> 
+          <li class="lotteryNum">奖品数量：<span>895</span></li> 
+          <li class="restNum">剩余数量：<span>884</span></li> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="footCloseBtn" onclick="closeBox('gift');">
+      <span>*</span>
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <a class="toDragent" href="/index.php?s=/Slz_Home/Index/slzplay"></a> 
+  <a class="fumaLottery" href="/index.php?s=/Slz_Home/Fuma/index"></a> 
+  <div style="left: 6%;position: fixed;top: 45.1%;width: 15%;color:#fff;">
+   您好！在路上|
+   <a style="color:#fff;" href="/index.php?s=/Slz_Home/Index/logout">退出</a>
+  </div> 
+  <div class="activityRule" onclick="alertRuleBox();" style="float:left;left:3%;width:46%;height:10%;">
+   <span>活动规则</span>
+  </div> 
+  <div class="activityGift" onclick="alertGiftBox();" style="float:right;right:2%;width:46%;height:10%;">
+   <span>活动奖品</span>
+  </div> 
+  <script src="js/jquery.min.js"></script> 
+  <script>
+		$(function(){
+			//弹窗背景图预加载
+			var firstAlertGL=new Image();
+			var firstAlertGR=new Image();
+			var firstAlertJL=new Image();
+			var firstAlertJR=new Image();
+			firstAlertGL.src="images/firstAlertGL.png";
+			firstAlertGR.src="images/firstAlertGR.png";
+			firstAlertJL.src="images/firstAlertJL.png";
+			firstAlertJR.src="images/firstAlertJR.png";
+		})
+		//活动规则弹窗
+		function alertRuleBox(){
+			$("#activityRuleBox").css("display","block");
+		}
+		//点击查看活动规则
+		function ruleDetail(type){
+			if(type=="dragent"){
+				//查看赛龙舟活动规则
+				$(".ruleContent_Slz").css("display","block");
+				$(".ruleContent_Fuma").css("display","none");
+			}else if(type=="fumaLottery"){
+				//查看福码抽奖活动规则
+				$(".ruleContent_Fuma").css("display","block");
+				$(".ruleContent_Slz").css("display","none");
+			}
+		}
+		//点击查看活动奖品
+		function giftDetail(type){
+			if(type=="dragent"){
+				//查看赛龙舟活动奖品
+				$(".giftContent").find(".mainFumaContent").css("display","none");
+				$(".giftContent").css("background-image","url('images/firstAlertJL.png')");
+				$(".giftContent").css("background-size","100% 100%");
+				$(".giftContent").find(".mainSlzContent").css("display","block");
+			}else if(type=="fumaLottery"){
+				//查看福码抽奖活动奖品
+				$(".giftContent").find(".mainSlzContent").css("display","none");
+				$(".giftContent").css("background-image","url('images/firstAlertJR.png')");
+				$(".giftContent").css("background-size","100% 100%");
+				$(".giftContent").find(".mainFumaContent").css("display","block");
+			}
+		}
+		//活动奖品弹窗
+		function alertGiftBox(){
+			$("#activityGiftBox").css("display","block");
+		}
+		//点击关闭弹窗
+		function closeBox(type){
+		
+			if(type=="rule"){
+				//关闭活动规则弹窗
+				$("#activityRuleBox").css("display","none");
+			}else if(type=="gift"){
+				//关闭活动奖品弹窗
+				$("#activityGiftBox").css("display","none");
+			}
+		}
+	</script>  
+ </body>
+</html>

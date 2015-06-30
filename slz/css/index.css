@@ -1,0 +1,428 @@
+body{
+            background:url('images/firstPageBg.png');
+            background-size: 100% 100%;
+            -moz-background-size: 100% 100%;
+            -webkit-background-size: 100% 100%;
+            -o-background-size: 100% 100%;
+            z-index:1;
+        }
+        body .loginout{
+            position:fixed;
+            top:5%;
+            right:3%;
+            color:#000;
+        }
+        body .toDragent{
+            position: absolute;
+            width:50%;
+            height:10%;
+            margin:0;
+            padding:0;
+            top: 36.5%;
+            left: 25%;
+			background-image:url('images/beginLGame.png');
+			 background-size: 100% 100%;
+            -moz-background-size: 100% 100%;
+            -webkit-background-size: 100% 100%;
+            -o-background-size: 100% 100%;
+			z-index:10;
+        }
+        .toDragent #btn1{
+            width:100%;
+            height:100%;
+            display: none;
+        }
+        body .fumaLottery{
+            position: absolute;
+            width:50%;
+            height:10%;
+            margin:0;
+            padding:0;
+            top: 48.5%;
+            left: 25%;
+			background-image:url('images/beginFGame.png');
+			 background-size: 100% 100%;
+            -moz-background-size: 100% 100%;
+            -webkit-background-size: 100% 100%;
+            -o-background-size: 100% 100%;
+			z-index:10;
+        }
+        .fumaLottery #btn2{
+            width:100%;
+            height:100%;
+            display: none;
+        }
+        #loginlink{
+            left: 6%;
+            position: fixed;
+            top: 45.1%;
+            width: 15%;
+        }
+		.activityRule{
+			position:absolute;
+			width:40%;
+			height:10%;
+			top:87%;
+			left:5%;
+			background-image:url('images/FootBtnLeft.png');
+			 background-size: 100% 100%;
+            -moz-background-size: 100% 100%;
+            -webkit-background-size: 100% 100%;
+            -o-background-size: 100% 100%;
+			z-index:10;
+		}
+		.activityRule span{
+			display:none;
+		}
+		.activityGift{
+			position:absolute;
+			width:40%;
+			height:10%;
+			top:87%;
+			left:50%;
+			background-image:url('images/FootBtnRight.png');
+			 background-size: 100% 100%;
+            -moz-background-size: 100% 100%;
+            -webkit-background-size: 100% 100%;
+            -o-background-size: 100% 100%;
+			z-index:10;
+		}
+		.activityGift span{
+			display:none;
+		}
+		
+		.alertBox{
+				display:none;
+				height:100%;
+				width:100%;
+				position:fixed;
+				top:0;
+				left:0;
+				background-color:rgba(0,0,0,0.5);
+				z-index:888;
+			}
+            .alertBoxContent{
+                width:100%;height:100%;position:fixed;z-index:889;
+				
+            }
+			.ruleContent_Slz,.ruleContent_Fuma{
+				position: absolute;
+				width: 100%;
+				height: 100%;
+				font-size: 6vw;
+				 background-size: 100% 100%;
+				-moz-background-size: 100% 100%;
+				-webkit-background-size: 100% 100%;
+				-o-background-size: 100% 100%;
+				z-index:901;
+			}
+			.ruleContent_Slz{
+				color:#1C7406;
+				background-image:url('images/firstAlertGL.png');
+			}
+			.ruleContent_Fuma{
+				color:#E17E00;
+				background-image:url('images/firstAlertGR.png');
+			}
+			.leftDragentBtn{
+				position: absolute;
+				width: 35%;
+				height: 6.5%;
+				margin: 0;
+				padding: 0;
+				top: 20%;
+				left: 13%;
+				font-size: 6vw;
+				text-align: center;
+				z-index:910;
+			}
+			.rightFumaLotteryBtn{
+				position:absolute;
+				width: 35%;
+				height: 6.5%;
+				margin:0;
+				padding:0;
+				top:20%;
+				left:53%;
+				font-size: 6vw;
+				text-align: center;
+				z-index:910;
+			}
+			.leftDragentBtn span,.rightFumaLotteryBtn span{
+				display:none;
+			}
+			
+			.ruleContent_Slz .mainSlzContent,.ruleContent_Fuma .mainFumaContent{
+				width: 82%;
+				height: 56%;
+				margin: 0px;
+				padding: 0px;
+				top: 30%;
+				overflow:auto;
+				position: absolute;
+				left: 10%;
+				z-index:901;
+				overflow:auto;
+				font-size:4vw;
+			}
+			.ruleContent_Slz{
+				display:block;
+			}
+			.ruleContent_Fuma{
+				display:none;
+			}
+			.giftContent{
+				position: absolute;
+				width: 100%;
+				height: 100%;
+				background-image:url('images/firstAlertJL.png');
+				 background-size: 100% 100%;
+				-moz-background-size: 100% 100%;
+				-webkit-background-size: 100% 100%;
+				-o-background-size: 100% 100%;
+				z-index:901;
+			}
+			.footCloseBtn{
+				position: absolute;
+				width: 12%;
+				height: 8%;
+				margin: 0px;
+				padding: 0px;
+				border-radius: 50%;
+				top: 86%;
+				left: 44%;
+				z-index:910;
+			}
+			.footCloseBtn span{
+				display:none;
+			}
+			.giftContent .mainSlzContent,.mainFumaContent{
+				width: 82%;
+				height: 56%;
+				margin: 0px;
+				padding: 0px;
+				top: 30%;
+				overflow:auto;
+				position: absolute;
+				left: 10%;
+				z-index:901;
+			}
+			.giftContent .mainSlzContent{
+				display:block;
+			}
+			.giftContent .mainFumaContent{
+				display:none;
+			}
+			.giftContent .mainSlzContent .firstWatch{
+				position: absolute;
+				width: 95%;
+				height: 40%;
+				left: 0px;
+				top: 0px;
+			}
+			.giftContent .mainSlzContent .firstWatch .firstWatchLeft{
+				width: 40%;
+				height: 98%;
+				margin:1%;
+				padding: 0;
+				float: left;
+				background-image: url("images/appleWatch1.png");
+				background-size: 100% 100%;
+				z-index: 901;
+			}
+			.giftContent .mainSlzContent .firstWatch .firstWatchRight{
+				float: left;
+				height: 80%;
+				padding: 0px;
+				width: 56%;
+				margin: 4% 1%;
+				font-size: 4vw;
+			}
+			.giftContent .mainSlzContent .firstWatchRight label{
+				line-height:8vw;
+				color:#1C7406;
+			}
+			.giftContent .mainSlzContent .firstWatchRight li{
+				list-style:none;
+				line-height:6vw;
+				color:#6BA33C;
+			}
+			.giftContent .mainSlzContent .secondrechargeCard{
+				position: absolute;
+				width: 95%;
+				left: 0px;
+				height: 60%;
+				top: 40%;
+				margin: 1%;
+				font-size:3.5vw;
+			}
+			.giftContent .mainSlzContent .secondrechargeCard .lineFirst,.lineSecond,.lineThird,.lineForth{
+				width:25%;
+				height:35%;
+				top:45%;
+				left:0;
+				float:left;
+				color:#6BA33C;
+				 background-size: 100% 100%;
+				-moz-background-size: 100% 100%;
+				-webkit-background-size: 100% 100%;
+				-o-background-size: 100% 100%;
+				z-index:901;
+			}
+			.giftContent .mainSlzContent .lineFirst{
+				background-image:url('images/sphone100.png');
+			}
+			.giftContent .mainSlzContent .lineSecond{
+				background-image:url('images/sphone50.png');
+			}
+			.giftContent .mainSlzContent .lineThird{
+				background-image:url('images/sphone30.png');
+			}
+			.giftContent .mainSlzContent .lineForth{
+				background-image:url('images/sphone10.png');
+			}
+			li{
+				list-style:none;
+				line-height:5vw;
+			}
+			.giftContent .mainSlzContent .secondrechargeCard .num{
+				margin-top: 95%;
+				margin-left: 10%;
+				font-size:2.5vw;
+			}
+			.giftContent .mainSlzContent .thirdMyPrizes{
+				position:absolute;
+				width:100%;
+				height:25%;
+				top:77%;
+				left:0;
+				z-index:902;
+			}
+			.giftContent .mainSlzContent .thirdMyPrizes .thirdHead{
+				width:100%;
+				height:30%;
+				background-image:url('images/myJ.png');
+				z-index:902;
+			}
+			.giftContent .mainSlzContent .thirdMyPrizes .prizesList{
+				width:100%;
+				height:60%;
+				padding-top:2%;
+			}
+			.giftContent .mainSlzContent .prizesList table{
+				border:0;
+				width: 95%;
+				margin-left: 2%;
+				color:#fff;
+			}
+			.giftContent .mainSlzContent .prizesList thead{
+				background-color:#3A7826;
+				font-size:4vw;
+			}
+			.giftContent .mainSlzContent .prizesList tbody{
+				background-color:#44912C;
+				font-size:4vw;
+			}
+			.giftContent .mainFumaContent .firstWatch{
+				position: absolute;
+				width: 95%;
+				height: 40%;
+				left: 0px;
+				top: 0px;
+			}
+			.giftContent .mainFumaContent .firstWatch .firstWatchLeft{
+				width: 40%;
+				height: 98%;
+				margin:1%;
+				padding: 0;
+				float: left;
+				background-image: url("images/appleWatch.png");
+				background-size: 100% 100%;
+				z-index: 901;
+			}
+			.giftContent .mainFumaContent .firstWatch .firstWatchRight{
+				float: left;
+				height: 80%;
+				padding: 0px;
+				width: 56%;
+				margin: 4% 1%;
+				font-size: 4vw;
+			}
+			.giftContent .mainFumaContent .firstWatchRight label{
+				line-height:8vw;
+				color:#FE6306;
+			}
+			.giftContent .mainFumaContent .firstWatchRight li{
+				list-style:none;
+				line-height:6vw;
+				color:#D5A865;
+			}
+			.giftContent .mainFumaContent .firstWatchRight li span{
+				color:#FE7C2F;
+			}
+			.giftContent .mainFumaContent .secondrechargeCard{
+				position: absolute;
+				width: 95%;
+				left: 0px;
+				height: 60%;
+				top: 40%;
+				margin: 1%;
+				font-size:3.5vw;
+				color:#D5A865;
+			}
+			.giftContent .mainFumaContent .secondrechargeCard .firstLineLeft,.firstLineCenter,.firstLineRight{
+				width:33%;
+				height:46%;
+				top:45%;
+				left:0;
+				float:left;
+				 background-size: 100% 100%;
+				-moz-background-size: 100% 100%;
+				-webkit-background-size: 100% 100%;
+				-o-background-size: 100% 100%;
+				z-index:901;
+			}
+			.giftContent .mainFumaContent .firstLineLeft{
+				left:3%;
+				background-image:url('images/phone200.png');
+			}
+			.giftContent .mainFumaContent .firstLineCenter{
+				left:41%;
+				background-image:url('images/phone100.png');
+			}
+			.giftContent .mainFumaContent .firstLineRight{
+				left:79%;
+				background-image:url('images/phone50.png');
+			}
+			.giftContent .mainFumaContent .secondLineLeft,.secondLineRight{
+				width:33%;
+				height:46%;
+				top:75%;
+				left:0;
+				float:left;
+				margin-top: 18%;
+				 background-size: 100% 100%;
+				-moz-background-size: 100% 100%;
+				-webkit-background-size: 100% 100%;
+				-o-background-size: 100% 100%;
+				z-index:901;
+			}
+			.giftContent .mainFumaContent .secondLineLeft{
+				margin-left: 15%;
+				background-image:url('images/phone30.png');
+			}
+			.giftContent .mainFumaContent .secondLineRight{
+				background-image:url('images/phone10.png');
+			}
+			.giftContent .mainFumaContent .secondrechargeCard li{
+				list-style:none;
+				line-height:5vw;
+			}
+			.giftContent .mainFumaContent .num{
+				margin-top: 95%;
+				margin-left: 5%;
+			}
+			.giftContent .mainFumaContent .num span{
+				font-size:2.9vw;
+				color:#F67706;
+			}

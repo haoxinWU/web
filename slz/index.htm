@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="initial-scale=1, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0, width=device-width">
+    <meta name="screen-orientation" content="portrait">
+    <title>龙舟赛万福，端阳乐邮礼</title>
+    <link rel="stylesheet" type="text/css" href="css/slzplay.css">
+    <script src="js/zepto.min.js"></script>
+    <script>
+        $(function(){
+            $("#playAgainBtnToo").on("click",function(){
+                $("#gameOverNonePanel").css("display","none");
+                location.href="/index.php?s=/Slz_Home/Index/index";
+            })
+        })
+        //将结果传递到后台
+        function sendResult(timecost,miter)
+        {
+            //var url="/index.php?s=/Slz_Home/Index/saveLongResult"+"&timeCost="+timecost+"&miter="+miter;
+                    $.getJSON("#",function(data){//
+                        //test add TODO
+                        data = 1;
+                        if(data==1)
+                        {
+                            issendding=0;
+                        }
+                    })
+        }
+        //跳转到拆粽子页面
+        function tozongzi()
+        {
+            if(issendding==1)
+            {
+                alert("网络太卡，请稍等或关闭重试");
+                return false;
+            }
+            location.href="/index.php?s=/Slz_Home/Index/zzplay"
+        }
+    </script>
+</head>
+<body>
+<div id="container">
+    <div id="guidePanel" ></div>
+    <div id="gamepanel">
+        <!--右边时间-->
+        <div class="score-wrap">
+            <span id="time">00:00</span>
+        </div>
+        <!--左边剩余次数-->
+        <div class="score-wrap-left">
+            <span>还剩<span id="hasNum">0</span>次</span>
+        </div>
+        <!--中间的米数-->
+        <div class="score-wrap-center">
+            <span id="hasmeter">0m</span>
+        </div>
+        <canvas id="stage" width="320" height="611"></canvas>
+    </div>
+    <!--开始的时间倒计时-->
+    <div >
+        <div id="begin3" style="position:fixed;top:0;left:0;height:100%;width:100%;z-index:1004;background-color:rgba(0,0,0,0.3);display: none;">
+            <img src="images/3.png" style="top:40%;position:fixed;left:50%;-webkit-transform:translateX(-50%);width:30%;z-index:1005" />
+        </div>
+        <div id="begin2" style="position:fixed;top:0;left:0;height:100%;width:100%;z-index:1004;background-color:rgba(0,0,0,0.3);display: none;">
+            <img src="images/2.png" style="top:40%;position:fixed;left:50%;-webkit-transform:translateX(-50%);width:30%;z-index:1005" />
+        </div>
+        <div id="begin1" style="position:fixed;top:0;left:0;height:100%;width:100%;z-index:1004;background-color:rgba(0,0,0,0.3);display: none;">
+            <img src="images/1.png" style="top:40%;position:fixed;left:50%;-webkit-transform:translateX(-50%);width:30%;z-index:1005" />
+        </div>
+        <div id="begingo" style="position:fixed;top:0;left:0;height:100%;width:100%;z-index:1004;background-color:rgba(0,0,0,0.3);display: none;">
+            <img src="images/go.png" style="top:40%;position:fixed;left:50%;-webkit-transform:translateX(-50%);width:40%;z-index:1005" />
+        </div>
+    </div>
+    <!--没过500米弹窗-->
+    <div id="gameOverLowPanel" style="position:fixed;top:0;left:0;height:100%;width:100%;z-index:1004;background-color:rgba(0,0,0,0.3);display: none;">
+        <div style="width:100%;height:auto;top:15%;position:fixed;overflow:auto;left:5%; ">
+            <img src="images/gameOverLow.png" style="width:90%;z-index:1005" />
+            <div id="playAgainBtn" style="  position: absolute;top: 75%;width: 42%;height: 15%;background: transparent;z-index: 1007;left: 45%;transform: translateX(-50%);-webkit-transform: translateX(-50%);"></div>
+        </div>
+    </div>
+    <!--次数用完弹窗-->
+    <div id="gameOverNonePanel" style="position:fixed;top:0;left:0;height:100%;width:100%;z-index:1004;background-color:rgba(0,0,0,0.3);display: none;">
+        <div style="width:100%;height:auto;top:15%;position:fixed;overflow:auto;left:5%; ">
+            <img src="images/gameOverNone.png" style="width:90%;z-index:1005" />
+            <div id="playAgainBtnToo" style="  position: absolute;top: 75%;width: 42%;height: 15%;background: transparent;z-index: 1007;left: 45%;transform: translateX(-50%);-webkit-transform: translateX(-50%);"></div>
+        </div>
+    </div>
+    <!--成功跑完-->
+    <div id="gameOverGoodPanel" style="position:fixed;top:0;left:0;height:100%;width:100%;z-index:1004;background-color:rgba(0,0,0,0.3);display: none;">
+        <div style="width:100%;height:auto;top:15%;position:fixed;overflow:auto;left:5%; ">
+            <img src="images/gameOverGood.png" style="width:90%;z-index:1005" />
+            <div onclick="tozongzi();"  style="  position: absolute;top: 75%;width: 42%;height: 15%;background: transparent;z-index: 1007;left: 45%;transform: translateX(-50%);-webkit-transform: translateX(-50%);"></div>
+        </div>
+    </div>
+</div>
+<audio src="music/slz.mp3" preload="auto" autoplay id="bgmusic" loop />
+</audio>
+<script src="js/slzplay.js"></script>
+<script src="js/jssdk.js"></script>
+<script src="js/wxShare.js"></script>
+<script>
+    wx.config({
+                    debug: false,
+                    appId: 'wx7e42d968508d9c7d',  //微信的appid需要在公众平台生成
+                        timestamp: '1434380278', //这是由php部分生成的
+                        nonceStr: 'MpBvCFS4SUE9WVF8', //这是由php部分生成的
+                        signature: '8b5d61c918536696622dad26a3de008283d39084', //这是由php部分生成的
+                        jsApiList: [
+                        'onMenuShareTimeline',
+                        'onMenuShareAppMessage',
+                        'onMenuShareQQ',
+                        'onMenuShareWeibo',
+                        ]
+        });
+    window.dataForWeixin = {
+
+        picture : "images/sharelogo.jpg",
+
+        url :"http://slz.nidjia.com",
+
+        desc : "快来参与趣味龙舟赛，赢Apple Watch大奖！",
+
+        title : document.title
+
+    };
+</script>
+<script>
+    leftNumber=1;
+    /*
+    document.getElementByIdx_x("myaudio").play();
+    */
+</script>
+
+</body>
+</html>

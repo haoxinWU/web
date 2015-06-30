@@ -1,0 +1,137 @@
+body .bg {
+	position: fixed;
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	background-image: url('images/zongziBg.png');
+	background-size: 100% 100%;
+	-moz-background-size: 100% 100%;
+	-webkit-background-size: 100% 100%;
+	-o-background-size: 100% 100%;
+	z-index: -10;
+}
+
+body .shareBg {
+	position: fixed;
+	display: none;
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	background-color: rgba(0,0,0,0.6);
+	background-image: url('images/zzAlertShare.png');
+	background-size: 100% 100%;
+	-moz-background-size: 100% 100%;
+	-webkit-background-size: 100% 100%;
+	-o-background-size: 100% 100%;
+	z-index: 1020;
+}
+
+body .main {
+	position: fixed;
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.hitZongzi {
+	position: absolute;
+	width: 100%;
+	height: 15%;
+	margin: 0;
+	padding: 0;
+	top: 20%;
+	left: 0;
+}
+
+.hitZongzi .zzFirst,.zzSecond,.zzThird {
+	width: 25%;
+	height: 100%;
+	float: left;
+}
+
+.hitZongzi span {
+	display: none;
+}
+
+.hitZongzi .zzFirst {
+	margin-left: 8%;
+}
+
+.hitZongzi .zzSecond {
+	margin-left: 5%;
+}
+
+.hitZongzi .zzThird {
+	margin-left: 5%;
+}
+
+.main {
+	position: fixed;
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.main .getPrize {
+	position: absolute;
+	width: 85%;
+	height: 6%;
+	margin: 0;
+	padding: 0px;
+	top: 48%;
+	left: 8%;
+	font-size: 4vw;
+	text-align: center;
+	color: #1c7507;
+}
+
+.main .descContent {
+	position: absolute;
+	left: 6%;
+	margin: 0px;
+	padding-right: 4%;
+	overflow: auto;
+	top: 65%;
+	height: 30%;
+	font-size: 4vw;
+	width: 85%;
+	color: #1c7507;
+}
+
+.descContent li {
+	list-style: none;
+	line-height: 6vw;
+}
+
+.alertBox {
+	display: none;
+	height: 100%;
+	width: 100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	background-color: rgba(0,0,0,0.5);
+	z-index: 888;
+}
+
+.alertBoxContent {
+	width: 90%;
+	height: 250px;
+	position: fixed;
+	top: 15%;
+	left: 5%;
+	border-radius: 6%;
+	z-index: 889;
+	background-size: 100% 100%;
+	-moz-background-size: 100% 100%;
+	-webkit-background-size: 100% 100%;
+	-o-background-size: 100% 100%;
+}
