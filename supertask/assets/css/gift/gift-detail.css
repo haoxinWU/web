@@ -1,0 +1,32 @@
+.pages div.page[data-page='gift-detail'] div.gift-img > img{
+    width: 100%;
+    height: 400px;
+}
+.pages div.page[data-page='gift-detail'] div.gift-content div.gift-title{
+    padding: 10px 0px 0px 15px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #4D4D4D;
+}
+.pages div.page[data-page='gift-detail'] div.gift-content div.gift-price{
+    padding: 10px 0px 0px 15px;
+    font-size: 16px;
+    font-weight: 600;
+    color: orangered;
+}
+.pages div.page[data-page='gift-detail'] div.gift-desc div.option{
+    padding: 10px 0px 0px 15px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #999;
+}
+.pages div.page[data-page='gift-detail'] div.gift-desc div.desc-content{
+    padding: 10px 0px 0px 15px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #29292f;
+}
+.pages div.page[data-page='gift-detail'] div.toolbar button{
+    width: 100%;
+    text-align: center;
+}

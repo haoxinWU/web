@@ -1,0 +1,100 @@
+.swiper-container {
+    height: 200px;
+}
+.swiper-slide {
+    background:#bbbbbb;
+}
+.swiper-slide span {
+    text-align:center;
+    display:block;
+    font-size:21px;
+    line-height: 200px;
+}
+.picture-card-header-pic .card-header {
+    height: 40vw;
+    background-size: cover;
+    background-position: center;
+}
+#ucenter div.head{
+    background-image: url(../../../images/user_bg.jpg);
+    background-position: center;
+}
+#ucenter div.user-head{
+    margin: 0px 0px 0px 0px;
+    padding: 15px 0px 0px 15px;
+}
+#ucenter div.user-name{
+    margin: none;
+}
+#ucenter img{
+    width: 130px;
+    height: 130px;
+    -moz-border-radius: 15px;      /* Gecko browsers */
+    -webkit-border-radius: 15px;   /* Webkit browsers */
+    border-radius:130px;            /* W3C syntax */
+}
+
+#ucenter .user-sroce-table{
+    width: 100%;
+    background-color: #FFFFFF;
+}
+#ucenter .user-sroce-table > .row > div[class*="col-"]{
+    border-right: 1px solid #bbbbbb;
+    font-size: 12px;
+    padding-top: 15px;
+    font-weight: 500;
+}
+#ucenter .money{
+    font-weight: 900;
+    font-size: 16px;
+    color: #ff9800;
+}
+#ucenter .score{
+    font-weight: 900;
+    font-size: 16px;
+    color: red;
+}
+#ucenter .share-times{
+    font-weight: 900;
+    font-size: 16px;
+    color: #00d449;
+}
+
+
+/*积分商城*/
+#gift-shop{
+
+}
+#gift-shop div.gift{
+    border: 2px solid #FFFFFF;
+    background-color: #FFFFFF;
+    margin-top: 10px;
+}
+#gift-shop div.gift .gift-img > img{
+    width: 100%;
+    height: 90%;
+}
+#gift-shop div.gift > div.gift-title{
+    font-size: 15px;
+
+    padding: 0px 5px;
+}
+
+#gift-shop div.gift > div.gift-price{
+    padding: 0px 5px;
+    color: orangered;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
