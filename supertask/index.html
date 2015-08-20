@@ -14,6 +14,7 @@
   <link rel="stylesheet" href="assets/css/index/index.css">
   <link rel="stylesheet" href="assets/css/gift/gift-detail.css">
   <link rel="stylesheet" href="assets/css/gift/gift-buy.css">
+  <link rel="stylesheet" href="assets/css/invite/invite-qrcode.css">
 </head>
 <body>
 <!-- Status bar overlay for fullscreen mode-->
@@ -165,7 +166,7 @@
               </div>
               <div class="list-block">
                 <ul>
-                  <a href="#" class="item-link">
+                  <a href="#gift-shop" class="item-link tab-link">
                     <div class="item-content">
                       <div class="item-media"><i class="icon-gift icon-15x color-orange"></i></div>
                       <div class="item-inner">
@@ -173,7 +174,7 @@
                       </div>
                     </div>
                   </a>
-                  <a href="#" class="item-link">
+                  <a href="pages/invite-qrcode.html" class="item-link">
                     <div class="item-content">
                       <div class="item-media"><i class="icon-random icon-15x color-blue"></i></div>
                       <div class="item-inner">
@@ -189,19 +190,19 @@
                   <li class="item-content">
                     <div class="item-inner">
                       <div class="item-title">关注人数</div>
-                      <div class="item-after">+10</div>
+                      <div class="item-after">10</div>
                     </div>
                   </li>
                   <li class="item-content">
                     <div class="item-inner">
                       <div class="item-title">取消关注</div>
-                      <div class="item-after">+5</div>
+                      <div class="item-after">5</div>
                     </div>
                   </li>
                   <li class="item-content">
                     <div class="item-inner">
                       <div class="item-title">下级推广人</div>
-                      <div class="item-after">+3</div>
+                      <div class="item-after">3</div>
                     </div>
                   </li>
                 </ul>
@@ -212,15 +213,15 @@
         <!-- 工具栏 -->
         <div class="toolbar tabbar tabbar-labels">
           <div class="toolbar-inner">
-            <a href="#index-page" class="tab-link active">
+            <a href="#index-page" data-title="首页" class="tab-link active">
               <i class="icon-home icon-2x"></i>
               <span class="tabbar-label">首页</span>
             </a>
-            <a href="#gift-shop" class="tab-link">
+            <a href="#gift-shop" data-title="礼品商城" class="tab-link">
               <i class="icon-gift icon-2x"></i>
               <span class="tabbar-label">礼品商城</span>
             </a>
-            <a href="#ucenter" class="tab-link">
+            <a href="#ucenter" data-title="个人中心" class="tab-link">
               <i class="icon-user icon-2x"></i>
               <span class="tabbar-label">个人中心</span>
             </a>

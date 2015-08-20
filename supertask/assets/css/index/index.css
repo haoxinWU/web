@@ -66,6 +66,7 @@
 
 }
 #gift-shop div.gift{
+    cursor: pointer;
     border: 2px solid #FFFFFF;
     background-color: #FFFFFF;
     margin-top: 10px;
