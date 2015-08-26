@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <title>超级菜单</title>
+  <!-- Path to Framework7 Library CSS-->
+  <link rel="stylesheet" href="css/framework7.ios.min.css">
+  <link rel="stylesheet" href="css/framework7.ios.colors.min.css">
+  <link rel="stylesheet" href="css/font-awesome.min.css">
+  <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="stylesheet" href="assets/css/index/index.css">
+  <link rel="stylesheet" href="assets/css/restaurant/restaurant.css">
+</head>
+<body>
+<!-- Status bar overlay for fullscreen mode-->
+<div class="statusbar-overlay"></div>
+<!-- Panels overlay-->
+<div class="panel-overlay"></div>
+<!-- Views-->
+<div class="views">
+  <!-- Your main view, should have "view-main" class-->
+  <div class="view view-main">
+    <!-- Top Navbar-->
+    <div class="navbar">
+      <div class="navbar-inner">
+        <div class="left">
+          <a href="#" class=""></a>
+        </div>
+        <!-- We have home navbar without left link-->
+        <div class="center sliding">超级菜单</div>
+        <div class="right">
+          <a href="#" class=""></a>
+        </div>
+      </div>
+    </div>
+    <!-- Pages, because we need fixed-through navbar and toolbar, it has additional appropriate classes-->
+    <div class="pages navbar-through toolbar-through">
+      <!-- Page, data-page contains page name-->
+      <div data-page="index" class="page toolbar-fixed">
+        <!-- Scrollable page content-->
+        <div class="page-content pull-to-refresh-content" data-ptr-distance="40">
+          <!-- 默认的下拉刷新层 -->
+          <div class="pull-to-refresh-layer">
+            <div class="preloader"></div>
+            <div class="pull-to-refresh-arrow"></div>
+          </div>
+          <div class="tabs">
+            <div class="tab active" id="index-page">
+              <!-- 顶部幻灯片 -->
+              <div class="swiper-container">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide"><span>广告1</span></div>
+                  <div class="swiper-slide"><span>广告2</span></div>
+                  <div class="swiper-slide"><span>广告3</span></div>
+                  <div class="swiper-slide"><span>广告4</span></div>
+                </div>
+                <div class="swiper-pagination"></div>
+              </div>
+              <!-- 幻灯片下面的选项按钮 -->
+              <div class="content-block option-buttons">
+                <div class="row">
+                  <div class="col-33">
+                    <a href="#" class="">
+                      <img src="images/head.jpg">
+                    </a>
+                  </div>
+                  <div class="col-33" >
+                    <a href="#" class="">
+                      <img src="images/head.jpg">
+                    </a>
+                  </div>
+                  <div class="col-33" >
+                    <a href="#" class="">
+                      <img src="images/head.jpg">
+                    </a>
+                  </div>
+                  <div class="col-33 option-name">寻找商品</div>
+                  <div class="col-33 option-name">促销活动</div>
+                  <div class="col-33 option-name">促销活动</div>
+                </div>
+              </div>
+              <!-- 店铺列表  -->
+              <div class="shop-item-list">
+                  <div class="shop-selector"></div>
+                  <div class="shop-list">
+                    <div class="list-block media-list margin-none">
+                      <ul>
+                        <li class="shop-item" data-id="1" data-title="">
+                          <a href="#" class="item-link item-content">
+                            <div class="item-media shop-head-pic"><img src="images/head.jpg" width="80"></div>
+                            <div class="item-inner">
+                              <div class="item-title-row">
+                                <div class="item-title shop-name">肯德基宅急送(陈航店)</div>
+                                <div class="item-after trans-min"><span class="color-red">￥</span><span class="money">15 </span> &nbsp; 起送</div>
+                              </div>
+                              <!-- 超市简单信息 -->
+                              <div class="shop-simple-info">
+                                <div class="item-subtitle second-line">
+                                  <span class="shop-stars">
+                                    <i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star-half"></i>
+                                  </span>
+                                  <span class="comment-count">(256)</span>
+                                  <span class="sold-count">月售1996份</span>
+                                </div>
+                                <!-- 第三行 -->
+                                <div class="trans-simple-info third-line">
+                                  <span class="comment-count">32分钟</span>
+                                  /
+                                  <span class="sold-count">2.8千米</span>
+                                </div>
+                                <hr class="" />
+                                <div class="activity-simple-info fourth-line">
+                                  <div class="activity-item">
+                                    <span class="badge square bg-red activity-logo">减</span>
+                                    <span class="activity-desc">满50减10元</span>
+                                  </div>
+                                  <div class="activity-item">
+                                    <span class="badge square bg-blue activity-logo">配</span>
+                                    <span class="activity-desc">满50减10元</span>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </a>
+                        </li>
+                        <li class="shop-item">
+                          <a href="#" class="item-link item-content">
+                            <div class="item-media shop-head-pic"><img src="images/head.jpg" width="80"></div>
+                            <div class="item-inner">
+                              <div class="item-title-row">
+                                <div class="item-title shop-name">味千拉面(近铁店)</div>
+                                <div class="item-after trans-min"><span class="color-red">￥</span><span class="money">15 </span> &nbsp; 起送</div>
+                              </div>
+                              <!-- 超市简单信息 -->
+                              <div class="shop-simple-info">
+                                <div class="item-subtitle second-line">
+                                  <span class="shop-stars">
+                                    <i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star-half"></i>
+                                  </span>
+                                  <span class="comment-count">(256)</span>
+                                  <span class="sold-count">月售1996份</span>
+                                </div>
+                                <!-- 第三行 -->
+                                <div class="trans-simple-info third-line">
+                                  <span class="comment-count">32分钟</span>
+                                  /
+                                  <span class="sold-count">2.8千米</span>
+                                </div>
+                                <hr class="" />
+                                <div class="activity-simple-info fourth-line">
+                                  <div class="activity-item">
+                                    <span class="badge square bg-red activity-logo">减</span>
+                                    <span class="activity-desc">满50减10元</span>
+                                  </div>
+                                  <div class="activity-item">
+                                    <span class="badge square bg-blue activity-logo">配</span>
+                                    <span class="activity-desc">免费配送</span>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </a>
+                        </li>
+                        <li class="shop-item">
+                          <a href="#" class="item-link item-content">
+                            <div class="item-media shop-head-pic"><img src="images/head.jpg" width="80"></div>
+                            <div class="item-inner">
+                              <div class="item-title-row">
+                                <div class="item-title shop-name">味千拉面(近铁店)</div>
+                                <div class="item-after trans-min"><span class="color-red">￥</span><span class="money">15 </span> &nbsp; 起送</div>
+                              </div>
+                              <!-- 超市简单信息 -->
+                              <div class="shop-simple-info">
+                                <div class="item-subtitle second-line">
+                                  <span class="shop-stars">
+                                    <i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star-half"></i>
+                                  </span>
+                                  <span class="comment-count">(256)</span>
+                                  <span class="sold-count">月售1996份</span>
+                                </div>
+                                <!-- 第三行 -->
+                                <div class="trans-simple-info third-line">
+                                  <span class="comment-count">32分钟</span>
+                                  /
+                                  <span class="sold-count">2.8千米</span>
+                                </div>
+                                <hr class="" />
+                                <div class="activity-simple-info fourth-line">
+                                  <div class="activity-item">
+                                    <span class="badge square bg-red activity-logo">减</span>
+                                    <span class="activity-desc">满50减10元</span>
+                                  </div>
+                                  <div class="activity-item">
+                                    <span class="badge square bg-blue activity-logo">配</span>
+                                    <span class="activity-desc">免费配送</span>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </a>
+                        </li>
+                        <li class="shop-item">
+                          <a href="#" class="item-link item-content">
+                            <div class="item-media shop-head-pic"><img src="images/head.jpg" width="80"></div>
+                            <div class="item-inner">
+                              <div class="item-title-row">
+                                <div class="item-title shop-name">味千拉面(近铁店)</div>
+                                <div class="item-after trans-min"><span class="color-red">￥</span><span class="money">15 </span> &nbsp; 起送</div>
+                              </div>
+                              <!-- 超市简单信息 -->
+                              <div class="shop-simple-info">
+                                <div class="item-subtitle second-line">
+                                  <span class="shop-stars">
+                                    <i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star-half"></i>
+                                  </span>
+                                  <span class="comment-count">(256)</span>
+                                  <span class="sold-count">月售1996份</span>
+                                </div>
+                                <!-- 第三行 -->
+                                <div class="trans-simple-info third-line">
+                                  <span class="comment-count">32分钟</span>
+                                  /
+                                  <span class="sold-count">2.8千米</span>
+                                </div>
+                                <hr class="" />
+                                <div class="activity-simple-info fourth-line">
+                                  <div class="activity-item">
+                                    <span class="badge square bg-red activity-logo">减</span>
+                                    <span class="activity-desc">满50减10元</span>
+                                  </div>
+                                  <div class="activity-item">
+                                    <span class="badge square bg-blue activity-logo">配</span>
+                                    <span class="activity-desc">免费配送</span>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+              </div>
+            </div>
+            <div class="tab" id="gift-shop">
+
+            </div>
+            <div class="tab" id="orders">
+
+            </div>
+            <div class="tab" id="ucenter">
+              <div class="head">
+                <div class="col-auto user-head">
+                  <img src="images/head.jpg">
+                </div>
+                <div class="col-auto user-name">Lonaking</div>
+              </div>
+              <div class="user-sroce-table center">
+                <div class="row">
+                  <div class="col-33">
+                    <span class="money">0.00</span> 元<br>
+                    <p>我的余额</p>
+                  </div>
+                  <div class="col-33">
+                    <span class="score">2550</span> 分<br>
+                    <p>我的积分</p>
+                  </div>
+                  <div class="col-33">
+                    <span class="share-times">153</span> 次<br>
+                    <p>推广次数</p>
+                  </div>
+                </div>
+              </div>
+              <div class="list-block">
+                <ul>
+                  <a href="pages/user-info.html" class="item-link">
+                    <div class="item-content">
+                      <div class="item-media"><i class="icon-user-md icon-15x color-green"></i></div>
+                      <div class="item-inner">
+                        <div class="item-title">我的资料</div>
+                      </div>
+                    </div>
+                  </a>
+                  <a href="pages/share-order.html" class="item-link">
+                    <div class="item-content">
+                      <div class="item-media"><i class="icon-signal icon-15x color-lightblue"></i></div>
+                      <div class="item-inner">
+                        <div class="item-title">推广排名</div>
+                      </div>
+                    </div>
+                  </a>
+                  <a href="#gift-shop" class="item-link tab-link">
+                    <div class="item-content">
+                      <div class="item-media"><i class="icon-gift icon-15x color-orange"></i></div>
+                      <div class="item-inner">
+                        <div class="item-title">积分商城</div>
+                      </div>
+                    </div>
+                  </a>
+                  <a href="pages/invite-qrcode.html" class="item-link">
+                    <div class="item-content">
+                      <div class="item-media"><i class="icon-random icon-15x color-blue"></i></div>
+                      <div class="item-inner">
+                        <div class="item-title">邀请好友加入</div>
+                      </div>
+                    </div>
+                  </a>
+                </ul>
+              </div>
+
+            </div>
+          </div>
+        </div>
+        <!-- 工具栏 -->
+        <div class="toolbar tabbar tabbar-labels">
+          <div class="toolbar-inner">
+            <a href="#index-page" data-title="首页" class="tab-link active">
+              <i class="icon-home icon-15x"></i>
+              <span class="tabbar-label">外卖</span>
+            </a>
+            <a href="#orders" data-title="订单" class="tab-link">
+              <i class="icon-food icon-15x"></i>
+              <span class="tabbar-label">订单</span>
+            </a>
+            <a href="#ucenter" data-title="个人中心" class="tab-link">
+              <i class="icon-user icon-15x"></i>
+              <span class="tabbar-label">我的</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Path to Framework7 Library JS-->
+<script type="text/javascript" src="js/jquery-2.1.3.min.js"></script>
+<script type="text/javascript" src="js/framework7.min.js"></script>
+<script type="text/javascript" src="assets/js/main.js"></script>
+<script type="text/javascript" src="assets/js/index/index.js"></script>
+<!-- Path to your app js-->
+</body>
+</html>

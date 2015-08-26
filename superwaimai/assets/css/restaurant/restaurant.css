@@ -1,0 +1,38 @@
+#restaurant .page-content{
+    margin-bottom: 2px;
+}
+/*菜单页面*/
+#restaurant-menu .notice{
+    padding: 0px 10px;
+    background-color: #fffcb6;
+    height: 30px;
+    line-height: 30px;
+}
+#restaurant-menu .notice i{
+    color: #ff3573;
+    padding-right : 10px;
+}
+#restaurant-menu .row .left{
+    margin-left: 0;
+    width: 25%;
+}
+#restaurant-menu .row .left ul li{
+    border-bottom: 1px solid #c8c7cc;
+    background-color: #ccc;
+}
+#restaurant-menu .row .left ul li.active{
+    border-left: 13px solid #007aff;
+    background-color: #FFFFFF;
+}
+#restaurant-menu .row .left ul li > div.item-content{
+    height: 44px;
+}
+#restaurant-menu .row .left .item-inner:after{
+    height : 0;
+}
+#restaurant-menu .row .left ul li .item-title{
+    font-size: 14px;
+    text-overflow: inherit;
+    overflow: inherit;
+    white-space: initial;
+}

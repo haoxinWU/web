@@ -6,6 +6,8 @@ var index = {
         //初始化首页的轮播图片
         index.functions.swiperInit();
 
+        index.functions.checkRegister();
+
     },
     event: function () {
 
@@ -35,6 +37,33 @@ var index = {
             });
             callback(this);
         },
+        /*跳转到用户信息页面*/
+        loadUserInfo : function(name,callback){
+            var context = {
+
+            };
+            if(name != null && ''!=name ){
+                context.name = name;
+            }
+            mainView.router.loadPage({
+                url : 'pages/user-info.html',
+                context : context
+            });
+            callback();
+        },
+        checkRegister : function(){
+            var name = $$('#ucenter div.user-name').text();
+            if('' == name || null == name || undefined == name){
+                taskFramework.confirm('您还没有等级成为推广员,点击确定进入登记页面,点击取消关闭本页面', function () {
+                    //确定
+                    index.functions.loadUserInfo(null,function(){
+                        //回调函数
+                    });
+                }, function () {//取消
+
+                });
+            }
+        }
     }
 }
 /*初始化页面*/

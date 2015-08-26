@@ -1,0 +1,156 @@
+.swiper-container {
+    height: 80px;
+}
+.swiper-slide {
+    background:#bbbbbb;
+}
+.swiper-slide span {
+    text-align:center;
+    display:block;
+    font-size:21px;
+    line-height: 80px;
+}
+
+/*点击按钮*/
+.option-buttons{
+    margin-bottom: 10px;
+}
+.row .option-button{
+    height: 100px;
+    padding-bottom: 0px;
+    line-height: 100px;
+}
+.row .option-button-name{
+    border: none;
+    background-color: none;
+}
+.content-block.option-buttons{
+    padding-top: 10px;
+    margin-top: 0px;
+    background-color: #FFFFFF;
+}
+.content-block.option-buttons img{
+    width: 50px;
+    height: 50px;
+    border-radius:50px;
+}
+.content-block.option-buttons .option-name{
+    font-size: 12px;
+    color: #999;
+}
+
+/*店铺列表*/
+.list-block li.media-item .item-link .item-title-row, .list-block.media-list .item-link .item-title-row{
+    background-image : none;
+    padding-right: 0px;
+}
+div.shop-list div.list-block{
+    font-size: 13px;
+}
+li.shop-item div.shop-name{
+    font-size: 15px;
+    color: #222;
+}
+div.trans-min{
+    font-size: 12px;
+    padding-top: 5px;
+}
+div.trans-min .money{
+    font-size: 16px;
+    color: red;
+    line-height: 16px;
+}
+div.item-subtitle.second-line{
+    font-size: 12px;
+    margin-top: 5px;
+
+}
+div.shop-simple-info .shop-stars i.icon-star,.shop-stars i.icon-star-half{
+    color: #ffb611;
+    margin-left: 2px;
+}
+div.shop-simple-info div.item-subtitle.second-line span.comment-count{
+    color: #998993;
+}
+div.shop-simple-info div.item-subtitle.second-line span.sold-count{
+    color: #998993;
+    padding-left: 10px;
+}
+
+div.shop-simple-info div.trans-simple-info{
+    color: #998993;
+    font-size: 12px;
+    padding-top: 0px;
+}
+div.shop-simple-info hr{
+    border:none;border-top:1px ridge #cccccc;
+}
+div.shop-simple-info div.activity-simple-info.fourth-line div.activity-item span.badge.square{
+    font-size: 11px;
+}
+div.shop-simple-info div.activity-simple-info.fourth-line div.activity-item span.activity-desc{
+    font-size: 11px;
+    margin-top: 5px;
+    color: #999;
+    padding-left: 10px;
+}
+div.shop-item-list  ul  li.shop-item{
+    border-bottom: 1px solid #cccccc;
+}
+div.shop-item-list  ul li .item-inner:after{
+    content : none;
+}
+
+
+/*ucneter tab*/
+#ucenter div.head{
+    background-image: url(../../../images/user_bg.jpg);
+    background-position: center;
+}
+#ucenter div.user-head{
+    margin: 0px 0px 0px 0px;
+    padding: 15px 0px 0px 15px;
+}
+#ucenter div.user-name{
+    margin: none;
+}
+#ucenter img{
+    width: 130px;
+    height: 130px;
+    -moz-border-radius: 15px;      /* Gecko browsers */
+    -webkit-border-radius: 15px;   /* Webkit browsers */
+    border-radius:130px;            /* W3C syntax */
+}
+
+#ucenter .user-sroce-table{
+    width: 100%;
+    background-color: #FFFFFF;
+}
+#ucenter .user-sroce-table > .row > div[class*="col-"]{
+    border-right: 1px solid #bbbbbb;
+    font-size: 12px;
+    padding-top: 15px;
+    font-weight: 500;
+}
+#ucenter .money{
+    font-weight: 900;
+    font-size: 16px;
+    color: #ff9800;
+}
+#ucenter .score{
+    font-weight: 900;
+    font-size: 16px;
+    color: red;
+}
+#ucenter .share-times{
+    font-weight: 900;
+    font-size: 16px;
+    color: #00d449;
+}
+
+
+
+
+
+
+
