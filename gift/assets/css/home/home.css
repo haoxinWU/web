@@ -1,0 +1,44 @@
+#ucenter div.head{
+    background-image: url(../../../images/user_bg.jpg);
+    background-position: center;
+}
+#ucenter div.user-head{
+    margin: 0px 0px 0px 0px;
+    padding: 15px 0px 0px 15px;
+}
+#ucenter div.user-name{
+    margin: none;
+}
+#ucenter img{
+    width: 130px;
+    height: 130px;
+    -moz-border-radius: 15px;      /* Gecko browsers */
+    -webkit-border-radius: 15px;   /* Webkit browsers */
+    border-radius:130px;            /* W3C syntax */
+}
+
+#ucenter .user-sroce-table{
+    width: 100%;
+    background-color: #FFFFFF;
+}
+#ucenter .user-sroce-table > .row > div[class*="col-"]{
+    border-right: 1px solid #bbbbbb;
+    font-size: 12px;
+    padding-top: 15px;
+    font-weight: 500;
+}
+#ucenter .money{
+    font-weight: 900;
+    font-size: 16px;
+    color: #ff9800;
+}
+#ucenter .score{
+    font-weight: 900;
+    font-size: 16px;
+    color: red;
+}
+#ucenter .share-times{
+    font-weight: 900;
+    font-size: 16px;
+    color: #00d449;
+}
