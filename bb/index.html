@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html data-openid="{$html['openid']}" data-follow-url="{$url['follow_url']}" data-pipei-url="{$url['pipei']}" data-add-tag-url="{$url[add_tag]}" data-remove-tag-url="{$url[remove_tag]}" data-hang-up-url="{$url['hang_up']}">
+<html data-openid="{$html['openid']}" data-follow-url="{$url['follow_url']}" data-pipei-url="json/pipei.json" data-add-tag-url="{$url[add_tag]}" data-remove-tag-url="{$url[remove_tag]}" data-hang-up-url="json/hang-up.json">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
@@ -45,20 +45,59 @@
         </div>
         <!-- Scrollable page content-->
         <div class="page-content">
-          <div class="content-block-title">点击选择或取消你的标签</div>
-          <div class="content-block tag-list">
-            <!-- 标签展示 -->
-            <p class="buttons-row">
-              <a href="#" class="button unselected color-red" data-name="red">Red</a>
-              <a href="#" class="button unselected color-green">Green</a>
-              <a href="#" class="button unselected color-blue">Blue</a>
-            </p>
-            <p class="buttons-row">
-              <a href="#" class="button color-orange selected">Orange</a>
-              <a href="#" class="button color-pink">Pink</a>
-              <a href="#" class="button color-purple">Purple</a>
-              <a href="#" class="button color-purple">Purple</a>
-            </p>
+          <div class="tag-list">
+            <div class="content-block-title">点击选择或取消你的标签</div>
+            <div class="content-block tag-list">
+              <!-- 标签展示 -->
+              <p class="buttons-row">
+                <a href="#" class="button unselected color-red" data-name="red">Red</a>
+                <a href="#" class="button unselected color-green">Green</a>
+                <a href="#" class="button unselected color-blue">Blue</a>
+              </p>
+              <p class="buttons-row">
+                <a href="#" class="button color-orange selected">Orange</a>
+                <a href="#" class="button color-pink">Pink</a>
+                <a href="#" class="button color-purple">Purple</a>
+                <a href="#" class="button color-purple">Purple</a>
+              </p>
+            </div>
+          </div>
+          <div class="current-chat-info">
+            <div class="content-block-title">当前匹配的用户(关闭页面发送消息给公众平台即可聊天)</div>
+            <div class="list-block media-list">
+              <ul>
+                <li>
+                  <div class="item-content">
+                    <div class="item-media"><img src="images/head.jpg" width="44"></div>
+                    <div class="item-inner">
+                      <div class="item-title-row">
+                        <div class="item-title">张三  &nbsp;<i class="icon-user color-blue"></i></div>
+                        <div class="item-after">聊天将在14点结束</div>
+                      </div>
+                      <div class="item-subtitle">重庆</div>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="history-chat-info">
+            <div class="content-block-title">曾经聊过的用户</div>
+            <div class="list-block media-list">
+              <ul>
+                <li>
+                  <div class="item-content">
+                    <div class="item-media"><img src="images/head.jpg" width="44"></div>
+                    <div class="item-inner">
+                      <div class="item-title-row">
+                        <div class="item-title">张小花&nbsp;<i class="icon-user color-pink"></i></div>
+                      </div>
+                      <div class="item-subtitle">山西太原</div>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
           </div>
       </div>
     </div>

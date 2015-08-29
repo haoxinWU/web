@@ -1,0 +1,11 @@
+{
+  "status" : 200,
+  "message" : "已经匹配成功,关闭此页面前往聊天",
+  "data" : {
+    "tag" : {
+      "avatar" : "images/head.jpg",
+      "sex" : 1,
+      "nickname" : "里斯"
+    }
+  }
+}
