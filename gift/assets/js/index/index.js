@@ -18,9 +18,19 @@ var index = {
          * 领取礼品提交按钮
          */
         $$('div.pages').on(clickEvent,'div.page[data-page=index] a.success-get-gift', function (e) {
-
-            index.functions.get_gift(function () {
-
+            mainFramework.showPreloader('提交中...');
+            index.functions.get_gift(function (json) {
+                mainFramework.hidePreloader();
+                if(json.data == null ){
+                    mainFramework.alert(json.message);
+                }else{
+                    mainFramework.confirm(json.message, function () {
+                        window.location.href = json.data.redirect;
+                    })
+                }
+            }, function (result) {
+                mainFramework.hidePreloader();
+                mainFramework.alert(result);
             });
         });
 
@@ -137,7 +147,7 @@ var index = {
          * 礼品获取按钮
          * @param e
          */
-        get_gift : function(callback){
+        get_gift : function(callback,error_callback){
             var url = $$('html').attr('data-get-gift-url');
             var post_data = {
                 gift_id :$$('html').data('gift-id'),
@@ -155,31 +165,31 @@ var index = {
             index.functions.get_gift_post_check(post_data, function () {
                 $$.post(url, post_data, function (e) {
                     var json = JSON.parse(e);
-                    mainFramework.alert(json.message,callback());
+                    callback(json);
                 })
-            });
+            },error_callback);
         },
         /**
          * 数据检测
          * @param post_data
          * @param callback
          */
-        get_gift_post_check : function (post_data, callback) {
+        get_gift_post_check : function (post_data, callback,error_callback) {
             if(post_data.name == '' || post_data.name == null){
-                mainFramework.alert('姓名不能为空');
+                error_callback('姓名不能为空');
                 return ;
             }
             if(post_data.mobile == '' || post_data.mobile == null){
-                mainFramework.alert('手机号码不能为空');
+                error_callback('手机号码不能为空');
                 return ;
             }
 
             if(post_data.city == '' || post_data.city == null || post_data.city == undefined){
-                mainFramework.alert('请选择您的地址');
+                error_callback('请选择您的地址');
                 return ;
             }
             if(post_data.address == '' || post_data.address == null){
-                mainFramework.alert('请输入您的详细地址');
+                error_callback('请输入您的详细地址');
                 return ;
             }
 
@@ -192,7 +202,7 @@ var index = {
             }
             callback();
         }
-        
+
 
 
     }
