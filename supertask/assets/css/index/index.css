@@ -86,7 +86,57 @@
     color: orangered;
 }
 
+/*列表*/
+.item-task{
+    height: 70px;
+    padding: 2px;
+    background-image: none;
+}
 
+#task-list{
+    margin-top: 0px;
+    margin: 0;/*浏览器没有滚动条*/
+}
+
+
+#task-list .item-inner:after{
+    height: 0px;
+}
+#task-list ul{
+    position: relative;
+}
+#task-list > ul > li.item-task{
+    border-bottom: 1px solid #cccccc;
+}
+
+.item-task .task-title{
+    font-size: 14px;
+    font-weight: 100;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 100px;
+    color: #666;
+    font-weight: 800;
+}
+.item-task .item-subtitle{
+    font-size: 13px;
+    color: #777777;
+}
+
+.item-task .task-info-bottom{
+    padding-top: 7px;
+}
+.item-task .task-score{
+    color: red;
+    font-weight: 500;
+    font-size: 13px;
+}
+.item-task .task-distance{
+    color: #777777;
+    font-weight: 200;
+    font-size: 14px;
+}
 
 
 
