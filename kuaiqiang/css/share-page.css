@@ -1,0 +1,14 @@
+div.share-content{
+    margin-top: 50px;
+}
+div.share-content .note{
+    font-size: 20px;
+    margin: 10px 0px 20px 0px;
+    text-align: center;
+}
+
+div.share-content div.guide-note{
+    font-size: 20px;
+    margin: 20px 0px 10px 0px;
+    text-align: center;
+}

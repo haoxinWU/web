@@ -10,14 +10,27 @@ var giftDetail = {
         /*确认兑换按钮*/
         $$('div.pages').on('click','div.page[data-page=gift-detail] div.toolbar button', function (e) {
             e.stopPropagation();
-            giftDetail.functions.buyButtonClick();
+            //1微信红包 2充值 3实物礼品 4自领礼品
+            var btn = $$(this);
+            var mode = btn.data('mode');
+            giftDetail.functions.buyButtonClick(mode);
         });
 
     },
     functions : {
-        buyButtonClick : function(){
+        buyButtonClick : function(mode){
+            var url = "pages/gift-buy-form/gift-buy-default.html";
+            if(mode == 1){
+                url = "pages/gift-buy-form/gift-buy-wechat-money.html";
+            }else if(mode == 2){
+                url = "pages/gift-buy-form/gift-buy-mobile-fee.html";
+            }else if(mode == 3){
+                url = "pages/gift-buy-form/gift-buy-default.html";
+            }else if(mode == 4){
+                url = "pages/gift-buy-form/gift-buy-ziling.html";
+            }
             mainView.router.loadPage({
-                url : 'pages/gift-buy.html'
+                url : url,
             });
         },
 
