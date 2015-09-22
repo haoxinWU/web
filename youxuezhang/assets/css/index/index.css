@@ -1,0 +1,187 @@
+/**
+ * 首页的css
+ */
+.page[data-page=index]{
+    background-color: #FFFFFF;
+}
+/*顶部幻灯片*/
+.swiper-container {
+    height: 160px;
+}
+.swiper-slide {
+    background:#B8E986;
+}
+.swiper-slide span {
+    text-align:center;
+    display:block;
+    font-size:21px;
+    line-height: 120px;
+}
+/*修理选项公用*/
+.content-block.option-buttons{
+    padding-top: 10px;
+    margin-top: 0px;
+    background-color: #FFFFFF;
+    margin-bottom: 10px;
+}
+/*修理选项按钮*/
+.option-buttons div.row>[class*=col-]{
+    height: 90px;
+    margin-bottom: 10px;
+    line-height: 90px;
+    padding-left: 2px;
+    padding-right: 2px;
+}
+
+.option-buttons div.row>[class*=col-] div.circle{
+     /* Oval 10: */
+     width: 50px;
+     height: 50px;
+     border: 3px solid #FFFFFF;
+     border-radius: 50%;
+     margin-top: 18px;
+     line-height: 45px;
+ }
+.option-buttons div.row>[class*=col-] div.option-title{
+    /* 修电脑: */
+    font-family: STHeitiSC-Light;
+    font-size: 20px;
+    color: #FFFFFF;
+    line-height: 90px;
+}
+.option-buttons div.row>[class*=col-] div.circle i.icon{
+    font-size: 2.5em;
+    color: #FFFFFF;
+}
+.row .col-50.fix-os{
+    background: #F5A623;
+    border-radius: 8px;
+}
+.row .col-50.wash-computer{
+    background: #B8E986;
+    border-radius: 8px;
+}
+.row .col-50.fix-computer-issue{
+    background: #E9D286;
+    border-radius: 8px;
+}
+.row .col-50.update-hardware{
+    background: #8BC1FF;
+    border-radius: 8px;
+}
+
+
+/*大神标题*/
+div.geek-list-title{
+    font-family: STHeitiSC-Light;
+    font-size: 16px;
+    color: #9B9B9B;
+    line-height: 16px;
+    margin-top: 0px;
+}
+/*大神列表*/
+.geek-list .list-block.media-list{
+    margin: 10px 0px;
+}
+.geek-list ul li{
+    /* Rectangle 11: */
+    border-radius: 8px;
+    margin: 10px 4%;
+}
+
+.geek-list ul li div.item-inner .name{
+    /* 研二 电气工程，共帮助582人: */
+    font-family: STHeitiSC-Light;
+    font-size: 14px;
+    color: #FFFFFF;
+}
+.geek-list ul li div.item-inner .grade-class{
+    /* 研二 电气工程，共帮助582人: */
+    font-family: STHeitiSC-Light;
+    font-size: 14px;
+    color: #FFFFFF;
+    width: 80%;overflow: hidden;white-space: nowrap;text-overflow: ellipsis;
+}
+.geek-list ul li div.item-inner .join-time{
+    /* 研二 电气工程，共帮助582人: */
+    font-family: STHeitiSC-Light;
+    font-size: 14px;
+    color: #FFFFFF;
+}
+.geek-list ul:before{
+    content: none;
+}
+.geek-list ul:after{
+    content: none;
+}
+.geek-list .list-block .item-inner:after{
+    content: none;
+}
+
+
+/*ucenter*/
+#ucenter-tab .module ul .item-title i{
+    color: #9B9B9B;
+}
+#ucenter-tab .module ul .item-title{
+    padding-left: 10px;
+    font-family: STHeitiSC-Medium;
+    font-size: 20px;
+    color: #9B9B9B;
+    line-height: 21px;
+}
+#ucenter-tab .module ul .item-after{
+    padding-left: 10px;
+    font-size: 12px;
+    color: #9B9B9B;
+}
+#ucenter-tab .module ul li a .item-inner{
+    min-height: 60px;
+}
+#ucenter-tab {
+    background-color: #F0F0F0;
+}
+#ucenter-tab .module ul .item-title span{
+    padding-left: 20px;
+}
+#ucenter-tab .module .list-block{
+    margin: 0px;
+}
+#ucenter-tab .module ul:before{
+    content:none;
+}
+#ucenter-tab .module ul:after{
+    content:none;
+}
+
+#ucenter-tab .module ul li.account .item-media img{
+    -moz-border-radius: 100%;      /* Gecko browsers */
+    -webkit-border-radius: 100%;   /* Webkit browsers */
+}
+#ucenter-tab .module ul li.account .item-title{
+    padding-left: 50px;
+}
+
+#ucenter-tab .module{
+    padding-bottom: 20px;
+}
+
+#ucenter-tab .module.contact ul li a.item-link{
+    min-height: 60px;
+    line-height: 60px;
+    font-size: 20px;
+}
+/*订单*/
+#orders-tab .content-block{
+    margin: 0px;
+}
+#orders-tab .empty-order i.icon{
+    color: #E4E4E4;
+}
+#orders-tab .empty-order .tip-text{
+    /* 不管坏没坏，先约个学长帮你看看呗: */
+    font-family: STHeitiSC-Light;
+    font-size: 16px;
+    color: #E4E4E4;
+    line-height: 16px;
+}

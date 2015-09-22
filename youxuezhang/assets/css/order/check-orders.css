@@ -1,0 +1,60 @@
+/*背景色*/
+.page[data-page=check-orders-page]{
+    background-color: #FFFFFF;
+}
+
+.content-block{
+    margin: 0px;
+}
+
+.empty-order i.icon{
+    color: #E4E4E4;
+}
+.empty-order .tip-text{
+    /* 不管坏没坏，先约个学长帮你看看呗: */
+    font-family: STHeitiSC-Light;
+    font-size: 16px;
+    color: #E4E4E4;
+    line-height: 16px;
+}
+
+/*订单列表*/
+.order-list .list-block.media-list{
+    margin: 5px 0px;
+}
+
+.order-list ul li{
+    /* Rectangle 11: */
+    border-radius: 8px;
+    margin: 10px 4%;
+    background-color: #F4F4F4;
+}
+.order-list ul li a .circle-text{
+    width: 50px;
+    height: 50px;
+    border: 2px solid;
+    border-radius: 50%;
+    font-size: 36px;
+    font-family: STHeitiSC-Light;
+}
+.order-list ul li a .circle-text .text{
+    line-height: 50px;
+    padding: 6px;
+}
+.order-list ul:before{
+    content: none;
+}
+.order-list ul:after{
+    content: none;
+}
+.order-list .list-block .item-inner:after{
+    content: none;
+}
+
+.order-list ul li .item-inner{
+    /* 系统: windows7(64): */
+    font-family: STHeitiSC-Light;
+    font-size: 14px;
+    color: #9B9B9B;
+    line-height: 24px;
+}

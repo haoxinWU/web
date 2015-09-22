@@ -1,0 +1,16 @@
+#login-page .list-block{
+    margin: 0px;
+}
+#login-page .list-block ul li .item-media i{
+    color: #9B9B9B;
+}
+#login-page .list-block ul li .item-inner{
+    min-height: 60px;
+}
+#login-page a.get-sms-code{
+    width: 100px;
+}
+
+#login-page a.get-sms-code.waiting{
+    background-color: darkgray;
+}

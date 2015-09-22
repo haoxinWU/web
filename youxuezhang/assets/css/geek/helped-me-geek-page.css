@@ -1,0 +1,39 @@
+.geek-info-list ul{
+    background-color: #efeff4;
+}
+.geek-info-list .list-block{
+    margin: 0px;
+}
+.geek-info-list ul li{
+    background-color: #FFFFFF;
+    border-radius: 8px;
+    margin: 10px 2%;
+}
+.geek-info-list ul li .item-media img{
+    border: 2px solid rgba(69, 156, 150, 0.36);
+    width: 100px;
+    height: 130px;
+}
+.geek-info-list ul li .item-inner{
+    /* 格言：哥修的不是电脑，是寂寞: */
+    font-size: 14px;
+    color: #4A4A4A;
+    line-height: 33px;
+}
+.geek-info-list ul li .item-inner .helped-me-detail{
+    /* 格言：哥修的不是电脑，是寂寞: */
+    background: #87C845;
+    color: #FFFFFF;
+    border-radius: 8px;
+    text-align: center;
+    font-size: 12px;
+}
+.geek-info-list ul:before{
+    content: none;
+}
+.geek-info-list ul:after{
+    content: none;
+}
+.geek-info-list .list-block .item-inner:after{
+    content: none;
+}
