@@ -17,7 +17,6 @@ var mainFramework = new Framework7({
     //滑动删除
     swipeout : false,
     swipeoutNoFollow : false,
-    scroller : "native"
 });
 var $$ = Framework7.$;
 var clickEvent = 'click';

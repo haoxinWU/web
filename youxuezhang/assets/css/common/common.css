@@ -79,9 +79,46 @@
 .order-link-info .list-block ul:before,.order-link-info .list-block ul:after,.color-checkbox ul:before,.color-checkbox ul:after{
     content: normal;
 }
+.order-link-info{
+    margin-bottom: 80px;
+}
 .order-link-info .list-block{
+    /*margin-bottom: 100px;*/
     margin: 0px;
-    margin-bottom: 100px;
+}
+.link-info-popup ul{
+    background: #FFFFFF;
+}
+.order-link-info .item-link .item-title,.order-link-info .item-link .item-title,.order-link-info .item-link .item-after{
+    font-size: 15px;
+    color: #8e8e93;
+    font-weight: 400;
+}
+.order-link-info .item-link .item-subtitle{
+    color: #8e8e93;
+}
+.order-link-info li a.item-link.item-content.active-state{
+    background-color: #FFFFFF;
+}
+/*联系方式popup*/
+.link-info-popup .submit-link-info{
+    margin: 0px 15px;
+    border: none;
+    color: #FFFFFF;
+    background: #87C845;
+    border-radius: 8px;
+    font-family: STHeitiSC-Medium;
+    font-size: 18px;
+}
+.link-info-popup ul:before,.link-info-popup ul:after{
+    content: normal;
+}
+.link-info-popup .content-block-title{
+    margin: 15px 15px 15px 15px;
+    font-family: STHeitiSC-Medium;
+    font-size: 14px;
+    color: #9B9B9B;
+    line-height: 14px;
 }
 /*呼唤学长帮忙*/
 .ask-for-help{
@@ -98,7 +135,6 @@
     top: initial;
 }
 .ask-for-help .ask-for-help-tip{
-    /* 大约需要花费80元，维修1小时，你的电脑: */
     font-size: 14px;
     color: #4A4A4A;
     line-height: 50px;
@@ -112,7 +148,6 @@
 .color-checkbox a.button{
     border: 1px solid #979797;
     border-radius: 8px;
-    border-color:#979797;
     color: #000;
     margin-bottom: 10px;
 }
@@ -124,7 +159,6 @@
     /* Rectangle 10 Copy 7: */
     border: 1px solid #979797;
     border-radius: 8px;
-    border-color:#979797;
     color: #000;
 }
 
