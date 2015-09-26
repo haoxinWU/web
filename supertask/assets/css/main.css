@@ -32,7 +32,15 @@ div[class*="col-"] {
 .icon-15x {
     font-size: 1.5em;
 }
-
+.icon-40x {
+    font-size: 4em;
+}
+.icon-50x {
+    font-size: 5em;
+}
+.icon-100x{
+    font-size: 10em;
+}
 
 /*导航条*/
 .navbar .left{

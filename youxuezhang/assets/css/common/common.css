@@ -45,12 +45,12 @@
 }
 
 /*彩色单选项目*/
-.color-select,.order-link-info,.color-checkbox {
+.color-select,.order-link-info,.color-checkbox,.white-block {
     margin-top: 15px;
     padding: 10px 0px;
     background: #FFFFFF;
 }
-.color-select .content-block-title,.order-link-info .content-block-title,.color-checkbox .content-block-title{
+.color-select .content-block-title,.order-link-info .content-block-title,.color-checkbox .content-block-title,.white-block .white-block-title{
     margin: 0px 15px 15px 15px;
     font-family: STHeitiSC-Medium;
     font-size: 14px;
@@ -76,7 +76,7 @@
     padding-left: 2px;
 }
 /*联系方式*/
-.order-link-info .list-block ul:before,.order-link-info .list-block ul:after,.color-checkbox ul:before,.color-checkbox ul:after{
+.order-link-info .list-block ul:before,.order-link-info .list-block ul:after,.color-checkbox ul:before,.color-checkbox ul:after,.white-block ul:before,.white-block ul:after{
     content: normal;
 }
 .order-link-info{
@@ -135,7 +135,7 @@
     top: initial;
 }
 .ask-for-help .ask-for-help-tip{
-    font-size: 14px;
+    font-size: 12px;
     color: #4A4A4A;
     line-height: 50px;
     text-align: center;
@@ -151,15 +151,16 @@
     color: #000;
     margin-bottom: 10px;
 }
-.color-checkbox a.button.selected{
-    color: #FFFFFF;
-    background: #87C845;
-}
-.theme-green .color-checkbox .button:not(.button-fill){
+.theme-green .color-checkbox .button{
     /* Rectangle 10 Copy 7: */
     border: 1px solid #979797;
     border-radius: 8px;
     color: #000;
+}
+
+.color-checkbox a.button.selected{
+    color: #FFFFFF;
+    background: #87C845;
 }
 
 .color-checkbox ul li{
