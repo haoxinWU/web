@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html data-my-gift-order-detail="mock/my-gift-detail.json">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <title>积分商城</title>
+  <!-- Path to Framework7 Library CSS-->
+  <link rel="stylesheet" href="css/framework7.ios.min.css">
+  <link rel="stylesheet" href="css/framework7.ios.colors.min.css">
+  <link rel="stylesheet" href="css/font-awesome.min.css">
+  <link rel="stylesheet" href="assets/css/main.css?v=12.1">
+  <link rel="stylesheet" href="assets/css/index/index.css">
+  <link rel="stylesheet" href="assets/css/gift/gift-detail.css">
+  <link rel="stylesheet" href="assets/css/gift/gift-buy.css">
+  <link rel="stylesheet" href="assets/css/gift/my-gifts.css">
+  <link rel="stylesheet" href="assets/font/iconfont.css">
+</head>
+<body>
+<!-- Status bar overlay for fullscreen mode-->
+<div class="statusbar-overlay"></div>
+<!-- Panels overlay-->
+<div class="panel-overlay"></div>
+<!-- Views-->
+<div class="views">
+  <!-- Your main view, should have "view-main" class-->
+  <div class="view view-main">
+    <!-- Top Navbar-->
+    <div class="navbar">
+      <div class="navbar-inner">
+        <div class="left"></div>
+        <!-- We have home navbar without left link-->
+        <div class="center sliding">积分商城</div>
+        <div class="right">
+        </div>
+      </div>
+    </div>
+    <!-- Pages, because we need fixed-through navbar and toolbar, it has additional appropriate classes-->
+    <div class="pages navbar-through toolbar-through">
+      <!-- Page, data-page contains page name-->
+      <div data-page="index" class="page toolbar-fixed">
+        <!-- Scrollable page content-->
+        <div class="page-content">
+          <div class="tabs">
+            <div class="tab active" id="gift-shop">
+              <!-- 幻灯片 -->
+              <div class="swiper-container" style="height: 200px;">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <a href="http://baidu.com" class="external">
+                      <img src="http://fuss10.elemecdn.com/3/9b/dd41b99f524d7edabdc674b02e483jpeg.jpeg" style="height : 200px;">
+                    </a>
+                  </div>
+                  <div class="swiper-slide">
+                    <a href="http://baidu.com" class="external">
+                      <img src=" http://fuss10.elemecdn.com/1/67/bda327bfb9b5c7e2ef99e616cd085jpeg.jpeg" style="height : 200px;">
+                    </a>
+                  </div>
+                </div>
+                <div class="swiper-pagination"></div>
+              </div>
+              <div class="row">
+                <div class="col-50 gift">
+                  <div class="gift-img">
+                    <img src="http://fuss10.elemecdn.com/7/b8/86fa11e52c41ad506c0dca7f025dcjpeg.jpeg">
+                  </div>
+                  <div class="gift-content">
+                    <p class="gift-title">20元微信红包</p>
+                    <p class="gift-price ">
+                      <i class="icon-money pull-left">  800 </i>
+                      <span class="gift-type pull-right">微信红包</span>
+                    </p>
+                  </div>
+                </div>
+                <div class="col-50 gift">
+                  <div class="gift-img">
+                    <img src="http://fuss10.elemecdn.com/7/ec/46eeb6a089dfe9632dd7d55a3e50ajpeg.jpeg">
+                  </div>
+                  <div class="gift-content">
+                    <p class="gift-title">50元话费免</p>
+                    <p class="gift-price ">
+                      <i class="icon-money pull-left">  800 </i>
+                      <span class="gift-type pull-right">话费</span>
+                    </p>
+                  </div>
+                </div>
+                <div class="col-50 gift">
+                  <div class="gift-img">
+                    <img src="http://p0.meituan.net/208.0/xianfu/99d27afc1a168b50d6b190d3c3b73ab6345243.jpg">
+                  </div>
+                  <div class="gift-content">
+                    <p class="gift-title">哈根达斯免费领取100元礼品</p>
+                    <p class="gift-price ">
+                      <i class="icon-money pull-left">  1800 </i>
+                      <span class="gift-type pull-right">自领礼品</span>
+                    </p>
+                  </div>
+                </div>
+                <div class="col-50 gift">
+                  <div class="gift-img">
+                    <img src="http://p0.meituan.net/208.0/xianfu/31749d0c76112e154dc80258569d604568883.jpg">
+                  </div>
+                  <div class="gift-content">
+                    <p class="gift-title">哈根达斯免费领取100元礼品</p>
+                    <p class="gift-price ">
+                      <i class="icon-money pull-left">  1800 </i>
+                      <span class="gift-type pull-right">自领礼品</span>
+                    </p>
+                  </div>
+                </div>
+                <div class="col-50 gift">
+                  <div class="gift-img">
+                    <img src="http://p0.meituan.net/208.0/xianfu/86eb8bdfbd02c022b3e3e340d73cd9a931964.jpg">
+                  </div>
+                  <div class="gift-content">
+                    <p class="gift-title">哈根达斯免费领取100元礼品</p>
+                    <p class="gift-price ">
+                      <i class="icon-money pull-left">  1800 </i>
+                      <span class="gift-type pull-right">自领礼品</span>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- 工具栏 -->
+        <div class="toolbar toolbar-tab">
+            <div class="row">
+              <div class="col-40 left"><i class="icon-credit-card"></i> &nbsp;&nbsp;积分: <span class="color-red">2888</span></div>
+              <div class="col-20 center"><span></span></div>
+              <div class="col-40 right"><i class="icon-gift"></i> &nbsp;&nbsp;兑换记录</div>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Path to Framework7 Library JS-->
+<script type="text/javascript" src="js/jquery-2.1.3.min.js"></script>
+<script type="text/javascript" src="js/framework7.min.js"></script>
+<script type="text/javascript" src="assets/js/main.js"></script>
+<!-- Path to your app js-->
+<script type="text/javascript" src="js/util/ifCompareHelper.js"></script>
+<script type="text/javascript" src="assets/js/index/index.js"></script>
+<script type="text/javascript" src="assets/js/gift/gift-detail.js"></script>
+<script type="text/javascript" src="assets/js/gift/gift-buy.js"></script>
+<script type="text/javascript" src="assets/js/gift/my-gifts.js"></script>
+</body>
+</html>

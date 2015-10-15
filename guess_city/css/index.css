@@ -1,0 +1,93 @@
+.index .logo img{
+    width: 150px;
+    padding: 20px 20px 50px 0px;
+}
+
+.index .theme-pic img{
+    width: 80%;
+}
+
+.index .play-text{
+    margin-top: 30px;
+    font-size: 20px;
+}
+.index .play-text .play-times{
+    color: red;
+    font-weight: 400;
+}
+
+.index .buttons{
+    padding-top: 30px;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+.index .buttons .start-button{
+    width: 130%;
+    border: none;
+    background-color: #d48b67;
+}
+.index .buttons .rule-context{
+    width: 70%;
+    float: right;
+    border: none;
+    background-color: #c9ccc9;
+}
+
+.index .copyright{
+    padding-top: 30px;
+    color: #9b9c9b;
+}
+
+/*问题*/
+.question .pic img{
+    width: 100%;
+    border-bottom: 4px solid #ffa517;
+}
+
+.question h2.question-title{
+    font-size: 20px;
+    font-weight: 300;
+}
+.question .panel{
+    margin: 10px 20px 10px 20px;
+    border-radius: 10px;
+}
+.question .panel .panel-body{
+    padding: 10px;
+    margin-left: 20px;
+    margin-right: 20px;
+    color: #6e6e70;
+}
+
+.question .panel .panel-body i.icon{
+    font-size: 30px;
+    line-height: 15px;
+}
+.selected-success {
+    border-color: #d6e9c6;
+}
+.selected-error{
+    border-color: #ebccd1;
+}
+.selected-success span,.selected-success i{
+    color: #d6e9c6;
+    
+}
+.selected-error span,.selected-error i{
+    color: #ebccd1;
+}
+.question-ad{
+    padding-top: 15px;
+}
+/*底部*/
+.footer{
+    left: 0px;
+    color: rgb(255, 255, 255);
+    height: 55px;
+    width: 100%;
+    position: fixed;
+    bottom: 0%;
+    font-size: 14px;
+    display: block;
+    background-color: #ffa517;
+}

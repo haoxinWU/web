@@ -30,3 +30,20 @@
 	font-size: 14px;
 	color: #FFF;
 }
+
+.empty-tip{
+	text-align:center;
+	color: #E4E4E4;
+	padding-top: 100px;
+}
+.empty-tip div.icon{
+	margin-bottom: 0px;
+}
+.empty-tip i.icon{
+	font-size: 14em;
+	line-height: 200px;
+}
+.empty-tip p.text-tip{
+	font-size: 16px;
+	font-weight: 600;
+}

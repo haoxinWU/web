@@ -1,0 +1,14 @@
+.usage-note{
+    background-color: #FFFFFF;
+}
+.usage-note .title{
+    font-size: 15px;
+    color: #262626;
+    font-weight: 500;
+}
+.usage-note .usage-text{
+    font-size: 13px;
+    color: #262626;
+    font-weight: 100;
+    color: #E4E4E4;
+}

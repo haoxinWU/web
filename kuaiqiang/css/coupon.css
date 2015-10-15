@@ -61,6 +61,10 @@ body{
 	color: #6495ED;
 }
 
+.copyright > footer >p a:link,.copyright > footer >p a:hover,.copyright > footer >p a:active,.copyright > footer >p a:visited{
+	color: #6495ED;
+}
+
 .coupon-get-success{
 	color: #4cae4c;
 }

@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="viewport" content="width=device-width initial-scale=1.0 maximum-scale=1.0 user-scalable=yes" />
+    <title>阜阳路痴考试</title>
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css" />
+    <link herf="css/bootstrap.foot.css" rel="stylesheet">
+    <link herf="css/fontstyle.css" rel="stylesheet">
+    <link href="css/reset.css" rel="stylesheet">
+    <style type="text/css">
+        body {
+        }
+        .addthumb {padding-left:0;padding-right:0; height: 50px; overflow: hidden;}
+    </style>
+</head>
+<body>
+<div class="container">
+
+    <div id="bd" class="panel">
+        <div id="panel1" class="panel-body">
+            <div class="index_c_img"></div>
+            <div class="index_footer">
+                <h2>看图猜地名</h2>
+                <p>已有12751人参与考试</p>
+                <a href="#result" class="btn btn-danger btn-block" onclick="return next(0);"> 开始考试</a>
+                <div class="index_tips">
+                    PS:你在阜阳是路痴吗？下面的阜阳路痴考试题你敢测不？不要东张西望， 一经发现，取消考试成绩，并终生禁止再次参与本考试！
+                </div><br>
+                <div class="copy">Copyright &copy;阜阳大城小事传媒旗下『吃喝玩乐在阜阳』</div>
+            </div>
+
+        </div>
+        <div id="panel2" class="panel-body js_answer"  style="display: none;">
+            <dl>
+                <dd><p class="a_img"><img src="http://ww2.sinaimg.cn/mw690/d87d5935gw1eltidsrhaqj20b40620vl.jpg" style="width:100%" /></p><div class="a_mask"></div><p class="a_title">请问图中建筑是阜阳哪个公园的？</p></dd>
+            </dl>
+            <ul class="list-group js_group">
+                <li class="list-group-item " data-score="0" onclick="return toggle(this);"><i class="glyphicon glyphicon-unchecked"></i>A.文峰公园</li>
+                <li class="list-group-item" data-score="0" onclick="return toggle(this);"><i class="glyphicon glyphicon-unchecked"></i> B.清颍公园</li>
+                <li class="list-group-item" data-score="6" onclick="return toggle(this);"><i class="glyphicon glyphicon-unchecked"></i> C.三角洲公园</li>
+            </ul>
+        </div>
+        <div id="panel2" class="panel-body js_answer" data-type="1" style="display: none;">
+            <dl>
+                <dd><p class="a_img"><img src="http://ww3.sinaimg.cn/mw690/d87d5935gw1eltidt26u4j20b405vq5s.jpg" style="width:100%" /></p><div class="a_mask"></div><p class="a_title">此图中公交站台名叫？（注意后面建筑）</p></dd>
+            </dl>
+            <ul class="list-group js_group">
+                <li class="list-group-item" data-score="0" onclick="return toggle(this);"><i class="glyphicon glyphicon-unchecked"></i> A.瑶海大市场站</li>
+                <li class="list-group-item" data-score="6" onclick="return toggle(this);"><i class="glyphicon glyphicon-unchecked"></i> B.幸福村站</li>
+                <li class="list-group-item" data-score="0" onclick="return toggle(this);"><i class="glyphicon glyphicon-unchecked"></i> C.生态园站</li>
+            </ul>
+        </div>
+        <div id="panel2" class="panel-body js_answer" data-type="1" style="display: none;">
+            <dl>
+                <dd><p class="a_img"><img src="http://ww1.sinaimg.cn/mw690/d87d5935gw1eltidtgookj20b407vad9.jpg" style="width:100%" /></p><div class="a_mask"></div><p class="a_title">请问图中是阜阳哪座塔？</p></dd>
+            </dl>
+            <ul class="list-group js_group">
+                <li class="list-group-item" data-score="0" onclick="return toggle(this);"><i class="glyphicon glyphicon-unchecked"></i> A.文峰塔</li>
+                <li class="list-group-item" data-score="0" onclick="return toggle(this);"><i class="glyphicon glyphicon-unchecked"></i> B.三塔</li>
+                <li class="list-group-item" data-score="6" onclick="return toggle(this);"><i class="glyphicon glyphicon-unchecked"></i> C.九和塔</li>
+            </ul>
+        </div>
+        <div id="panel2" class="panel-body js_answer" data-type="1" style="display: none;">
+            <dl>
+                <dd><p class="a_img"><img src="http://ww2.sinaimg.cn/mw690/d87d5935gw1eltidu20plj20b4052tb6.jpg" style="width:100%" /></p><div class="a_mask"></div><p class="a_title">请问莲池小学在哪条道路上？</p></dd>
+            </dl>
+            <ul class="list-group js_group">
+                <li class="list-group-item" data-score="6" onclick="return toggle(this);"><i class="glyphicon glyphicon-unchecked"></i> A.莲花路</li>
+                <li class="list-group-item" data-score="0" onclick="return toggle(this);"><i class="glyphicon glyphicon-unchecked"></i> B.清河路</li>
+                <li class="list-group-item" data-score="0" onclick="return toggle(this);"><i class="glyphicon glyphicon-unchecked"></i> C.莲池路</li>
+            </ul>
+        </div>
+        <div id="panel2" class="panel-body js_answer" data-type="1" style="display: none;">
+            <dl>
+                <dd><p class="a_img"><img src="http://ww1.sinaimg.cn/mw690/d87d5935gw1eltidugc7qj20b405racf.jpg" style="width:100%" /></p><div class="a_mask"></div><p class="a_title">请问图中天桥的东南角商业名称是？</p></dd>
+            </dl>
+            <ul class="list-group js_group">
+                <li class="list-group-item" data-score="0" onclick="return toggle(this);"><i class="glyphicon glyphicon-unchecked"></i> A.国贸</li>
+                <li class="list-group-item" data-score="6" onclick="return toggle(this);"><i class="glyphicon glyphicon-unchecked"></i> B.百货大楼</li>
+                <li class="list-group-item" data-score="0" onclick="return toggle(this);"><i class="glyphicon glyphicon-unchecked"></i> C.麦当劳</li>
+            </ul>
+        </div>
+        <div id="panel2" class="panel-body js_answer" data-type="1" style="display: none;">
+            <dl>
+                <dd><p class="a_img"><img src="http://ww4.sinaimg.cn/mw690/d87d5935gw1eltiduv9hrj20b409r78w.jpg" style="width:100%" /></p><div class="a_mask"></div><p class="a_title">请问图中阜阳第一座景观桥哪年通车的？</p></dd>
+            </dl>
+            <ul class="list-group js_group">
+                <li class="list-group-item" data-score="0" onclick="return toggle(this);"><i class="glyphicon glyphicon-unchecked"></i> A.2010年</li>
+                <li class="list-group-item" data-score="6" onclick="return toggle(this);"><i class="glyphicon glyphicon-unchecked"></i> B.2011年</li>
+                <li class="list-group-item" data-score="0" onclick="return toggle(this);"><i class="glyphicon glyphicon-unchecked"></i> C.2012年</li>
+            </ul>
+        </div>
+        <div id="panel2" class="panel-body js_answer" data-type="1" style="display: none;">
+            <dl>
+                <dd><p class="a_img"><img src="http://ww3.sinaimg.cn/mw690/d87d5935gw1eltidv9zcrj20b4075wgl.jpg" style="width:100%" /></p><div class="a_mask"></div><p class="a_title">请问图中的这个巷子名叫什么？</p></dd>
+            </dl>
+            <ul class="list-group js_group">
+                <li class="list-group-item" data-score="6" onclick="return toggle(this);"><i class="glyphicon glyphicon-unchecked"></i> A.东岳巷</li>
+                <li class="list-group-item" data-score="0" onclick="return toggle(this);"><i class="glyphicon glyphicon-unchecked"></i> B.资福巷</li>
+                <li class="list-group-item" data-score="0" onclick="return toggle(this);"><i class="glyphicon glyphicon-unchecked"></i> C.一人巷</li>
+            </ul>
+        </div>
+        <div id="panel2" class="panel-body js_answer" data-type="1" style="display: none;">
+            <dl>
+                <dd><p class="a_img"><img src="http://ww3.sinaimg.cn/mw690/d87d5935gw1eltidvst67j20b40awn2v.jpg" style="width:100%" /></p><div class="a_mask"></div><p class="a_title">请问图中这条较宽的道路叫什么路？</p></dd>
+            </dl>
+            <ul class="list-group js_group">
+                <li class="list-group-item" data-score="0" onclick="return toggle(this);"><i class="glyphicon glyphicon-unchecked"></i> A.外滩路</li>
+                <li class="list-group-item" data-score="6" onclick="return toggle(this);"><i class="glyphicon glyphicon-unchecked"></i> B.河滨路</li>
+                <li class="list-group-item" data-score="0" onclick="return toggle(this);"><i class="glyphicon glyphicon-unchecked"></i> C.滨河路</li>
+            </ul>
+        </div>
+        <div id="panel2" class="panel-body js_answer" data-type="1" style="display: none;">
+            <dl>
+                <dd><p class="a_img"><img src="http://ww2.sinaimg.cn/mw690/d87d5935gw1eltidwbh8tj20b405m768.jpg" style="width:100%" /></p><div class="a_mask"></div><p class="a_title">请问图中雪景位于哪里？</p></dd>
+            </dl>
+            <ul class="list-group js_group">
+                <li class="list-group-item" data-score="0" onclick="return toggle(this);"><i class="glyphicon glyphicon-unchecked"></i> A.生态园</li>
+                <li class="list-group-item" data-score="0" onclick="return toggle(this);"><i class="glyphicon glyphicon-unchecked"></i> B.八里河</li>
+                <li class="list-group-item" data-score="6" onclick="return toggle(this);"><i class="glyphicon glyphicon-unchecked"></i> C.颍州西湖</li>
+            </ul>
+        </div>
+        <div id="panel2" class="panel-body js_answer" data-type="1" style="display: none;">
+            <dl>
+                <dd><p class="a_img"><img src="http://ww2.sinaimg.cn/mw690/d87d5935gw1eltidwpw7rj20b405qq5t.jpg" style="width:100%" /></p><div class="a_mask"></div><p class="a_title">请问图中的桥位于阜阳哪里？</p></dd>
+            </dl>
+            <ul class="list-group js_group">
+                <li class="list-group-item" data-score="0" onclick="return toggle(this);"><i class="glyphicon glyphicon-unchecked"></i> A.阜阳北关</li>
+                <li class="list-group-item" data-score="6" onclick="return toggle(this);"><i class="glyphicon glyphicon-unchecked"></i> B.阜阳东关</li>
+                <li class="list-group-item" data-score="0" onclick="return toggle(this);"><i class="glyphicon glyphicon-unchecked"></i> C.阜阳西关</li>
+            </ul>
+        </div>
+        <div id="panel2" class="panel-body js_answer" data-type="1" style="display: none;">
+            <dl>
+                <dd><p class="a_img"><img src="http://ww1.sinaimg.cn/mw690/d87d5935gw1eltidx55m2j20b405nq6f.jpg" style="width:100%" /></p><div class="a_mask"></div><p class="a_title">请问图中天桥位于哪个交叉口？</p></dd>
+            </dl>
+            <ul class="list-group js_group">
+                <li class="list-group-item" data-score="0" onclick="return toggle(this);"><i class="glyphicon glyphicon-unchecked"></i> A.颍州路与淮河路交叉口</li>
+                <li class="list-group-item" data-score="0" onclick="return toggle(this);"><i class="glyphicon glyphicon-unchecked"></i> B.颍州路与文峰路交叉口</li>
+                <li class="list-group-item" data-score="6" onclick="return toggle(this);"><i class="glyphicon glyphicon-unchecked"></i> C.颍州路与颍河西路交叉口</li>
+            </ul>
+        </div>
+        <div id="panel2" class="panel-body js_answer" data-type="1" style="display: none;">
+            <dl>
+                <dd><p class="a_img"><img src="http://ww3.sinaimg.cn/mw690/d87d5935gw1eltidxj5m6j20b406ugp9.jpg" style="width:100%" /></p><div class="a_mask"></div><p class="a_title">请问图上的建筑是哪个区政府办公楼？</p></dd>
+            </dl>
+            <ul class="list-group js_group">
+                <li class="list-group-item" data-score="0" onclick="return toggle(this);"><i class="glyphicon glyphicon-unchecked"></i> A.颍泉区</li>
+                <li class="list-group-item" data-score="6" onclick="return toggle(this);"><i class="glyphicon glyphicon-unchecked"></i> B.颍州区</li>
+                <li class="list-group-item" data-score="0" onclick="return toggle(this);"><i class="glyphicon glyphicon-unchecked"></i> C.颖东区</li>
+            </ul>
+        </div>
+        <div id="panel2" class="panel-body js_answer" data-type="1" style="display: none;">
+            <dl>
+                <dd><p class="a_img"><img src="http://ww4.sinaimg.cn/mw690/d87d5935gw1eltidxzcq9j20b406641n.jpg" style="width:100%" /></p><div class="a_mask"></div><p class="a_title">请问图中寺庙位于哪条道路？</p></dd>
+            </dl>
+            <ul class="list-group js_group">
+                <li class="list-group-item" data-score="6" onclick="return toggle(this);"><i class="glyphicon glyphicon-unchecked"></i> A.大寺街</li>
+                <li class="list-group-item" data-score="0" onclick="return toggle(this);"><i class="glyphicon glyphicon-unchecked"></i> B.鹿祠街</li>
+                <li class="list-group-item" data-score="0" onclick="return toggle(this);"><i class="glyphicon glyphicon-unchecked"></i> C.解放街</li>
+            </ul>
+        </div>
+        <div id="panel2" class="panel-body js_answer" data-type="1" style="display: none;">
+            <dl>
+                <dd><p class="a_img"><img src="http://ww1.sinaimg.cn/mw690/d87d5935gw1eltidyiyanj20b4074418.jpg" style="width:100%" /></p><div class="a_mask"></div><p class="a_title">请问图中的景观石在阜阳哪里？</p></dd>
+            </dl>
+            <ul class="list-group js_group">
+                <li class="list-group-item" data-score="0" onclick="return toggle(this);"><i class="glyphicon glyphicon-unchecked"></i> A.生态园</li>
+                <li class="list-group-item" data-score="6" onclick="return toggle(this);"><i class="glyphicon glyphicon-unchecked"></i> B.外滩大坝</li>
+                <li class="list-group-item" data-score="0" onclick="return toggle(this);"><i class="glyphicon glyphicon-unchecked"></i> C.合阜工业园</li>
+            </ul>
+        </div>
+        <div id="panel2" class="panel-body js_answer" data-type="1" style="display: none;">
+            <dl>
+                <dd><p class="a_img"><img src="http://ww2.sinaimg.cn/mw690/d87d5935gw1eltidyytqlj20b405on0a.jpg" style="width:100%" /></p><div class="a_mask"></div><p class="a_title">请问图中是哪条路夜景？（请留意两旁店铺）</p></dd>
+            </dl>
+            <ul class="list-group js_group">
+                <li class="list-group-item" data-score="0" onclick="return toggle(this);"><i class="glyphicon glyphicon-unchecked"></i> A.阜王路</li>
+                <li class="list-group-item" data-score="0" onclick="return toggle(this);"><i class="glyphicon glyphicon-unchecked"></i> B.一道河路</li>
+                <li class="list-group-item" data-score="6" onclick="return toggle(this);"><i class="glyphicon glyphicon-unchecked"></i> C.清河路</li>
+            </ul>
+        </div>
+        <div id="panel2" class="panel-body js_answer" data-type="1" style="display: none;">
+            <dl>
+                <dd><p class="a_img"><img src="http://ww1.sinaimg.cn/mw690/d87d5935gw1eltidzks15j20b407awh4.jpg" style="width:100%" /></p><div class="a_mask"></div><p class="a_title">【情景再现】要去图中地点，以下怎么说合适？</p></dd>
+            </dl>
+            <ul class="list-group js_group">
+                <li class="list-group-item" data-score="5" onclick="return toggle(this);"><i class="glyphicon glyphicon-unchecked"></i> A.哎，你好，可知道西站咋走？</li>
+                <li class="list-group-item" data-score="5" onclick="return toggle(this);"><i class="glyphicon glyphicon-unchecked"></i> B.师傅，2路车可经过北站？</li>
+                <li class="list-group-item" data-score="5" onclick="return toggle(this);"><i class="glyphicon glyphicon-unchecked"></i> C.的士：“到哪”？ 乘客：“南站”。</li>
+            </ul>
+        </div>
+        <div id="panel2" class="panel-body js_answer" data-type="1" style="display: none;">
+            <dl>
+                <dd><p class="a_img"><img src="http://ww2.sinaimg.cn/mw690/d87d5935gw1eltidzvtpbj20b4068gp7.jpg" style="width:100%" /></p><div class="a_mask"></div><p class="a_title">请问图中品牌在阜阳“第一家”店开在哪？</p></dd>
+            </dl>
+            <ul class="list-group js_group">
+                <li class="list-group-item" data-score="0" onclick="return toggle(this);"><i class="glyphicon glyphicon-unchecked"></i> A.大润发</li>
+                <li class="list-group-item" data-score="6" onclick="return toggle(this);"><i class="glyphicon glyphicon-unchecked"></i> B.步行街</li>
+                <li class="list-group-item" data-score="0" onclick="return toggle(this);"><i class="glyphicon glyphicon-unchecked"></i> C.女人城楼下</li>
+            </ul>
+        </div>
+        <div id="panel3" class="panel-body js_result" data-id="0" style="display:none;">
+            <h1 class="bold text-danger"><b>10分</b>以下</h1>
+            <p class="view_a"><a href="view3.html" target="_blank">【查看答案】</a></p>
+            <dl>
+                <dt>答题分析:</dt>
+                <dd>
+                    <p>你这完全属于标准的极品路痴，不是大阜阳人吧！！！;</p>
+                </dd>
+            </dl>
+            <div class="buttons">
+                <a href="javascript:void(0)" class="btn btn-success btn-block" onclick="$('#mcover').show()">分享到朋友圈</a>
+            </div>
+            <div style="text-align: center;color: #FF8500;width: 100%;margin: 5px auto;">------------广告------------</div>
+            <div><a href="add/baolong.html"><img src="add/baolong.jpg" width="100%"/></a></div>
+        </div>
+        <div id="panel3" class="panel-body js_result" data-id="1" style="display:none;">
+            <h1 class="bold text-danger"><b>50分</b>以下</h1>
+            <p class="view_a"><a href="view3.html" target="_blank">【查看答案】</a></p>
+            <dl>
+                <dt>答题分析:</dt>
+                <dd>
+                    <p>看的出你是刚到阜阳的外地人，希望你能爱上阜阳！！！;</p>
+                </dd>
+            </dl>
+            <div class="buttons">
+                <a href="javascript:void(0)" class="btn btn-success btn-block" onclick="$('#mcover').show()">分享到朋友圈</a>
+            </div>
+            <div style="text-align: center;color: #FF8500;width: 100%;margin: 5px auto;">------------广告------------</div>
+            <div><a href="add/xiangqin.html"><img src="add/xiangqin.jpg" width="100%"/></a></div>
+        </div>
+        <div id="panel3" class="panel-body js_result" data-id="2" style="display:none;">
+            <h1 class="bold text-danger"><b>60分</b>以下</h1>
+            <p class="view_a"><a href="view3.html" target="_blank">【查看答案】</a></p>
+            <dl>
+                <dt>答题分析:</dt>
+                <dd>
+                    <p>才来阜阳3个月？半年？建议多出去走走逛逛，阜阳很多不赖里好玩里等你发现哦！！！;</p>
+                </dd>
+            </dl>
+            <div class="buttons">
+                <a href="javascript:void(0)" class="btn btn-success btn-block" onclick="$('#mcover').show()">分享到朋友圈</a>
+            </div>
+            <div style="text-align: center;color: #FF8500;width: 100%;margin: 5px auto;">------------广告------------</div>
+            <div><a href=""><img src="add/wanda.jpg" width="100%"/></a></div>
+        </div>
+        <div id="panel3" class="panel-body js_result" data-id="3" style="display:none;">
+            <h1 class="bold text-danger"><b>70分</b>以下</h1>
+            <p class="view_a"><a href="view3.html" target="_blank">【查看答案】</a></p>
+            <dl>
+                <dt>答题分析:</dt>
+                <dd>
+                    <p>你对阜阳还不完全了解，没事多出去打打酱油，逛逛街，邀上朋友一起多嗨皮下！！！;</p>
+                </dd>
+            </dl>
+            <div class="buttons">
+                <a href="javascript:void(0)" class="btn btn-success btn-block" onclick="$('#mcover').show()">分享到朋友圈</a>
+            </div>
+            <div style="text-align: center;color: #FF8500;width: 100%;margin: 5px auto;">------------广告------------</div>
+            <div><a href="add/baolong.html"><img src="add/baolong.gif" width="100%"/></a></div>
+        </div>
+        <div id="panel3" class="panel-body js_result" data-id="4" style="display:none;">
+            <h1 class="bold text-danger"><b>80分</b>以下</h1>
+            <p class="view_a"><a href="view3.html" target="_blank">【查看答案】</a></p>
+            <dl>
+                <dt>答题分析:</dt>
+                <dd>
+                    <p>这个分数线上的朋友，斗里还不赖，再试一次，看看能不能满分;</p>
+                </dd>
+            </dl>
+            <div class="buttons">
+                <a href="javascript:void(0)" class="btn btn-success btn-block" onclick="$('#mcover').show()">分享到朋友圈</a>
+            </div>
+            <div style="text-align: center;color: #FF8500;width: 100%;margin: 5px auto;">------------广告------------</div>
+            <div><a href="add/xiangqin.html"><img src="add/xiangqin.jpg" width="100%"/></a></div>
+        </div>
+        <div id="panel3" class="panel-body js_result" data-id="5" style="display:none;">
+            <h1 class="bold text-danger"><b>90分</b>以下</h1>
+            <p class="view_a"><a href="view3.html" target="_blank">【查看答案】</a></p>
+            <dl>
+                <dt>答题分析:</dt>
+                <dd>
+                    <p>这个分数线上的朋友，你是阜阳人民的骄傲！阜阳城难得的人才啊;</p>
+                </dd>
+            </dl>
+            <div class="buttons">
+                <a href="javascript:void(0)" class="btn btn-success btn-block" onclick="$('#mcover').show()">分享到朋友圈</a>
+            </div>
+            <div style="text-align: center;color: #FF8500;width: 100%;margin: 5px auto;">------------广告------------</div>
+            <div><a href=""><img src="add/wanda.jpg" width="100%"/></a></div>
+        </div>
+        <div id="panel3" class="panel-body js_result" data-id="6" style="display:none;">
+            <h1 class="bold text-danger">哇噻，高分！</h1>
+            <p class="view_a"><a href="view3.html" target="_blank">【查看答案】</a></p>
+            <dl>
+                <dt>答题分析:</dt>
+                <dd>
+                    <p>不会吧，整凶残了哦，满分，你不愧是一个地地道道的阜阳人！大阜阳人民的骄傲！。;</p>
+                </dd>
+            </dl>
+            <div class="buttons">
+                <a href="javascript:void(0)" class="btn btn-success btn-block" onclick="$('#mcover').show()">分享到朋友圈</a>
+            </div>
+            <div style="text-align: center;color: #FF8500;width: 100%;margin: 5px auto;">------------广告------------</div>
+            <div><a href="add/baolong.html"><img src="add/baolong.gif" width="100%"/></a></div>
+        </div>
+    </div>
+</div>
+<div class="footer text-center" style="margin-top:10px">
+    <!--<div class="container"><a href="http://1.dh0833.sinaapp.com/">&copy;点击关注我们</a> </div>-->
+    <!--<div class="container addthumb"><a href="http://1.dh0833.sinaapp.com/"><img src="picture/dh.jpg" style="width:100%" /></a></div>-->
+</div>
+<div id="mcover" onclick="$(this).hide()">
+    <img src="picture/guide.png">
+</div>
+<div class="loads" style="display:bolck"><i></i></div>
+<script src="bootstrap/js/jquery-2.1.3.min.js"></script>
+<script type="text/javascript">
+    // var audio = new Audio();
+    var stime;
+    var total = '17';
+    var tScore = 0;
+    var ttime=0;
+    var scoreArr = new Array();
+    scoreArr[0] = 0;
+    scoreArr[1] = 10;
+    scoreArr[2] = 50;
+    scoreArr[3] = 60;
+    scoreArr[4] = 70;
+    scoreArr[5] = 80;
+    scoreArr[6] = 90;
+    function count_s(){
+        nt=document.getElementById("now_time")
+        num=parseInt(nt.getAttribute("data-src"))+1;
+        nt.innerHTML=num+'<i>秒</i>';
+        nt.setAttribute("data-src",num);
+        ttime++;
+
+    }
+    function next(t){
+        if(t==0)
+        {
+
+            stime=window.setInterval(count_s,1000);
+            ui = document.getElementById("fix_footer");
+            ui.style.display="block";
+
+            ui = document.getElementById("fix_nav");
+            ui.style.display="none";
+            $(".back_index").show();
+            $(".back_index a").click(function(){
+                location.reload();
+            });
+        }
+        // console.log(t);
+        $(".panel-body").hide();
+        var $_this = $(".js_answer").eq(t);
+        $_this.show();
+        var type = $_this.attr('data-type');
+        if(type==2){
+            // audio.src = $_this.find('audio').attr('src');
+            // audio.load();
+            // audio.play();
+            $('#sicon').html('<span class="glyphicon glyphicon-headphones"></span>');
+        }
+        else if(type==1){
+            // stop = true;
+            // audio.pause();
+            $('#sicon').html('<span class="glyphicon glyphicon-picture"></span>');
+        }
+        else{
+            // stop = true;
+            // audio.pause();
+            $('#sicon').html('<span class="glyphicon glyphicon-pencil"></span>');
+        }
+    }
+
+    function result(t){
+        console.log("得分"+tScore);
+        $(".panel-body").hide();
+        for (var i = scoreArr.length - 1; i >= 0; i--) {
+            if ( parseInt(t) >= parseInt(scoreArr[i]) ) {
+                console.log("应该弹"+i);
+                $(".js_result").eq(i).show();
+                if(i>(total/2)){
+                    $('#sicon').html('<span class="glyphicon glyphicon-thumbs-up"></span>');
+                }
+                else{
+                    $('#sicon').html('<span class="glyphicon glyphicon-thumbs-down"></span>');
+                }
+                $.get("mobile.php?act=module&name=dialect&do=detail&weid=5", {id: "6",score: tScore});
+                return false;
+            }
+            else{
+                continue;
+            }
+        };
+    }
+
+    function toggle(t){
+        $(".list-group-item").removeClass('active')
+        var score = $(t).attr("data-score");
+        tScore  = parseInt(tScore) + parseInt(score);
+        $(t).find('i').removeClass('glyphicon-unchecked').addClass('glyphicon-ok');
+        $(t).addClass("on");
+        var t = $(".js_answer").index($(t).parents(".js_answer")) + 1;
+        $("#now_an").html(t);
+        if(t == total){
+            window.clearInterval(stime) ;
+            result(tScore);
+        }
+        else{
+            setTimeout(function(){next(t);},300);
+        }
+    }
+    Zepto(function($){
+        $('.loads').hide();
+    })
+    WeixinApi.ready(function(Api) {
+        Api.showOptionMenu();
+        var wxData = {
+            "appId": "wx0832c6138fd78527",
+            "imgUrl" : 'http://www.fuyang558.cn/wechat/games/luchi/share.jpg',
+            "link" : 'http://www.fuyang558.cn/wechat/games/luchi/index.html',
+            "desc" : '我正在参加阜阳路痴考试，在#ttime#秒内得了#score#分，你也来试试吧！',
+            "title" : '我正在参加阜阳路痴考试，在#ttime#秒内得了#score#分，你也来试试吧！'
+        };
+        // 分享的回调
+        var wxCallbacks = {
+            // 分享操作开始之前
+            ready:function () {
+                wxData['title']=wxData['title'].replace('#score#',tScore);
+                wxData['title']=wxData['title'].replace('#dialect#',"阜阳路痴考试");
+                wxData['desc']=wxData['desc'].replace('#score#',tScore);
+                wxData['desc']=wxData['desc'].replace('#dialect#',"阜阳路痴考试");
+                wxData['title']=wxData['desc'].replace('#ttime#',ttime);
+                wxData['desc']=wxData['desc'].replace('#ttime#',ttime);
+            },
+            // 分享被用户自动取消
+            cancel : function(resp) {
+                alert("别这样的啦，好东西要和朋友分享的嘛！分享后我告诉你一个秘密。");
+            },
+            // 分享失败了
+            fail : function(resp) {
+                alert("分享失败，可能是网络问题，一会儿再试试？");
+            },
+            // 分享成功
+            confirm : function(resp) {
+                $.get("mobile.php?act=module&name=dialect&do=detail&weid=5", {id: "6",op:'share'});
+                window.location.href='view3.html';
+            },
+        };
+        Api.shareToFriend(wxData,wxCallbacks);
+        Api.shareToTimeline(wxData,wxCallbacks);
+        Api.shareToWeibo(wxData,wxCallbacks);
+    });
+
+
+</script>
+<div class="hide"></div>
+<div class="fix_footer" id="fix_footer" style="left:0;background-color:#333739;color:#ffffff;height:55px;width:100%;position:fixed;bottom:0%;font-size:14px;">
+    <table width="100%" height="100%" border="0" style="border-collapse: collapse;">
+        <tbody><tr>
+            <td id="fix_footer_menu" align="center"><span id="now_an">0</span><br>
+                已答题目</a></td>
+            <td id="fix_footer_menu" align="center"><span>17</span><br>
+                题目总数</a></td>
+            <td id="fix_footer_menu" align="center"><span id="now_time" data-src='0'>0<i>秒</i></span><br>
+                答题用时</a></td>
+        </tr>
+        </tbody></table>
+</div>
+<div class="back_index">
+    <div class="back_mask"></div>
+    <a href="javascript:void(0);">答题首页</a>
+</div>
+<div class="fix_nav" id="fix_nav">
+    <div class="fix_sp"></div>
+    <div class="index_bottom">
+        <ul>
+            <li><a href="http://m.wsq./142335379" target="_blank">微社区</a></li>
+            <li><a href="view2.html" target="_blank">活动运营</a></li>
+            <li style="border-right:none;"><a href="tel:05582255800" target="_blank">合作热线</a></li>
+        </ul>
+    </div>
+</div>
+</body>
+</html>            
