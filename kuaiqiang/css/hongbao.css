@@ -1,0 +1,80 @@
+body{
+	
+	background: url(../images/back_img.jpg) repeat ;
+}
+
+.title > h3{
+	font-size: 16px;
+	padding: 25px;
+}
+
+
+.free-get{
+	color: #79362C;
+	background-color : #FFD440;
+	border-radius : 20px;
+	width: 120px;
+}
+
+.coupon-box > h4{
+	display:block;
+	position:absolute;
+	color: #fff;
+	font-size: 19px;
+	top: 25%; left: 0; bottom: 40%; right: 0;
+	font-weight: 100;
+	line-height: 25px;
+	margin: auto;
+}
+
+.coupon-box > .discount{
+	display:block;
+	position:absolute;
+	color: #FFEA00;
+	font-size: 30px;
+	top: 45%; left: 0; bottom: 40%; right: 0;
+	line-height: 25px;
+	margin: auto;
+}
+
+.coupon-box > .click{
+	display:block;
+	position:absolute;
+	color: #670001;
+	font-size: 14px;
+	font-weight: 800;
+	top: 77%; left: 0; bottom: 40%; right: 0;
+	line-height: 25px;
+	margin: auto;
+}
+
+.copyright > footer >p{
+	font-size: 12px;
+}
+
+.copyright > footer >p:nth-child(1){
+	padding-top: 50px;
+}
+
+.copyright > footer >p:nth-child(2){
+	padding-top: -5px;
+	color: #6495ED;
+}
+
+.copyright > footer >p a:link,.copyright > footer >p a:hover,.copyright > footer >p a:active,.copyright > footer >p a:visited{
+	color: #6495ED;
+}
+
+.coupon-get-success{
+	color: #4cae4c;
+}
+
+
+
+
+
+
+
+
+
+
