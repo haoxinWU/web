@@ -1,0 +1,30 @@
+{
+  "status" : 200,
+  "message" : "success",
+  "data" : {
+    "machine" : [
+      {
+        "id" : 1,
+        "machine_name" : "台式机",
+        "color" : "#8BC1FF"
+      },
+      {
+        "id" : 2,
+        "machine_name" : "笔记本",
+        "color" : "#8BC1FF"
+      }
+    ],
+    "wash_type" : [
+      {
+        "id" : 1,
+        "wash_name" : "深度清理",
+        "color" : "#8BC1FF"
+      },
+      {
+        "id" : 2,
+        "wash_name" : "常规清理",
+        "color" : "#8BC1FF"
+      }
+    ]
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "status" : 200,
+  "message" : "success",
+  "data" : [
+    {
+      "id" : 1,
+      "os_name" : "win7(32)",
+      "os_type" : 1,
+      "os_type" : 1,
+      "price" : 18.1,
+      "area_id" : 1,
+      "school_id" : 1,
+      "default" : 1,
+      "color" : "#666699",
+      "range" : 1,
+      "create_time" : 178216237
+    },
+    {
+      "id" : 2,
+      "os_name" : "win7(64)",
+      "os_type" : 1,
+      "os_type" : 1,
+      "price" : 28.1,
+      "area_id" : 1,
+      "school_id" : 1,
+      "default" : 0,
+      "color" : "#50E3C2",
+      "range" : 1,
+      "create_time" : 178216237
+    },
+    {
+      "id" : 3,
+      "os_name" : "win10(64)",
+      "os_type" : 1,
+      "os_type" : 1,
+      "price" : 28.1,
+      "area_id" : 1,
+      "school_id" : 1,
+      "default" : 0,
+      "color" : "#8BC1FF",
+      "range" : 1,
+      "create_time" : 178216237
+    },
+    {
+      "id" : 4,
+      "os_name" : "win7(64)",
+      "os_type" : 1,
+      "os_type" : 1,
+      "price" : 28.1,
+      "area_id" : 1,
+      "school_id" : 1,
+      "default" : 0,
+      "color" : "#E9D286",
+      "range" : 1,
+      "create_time" : 178216237
+    }
+  ]
+}

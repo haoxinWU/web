@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html>
+<html data-load-os-list-url="mock/load-os-list.json" data-load-wash-computer-url="mock/load-wash-computer-url.json" data-load-computer-issue-url="mock/load-computer-issue-url.json">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
-  <title>有学长:一切搞得定</title>
+  <title>有学长~一切搞得定</title>
   <!-- Path to Framework7 Library CSS-->
   <link rel="stylesheet" href="css/framework7.min.css?v=20150923.1.1">
   <link rel="stylesheet" href="css/font-awesome.min.css?v=20150923.1.1">
@@ -101,8 +101,7 @@
               <div class="content-block option-buttons">
                 <div class="row">
                   <!-- 装系统 -->
-                  <div class="col-50 fix-os">
-                    <a href="pages/option/fix-os.html">
+                  <div class="col-50 fix-os" data-target-page="pages/option/fix-os.html">
                       <div class="row">
                         <div class="col-40">
                           <div class="circle">
@@ -113,37 +112,32 @@
                           <div class="option-title">装系统</div>
                         </div>
                       </div>
-                    </a>
                   </div>
                   <!-- 清灰尘 -->
-                  <div class="col-50 wash-computer" >
-                    <a href="pages/option/wash-computer.html">
-                      <div class="row">
-                        <div class="col-40">
-                          <div class="circle">
-                            <i class="icon iconfont color-white">&#xe63d;</i>
-                          </div>
-                        </div>
-                        <div class="col-60">
-                          <div class="option-title">清灰尘</div>
+                  <div class="col-50 wash-computer" data-target-page="pages/option/wash-computer.html">
+                    <div class="row">
+                      <div class="col-40">
+                        <div class="circle">
+                          <i class="icon iconfont color-white">&#xe63d;</i>
                         </div>
                       </div>
-                    </a>
+                      <div class="col-60">
+                        <div class="option-title">清灰尘</div>
+                      </div>
+                    </div>
                   </div>
                   <!-- 修电脑 -->
-                  <div class="col-50 fix-computer-issue" >
-                    <a href="pages/option/fix-computer-issue.html">
-                      <div class="row">
-                        <div class="col-40">
-                          <div class="circle">
-                            <i class="icon iconfont color-white">&#xe635;</i>
-                          </div>
-                        </div>
-                        <div class="col-60">
-                          <div class="option-title">修电脑</div>
+                  <div class="col-50 fix-computer-issue" data-target-page="pages/option/fix-computer-issue.html">
+                    <div class="row">
+                      <div class="col-40">
+                        <div class="circle">
+                          <i class="icon iconfont color-white">&#xe635;</i>
                         </div>
                       </div>
-                    </a>
+                      <div class="col-60">
+                        <div class="option-title">修电脑</div>
+                      </div>
+                    </div>
                   </div>
                   <!-- 硬件升级 -->
                   <div class="col-50 update-hardware" >

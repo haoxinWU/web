@@ -20,30 +20,11 @@
         <div class="color-select os-select-option">
             <div class="content-block-title">想装的系统</div>
             <div class="row">
+                {{#each this}}
                 <div class="col-50">
-                    <a href="#" class="button button-big" style="background: #666699;">Win 10(32)</a>
+                    <a href="#" class="button button-big" data-price="{{price}}" style="background: {{color}};">{{os_name}}{{#if default}}<span class="selected"><i class="icon iconfont">&#xe60a;</i></span>{{/if}}</a>
                 </div>
-                <div class="col-50">
-                    <a href="#" class="button button-big" style="background: #666699;">Win 10(64)</a>
-                </div>
-                <div class="col-50">
-                    <a href="#" class="button button-big" style="background: #B8E986;">Win 8(32)</a>
-                </div>
-                <div class="col-50">
-                    <a href="#" class="button button-big" style="background: #B8E986;">Win 8(64)</a>
-                </div>
-                <div class="col-50">
-                    <a href="#" class="button button-big" style="background: #E9D286;">Win 7(32)</a>
-                </div>
-                <div class="col-50">
-                    <a href="#" class="button button-big" style="background: #E9D286;">Win 7(64)<span class="selected"><i class="icon iconfont">&#xe60a;</i></span></a>
-                </div>
-                <div class="col-50">
-                    <a href="#" class="button button-big" style="background: #8BC1FF;">Win xp</a>
-                </div>
-                <div class="col-50">
-                    <a href="#" class="button button-big" style="background: #50E3C2;">苹果系统</a>
-                </div>
+                {{/each}}
             </div>
         </div>
         <!-- 订单联系方式以及预约时间 -->
