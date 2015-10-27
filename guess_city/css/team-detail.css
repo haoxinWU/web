@@ -1,0 +1,29 @@
+.qrcode-img{
+    padding-top: 20px;
+}
+.qrcode-img img{
+    border: 10px solid #b2d1b7;
+}
+.qrcode-description{
+    margin-top: 15px;
+    color: #9b9c9b;
+}
+.team-user-list{
+    padding-top: 15px;
+}
+.team-user-list tbody tr td{
+    line-height: 40px;
+    border-top: none;
+    padding-left: 20px;
+    padding-right: 20px;
+    background-color: #9cd191;
+}
+.team-user-list tbody tr{
+    border-top: 10px solid #FFFFff;
+    border-right: 10px solid #FFFFff;
+    border-left: 10px solid #FFFFff;
+}
+.team-user-list tbody span.nickname{
+    padding-left: 10px;
+    font-weight: 600;
+}
