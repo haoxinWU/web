@@ -1,0 +1,59 @@
+.score-content{
+    padding-top: 20px;
+}
+.score-result{
+    float: left;
+    margin-top: 10%;
+    margin-bottom: 15%;
+    font-size: 13px;
+}
+.score-and-question-desc{
+    padding-left: 5px;
+}
+
+.user-score-list .user-item{
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.user-score-list .user-item p{
+    font-size: 13px;
+    line-height: 10px;
+    color: #3f3f3e;
+}
+.user-score-list .user-item .nickname{
+    font-size: 14px;
+    color: #3f3f3e;
+    width: 50px;
+    padding-top: 5px;
+}
+.user-score-list .user-item p.member{
+    margin-top: 4px;
+    font-size: 14px;
+    color: #3f7fad;
+}
+.user-score-list .user-item p.member span{
+    padding-left: 10px;
+}
+.user-score-list .item:nth-child(even) .member-logo{
+    border-left: 1px solid #cacbcc;
+}
+.user-score-list .item:nth-child(n+3){
+    border-top: 1px solid #cacbcc;
+}
+
+.team-list tr:nth-child(1) .badge{
+    background-color: #427ca8;
+}
+.team-list tr:nth-child(2) .badge{
+    background-color: #76aed9;
+}
+.team-list tr:nth-child(3) .badge{
+    background-color: #a5c7e2;
+}
+.team-list tr p{
+    font-size: 12px;
+    padding-top: 3px;
+}
+.team-list tr p.team-score{
+    color: #427ca8;
+}

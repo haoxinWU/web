@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="format-detection" content="telephone=no" />
     <meta name="viewport" content="width=device-width initial-scale=1.0 maximum-scale=1.0 user-scalable=yes" />
-    <title>路痴测试</title>
+    <title>来子里卬的求助</title>
     <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="share-assets/share.css">
-    <link href="css/index.css" rel="stylesheet">
+    <link href="css/help-index.css" rel="stylesheet">
     <link href="font/iconfont.css" rel="stylesheet">
     <script type="text/javascript" src="bootstrap/js/jquery-2.1.3.min.js"></script>
     <script type="text/javascript" src="js/index.js"></script>
@@ -38,50 +38,17 @@
             </div>
         </div>
         <div class="index option" style="display: block;">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="logo pull-right">
-                        <img src="images/logo.png">
-                    </div>
+            <div class="help-index">
+                <div class="source-user text-center">
+                    <img src="images/wechat-head4.jpg" class="img-circle">
+                    <p class="source-nickname">里卬</p>
                 </div>
-                <div class="col-lg-12">
-                    <div class="theme-pic text-center">
-                        <img src="images/theme-pic.png">
-                    </div>
+                <div class="help-content">
+                    <article class="help-message">
+                        你好，我是里卬，我在参加******第一期答题活动，还有8道题没有答对，希望得到你的帮助，如果你能帮我答对剩下的题目，我将可以获得100积分，不胜感激!
+                    </article>
                 </div>
-                <div class="col-lg-12">
-                    <div class="play-text text-center">
-                        已有<span class="play-times">1564465</span>参与测试
-                    </div>
-                </div>
-                <div class="col-lg-12">
-                    <div class="btn-group btn-group-justified buttons" role="group">
-                        <div class="btn-group" role="group">
-                            <button type="button" class="btn btn-primary start-button">开始考试</button>
-                        </div>
-                        <div class="btn-group" role="group">
-                            <button type="button" class="btn btn-default rule-button">规则说明</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-lg-12 text-center" style="margin-top: 10px;">
-                        <div class="col-lg-4 col-md-4 col-xs-4 col-sm-4" style="border-right: 1px solid #000018;">
-                            <a href="score-player-and-team-new.html">本期排行</a>
-                        </div>
-                        <div class="col-lg-4 col-md-4 col-xs-4 col-sm-4" >
-                            我的答题
-                        </div>
-                        <div class="col-lg-4 col-md-4 col-xs-4 col-sm-4" style="border-left: 1px solid #000018;">
-                            我的战绩
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-12">
-                    <div class="copyright text-center">
-                        <div class="">&copy; 本页面由麦子提供</div>
-                    </div>
-                </div>
+                <button type="button" class="btn btn-primary start-button"><i class="glyphicon glyphicon-heart"></i>&nbsp;&nbsp;&nbsp;开始帮他答题&nbsp;&nbsp;&nbsp;<i class="glyphicon glyphicon-heart"></i></button>
             </div>
         </div>
         <div class="question option" style="display: none;" data-score="189" data-question-id="">
@@ -167,18 +134,18 @@
                 <span class="score">50</span>分
             </div>
             <div class="result-analyse">
-                <h2 class="result-title">答题分析</h2>
-
-                <div class="result-context">
-                    <article class="result-context-desc">
-                        看出你已经是渭南本地人了，对陕西已经了如指掌，可以分享给朋友看看，他们能得积分呢？
+                <div class="help-result-context text-center">
+                    <article class="help-result-context-desc">
+                        <i class="glyphicon glyphicon-heart"></i><i class="glyphicon glyphicon-heart"></i><i class="glyphicon glyphicon-heart"></i>&nbsp;恭喜你帮助里卬赢得50分!&nbsp;<i class="glyphicon glyphicon-heart"></i><i class="glyphicon glyphicon-heart"></i><i class="glyphicon glyphicon-heart"></i>
                     </article>
-                    <div class="result-tip"><i class="glyphicon glyphicon-hand-right"></i>&nbsp;&nbsp;答错8道题,转发朋友圈求助圈里好友,让他/她帮你答题,答对全部可获100积分哦</div>
                 </div>
             </div>
-            <button type="button" class="btn btn-primary btn-sm btn-block share-btn" onclick="shareTimeLine();">
-                分享给好友看看他们的得分
-            </button>
+            <div class="restart-game text-center">
+                <p class="desc">挑战全部题目获得更多积分</p>
+                <a href="#" type="button" class="btn btn-primary btn-sm btn-block start-new-game">
+                    开始挑战
+                </a>
+            </div>
             <div class="gift-shop-ad text-center">
                 <span class="tip-line">-----本次答题获得<span class="score"></span>分，用时<span id="second"></span>秒点击下面兑换礼品-----</span>
                 <a href="#"> <img src="images/gift-shop-link.png"></a>

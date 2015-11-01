@@ -185,3 +185,44 @@
 .rule-context .rule-back-tip{
     margin-top: 30px;
 }
+.help-index{
+    padding-top: 30px;
+}
+.help-index .source-user img{
+    width: 100px;
+    height: 100px;
+    border: 3px solid #76aed9;
+}
+.help-index .source-user .source-nickname{
+    padding-top: 10px;
+
+}
+.help-index .help-message{
+    padding: 10px;
+    font-size: 16px;
+}
+.help-index .start-button{
+    width: 100%;
+    margin-top: 40px;
+    border: none;
+    background-color: #5ea7d4;
+    border-radius: inherit;
+}
+.result-analyse .help-result-context{
+    border-top: 1px dashed #bc1a1d;
+    border-bottom: 1px dashed #bc1a1d;
+    font-size: 14px;
+    padding: 10px 10px 10px 10px;
+}
+.result-analyse .help-result-context .help-result-context-desc{
+    line-height: 30px;
+    color: #bc1a1d;
+}
+
+.restart-game {
+    padding-top: 15px;
+}
+.restart-game .start-new-game{
+    background-color : #5ea7d4;
+    border: none;
+}

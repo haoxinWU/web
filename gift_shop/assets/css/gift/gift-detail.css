@@ -1,6 +1,6 @@
 .pages div.page[data-page='gift-detail'] div.gift-img > img{
     width: 100%;
-    height: 400px;
+    height: 300px;
 }
 .pages div.page[data-page='gift-detail'] div.gift-content div.gift-title{
     padding: 10px 0px 0px 15px;

@@ -57,7 +57,15 @@ a.btn-qiang,a:hover.btn-qiang{
 	opacity: 0.8;
 	color: #FFF;
 }
-
+.media-box .empty{
+	display:block;
+	position:absolute;
+	top : 40px;
+	-moz-transform:rotate(-10deg); -webkit-transform:rotate(-10deg);
+	left: 25%;
+	opacity: 0.8;
+	color: #FFF;
+}
 
 .footer{
 	text-align: center;

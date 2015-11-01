@@ -1,0 +1,44 @@
+body{
+    background-color: #3a7eaa;
+}
+.theme-container{
+    padding-top: 30%;
+}
+a{
+    color: #FFFFff;
+}
+a:hover, a:focus {
+    color: #23527c;
+     text-decoration: none;
+}
+.button-container{
+    
+}
+.button-container .buttons{
+    padding-top: 15px;
+    margin: 0px 50px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #FFFFff;
+}
+.button-container .buttons a:nth-child(1){
+    border-right: 1px solid #b8cec7;
+}
+.button-container a{
+    font-size: 20px;
+}
+.button-container a.create-team{
+    padding-right: 20px;
+}
+.button-container a.join-team{
+    padding-left: 20px;
+}
+.start-button .start-game{
+    padding-top: 30px;
+}
+.start-button .start-game a{
+    font-size: 15px;
+    padding: 10px 50px;
+    color: #262626;
+    margin-top: 30px;
+    background-color: #FFFFff;
+}
