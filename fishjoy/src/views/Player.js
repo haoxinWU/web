@@ -16,16 +16,16 @@
 	var gameTime=0;
 
 	var status,coinGets;
-
+	//TODO 获取配置信息
 	var responseData = $.ajax({
-		url: "http://liveapp.1paiclub.com/rest/lightApp/config",
+		url: $("html").data("config-url"),
 		async: false,
 		type : "GET",
 		dataType : "json",
-		data: {"activityId": activityId, "hitType":hitType}
+		data: {}
 	}).responseText;
 	responseData=eval("("+responseData+")");
-
+	var playTimePrivilege = responseData.data.playTimePrivilege;// 可以玩的次数
 	responseData = responseData.data;
 
 	var paramLogo=responseData.param_logo;
@@ -79,6 +79,7 @@ var Player = ns.Player = function(props)
 
 	$('#bg').css('background-image','url('+gameBg+')');
 	var isAgain=$.cookies.get('again');
+	isAgain = 0;
 	if(isAgain==1){
 		page1.style.display='none';
 		init_this();
@@ -88,10 +89,21 @@ var Player = ns.Player = function(props)
 
 	var start_game=document.getElementById('start');
 	start_game.addEventListener('click',function(){
-		$.cookies.set('again',0);
-		page1.style.display='none';
-		init_this();
+		checkPlayPrivilege(function () {
+			playTimePrivilege  = playTimePrivilege - 1;
+			page1.style.display='none';
+			init_this();
+		});
+
 	});
+	//判断是否还有权限玩
+	function checkPlayPrivilege(callback){
+		if(playTimePrivilege < 1){
+			alert("今日游戏次数已经用完");
+		}else{
+			callback();
+		}
+	}
 	function init_this(){
 		this_.init();
 		console.log(shareTitle+'hehe'+shareContent);
@@ -121,12 +133,13 @@ var Player = ns.Player = function(props)
 				status=1;
 				if(coinGets>0){
 					var award,awardResponse,remainNumber,lowerLimit;
+					//记录成绩 TODO
 					var responseAwardData = $.ajax({
-						url: "/rest/lightApp/award/scoreLottery",
+						url: $("html").data("score-lottery-url"),
 						async: false,
 						type : "POST",
 						dataType : "json",
-						data: {"activityId": activityId, "token":token,"score":coinGets}
+						data: {"token":token,"score":coinGets}
 					}).responseText;
 					awardResponse=eval("("+responseAwardData+")");
 					///rest/lightApp/award/scoreLottery
@@ -149,13 +162,16 @@ var Player = ns.Player = function(props)
 					setTimeout(function(){
 						page2.style.display='none';
 						$('#goToAgain').bind('click',function(){
-							$.cookies.set('again',1);
-							window.location.reload();
-							status=0;
-							var s = gameTime, t;
-							page2.style.display='block';
-							times();
+							checkPlayPrivilege(function () {
+								$.cookies.set('again',1);
+								window.location.reload();
+								status=0;
+								var s = gameTime, t;
+								page2.style.display='block';
+								times();
+							});
 						});
+						//提交结果
 						$('#goToSubmit').bind('click',function(){
 							$.cookies.set('again',0);
 							popUp.style.display='block';

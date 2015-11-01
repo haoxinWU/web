@@ -2,19 +2,6 @@
     "code": 0,
     "msg": "操作成功",
     "data": {
-        "activityId": 24104,
-        "deduct": 1,
-        "defaultPrize": false,
-        "description": "10积分",
-        "icon": "",
-        "id": 2166,
-        "lowerLimit": 50,
-        "name": "10积分",
-        "remainNumber": 336,
-        "time": 1446079352029,
-        "tips": "10积分",
-        "totalNumber": 1000,
-        "type": null,
-        "upperLimit": 150
+        "tips": "10积分"
     }
 }
