@@ -2,7 +2,6 @@
  * Created by leon on 15/10/15.
  */
 var index = {
-
     data : {
         time_count : 0,
         time_cost : 0,
@@ -11,6 +10,8 @@ var index = {
         right_answer : 0,
         wrong_answer : 0,
         score : 0 ,
+        right_ids : '0',
+        wrong_ids : '0',
     },
     init : function(){
         //题目数初始化
@@ -25,7 +26,6 @@ var index = {
             // 开始计时
             index.functions.second_start();
         });
-
         //点击规则说明
         $('.rule-button').on('click', function () {
             $(this).parents('.option').hide();
@@ -51,11 +51,12 @@ var index = {
                     $(".score").text(parseInt(index.data.score));
                     $("#second").text(parseInt(index.data.time_cost));
                     $('.footer').hide();
+                    //发送成绩
+                    index.functions.send_results();
                 }
             },300);
         });
     },
-    
     functions : {
         //答了一道题
         answer_one_question : function (current_btn) {
@@ -71,18 +72,21 @@ var index = {
         //答对一道题
         answer_right : function (current_btn) {
             var current_question = current_btn.parents('.question');
+            var question_id = current_question.data('question-id');
             current_btn.addClass('selected-success');
             index.data.right_answer = index.data.right_answer + 1;
+            index.data.right_ids = index.data.right_ids+','+question_id;
             index.data.score = index.data.score + parseInt(current_question.data('score'));
-
         },
         //答错一道题
         answer_wrong : function(current_btn){
             var current_question = current_btn.parents('.question');
+            var question_id = current_question.data('question-id');
             current_btn.addClass('selected-error');
             index.data.wrong_answer = index.data.wrong_answer + 1;
+            index.data.wrong_ids = index.data.wrong_ids+','+question_id;
+            index.data.score = index.data.score - parseInt(current_question.data('descore'));
         },
-
         //开始计时
         second_start : function(){
             setTimeout(function () {
@@ -98,6 +102,9 @@ var index = {
                 right : index.data.right_answer,
                 wrong : index.data.wrong_answer,
                 answer_seconds : index.data.time_cost,
+                right_ids : index.data.right_ids,
+                wrong_ids : index.data.wrong_ids,
+                score : index.data.score
             }
             $.post(post_url,post_data, function (e) {
                 var json = JSON.parse(e);
