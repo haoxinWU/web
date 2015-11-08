@@ -5,6 +5,8 @@ var index = {
     init: function () {
         //初始化首页的轮播图片
         index.functions.swiperInit();
+        index.functions.checkLoadGo();
+
     },
     event: function () {
 
@@ -44,6 +46,23 @@ var index = {
             });
             callback(this);
         },
+
+        //检测是否礼品信息
+        checkLoadGo : function(){
+            var goParam = getQueryString("go");
+            if(goParam == 'gift_detail'){
+                mainFramework.showIndicator();
+                myGifts.functions.loadMyGiftOrderDetail(getQueryString('id'), function (json,url) {
+                    mainFramework.hideIndicator();
+                    mainView.router.loadPage({
+                        url : url,
+                        context : {
+                            'gift_order' : json.data
+                        }
+                    });
+                });
+            }
+        }
     }
 }
 /*初始化页面*/

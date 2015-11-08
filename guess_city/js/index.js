@@ -10,8 +10,8 @@ var index = {
         right_answer : 0,
         wrong_answer : 0,
         score : 0 ,
-        right_ids : '0',
-        wrong_ids : '0',
+        right_ids : '',
+        wrong_ids : '',
     },
     init : function(){
         //题目数初始化
@@ -104,7 +104,8 @@ var index = {
                 answer_seconds : index.data.time_cost,
                 right_ids : index.data.right_ids,
                 wrong_ids : index.data.wrong_ids,
-                score : index.data.score
+                score : index.data.score,
+                activity_id : $("html").data('activity-id')
             }
             $.post(post_url,post_data, function (e) {
                 var json = JSON.parse(e);

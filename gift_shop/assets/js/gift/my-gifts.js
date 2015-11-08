@@ -12,12 +12,25 @@ var myGifts = {
         $$('div.pages').on('click','#my-gifts a.gift-order-link', function () {
             var btn = $$(this);
             mainFramework.showIndicator();
+            myGifts.functions.loadMyGiftOrderDetail(btn.data('id'), function (json,url) {
+                mainFramework.hideIndicator();
+                mainView.router.loadPage({
+                    url : url,
+                    context : {
+                        'gift_order' : json.data
+                    }
+                });
+            });
+        });
+    },
+    functions : {
+        loadMyGiftOrderDetail : function (id,callback) {
             var url = $$('html').data('my-gift-order-detail');
             var postData = {
-                'id' : btn.data('id')
+                'id' : id
             };
             $$.post(url,postData, function (e) {
-                mainFramework.hideIndicator();
+
                 var json = JSON.parse(e);
                 if(json.status == 200){
                     var url = 'pages/gift-order-detail/my-gift-order-detail.html';
@@ -31,18 +44,10 @@ var myGifts = {
                         url = 'pages/gift-order-detail/my-gift-order-detail-ziling.html';
                     }
 
-                    mainView.router.loadPage({
-                        url : url,
-                        context : {
-                            'gift_order' : json.data
-                        }
-                    });
+                    callback(json,url);
                 }
             });
-        });
-    },
-    functions : {
-
+        }
     }
 };
 //$(function () {
