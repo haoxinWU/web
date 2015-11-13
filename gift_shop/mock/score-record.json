@@ -1,0 +1,26 @@
+{
+  "status": 200,
+  "message": "success",
+  "data": [
+    {
+      "id" : 3,
+      "uid" : 3
+      "uniacid" : 3,
+      "credittype" : "credit1",
+      "num" : "5.00",
+      "operator" : "1",
+      "createtime" : "2348642426",
+      "remark" : "关注增加积分"
+    },
+    {
+      "id" : 3,
+      "uid" : 3
+      "uniacid" : 3,
+      "credittype" : "credit1",
+      "num" : "－15.00",
+      "operator" : "1",
+      "createtime" : "2348642426",
+      "remark" : "游戏失败"
+    }
+  ]
+}
