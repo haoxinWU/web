@@ -59,7 +59,10 @@
     border: none;
     background-color: #c9ccc9;
 }
-
+.index .dead-page-content{
+    position: absolute;
+    bottom: 30px;
+}
 .copyright{
     padding-top: 30px;
     color: #9b9c9b;
