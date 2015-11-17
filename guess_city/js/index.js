@@ -3,6 +3,7 @@
  */
 var index = {
     data : {
+
         time_count : 0,
         time_cost : 0,
         answered_count : 0,
