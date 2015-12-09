@@ -16,7 +16,9 @@ var account = {
             var bheight=rheight-theight-height;
             if(bheight == "0"){
                 account.functions.loadScoreRecord(function (json) {
-                    alert('成功');
+                    account.data.page_index = account.data.page_index + 1;
+
+
                 }, function (json) {
                     alert('失败');
                 });
@@ -26,18 +28,33 @@ var account = {
 
     functions: {
 
-        loadScoreRecord : function () {
+        loadScoreRecord : function (success,error) {
             var url = $("html").data('load-score-record-url');
-            var postData = {};
-            $.post(url,postData, function (e) {
-                var json=eval("("+ e +")");
-                alert(json);
-                if(json.status == 200){
-
-                }else{
-
+            $.ajax({
+                url: url,
+                type: 'POST',
+                data:{
+                    'page' : account.data.page_index,
+                    'size' : account.data.page_size
+                },
+                dataType: 'html',
+                timeout: 1000,
+                error: function(result){
+                    error(result)
+                },
+                success: function(result){
+                    success(result);
                 }
+
             });
+            //$.post(url,function (e) {
+            //    var json = e;
+            //    if(json.status == 200){
+            //        success(e);
+            //    }else{
+            //        error(e);
+            //    }
+            //});
         },
 
         getScrollHeight: function () {

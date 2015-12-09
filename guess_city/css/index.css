@@ -24,6 +24,9 @@
     zoom:1
 }
 /*/common*/
+body{
+    background-repeat: repeat
+}
 
 .index .logo img{
     width: 150px;
@@ -102,7 +105,7 @@
 }
 .selected-success span,.selected-success i{
     color: #d6e9c6;
-    
+
 }
 .selected-error span,.selected-error i{
     color: #ebccd1;
@@ -135,7 +138,7 @@
     font-weight: 600;
 }
 .result-analyse .result-title{
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 300;
 
 }
@@ -151,7 +154,7 @@
 .result-analyse .result-context .result-tip{
     line-height: 30px;
     color: #ffa517;
-    
+
 }
 .share-btn{
     margin-top:20px ;
