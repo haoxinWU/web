@@ -1,0 +1,84 @@
+/**
+ * 首页的css
+ */
+.page[data-page=index]{
+    background-color: #FFFFFF;
+}
+/*顶部幻灯片*/
+.swiper-container {
+
+}
+.swiper-slide {
+    background:#B8E986;
+}
+.swiper-slide span {
+    text-align:center;
+    display:block;
+    font-size:21px;
+}
+section{
+    padding: 0px 20px 15px 20px;
+}
+section.shop-info{
+    border-bottom: 1px solid #E6E6E6;
+}
+/*商铺信息*/
+section.shop-info h1{
+    /* 肯德基(人民广场店): */
+    font-size: 18px;
+    color: #333333;
+    line-height: 18px;
+}
+
+section.shop-info .option-list{
+    font-size: 14px;
+    color: #999999;
+    line-height: 20px;
+}
+
+section.notice-info{
+    padding-top: 15px;
+    border-bottom: 1px solid #E6E6E6;
+}
+section.notice-info .notice-item{
+    /* 每周日生日顾客，可凭证件领取小蛋糕一份！: */
+    font-family: PingFangSC-Light;
+    font-size: 14px;
+    color: #666666;
+    line-height: 20px;
+}
+section.notice-info i{
+    font-size: 17px;
+}
+
+/*选项*/
+.option-buttons{
+    padding-top: 10px;
+    margin-top: 0px;
+}
+.option-buttons .option-item{
+    padding-bottom: 20px;
+}
+.option-buttons i{
+    font-size: 60px;
+    color: white;
+    width: 80px;
+    height: 80px;
+    border-radius: 35px;
+}
+
+.option-buttons h3{
+    font-family: PingFangSC-Light;
+    padding-top: 0px;
+    line-height: 0px;
+    color: #666666;
+    font-size: 16px;
+    font-weight: 100;
+}
+
+.option-buttons .tip{
+    /* 当前等位21桌: */
+    font-family: PingFangSC-Light;
+    font-size: 12px;
+    color: #999999;
+}
