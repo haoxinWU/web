@@ -1,0 +1,179 @@
+.fix-computer-issue{
+    /* 修: */
+    border-color: #8BC1FF;
+    color: #8BC1FF;
+}
+.wash-computer{
+    /* 清: */
+    color: #B8E986;
+    border-color: #B8E986;
+}
+.fix-os{
+    /* 装: */
+    color: #F5A623;
+    border-color: #F5A623;
+}
+.update-hardware{
+    /* 升: */
+    color: #8BC1FF;
+    border-color: #8BC1FF;
+}
+
+/*选项顶部绿色的广告条*/
+.option-head-ad{
+    background: #87C845;
+    height: 81px;
+}
+.option-head-ad .row .icon-img i.icon{
+    color: #FFFFFF;
+    font-size: 4.5em;
+    line-height: 81px;
+}
+.option-head-ad .row .line-container{
+}
+.option-head-ad .row span.line{
+    color: #FFFFFF;
+    border: 1px solid #FFFFFF;
+    line-height: 80px;
+    font-size: 3em;
+}
+.option-head-ad .row .ad-text .text{
+    font-size: 18px;
+    color: #FFFFFF;
+    margin-left: 10px;
+    line-height: 80px;
+}
+
+/*彩色单选项目*/
+.color-select,.order-link-info,.color-checkbox,.white-block {
+    margin-top: 15px;
+    padding: 10px 0px;
+    background: #FFFFFF;
+}
+.color-select .content-block-title,.order-link-info .content-block-title,.color-checkbox .content-block-title,.white-block .white-block-title{
+    margin: 0px 15px 15px 15px;
+    font-family: STHeitiSC-Medium;
+    font-size: 14px;
+    color: #9B9B9B;
+    line-height: 14px;
+}
+.color-select .row div[class*="col-"]{
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+}
+.color-select .row a.button{
+    border: none;
+    font-family: STHeitiSC-Medium;
+    font-size: 18px;
+    color: #FFFFFF;
+    border-radius: 8px;
+}
+.color-select .row a.button span.selected i{
+    color: #FFFFFF;
+    font-size: 22px;
+    line-height: 44px;
+    padding-left: 2px;
+}
+/*联系方式*/
+.order-link-info .list-block ul:before,.order-link-info .list-block ul:after,.color-checkbox ul:before,.color-checkbox ul:after,.white-block ul:before,.white-block ul:after{
+    content: normal;
+}
+.order-link-info{
+    margin-bottom: 80px;
+}
+.order-link-info .list-block{
+    /*margin-bottom: 100px;*/
+    margin: 0px;
+}
+.link-info-popup ul{
+    background: #FFFFFF;
+}
+.order-link-info .item-link .item-title,.order-link-info .item-link .item-title,.order-link-info .item-link .item-after{
+    font-size: 15px;
+    color: #8e8e93;
+    font-weight: 400;
+}
+.order-link-info .item-link .item-subtitle{
+    color: #8e8e93;
+}
+.order-link-info li a.item-link.item-content.active-state{
+    background-color: #FFFFFF;
+}
+/*联系方式popup*/
+.link-info-popup .submit-link-info{
+    margin: 0px 15px;
+    border: none;
+    color: #FFFFFF;
+    background: #87C845;
+    border-radius: 8px;
+    font-family: STHeitiSC-Medium;
+    font-size: 18px;
+}
+.link-info-popup ul:before,.link-info-popup ul:after{
+    content: normal;
+}
+.link-info-popup .content-block-title{
+    margin: 15px 15px 15px 15px;
+    font-family: STHeitiSC-Medium;
+    font-size: 14px;
+    color: #9B9B9B;
+    line-height: 14px;
+}
+/*呼唤学长帮忙*/
+.ask-for-help{
+    height: 100px;
+    background: #FFFFFF;
+}
+.ask-for-help a{
+    width: 100%;
+    text-align: center;
+}
+.ask-for-help .toolbar-inner{
+    height: initial;
+    bottom: 10px;
+    top: initial;
+}
+.ask-for-help .ask-for-help-tip{
+    font-size: 12px;
+    color: #4A4A4A;
+    line-height: 50px;
+    text-align: center;
+}
+.ask-for-help .ask-for-help-tip span.money,.ask-for-help .ask-for-help-tip span.time{
+    color: red;
+}
+
+/*多选*/
+.color-checkbox a.button{
+    border: 1px solid #979797;
+    border-radius: 8px;
+    color: #000;
+    margin-bottom: 10px;
+}
+.theme-green .color-checkbox .button{
+    /* Rectangle 10 Copy 7: */
+    border: 1px solid #979797;
+    border-radius: 8px;
+    color: #000;
+}
+
+.color-checkbox a.button.selected{
+    color: #FFFFFF;
+    background: #87C845;
+}
+
+.color-checkbox ul li{
+    /* Rectangle 17: */
+    border: 1px solid #979797;
+    border-radius: 8px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.color-checkbox ul li textarea{
+    font-family: STHeitiSC-Light;
+    font-size: 14px;
+    color: #9B9B9B;
+    line-height: 14px;
+}

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <title>智慧餐厅首页</title>
+  <link rel="stylesheet" href="css/framework7.min.css?v=20150923.1.1">
+  <link rel="stylesheet" href="css/font-awesome.min.css?v=20150923.1.1">
+  <link rel="stylesheet" href="assets/font/iconfont.css?v=20150923.1.1.1.1">
+  <link rel="stylesheet" href="assets/css/main.css?v=20150923.1.1">
+  <link rel="stylesheet" href="assets/css/common/common.css?v=2015092.1.1.2">
+  <link rel="stylesheet" href="assets/css/index/index.css">
+</head>
+<body>
+<!-- Status bar overlay for fullscreen mode-->
+<div class="statusbar-overlay"></div>
+<!-- Panels overlay-->
+<div class="panel-overlay"></div>
+<!-- Views-->
+<div class="views">
+  <!-- Your main view, should have "view-main" class-->
+  <div class="view view-main">
+    <!-- Pages, because we need fixed-through navbar and toolbar, it has additional appropriate classes-->
+    <div class="pages">
+      <!-- Page, data-page contains page name-->
+      <div data-page="index" class="page">
+        <!-- Scrollable page content-->
+        <div class="page-content">
+          <div class="tabs">
+            <div class="tab active" id="index-page">
+              <!-- 顶部幻灯片 -->
+              <div class="swiper-container" style="height: 90px;">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide"><span>广告1</span></div>
+                  <div class="swiper-slide"><span>广告2</span></div>
+                </div>
+                <div class="swiper-pagination"></div>
+              </div>
+              <section class="shop-info">
+                <h1 class="title">肯德基浦江店（周浦镇店）</h1>
+                <div class="option-list">
+                  <div class="time">
+                    <i class="icon-time"></i> 10:00～22:00
+                  </div>
+                  <div class="address">
+                     <i class="icon-map-marker"> </i> 北京市时代广场4楼4B-22
+                  </div>
+                </div>
+              </section>
+              <section class="notice-info">
+                <div class="notice-item">
+                  <a href="index.html" class="external" style="color: #666666;"> <i class="icon-volume-up" style="color: #50E3C2;"></i> 即日起，微信点餐满66元减10块！！！</a>
+                </div>
+                <div class="notice-item">
+                  <a href="index.html" class="external" style="color: #666666;"> <i class="icon-volume-up" style="color: #50E3C2;"></i> 每周日生日顾客，可凭证件领取小蛋糕一份！</a>
+                </div>
+              </section>
+              <!-- 幻灯片下面的选项按钮 -->
+              <div class="content-block option-buttons">
+                <div class="row">
+                  <div class="col-50 option-item">
+                    <a href="index.html" class="external">
+                      <i class="icon iconfont" style="background: #FD6021;">&#xe604;</i>
+                      <h3>排队取号</h3>
+                      <span class="tip">当前等位21桌</span>
+                    </a>
+                  </div>
+                  <div class="col-50 option-item">
+                    <a href="index.html" class="external">
+                      <i class="icon iconfont" style="background: #FF83A6;">&#xe608;</i>
+                      <h3>自主点餐</h3>
+                      <span class="tip">扫描桌上二维码即可点餐</span>
+                    </a>
+                  </div>
+                  <div class="col-50 option-item">
+                    <a href="index.html" class="external">
+                      <i class="icon iconfont" style="background: #73DEA3;">&#xe603;</i>
+                      <h3>就餐纪录</h3>
+                    </a>
+                  </div>
+                  <div class="col-50 option-item">
+                    <a href="index.html" class="external">
+                      <i class="icon iconfont" style="background: #B1DD70;">&#xe605;</i>
+                      <h3>评价</h3>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- 工具栏
+        <div class="toolbar tabbar tabbar-labels">
+          <div class="toolbar-inner">
+            <a href="#index-page" data-title="首页" class="tab-link active">
+              <i class="icon iconfont icon-15x">&#xe62c;</i>
+              <span class="tabbar-label">首页</span>
+            </a>
+            <a href="#orders-tab" data-title="维修记录" class="tab-link">
+              <i class="icon iconfont icon-15x">&#xe620;</i>
+              <span class="tabbar-label">维修记录</span>
+            </a>
+            <a href="#ucenter-tab" data-title="个人中心" class="tab-link">
+              <i class="icon iconfont icon-15x">&#xe63a;</i>
+              <span class="tabbar-label">个人中心</span>
+            </a>
+          </div>
+        </div>
+         -->
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Path to Framework7 Library JS-->
+<script type="text/javascript" src="js/jquery-2.1.3.min.js?v=20150923"></script>
+<script type="text/javascript" src="js/framework7.js?v=20150923"></script>
+<script type="text/javascript" src="assets/js/main.js?v=20150923"></script>
+<script type="text/javascript" src="assets/js/common/common.js?v=20150923"></script>
+<script type="text/javascript" src="assets/js/index/index.js?v=20150923"></script>
+<script type="text/javascript" src="assets/js/ucenter/login-page/login-page.js?v=20150923"></script>
+<script type="text/javascript" src="assets/js/option/option_common.js?v=20150923"></script>
+<!-- Path to your app js-->
+</body>
+</html>

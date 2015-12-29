@@ -17,15 +17,41 @@ var index = {
     init : function(){
         //题目数初始化
         index.data.question_count = parseInt($('#question-count').text());
+        index.functions.checkPlayLimit(function (limit,message) {
+
+        }, function (limit,message) {
+            $.alert({
+                title : "提示",
+                content: message,
+                confirmButton : "确认",
+                confirmButtonClass: 'btn-success',
+                confirm : function () {
+
+                }
+            });
+        });
     },
     event : function () {
         //开始答题按钮
         $('.start-button').on('click', function () {
-            $(this).parents('.option').hide();
-            $('.footer').show();
-            $('.question.option').first().show();
-            // 开始计时
-            index.functions.second_start();
+            var btn = $(this);
+            index.functions.checkPlayLimit(function (limit,message) {
+                btn.parents('.option').hide();
+                $('.footer').show();
+                $('.question.option').first().show();
+                // 开始计时
+                index.functions.second_start();
+            }, function (limit,message) {
+                $.alert({
+                    title : "提示",
+                    content: message,
+                    confirmButton : "确认",
+                    confirmButtonClass: 'btn-success',
+                    confirm : function () {
+
+                    }
+                });
+            });
         });
         //点击规则说明
         $('.rule-button').on('click', function () {
@@ -59,6 +85,24 @@ var index = {
         });
     },
     functions : {
+        checkPlayLimit : function(success,error){
+            var checkUrl = $("html").data("check-limit-url");
+            var postData = {
+                "activity_id" : $("html").data("activity-id")
+            };
+
+            $.post(checkUrl,postData, function (e) {
+                var json = e;
+                if(json.status == 200){
+                    if(json.data.limit <= 0){
+                        error(json.data.limit,json.data.message);
+                    }else{
+                        success(json.data.limit,json.data.message);
+                    }
+                }
+            });
+        },
+
         //答了一道题
         answer_one_question : function (current_btn) {
             index.data.answered_count = index.data.answered_count + 1;
