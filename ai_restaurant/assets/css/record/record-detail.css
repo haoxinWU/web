@@ -1,0 +1,9 @@
+.item-list{
+    margin-top: 0px;
+}
+.item-detail .head-image{
+    width: 40px;
+    border: 1px solid #ffffff;
+    border-radius: 100%;
+
+}

@@ -1,0 +1,34 @@
+.main-container{
+    background: #ffffff;
+}
+
+.outline-block{
+    text-align: center;
+    height: 160px;
+    border-bottom: 1px solid #E6E6E6;
+}
+.outline-block h2{
+    padding-top: 30px;
+    /* 领取成功，您的号码为: */
+    font-family: PingFangSC-Light;
+    font-size: 16px;
+    color: #666666;
+    line-height: 16px;
+    font-weight: 200;
+}
+.outline-block .number{
+    font-family: PingFangSC-Regular;
+    font-size: 60px;
+    color: #FD7C21;
+}
+.detail-block{
+    margin-left: 20px;
+    font-family: PingFangSC-Light;
+    font-size: 14px;
+    color: #333333;
+    line-height: 14px;
+}
+.detail-block p.tip{
+    color: #999999;
+    padding-bottom: 15px;
+}

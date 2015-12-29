@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title>排队页面</title>
+    <link rel="stylesheet" href="css/framework7.min.css?v=20150923.1.1">
+    <link rel="stylesheet" href="css/framework7.ios.colors.min.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css?v=20150923.1.1">
+    <link rel="stylesheet" href="assets/font/iconfont.css?v=20150923.1.1.1.1">
+    <link rel="stylesheet" href="assets/css/main.css?v=20150923.1.1">
+    <link rel="stylesheet" href="assets/css/common/common.css?v=2015092.1.1.2">
+    <link rel="stylesheet" href="assets/css/line/line.css">
+</head>
+<body>
+<!-- Status bar overlay for fullscreen mode-->
+<div class="statusbar-overlay"></div>
+<!-- Panels overlay-->
+<div class="panel-overlay"></div>
+<!-- Views-->
+<div class="views">
+    <!-- Your main view, should have "view-main" class-->
+    <div class="view view-main">
+        <!-- Pages, because we need fixed-through navbar and toolbar, it has additional appropriate classes-->
+        <div class="pages">
+            <!-- Page, data-page contains page name-->
+            <div data-page="index" class="page">
+                <!-- Scrollable page content-->
+                <div class="page-content">
+                    <header class="">
+                        <div class="list-block select-container">
+                            <ul>
+                                <li>
+                                    <a href="#" class="item-link smart-select" data-back-on-select="true" data-page-title="就餐人数">
+                                        <select name="personCount">
+                                            <option value="2" selected>2人</option>
+                                            <option value="5">5人</option>
+                                            <option value="10">10人</option>
+                                        </select>
+                                        <div class="item-content">
+                                            <div class="item-inner">
+                                                <div class="item-title">就餐人数</div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="fetch-number-container button-row theme-orange">
+                            <div>
+                                <a href="registration.html" class="button button-big button-fill external">马上取号</a>
+                            </div>
+                        </div>
+                    </header>
+                    <div class="">
+                        <div class="content-block-title">餐厅当前等位</div>
+                        <div class="list-block">
+                            <ul>
+                                <li class="item-content">
+                                    <div class="item-inner">
+                                        <div class="item-title">小桌(1-2人)</div>
+                                        <div class="item-after">0桌</div>
+                                    </div>
+                                </li>
+                                <li class="item-content">
+                                    <div class="item-inner">
+                                        <div class="item-title">中桌(3-4人)</div>
+                                        <div class="item-after">2桌</div>
+                                    </div>
+                                </li>
+                                <li class="item-content">
+                                    <div class="item-inner">
+                                        <div class="item-title">大桌(5-9人)</div>
+                                        <div class="item-after">10桌</div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- 工具栏
+                <div class="toolbar tabbar tabbar-labels">
+                  <div class="toolbar-inner">
+                    <a href="#index-page" data-title="首页" class="tab-link active">
+                      <i class="icon iconfont icon-15x">&#xe62c;</i>
+                      <span class="tabbar-label">首页</span>
+                    </a>
+                    <a href="#orders-tab" data-title="维修记录" class="tab-link">
+                      <i class="icon iconfont icon-15x">&#xe620;</i>
+                      <span class="tabbar-label">维修记录</span>
+                    </a>
+                    <a href="#ucenter-tab" data-title="个人中心" class="tab-link">
+                      <i class="icon iconfont icon-15x">&#xe63a;</i>
+                      <span class="tabbar-label">个人中心</span>
+                    </a>
+                  </div>
+                </div>
+                 -->
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Path to Framework7 Library JS-->
+<script type="text/javascript" src="js/jquery-2.1.3.min.js?v=20150923"></script>
+<script type="text/javascript" src="js/framework7.js?v=20150923"></script>
+<script type="text/javascript" src="assets/js/main.js?v=20150923"></script>
+<script type="text/javascript" src="assets/js/common/common.js?v=20150923"></script>
+<script type="text/javascript" src="assets/js/line/line.js?v=20150923"></script>
+<!-- Path to your app js-->
+</body>
+</html>

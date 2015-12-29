@@ -45,7 +45,7 @@ div[class*="col-"] {
 /*导航条*/
 .navbar{
     /*background-color: #1dc400;*/
-    background-color: #007aff;
+    background-color: #FD7C21;
 }
 /*导航条*/
 .navbar .left{
@@ -60,6 +60,7 @@ div[class*="col-"] {
 .navbar .center{
     font-weight: 100;
     color: #fff;
+    opacity : inherit;
 }
 .navbar .right{
     color: #fff;

@@ -1,0 +1,27 @@
+.order-list{
+    margin-top: 0px;
+}
+.order-list .item-title{
+    /* 超级鸡腿堡套餐、无敌鸡肉…: */
+    font-family: PingFangSC-Regular;
+    font-size: 16px;
+    color: #333333;
+    line-height: 22px;
+}
+
+.order-list .item-subtitle{
+    /* 积分：￥98: */
+    font-family: PingFangSC-Light;
+    font-size: 14px;
+    color: #999999;
+    line-height: 22px;
+    padding-top: 10px;
+}
+.item-subtitle .score{
+    padding-left: 20px;
+
+}
+.item-subtitle .paid{
+    padding-left: 20px;
+    color: #FD7C21;
+}
