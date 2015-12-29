@@ -1,0 +1,109 @@
+{
+  "status": 200,
+  "message": "success",
+  "data": {
+    "data": [
+      {
+        "id": "1268",
+        "uid": "1482",
+        "uniacid": "13",
+        "credittype": "credit1",
+        "num": "3.00",
+        "operator": "1482",
+        "createtime": "1449653599",
+        "remark": "未记录"
+      },
+      {
+        "id": "1269",
+        "uid": "1482",
+        "uniacid": "13",
+        "credittype": "credit1",
+        "num": "-3.00",
+        "operator": "1482",
+        "createtime": "1449653599",
+        "remark": "邀请推广人积分奖励"
+      },
+      {
+        "id": "1267",
+        "uid": "1482",
+        "uniacid": "13",
+        "credittype": "credit1",
+        "num": "2.00",
+        "operator": "1482",
+        "createtime": "1449653590",
+        "remark": "推广邀请用户关注奖励"
+      },
+      {
+        "id": "1263",
+        "uid": "1482",
+        "uniacid": "13",
+        "credittype": "credit1",
+        "num": "3.00",
+        "operator": "1482",
+        "createtime": "1449653402",
+        "remark": "邀请推广人积分奖励"
+      },
+      {
+        "id": "1262",
+        "uid": "1482",
+        "uniacid": "13",
+        "credittype": "credit1",
+        "num": "3.00",
+        "operator": "1482",
+        "createtime": "1449653402",
+        "remark": "未记录"
+      },
+      {
+        "id": "1261",
+        "uid": "1482",
+        "uniacid": "13",
+        "credittype": "credit1",
+        "num": "2.00",
+        "operator": "1482",
+        "createtime": "1449653391",
+        "remark": "推广邀请用户关注奖励"
+      },
+      {
+        "id": "1257",
+        "uid": "1482",
+        "uniacid": "13",
+        "credittype": "credit1",
+        "num": "2.00",
+        "operator": "1482",
+        "createtime": "1449643718",
+        "remark": "推广邀请用户关注奖励"
+      },
+      {
+        "id": "1251",
+        "uid": "1482",
+        "uniacid": "13",
+        "credittype": "credit1",
+        "num": "2.00",
+        "operator": "1482",
+        "createtime": "1449565849",
+        "remark": "推广邀请用户关注奖励"
+      },
+      {
+        "id": "1247",
+        "uid": "1482",
+        "uniacid": "13",
+        "credittype": "credit1",
+        "num": "3.00",
+        "operator": "1482",
+        "createtime": "1449547265",
+        "remark": "邀请推广人积分奖励"
+      },
+      {
+        "id": "1246",
+        "uid": "1482",
+        "uniacid": "13",
+        "credittype": "credit1",
+        "num": "3.00",
+        "operator": "1482",
+        "createtime": "1449547265",
+        "remark": "未记录"
+      }
+    ],
+    "count": "217"
+  }
+}
