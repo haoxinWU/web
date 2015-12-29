@@ -1,9 +1,54 @@
 .item-list{
+    background: #ffffff;
     margin-top: 0px;
+
+
 }
-.item-detail .head-image{
+.item-list .item{
+    padding-top: 15px;
+    box-shadow: 0px 1px 0px 0px #DBDBDB;
+}
+.head-image{
     width: 40px;
     border: 1px solid #ffffff;
-    border-radius: 100%;
+    border-radius: 50%;
+}
+.nickname{
 
+}
+div[class*="col-"] {
+    text-align: left;
+}
+.price{
+    text-align: center;
+}
+
+.item-list .user{
+    font-family: PingFangSC-Regular;
+    font-size: 18px;
+    color: #333333;
+    line-height: 20px;
+}
+.item-list .user .nickname{
+
+}
+.item-list .user .subtotal{
+    font-family: PingFangSC-Light;
+    font-size: 14px;
+    color: #FD7C21;
+}
+.item-list .menu{
+    /* 皇家鸡腿堡套餐: */
+    font-family: PingFangSC-Light;
+    font-size: 14px;
+    color: #666666;
+    line-height: 18px;
+}
+.item-list .total-amount .amount{
+
+    font-size: 16px;
+    line-height: 50px;
+}
+.item-list .total-amount .amount .number{
+    color: #FD7C21;
 }
