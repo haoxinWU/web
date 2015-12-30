@@ -120,29 +120,6 @@
     color: #9B9B9B;
     line-height: 14px;
 }
-/*呼唤学长帮忙*/
-.ask-for-help{
-    height: 100px;
-    background: #FFFFFF;
-}
-.ask-for-help a{
-    width: 100%;
-    text-align: center;
-}
-.ask-for-help .toolbar-inner{
-    height: initial;
-    bottom: 10px;
-    top: initial;
-}
-.ask-for-help .ask-for-help-tip{
-    font-size: 12px;
-    color: #4A4A4A;
-    line-height: 50px;
-    text-align: center;
-}
-.ask-for-help .ask-for-help-tip span.money,.ask-for-help .ask-for-help-tip span.time{
-    color: red;
-}
 
 /*多选*/
 .color-checkbox a.button{

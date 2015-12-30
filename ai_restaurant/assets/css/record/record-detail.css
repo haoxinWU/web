@@ -52,3 +52,18 @@ div[class*="col-"] {
 .item-list .total-amount .amount .number{
     color: #FD7C21;
 }
+
+/*呼唤学长帮忙*/
+.comment-button{
+    height: 65px;
+    background: #FFFFFF;
+}
+.comment-button a{
+    width: 100%;
+    text-align: center;
+}
+.comment-button .toolbar-inner{
+    height: initial;
+    bottom: 10px;
+    top: initial;
+}
