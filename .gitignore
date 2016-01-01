@@ -1,7 +1,7 @@
 wp
 .DS_Store
 .sass-cache
-bower_components
+#bower_components
 node_modules
 dist
 .*
