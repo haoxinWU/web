@@ -1,0 +1,32 @@
+.table-list{
+    background: #ffffff;
+}
+.row.table-list .col-33{
+    width: 33.33333333%;
+    margin-left: 0;
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
+.table-item{
+    border-bottom: 1px solid #D9D9D9;
+}
+.table-item:nth-child(3n-1){
+    border-left: 1px solid #D9D9D9;
+    border-right: 1px solid #D9D9D9;
+
+}
+.table-item.empty{
+    color: #999999;
+}
+.table-item.busy{
+    color: #FD6021;
+}
+.table-item.waiting{
+    color: #7ED321;
+}
+.table-item .name{
+    font-size: 30px;
+}
+.table-item .status{
+    font-size: 10px;
+}

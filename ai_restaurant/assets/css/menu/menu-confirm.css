@@ -1,0 +1,26 @@
+.confirm-toolbar{
+    line-height: 50px;
+}
+.confirm-toolbar .row{
+    margin-right: -4%;
+}
+.confirm-toolbar .left{
+    opacity: 0.69;
+    background: #000000;
+    color: white;
+    padding-left: 20px;
+}
+.confirm-toolbar .right{
+    background: #FF7900;
+    color: white;
+    margin-left: 0px;
+    text-align: center;
+    cursor: pointer;
+}
+/*付款方式*/
+.pay-method .item-title .tip{
+    padding-left: 10px;
+    font-family: PingFangSC-Light;
+    font-size: 14px;
+    color: #999999;
+}

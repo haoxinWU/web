@@ -38,22 +38,29 @@ div[class*="col-"] {
     color: #FD7C21;
 }
 .item-list .menu{
-    /* 皇家鸡腿堡套餐: */
     font-family: PingFangSC-Light;
     font-size: 14px;
     color: #666666;
     line-height: 18px;
 }
+.item-list .total-amount{
+    padding-right: 35px;
+    padding-bottom: 10px;
+}
 .item-list .total-amount .amount{
-
     font-size: 16px;
-    line-height: 50px;
+    line-height: 40px;
 }
 .item-list .total-amount .amount .number{
     color: #FD7C21;
 }
+/*自己付*/
+.total-amount .only-me,.total-amount .aa{
+    font-size: 13px;
+    font-family: PingFangSC-Light;
+    color: #999999;
+}
 
-/*呼唤学长帮忙*/
 .comment-button{
     height: 65px;
     background: #FFFFFF;
@@ -66,4 +73,18 @@ div[class*="col-"] {
     height: initial;
     bottom: 10px;
     top: initial;
+}
+
+/*顶部*/
+.head-tip{
+    background: #efeff4;
+    height: 30px;
+    line-height: 30px;
+    padding: 0px 10px;
+}
+.head-tip .pull-left{
+    color: #666666;
+}
+.head-tip .pull-right{
+    color: #3190E8;
 }
