@@ -31,7 +31,7 @@ var cart = {
         });
 
         //点击+
-        $(".list-item").on('click','.btn.-plus', function (e) {
+        $(".list-item").on('touchstart','.btn.-plus', function (e) {
             e.stopPropagation();
             var foodId = $(this).parents(".list-item").data("item");
             //alert(foodId);
@@ -39,8 +39,12 @@ var cart = {
             //alert(windowHeight);
             //alert(getY(e));
             var offset = $(this).offset();
+
             var startTop = offset.top;
             var startLeft = offset.left;
+            var btnTop = offset.top;
+            var scrollTop = $(window).scrollTop();
+            startTop = btnTop - scrollTop;
             //判断高度
             cart.fly(startTop,startLeft, function () {
                 //shopCartAnimate
