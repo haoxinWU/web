@@ -79,7 +79,28 @@
     margin-left: 15px;
     margin-top: 15px;
 }
+#shopmenu-cart .shopmenu-cart-list .list-group{
+    background: #ffffff;
+}
+.cart-tool{
+    background: #FAFAFA;
+    box-shadow: 0px 1px 0px 0px #E4E4E4;
+    border-bottom: 1px solid #D9D9D9;
+    line-height: 30px;
+    font-size: 14px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+.cart-tool .title{
+    font-family: PingFangSC-Light;
+    color: #999999;
+}
+.cart-tool .clean{
+    float: right;
+    font-family: PingFangSC-Light;
+    color: #999999;
 
+}
 /*下面的是来自百度*/
 body {
     background: #ECEDF1;

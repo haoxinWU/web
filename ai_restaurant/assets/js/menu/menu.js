@@ -15,7 +15,7 @@ var menu = {
     },
     event : function(){
         //点击菜单
-        $("ul.list-group").on('click','.list-item', function (e) {
+        $("ul.list-group").on('touchstart','.list-item', function (e) {
             e.stopPropagation();
             var btn = $(this);
             $("ul.list-group .list-item.active").removeClass('active');
@@ -27,7 +27,9 @@ var menu = {
             var currentMenuTop = menu.menuGroupTopList['group'+index];
             $('html,body').animate({scrollTop: currentMenuTop+'px'}, 300);
         });
+
         //滚动条滚动
+        /*
         $(window).scroll(function(e) {
             e.stopPropagation();
             $(".shopmenu-list ul.listgroup").each(function (index, item) {
@@ -42,6 +44,7 @@ var menu = {
                 }
             });
         });
+        */
         //$('.actGotop').click(function(){
         //$('html,body').animate({scrollTop: '0px'}, 800);});
     }

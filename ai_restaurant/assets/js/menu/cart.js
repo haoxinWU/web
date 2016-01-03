@@ -23,7 +23,7 @@ var cart = {
     event : function () {
 
         //点击-
-        $(".list-item").on('click','.btn.-minus', function (e) {
+        $(".list-item").on('touchstart','.btn.-minus', function (e) {
             e.stopPropagation();
             var foodId = $(this).parents(".list-item").data("item");
             //alert(foodId);
@@ -52,7 +52,7 @@ var cart = {
         });
 
         //点击购物车
-        $("#shopmenu-cart-bar").on('click','.row-num', function (e) {
+        $("#shopmenu-cart-bar").on('touchstart','.row-num', function (e) {
             e.stopPropagation();
             var cartMenuButton = $("#shopmenu-cart-list");
             var status = cartMenuButton.data("status");
@@ -71,7 +71,7 @@ var cart = {
             }
         });
         //关闭购物车
-        $(".global-mask").on("click", function (e) {
+        $(".global-mask").on("touchstart", function (e) {
             e.stopPropagation();
             var cartMenuButton = $("#shopmenu-cart-list");
             cartMenuButton.removeClass("up");

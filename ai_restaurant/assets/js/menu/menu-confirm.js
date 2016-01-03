@@ -3,7 +3,7 @@ var menuConfirm = {
         menuConfirm.event();
     },
     event : function () {
-        $(".confirm-toolbar").on("click",".submit", function (e) {
+        $(".confirm-toolbar").on("touchstart",".submit", function (e) {
             e.stopPropagation();
             window.location.href = 'pay-result.html';
         })
