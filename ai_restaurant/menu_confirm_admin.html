@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <title>就餐详情</title>
+    <title>菜单确认</title>
     <link rel="stylesheet" href="css/framework7.min.css?v=20150923.1.1">
     <link rel="stylesheet" href="css/framework7.ios.colors.min.css">
     <link rel="stylesheet" href="css/font-awesome.min.css?v=20150923.1.1">
@@ -13,7 +13,8 @@
     <link rel="stylesheet" href="assets/css/main.css?v=20150923.1.1">
     <link rel="stylesheet" href="assets/css/common/common.css?v=2015092.1.1.2">
     <link rel="stylesheet" href="assets/css/record/record-detail.css">
-
+    <link rel="stylesheet" href="assets/css/menu/menu-confirm.css">
+    <link rel="stylesheet" href="assets/css/table/menu-confirm-admin.css">
 </head>
 <body>
 <!-- Status bar overlay for fullscreen mode-->
@@ -30,49 +31,25 @@
             <div data-page="index" class="page">
                 <!-- Scrollable page content-->
                 <div class="page-content">
-                    <div class="content-block item-list">
+                    <div class="list-block margin-none table-info">
+                        <ul>
+                            <li class="item-content">
+                                <div class="item-inner">
+                                    <div class="item-title table-name">A3</div>
+                                    <div class="item-after order-time">下单时间: 2015-12-29 12:28:28</div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="content-block item-list menu-list">
                         <div class="row item">
-                            <div class="col-15">
-                                <img class="head-image" src="mock/head.jpg">
-                            </div>
-                            <div class="col-85">
-                                <div class="user">
-                                    <div class="row">
-                                        <div class="col-66 nickname">我</div>
-                                        <div class="col-33 subtotal">小计:98元</div>
-                                    </div>
-                                </div>
+                            <div class="col-100">
                                 <div class="menu">
-                                    <div class="row">
-                                        <div class="col-50">皇家鸡腿堡套餐</div>
-                                        <div class="col-25">X1</div>
-                                        <div class="col-25 price">￥34</div>
+                                    <div class="row th">
+                                        <div class="col-50">菜品</div>
+                                        <div class="col-25">数量</div>
+                                        <div class="col-25 price">价格</div>
                                     </div>
-                                    <div class="row">
-                                        <div class="col-50">炫辣鸡腿堡套餐</div>
-                                        <div class="col-25">X1</div>
-                                        <div class="col-25 price">￥34</div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-50">薯条</div>
-                                        <div class="col-25">X2</div>
-                                        <div class="col-25 price">￥6</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row item">
-                            <div class="col-15">
-                                <img class="head-image" src="mock/head.jpg">
-                            </div>
-                            <div class="col-85">
-                                <div class="user">
-                                    <div class="row">
-                                        <div class="col-66 nickname">我</div>
-                                        <div class="col-33 subtotal">小计:98元</div>
-                                    </div>
-                                </div>
-                                <div class="menu">
                                     <div class="row">
                                         <div class="col-50">皇家鸡腿堡套餐</div>
                                         <div class="col-25">X1</div>
@@ -92,16 +69,24 @@
                             </div>
                         </div>
                         <div class="row total-amount">
-                            <div class="pull-right amount">总计: <span class="number">￥208</span></div>
+                            <div class="row">
+                                <div class="pull-right amount">总计: <span class="number">￥208</span></div>
+                            </div>
+                            <div class="row">
+                                <div class="pull-right only-me">支付本人菜品为: <span class="number">￥44</span></div>
+                            </div>
+                            <div class="row">
+                                <div class="pull-right aa">AA付款为: <span class="number">￥39</span></div>
+                            </div>
                         </div>
                     </div>
-
                 </div>
                 <div class="comment-button toolbar tabbar tabbar-labels">
                     <div class="toolbar-inner theme-orange">
-                        <a href="comment.html" class="button button-big button-fill external">评价</a>
+                        <a href="#" class="button button-big button-fill external">确认菜单并打印</a>
                     </div>
                 </div>
+
             </div>
         </div>
     </div>
@@ -112,6 +97,12 @@
 <script type="text/javascript" src="assets/js/main.js?v=20150923"></script>
 <script type="text/javascript" src="assets/js/common/common.js?v=20150923"></script>
 <script type="text/javascript" src="assets/js/record/record-detail.js"></script>
+<script type="text/javascript" src="assets/js/menu/menu-confirm.js"></script>
 <!-- Path to your app js-->
+<script type="text/javascript">
+    $(function () {
+        menuConfirm.init();
+    });
+</script>
 </body>
 </html>

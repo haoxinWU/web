@@ -1,0 +1,26 @@
+.menu .row.th>[class*=col-]{
+    color: #999999;
+}
+.menu-list{
+    margin-top: 20px;
+}
+
+.table-info .item-inner{
+    font-size: 20px;
+    min-height: 70px;
+    margin-left: 4%;
+    margin-right: 4%;
+    
+}
+.table-info ul:after{
+    height: 0px;
+}
+.table-info .table-name{
+    font-size: 30px;
+    color: #FD7C21;
+}
+.table-info .order-time{
+    font-family: PingFangSC-Light;
+    font-size: 14px;
+    color: #999999;
+}

@@ -1,0 +1,94 @@
+#shopmenu-category,#shopmenu-list{
+    top: 30px;
+}
+.top-tip{
+    position: fixed;
+    width: 100%;
+    z-index: 100;
+    line-height: 30px;
+    padding-left: 8px;
+    background: #FFF8C1;
+}
+#shopmenu-category .list-group li.active{
+    border-left: 3px solid #FD7C21;
+}
+#shopmenu-category .list-group li.active a{
+    color: #FD7C21;
+}
+.shopmenu-list .listgroup .list-content .price{
+    color: #FD7C21;
+    font-size: 15px;
+    font-weight: 700;
+}
+.-minus i, .-plus i{
+    color: #FD7C21;
+    font-weight: 100;
+}
+#shopmenu-cart .shopmenu-cart-bar .row-status{
+    display: block;
+    width: 120px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    background-color: #FD7C21;
+    color: #fff;
+    font-size: 16px;
+}
+#shopmenu-cart .shopmenu-cart-bar .row-num .cart-count{
+    position: absolute;
+    font-style: normal;
+    width: 20px;
+    height: 20px;
+    top: -5px;
+    right: -5px;
+    background: #FD7C21;
+    border-radius: 20px;
+    font-size: 8px;
+    font-weight: 100;
+    text-align: center;
+    line-height: 20px;
+    color: #ffffff;
+}
+.cart-count {
+    position: absolute;
+    font-style: normal;
+    width: 20px;
+    height: 20px;
+    top: -5px;
+    right: -5px;
+    background: #FD7C21;
+    border-radius: 20px;
+    font-size: 8px;
+    font-weight: 100;
+    text-align: center;
+    line-height: 20px;
+    color: #ffffff;
+    z-index: 1000;
+}
+#shopmenu-cart .shopmenu-cart-list .cl-item .cl-r3{
+    width: 60px;
+    color: #FD7C21;
+    font-size: 16px;
+    font-weight: 700;
+}
+/*购物车头像*/
+#shopmenu-cart .shopmenu-cart-list .cl-item .cl-r4 img{
+    
+    border: 1px solid #ffffff;
+    border-radius: 100%;
+    margin-left: 15px;
+    margin-top: 15px;
+}
+
+/*下面的是来自百度*/
+body {
+    background: #ECEDF1;
+    color: #4d4d4d;
+    font-size: 14px;
+    font-family: Helvetica;
+    -webkit-font-smoothing: antialiased;
+    -webkit-user-select: none;
+    margin: 0;
+    height: 100%;
+    line-height: 1;
+}
