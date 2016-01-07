@@ -99,6 +99,8 @@ var index = {
                     }else{
                         success(json.data.limit,json.data.message);
                     }
+                }else{
+                    error(0,json.data.message);
                 }
             });
         },
