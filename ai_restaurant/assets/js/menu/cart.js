@@ -1,9 +1,14 @@
 var cart = {
+    tableId : null,
+    shopId : null,
+    cartNum : "",
     cart : {
+        id : null,
+        cartNum : "",
         count : 0,//人数
         menuCount : 0,//菜数
         //菜品
-        food : {
+        foods : {
 
         },
         totalAmount : 0.0,
@@ -15,10 +20,20 @@ var cart = {
         left : 0,
     },
     init : function () {
+        //初始化数据
+        cart.shopId = parseInt($("html").data("shop-id"));
+        cart.tableId = parseInt($("html").data("table-id"));
         //初始化 购物车位置
         cart.initCartPosition();
         cart.event();
+        cart.initCart(cart.shopId,cart.tableId, function (json) {
+            //成功
+            cart.cart.id = json.data.id;
+            cart.cartNum = json.data.cart_num;
 
+        }, function (json) {
+            alert(json.message);
+        });
     },
     event : function () {
 
@@ -34,12 +49,8 @@ var cart = {
         $(".list-item").on('touchstart','.btn.-plus', function (e) {
             e.stopPropagation();
             var foodId = $(this).parents(".list-item").data("item");
-            //alert(foodId);
             var windowHeight = $(window).height();
-            //alert(windowHeight);
-            //alert(getY(e));
             var offset = $(this).offset();
-
             var startTop = offset.top;
             var startLeft = offset.left;
             var btnTop = offset.top;
@@ -112,8 +123,27 @@ var cart = {
     /*初始化购物车位置*/
     initCartPosition : function () {
         var offset = $("em.cart-count").offset();
-        cart.cartPosition.top = offset.top;
+        //cart.cartPosition.top = offset.top;
+        cart.cartPosition.top = $(window).height();
         cart.cartPosition.left = offset.left;
+    },
+
+    /*初始化购物车数据*/
+    initCart : function (shopId, tableId, success, error) {
+        var url = $("html").data("basket-api");
+        var data = {
+            "shop_id" : shopId,
+            "table_id" : tableId
+        }
+        $.get(url,data, function (res) {
+            //var json = JSON.parse(res);
+            var json = res;
+            if(json.status == 200){
+                success(json);
+            }else{
+                error(json);
+            }
+        })
     },
 };
 function getX(e) {

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="format-detection" content="email=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="author" content="Tencent-CDC">
+    <meta name="copyright" content="Tencent">
+    <title>2016 微信公开课 PRO 版</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script>
+        (function (doc, win) {
+            var docEl = doc.documentElement,
+                    resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+                    recalc = function () {
+                        var clientWidth = docEl.clientWidth;
+                        if (!clientWidth) return;
+                        docEl.style.fontSize = 100 * (clientWidth / 320) + 'px';
+                    };
+            // Abort if browser does not support addEventListener
+            if (!doc.addEventListener) return;
+            win.addEventListener(resizeEvt, recalc, false);
+            doc.addEventListener('DOMContentLoaded', recalc, false);
+        })(document, window);
+    </script>
+</head>
+<body>
+<div class="music playing"></div>
+<!--animation 动态的 loading 上去-->
+<div class="page2 point animation">
+    <div class="touch_tip"></div>
+    <div class="touch_effect"></div>
+    <div class="dot"></div>
+    <div class="after_wrap">
+        <div class="after"></div>
+    </div>
+</div>
+<div class="preloader loaded">
+    <div class="story">2015年我和微信的故事</div>
+    <div class="percent"></div>
+    <div class="logo"></div>
+    <div class="wrapper"></div>
+</div>
+<div class="wrapper">
+    <!--第一个页面-->
+
+    <div class="page page1 " style="display: none;">
+        <h2 class="page_title">
+            2015年过去了，我很怀念它。
+            <div class="year"></div>
+        </h2>
+        <div class="circle">
+            <div class="line line1"><i></i><span class="lr"></span></div>
+            <div class="line line2"><i></i></div>
+            <div class="line line3"><i></i><div class="lr"></div></div>
+            <div class="line line4"><i></i></div>
+            <div class="line line5"><i></i></div>
+            <div class="line line6"><i></i></div>
+            <div class="line line7"><i></i><div class="lr"></div></div>
+            <div class="line line8"><i></i></div>
+            <div class="line line9"><i></i></div>
+            <div class="line line10"><i></i></div>
+            <div class="line line11"><i></i><div class="lr"></div></div>
+            <div class="line line12"><i></i><div class="lr"></div></div>
+            <div class="line line13"><i></i></div>
+            <div class="line line14"><i></i></div>
+            <div class="line line15"><i></i><div class="lr"></div></div>
+        </div>
+    </div>
+    <!-- 第二个页面 -->
+    <div class="page page2 play">
+        <div class="ray ray1"><i></i></div>
+        <div class="ray ray2"><i></i></div>
+        <div class="ray ray3"><i></i></div>
+        <div class="ol ol1"><i></i></div>
+        <div class="ol ol2"><i></i></div>
+        <div class="dot1">
+            <div class="line line1"><i></i></div>
+            <div class="line line2"><i></i></div>
+            <div class="line line3"><i></i></div>
+            <div class="line line4"><i></i></div>
+        </div>
+        <div class="dot2">
+            <div class="line line1"><i></i></div>
+            <div class="line line2"><i></i></div>
+            <div class="line line3"><i></i></div>
+            <div class="line line4"><i></i></div>
+            <div class="line line5"><i></i></div>
+            <div class="line line6"><i></i></div>
+        </div>
+        <div class="dot3">
+            <div class="line line1"><i></i></div>
+            <div class="line line2"><i></i></div>
+            <div class="line line3"><i></i></div>
+            <div class="line line4"><i></i></div>
+        </div>
+        <section class="section section1"></section>
+        <section class="section section2 section_empty"></section>
+        <section class="section section3">
+            <div class="data">Mr.Yang</div>
+            <div class="avatar">
+                <img src="images/head.jpg">
+            </div>
+        </section>
+    </div>
+    <!-- -->
+    <!--<div class="page page_error">-->
+        <!--<div class="error_msg">服务异常</div>-->
+        <!--<div class="logo"></div>-->
+    <!--</div>-->
+</div>
+<script src="js/jquery-2.1.3.min.js"></script>
+<script src="js/index.js"></script>
+<script>
+    $(function () {
+        index.init();
+    });
+</script>
+</body>
+</html>

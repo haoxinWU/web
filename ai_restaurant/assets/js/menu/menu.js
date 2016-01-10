@@ -4,11 +4,22 @@ var menu = {
 
     },
     init : function(){
+        // 初始化active
+        if($("#shopmenu-category li.active").length == 0){
+            $("#shopmenu-category li:nth-child(1)").addClass('active');
+
+        }
+
         //初始化高度 菜单高度
         $(".shopmenu-list ul.listgroup").each(function (index, item) {
             var top = $(item).offset().top;
-            menu.menuGroupTopList['group'+index] = top;
+            var groupIndex = $(item).data("id");
+            if(index == 0){ top = 0;}
+
+            menu.menuGroupTopList['group'+groupIndex] = top;
         });
+        //最初将菜单移动到最高高度
+        $('html,body').animate({scrollTop: 0+'px'}, 300);
         //事件
         menu.event();
 
