@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html data-shop-id="1" data-product-id="2" data-comment-list-api="mock/comment-list.json">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
@@ -32,42 +32,8 @@
                 <!-- Scrollable page content-->
                 <div class="page-content">
                     <div class="list-block media-list margin-none">
-                        <ul>
-                            <li>
-                                <div class="item-content">
-                                    <div class="item-media"><img class="head-image" src="images/head.jpg" width="44"></div>
-                                    <div class="item-inner">
-                                        <div class="item-title-row">
-                                            <div class="item-title"><span class="commenter-name">小妹DD</span>
-                                                <span class="stars">
-                                                    <img src="bower_components/raty/lib/images/star-on.png">
-                                                    <img src="bower_components/raty/lib/images/star-on.png">
-                                                    <img src="bower_components/raty/lib/images/star-on.png">
-                                                </span>
-                                            </div>
-                                        </div>
-                                        <div class="item-subtitle comment-content">餐厅服务态度非常不错，就是有点脏了</div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="item-content">
-                                    <div class="item-media"><img class="head-image" src="images/head.jpg" width="44"></div>
-                                    <div class="item-inner">
-                                        <div class="item-title-row">
-                                            <div class="item-title"><span class="commenter-name">爱美丽</span>
-                                                <span class="stars">
-                                                    <img src="bower_components/raty/lib/images/star-on.png">
-                                                    <img src="bower_components/raty/lib/images/star-on.png">
-                                                    <img src="bower_components/raty/lib/images/star-on.png">
-                                                    <img src="bower_components/raty/lib/images/star-on.png">
-                                                </span>
-                                            </div>
-                                        </div>
-                                        <div class="item-subtitle comment-content">餐厅服务态度非常不错，就是有点脏了餐厅服务态度非常不错，就是有点脏了餐厅服务态度非常不错，就是有点脏了</div>
-                                    </div>
-                                </div>
-                            </li>
+                        <ul id="comment-ul">
+
                         </ul>
                     </div>
                 </div>
@@ -82,6 +48,10 @@
 <script type="text/javascript" src="assets/js/common/common.js?v=20150923"></script>
 <script type="text/javascript" src="assets/js/comment/comment-list.js"></script>
 <!-- Path to your app js-->
-
+<script type="text/javascript">
+    $(function () {
+        commentList.init();
+    });
+</script>
 </body>
 </html>
