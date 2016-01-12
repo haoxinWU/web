@@ -15,10 +15,14 @@
     line-height: 45px;
 
 }
+.main-container .nav{
 
+}
 .main-container .nav .table-button{
     border-right: 1px solid #D9D9D9;
     border-bottom: 1px solid #D9D9D9;
+    width: 33.3333333333332%;
+    margin-left: 0px;
 }
 .main-container .nav .table-button.active{
     background: #ffffff;
@@ -40,7 +44,9 @@
     line-height: 15px;
     color: #ffffff;
 }
-
+.registration-list{
+    width: 100%;
+}
 /*等位*/
 .registration-list li{
     height: 80px;
