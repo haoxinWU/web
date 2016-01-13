@@ -154,3 +154,17 @@
     color: #9B9B9B;
     line-height: 14px;
 }
+
+.fix-bottom-button{
+    height: 65px;
+    background: #FFFFFF;
+}
+.fix-bottom-button a{
+    width: 100%;
+    text-align: center;
+}
+.fix-bottom-button .toolbar-inner{
+    height: initial;
+    bottom: 10px;
+    top: initial;
+}
