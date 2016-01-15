@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="assets/font/iconfont.css?v=20150923.1.1.1.1">
     <link rel="stylesheet" href="assets/css/main.css?v=20150923.1.1">
     <link rel="stylesheet" href="assets/css/common/common.css?v=2015092.1.1.2">
+    <link rel="stylesheet" href="assets/css/common/loading.css">
     <link rel="stylesheet" href="assets/css/comment/comment.css">
 
     <!-- raty lib -->
@@ -56,9 +57,10 @@
                         </ul>
                     </div>
                 </div>
+                <div id="alert-tip" class="alert-tip" style="bottom: 80px; display: none;"></div>
                 <div class="comment-button toolbar tabbar tabbar-labels">
                     <div class="toolbar-inner theme-orange">
-                        <a href="javascript:void(0);" class="button button-big button-fill">提交评价</a>
+                        <a href="javascript:void(0);" class="button button-big button-fill submit-comment">提交评价</a>
                     </div>
                 </div>
             </div>
@@ -71,11 +73,16 @@
 <script type="text/javascript" src="js/framework7.js?v=20150923"></script>
 <script type="text/javascript" src="assets/js/main.js?v=20150923"></script>
 <script type="text/javascript" src="assets/js/common/common.js?v=20150923"></script>
+<script type="text/javascript" src="assets/js/common/loading.js"></script>
 <script type="text/javascript" src="assets/js/comment/comment.js"></script>
 <!-- Path to your app js-->
 
 <!--raty-->
 <script type="text/javascript">
+
+    $(function () {
+        comment.init();
+    });
     rat('star1','result1',10);
     rat('star2','result2',1);
 
