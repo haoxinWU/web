@@ -1,0 +1,15 @@
+.toast {
+    font-size: 16px;
+    color: #ffffff;
+    line-height: 20px;
+    text-align: center;
+}
+
+#toast {
+    display: none;
+    position: fixed;
+    padding: 9px 15px;
+    background-color: #333;
+    z-index: 8000;
+    border-radius: 5px;
+}
