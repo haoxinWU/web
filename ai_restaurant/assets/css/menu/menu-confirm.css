@@ -10,8 +10,15 @@
     color: white;
     padding-left: 20px;
 }
-.confirm-toolbar .right{
+.confirm-toolbar .right.submit{
     background: #FF7900;
+    color: white;
+    margin-left: 0px;
+    text-align: center;
+    cursor: pointer;
+}
+.confirm-toolbar .right.success{
+    background: #cacbcc;
     color: white;
     margin-left: 0px;
     text-align: center;
