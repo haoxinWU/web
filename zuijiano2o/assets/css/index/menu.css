@@ -1,0 +1,28 @@
+.top {
+    padding-top: 10px;
+}
+.top .m_nav {
+    margin-top: 10px;
+    float: left;
+    width: 100%;
+}
+.top .m_nav img {
+    height: 44px;
+}
+
+.top .m_nav a {
+    width: 24%;
+    text-decoration: none;
+    height: 100px;
+    text-align: center;
+    float: left;
+    margin-top: 10px;
+}
+.top .m_nav a span {
+    width: 100%;
+    float: left;
+    line-height: 40px;
+    font-size: 14px;
+    color: #666666;
+    font-family: "Microsoft YaHei", Arial, Helvetica, sans-serif;
+}
