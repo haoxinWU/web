@@ -7,7 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="msapplication-tap-highlight" content="no" />
 
-  <title>最简微信管理后台 | 公众号信息编辑</title>
+  <title>RENAISSANCE | 接入详情</title>
 
 
   <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
@@ -17,15 +17,9 @@
   <link rel="stylesheet" href="bower_components/Waves/dist/waves.min.css">
   <link rel="stylesheet" href="bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.css">
 
-  <link rel="stylesheet" href="bower_components/jasny-bootstrap/dist/css/jasny-bootstrap.min.css">
   <link rel="stylesheet" href="js/selects/cs-select.css">
   <link rel="stylesheet" href="js/selects/cs-skin-elastic.css">
-  <link rel="stylesheet" href="bower_components/summernote/dist/summernote.css">
 
-  <link rel="stylesheet" href="js/notifications/ns-style-growl.css">
-  <link rel="stylesheet" href="js/notifications/ns-style-other.css">
-
-  <link rel="stylesheet" href="bower_components/smoke/dist/css/smoke.min.css">
   <link rel="stylesheet" href="bower_components/google-material-color/dist/palette.css">
     <script src="js/menu/modernizr.custom.js"></script>
 
@@ -78,23 +72,23 @@
               <li>
                 <a href="index.html"><i class="fa fa-home"></i>主页</a>
               </li>
-              <li class="active">
+              <li class="">
                 <a href="index.html" aria-expanded="true"><i class="fa fa-tachometer"></i>数据仪表盘<span class="fa arrow"></span></a>
                 <ul class="gn-submenu collapse" aria-expanded="true">
-                  <li><a class="active" href="index.html">数据统计</a></li>
+                  <li><a href="index.html">数据统计</a></li>
                   <li><a href="dashboard_2.html">今日接口统计</a></li>
                   <li><a href="dashboard_3.html">数据预测</a></li>
                 </ul>
               </li>
-              <li>
+              <li class="active">
                 <a href="typography.html" aria-expanded="false">
                   <i class="fa fa-gears (alias)"></i>公众号管理
                   <span class="fa arrow"></span>
                 </a>
                 <ul class="gn-submenu collapse" aria-expanded="false">
-                  <li><a href="edit-.html">编辑信息</a></li>
-                  <li><a href="mailbox.html">接入详情</a></li>
-                  <li><a href="email-inbox.html">菜单设置</a></li>
+                  <li><a href="edit-wechat-account.html">编辑信息</a></li>
+                  <li><a class="active" href="wechat-develop-detail.html">接入详情</a></li>
+                  <li><a href="menu-config.html">菜单设置</a></li>
                   <li><a href="email-inbox.html">积分设置</a></li>
                 </ul>
               </li>
@@ -227,162 +221,44 @@
       <div class="row">
         <div class="col-lg-12">
           <div class="page-header">
-            <h2>公众号信息编辑</h2>
+            <h2>接入详情</h2>
             <ol class="breadcrumb">
               <li><a href="index.html">主页</a></li>
               <li class="">公众号管理</li>
-              <li class="active">信息编辑</li>
+              <li class="active">接入详情</li>
             </ol>
           </div>
         </div>
       </div>
-      <!-- content-->
+      <!-- 主要内容-->
       <div class="row">
         <div class="col-lg-12">
           <div class="content-box big-box box-shadow">
-            <!-- 基本信息-->
-            <h4><strong>基本信息</strong></h4>
             <form class="content-form form-horizontal">
               <div class="form-group">
-                <label for="accountName" class="col-sm-2 control-label">公众号名称</label>
+                <label class="col-sm-2 control-label">接入地址</label>
                 <div class="col-sm-8">
-                  <input type="text" class="form-control material" id="accountName" placeholder="公众号名称">
+                  <div class="well well-sm">http://weixin.mywntc.com/2/api</div>
+                  <p class="help-text">微信公众号的接入地址.</p>
                 </div>
               </div>
               <div class="form-group">
-                <label for="original" class="col-sm-2 control-label">原始ID</label>
+                <label class="col-sm-2 control-label">TOKEN</label>
                 <div class="col-sm-8">
-                  <input type="text" class="form-control material" id="original" placeholder="原始id">
+                  <div class="well well-sm">aTxTxXaaeFRDa6AfFASLJLjl81FtdT11EiXx1</div>
+                  <p class="help-text">微信公众号的接入验证TOKEN.</p>
                 </div>
               </div>
               <div class="form-group">
-                <label class="col-sm-2 control-label">公众号类型</label>
+                <label class="col-sm-2 control-label">接入状态</label>
                 <div class="col-sm-8">
-                  <label class="radio-inline">
-                    <input type="radio" name="accountType" value="1" checked> 普通订阅号
-                  </label>
-                  <label class="radio-inline">
-                    <input type="radio" name="accountType" value="2"> 认证订阅号
-                  </label>
-                  <label class="radio-inline">
-                    <input type="radio" name="accountType" value="3"> 普通服务号
-                  </label>
-                  <label class="radio-inline">
-                    <input type="radio" name="accountType" value="4"> 认证服务号
-                  </label>
-                </div>
-              </div>
-
-            </form>
-
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-lg-12">
-          <div class="content-box big-box box-shadow">
-            <!-- -->
-            <h4><strong>接口高级信息</strong></h4>
-            <form class="content-form form-horizontal">
-              <div class="form-group">
-                <label class="col-sm-2 control-label">APPID</label>
-                <div class="col-sm-8">
-                  <input type="text" class="form-control material" placeholder="appid">
-                </div>
-              </div>
-              <div class="form-group">
-                <label class="col-sm-2 control-label">secret</label>
-                <div class="col-sm-8">
-                  <input type="text" class="form-control material" placeholder="secret">
-                </div>
-              </div>
-              <div class="form-group">
-                <label class="col-sm-2 control-label">EncodingAESKey </label>
-                <div class="col-sm-8">
-                  <input type="text" class="form-control material" placeholder="EncodingAESKey">
+                  <span class="label label-default hide">未接入</span>
+                  <span class="label label-primary">成功接入</span>
                 </div>
               </div>
             </form>
           </div>
         </div>
-      </div>
-      <!-- 二维码头像-->
-      <div class="row">
-        <div class="col-lg-12">
-          <div class="content-box big-box box-shadow">
-            <!-- -->
-            <h4><strong>其他额外信息</strong></h4>
-            <form class="content-form form-horizontal">
-              <div class="form-group">
-                <label class="col-sm-2 control-label">二维码</label>
-                <div class="col-sm-8">
-                  <div class="fileinput fileinput-new input-group" data-provides="fileinput">
-                    <span class="input-group-addon btn btn-default btn-file">
-                      <span class="fileinput-new">
-                        <i class="fa fa-file"></i> 选择文件
-                      </span>
-                      <span class="fileinput-exists">修改</span>
-                      <input type="file" name="accountQrcode" placeholder="请设置公众号的二维码">
-                    </span>
-                    <div class="form-control" data-trigger="fileinput">
-                      <span class="fileinput-filename"></span>
-                    </div>
-                    <a href="form-elements.html#" class="input-group-addon btn btn-default fileinput-exists" data-dismiss="fileinput">移除</a>
-                  </div>
-                </div>
-              </div>
-              <div class="form-group">
-                <label class="col-sm-2 control-label">头像</label>
-                <div class="col-sm-8">
-                  <div class="fileinput fileinput-new input-group" data-provides="fileinput">
-                    <span class="input-group-addon btn btn-default btn-file">
-                      <span class="fileinput-new">
-                        <i class="fa fa-file"></i> 选择文件
-                      </span>
-                      <span class="fileinput-exists">修改</span>
-                      <input type="file" name="accountLogo" placeholder="请设置公众号的头像">
-                    </span>
-                    <div class="form-control" data-trigger="fileinput">
-                      <span class="fileinput-filename"></span>
-                    </div>
-                    <a href="form-elements.html#" class="input-group-addon btn btn-default fileinput-exists" data-dismiss="fileinput">移除</a>
-                  </div>
-                </div>
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-lg-12">
-          <div class="content-box big-box box-shadow">
-            <!-- -->
-            <h4><strong>修改备注</strong></h4>
-            <form class="content-form form-horizontal">
-              <div class="form-group">
-                <label class="col-sm-2 control-label">本次修改说明</label>
-                <div class="col-sm-8">
-                  <textarea class="form-control" rows="3"></textarea>
-                </div>
-              </div>
-
-            </form>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-lg-12">
-          <div class="content-box big-box box-shadow">
-            <form class="content-form form-horizontal">
-                <a href="javascript:void(0);" class="btn progress-button btn-block btn-warning text-uppercase waves waves-button" id="save-config">提交保存</a>
-            </form>
-
-          </div>
-        </div>
-      </div>
-
-      <!--Welcome notification-->
-      <div id="welcome"></div>
       <!--Footer-->
       <div class="footer">© 2015 Copyright</div>
     </div>
@@ -501,31 +377,14 @@
   <!--Selects-->
   <script src="js/selects/selectFx.js"></script>
 
-  <!--Jasny Bootstrap-->
-  <script src="bower_components/jasny-bootstrap/dist/js/jasny-bootstrap.min.js"></script>
 
-  <!--Notification-->
-  <script src="js/notifications/notificationFx.js"></script>
-
-  <!-- smoke -->
-  <script src="bower_components/smoke/dist/js/smoke.min.js"></script>
     <!--Custom Scripts-->
   <script src="js/common.js"></script>
 
-  <script type="text/javascript">
-    $(function () {
-      $('.fileinput').fileinput();
 
-      $("#save-config").on('click', function () {
-        this.disable;
-        $.smkAlert({
-          text: '提交成功...',
-          type: 'success',
-          time: 3
-        });
-      });
-    });
-  </script>
+
+
+
 </body>
 
 </html>
