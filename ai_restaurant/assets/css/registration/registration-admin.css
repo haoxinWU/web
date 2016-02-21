@@ -13,7 +13,7 @@
     height: 45px;
     background: #ebedf0;
     line-height: 45px;
-
+    border-top: 1px solid #D9D9D9;
 }
 .main-container .nav{
 
@@ -34,14 +34,14 @@
 .main-container .nav .table-button em{
     position: absolute;
     font-style: normal;
-    width: 15px;
-    height: 15px;
+    width: 20px;
+    height: 20px;
     background: #FD7C21;
-    border-radius: 15px;
-    font-size: 6px;
+    border-radius: 20px;
+    font-size: 10px;
     font-weight: 100;
     text-align: center;
-    line-height: 15px;
+    line-height: 20px;
     color: #ffffff;
 }
 .registration-list{

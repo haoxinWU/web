@@ -1,0 +1,32 @@
+{
+  "code" : 200,
+  "msg" : "success",
+  "data" : [
+    {
+      "id" : 1,
+      "name" : "搜索",
+      "href" : "index.html",
+      "isParent" : true,
+      "icon" : "fa fa-th",
+      "children" : [
+        {
+          "id" : 2,
+          "name" : "管理台1",
+          "href" : "home.html"
+        },
+        {
+          "id" : 3,
+          "name" : "管理台2",
+          "href" : "home.html"
+        }
+      ]
+    },{
+      "id" : 2,
+      "name" : "日历",
+      "href" : "home.html",
+      "isParent" : true,
+      "icon" : "fa fa-th",
+      "children" : null
+    }
+  ]
+}

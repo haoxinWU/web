@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="msapplication-tap-highlight" content="no" />
+
+  <title> | 后台登录</title>
+
+
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="bower_components/Waves/dist/waves.min.css">
+  <!-- lib -->
+  <link rel="stylesheet" href="bower_components/smoke/dist/css/smoke.min.css">
+
+
+  <link rel="stylesheet" href="css/style.css">
+
+  <link rel="icon" href="img/favicon.ico" type="image/x-icon" />
+  <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
+  <!--[if lt IE 9]>
+      <script src="bower_components/html5shiv/dist/html5shiv.min.js"></script>
+      <script src="bower_components/respondJs/dest/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+
+<!--Preloader-->
+<div id="preloader" class="preloader table-wrapper">
+  <div class="table-row">
+    <div class="table-cell">
+      <div class="la-ball-scale-multiple la-3x">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </div>
+  </div>
+</div>
+  <div class="table-wrapper">
+    <div class="table-row">
+      <div class="table-cell text-center">
+        <div class="login i-block">
+          <div class="content-box">
+            <div class="light-blue-bg biggest-box">
+
+              <h1 class="zero-m text-uppercase">欢迎您</h1>
+
+            </div>
+            <div class="big-box text-left login-form">
+              <h4 class="text-center">登录</h4>
+              <form name="login">
+                <div class="form-group">
+                  <input type="text" name="username" class="form-control material" id="username" placeholder="请输入用户名">
+                </div>
+                <div class="form-group">
+                  <input type="password" name="password" class="form-control material" id="password" placeholder="请输入密码">
+                </div>
+
+                <button type="button" id="login" class="btn btn-block btn-info text-uppercase waves">登录</button>
+
+              </form>
+              <a href="login.html" class="green i-block">忘记密码?</a>
+              <p>还没有账号?</p>
+              <a href="registration.html" class="btn btn-block btn-warning text-uppercase waves waves-button">注册账号</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- components-->
+  <script src="assets/js/components/response.js"></script>
+  <script src="assets/js/components/StringUtils.js"></script>
+
+  <script src="bower_components/jquery/dist/jquery.min.js"></script>
+  <script src="bower_components/metisMenu/dist/metisMenu.min.js"></script>
+  <script src="bower_components/Waves/dist/waves.min.js"></script>
+  <script src="bower_components/moment/min/moment.min.js"></script>
+  <script src="bower_components/jquery.nicescroll/jquery.nicescroll.min.js"></script>
+  <script src="bower_components/slimScroll/jquery.slimscroll.min.js"></script>
+  <script src="bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.js"></script>
+  <script src="bower_components/cta/dist/cta.min.js"></script>
+
+  <!--Menu-->
+  <script src="js/menu/classie.js"></script>
+  <script src="js/menu/gnmenu.js"></script>
+  <!--Selects-->
+  <script src="js/selects/selectFx.js"></script>
+
+  <!-- lib-->
+  <script src="bower_components/smoke/dist/js/smoke.min.js"></script>
+  <!-- app -->
+  <script src="assets/js/app.js"></script>
+  <script src="assets/js/login/login.js"></script>
+
+  <!-- customer-->
+  <script src="js/common.js"></script>
+
+  <script>
+    //Waves effect on buttons
+    Waves.attach('.waves', ['waves-float']);
+    Waves.init();
+    login.init();
+  </script>
+
+</body>
+
+</html>
