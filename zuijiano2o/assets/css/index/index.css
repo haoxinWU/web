@@ -15,11 +15,16 @@
     height: 14px;
     font-size: 14px;
     line-height: 14px;
+    color: #999999;
 }
 
 .top-alert .pull-left{
     padding-left: 10px;
 }
 .top-alert .pull-right{
-    padding-right: 10px;
+    padding-right: 20px;
+}
+
+.top.menu .m_nav span{
+    color: #333333;
 }

@@ -1,0 +1,424 @@
+<!Doctype html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0"/>
+    <title>一元许愿</title>
+    <link rel="shortcut icon" type="image/x-icon" href="static/one_wap/images/icon/icon_72.png">
+    <link rel="icon" type="image/x-icon" href="static/one_wap/images/icon/icon_72.png">
+
+
+    <script>
+        !function (w) {
+            // 地图webview丢失登录态hack;
+            w.ONEBAIDU = window.ONEBAIDU || {};
+            ONEBAIDU.mt = '';
+            function deParams(queryString) {
+                if (queryString.indexOf('?') == 0) {
+                    queryString = queryString.substr(1);
+                }
+                var map = {}
+                var queries = queryString.split('&');
+                queries.forEach(function (item) {
+                    var temp = item.split('=');
+                    map[temp[0]] = temp[1];
+                });
+                return map;
+            }
+
+            var map = deParams(location.search);
+            var isInMap = !!(map.ua && map.ua.trim() === '1-1-1-map');
+            ONEBAIDU.isInMap = isInMap;
+            if (!ONEBAIDU.mt && isInMap && !map.doublereload) {
+                location.href = location.href + '&doublereload=1';
+            }
+            w['statisticStartTime'] = +new Date;
+            w['statisticPageId'] = '1baidu_productDetail_h5';
+        }(window);
+    </script>
+
+    <link rel="stylesheet" type="text/css" href="static/one_wap/pkg/common_702dd5c.css"/><link rel="stylesheet" type="text/css" href="static/one_wap/pkg/detail.css"/></head>
+<body>
+
+<script>
+    window['statisticWhiteScreenEndTime'] = +new Date;
+</script>
+<div
+        id="loading"
+        class="page-loading"
+        ontouchmove="return false;">
+    <img src="static/one_wap/images/loading2.gif">
+</div>
+<article class="wrapper" id="wrapper">
+    <header class="page-header" id="header" v-if="!envLightapp">
+        <a
+                class="control control-left"
+                href="//1.baidu.com">返回</a>
+        <span v-text="pageTitle">页面加载中...</span>
+        <!--<a-->
+                <!--class="control control-right"-->
+                <!--href="javascript:;"-->
+                <!--id="shareBtn">分享</a>-->
+    </header>
+    <div
+            v-if="announcement_text"
+            class="alert alert-warning text-large text-center" style="border:0;">
+        <span v-text="announcement_text" v-on="click: triggerAnnouncement"></span>
+    </div>
+    <section class="goods_imgInfo" id="imgInfo" style="height: 220px">
+        <b v-if="is_fountain != '1'"><span v-text="picUrlSelectedIndex">1</span>/<i
+                v-text="head_picurl.length">3</i></b>
+        <div class="swiper-container">
+            <div class="swiper-wrapper" v-if="is_fountain != '1'">
+                <div class="swiper-slide" v-repeat="head_picurl">
+                    <div class="swiper-lazy-preloader"></div>
+                    <img
+                            src='static/one_wap/images/blank_a5779c6.png'
+                            class="swiper-lazy"
+                            data-src="{{$value}}"
+                            />
+                </div>
+            </div>
+            <img
+                    v-if="is_fountain == '1'"
+                    v-attr="src: head_picurl[0]"
+                    class="img-loading"
+                    onload="this.classList.remove('img-loading')"
+                    src="static/one_wap/images/blank_a5779c6.png"/>
+        </div>
+        <div class="description" v-if="category != 7 && is_fountain !== '1'">
+            <h1 v-text="product_name"></h1>
+            <p v-text="short_title"></p>
+        </div>
+    </section>
+    <div v-if="category == 7">
+        <div class="goods_crowdfunding">
+            <h1>
+                <span v-text="'【第' + crowdfunding_current_period + '期】'"></span>
+                <span v-text="product_name"></span>
+            </h1>
+            <div
+                    class="good_info"
+                    v-if="online_status == 3 || (crowdfunding_current_period > crowdfunding_total_period)">
+                <span>活动已结束</span>&nbsp;<span v-text="'结束时间：' + ((category == 7) ? finish_time : end_time)"></span>
+            </div>
+            <div v-if="crowdfunding_current_period <= crowdfunding_total_period || online_status != 3">
+                <div class="good_info clearfix">
+                    <div class="progress">
+                        <div
+                                class="progress-bar progress-bar-danger"
+                                v-style="width: (crowdfunding_current_period_number/crowdfunding_period_user) * 100 + '%'">
+                        </div>
+                    </div>
+                    <div class="pull-left">
+                        总需<strong v-text="crowdfunding_period_user"></strong>
+                        人次/剩余<strong v-text="crowdfunding_period_user - crowdfunding_current_period_number"></strong>
+                    </div>
+<span
+        v-if="is_login == 1 && participateThisPeriod>0"
+        class="pull-right"
+        >
+你已许愿<strong v-text="participateThisPeriod"></strong>次</span>
+                </div>
+            </div>
+            <ul class="good_addtion" id="detailController">
+                <li
+                        v-repeat="tabData"
+                        v-text="$value"
+                        v-class="active : (tabindex == $index)"
+                        v-on="click : switcher($index)">
+                </li>
+            </ul>
+        </div>
+        <div class="list-groups" v-show="tabindex == 1">
+            <div v-repeat="item : crowdfundinglottery" class="group-item">
+                <div
+                        class="title"
+                        v-text=" '（第' + item.period + '期） 揭晓时间' + item.lottery_time"></div>
+                <div class="group-body clearfix">
+                    <img
+                            class="group-img"
+                            src="static/one_wap/images/blank_a5779c6.png"
+                            v-attr="src : '//1.baidu.com/himg_proxy/sys/portrait/item/' + item.sign">
+                    <div class="group-info">
+                        <p><span class="text-gray">获奖者：</span><span v-text="item.user_name"></span></p>
+                        <p><span class="text-gray">幸运号：</span><span v-text="item.lottery_code"></span></p>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center alert bg-white text-gray" v-html=" tabConfig[1] | loadedTipFilter"></div>
+        </div>
+        <div class="list-groups" v-show="tabindex == 2">
+            <div v-repeat="item : crowdfunding" class="group-item">
+                <div
+                        class="title"
+                        v-show="!item.hideTitle">
+                    <span v-text=" '第' + item.period + '期参与记录' "></span>
+                </div>
+                <div
+                        class="sub-title text-gray"
+                        v-show="!item.hideTime"
+                        v-text="item.create_time.split(' ')[0]"></div>
+                <div
+                        class="group-body clearfix">
+                    <img
+                            class="group-img"
+                            src="static/one_wap/images/blank_a5779c6.png"
+                            v-attr="src : '//1.baidu.com/himg_proxy/sys/portrait/item/' + item.sign">
+                    <div class="group-info">
+                        <p>
+                            <span class="text-gray" v-text="item.user_name"></span>
+                            <span v-text="item.phone"></span></p>
+                        <p>
+                            <span class="text-gray">许愿<b v-text="item.order_count"></b>次</span>
+                            <span v-text="item.create_time.split(' ')[1]"></span></p>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center alert bg-white text-gray" v-html=" tabConfig[2] | loadedTipFilter"></div>
+        </div>
+    </div>
+    <div v-if="category != 7">
+        <div
+                v-if="is_fountain !== '1'"
+                class="goods_price">
+            <div class="price">
+                <span v-html="price | priceFilter"></span>
+<span class="express" v-if="product_type == 1">
+获取方式-短信下发</span>
+<span class="express" v-if="product_type == 2">
+卖家包邮</span>
+                <div v-if="online_status != 1 && online_status != 3"
+                     class="time" v-html="left_time | timerFilter">
+                </div>
+            </div>
+        </div>
+        <div
+                v-if="is_fountain == '1'"
+                v-text="product_name"
+                class="alert text-xs-large"
+                style="padding: 1rem 1.4rem 2rem"
+                >
+        </div>
+    </div>
+    <div class="goods_detail" v-show="tabindex == 0">
+        <div v-if="lotteryinfo.length" class="alert text-center">
+            <h2>中奖公告</h2>
+            <table width="100%">
+                <tr>
+                    <th colspan="2" v-text="product_name"></th>
+                </tr>
+                <tr>
+                    <th class="table-header">开奖时间</th>
+                    <td v-text="lottery_time"></td>
+                </tr>
+                <tr>
+                    <th class="table-header">中奖号码</th>
+                    <th class="table-header">中奖人电话</th>
+                </tr>
+                <tr v-repeat="item : lotteryinfo">
+                    <td v-text="item.code"></td>
+                    <td v-text="item.phone"></td>
+                </tr>
+            </table>
+        </div>
+        <div v-if="specification.length" class="text-center alert">
+            <h2>规格参数</h2>
+            <table width="100%">
+                <tr v-repeat="item : specification">
+                    <th class="text-right" width="40%"><span v-html="item.key"></span></th>
+                    <td><span v-html="item.info"></span></td>
+                </tr>
+            </table>
+        </div>
+        <img
+                v-repeat="h5_description"
+                v-attr="src : $value"
+
+                width="100%"
+                class="img-loading display-block"
+                src='static/one_wap/images/blank_a5779c6.png'
+                onload="this.classList.remove('img-loading')"/>
+        <div v-html="activity_description" class="activity-description"></div>
+        <div v-if="is_fountain == '1' && merchant" class="merchant-groups">
+            <p class="alert text-large">离你较近的门店</p>
+            <div class="group-item clearfix">
+                <div class="group-body">
+                    <div class="title">
+                        <span v-text="merchant.storename"></span>
+<span class="text-gray text-small coords" v-if="merchant.distance">
+<img
+        v-attr="src: 'static/one_wap/images/icon-coords.gif'"
+        class="icon"
+        src="static/one_wap/images/blank_a5779c6.png">
+{{merchant.distance}}</span>
+                    </div>
+                    <div class="text-small text-gray">{{merchant.address}}</div>
+                </div>
+                <div class="group-footer">
+                    <a class="btn"
+                       href="{{merchant | parseMapUrlFilter}}">
+                        <img
+                                v-attr="src: 'static/one_wap/images/icon-check.gif'"
+                                class="icon"
+                                src="static/one_wap/images/blank_a5779c6.png">
+                        查看地图</a>
+                    <a class="btn border-left-gray" href="tel:{{merchant.phone}}">
+                        <img
+                                v-attr="src: 'static/one_wap/images/icon-phone.gif'"
+                                class="icon"
+                                src="static/one_wap/images/blank_a5779c6.png">
+                        拨打电话</a>
+                </div>
+            </div>
+            <p class="alert text-large">
+                <a style="color:#0a55bc"
+                   href="{{merchant | parseMerchantListUrlFilter}}">
+                    查看全部</a>
+            </p>
+            <div class="img-loading" v-if="merchant.default" v-transition="expand"></div>
+        </div>
+        <p
+                v-if="category == 7"
+                class="text-center alert text-large text-gray"><a
+                href="http://co.baifubao.com/content/mywallet/h5/1_baidu/crowdfunding.html">一元许愿规则</a></p>
+    </div>
+    <div class="goods_foot">
+        <a
+                v-on="click : transform"
+                v-class="btn-disabled : !btnAction"
+                class="text-xs-large btn btn-red btn-block"
+                href="javascript:;">
+<span v-text="online_status | btnTextFilter">
+努力加载中...</span>
+        </a>
+    </div>
+</article>
+<span
+        id="back2top"
+        class="back-to-top"
+        style="display: none">
+</span>
+<script src="static/js/bdp.min.js"></script>
+
+</body><script type="text/javascript" src="static/one_wap/widget/vue/vuep_2e9a4ed.js"></script>
+<script type="text/javascript" src="static/one_wap/widget/jDialog/jDialog_30a576d.js"></script>
+<script type="text/javascript" src="static/one_wap/js/modules/goods_fdf2b5d.js"></script>
+<script type="text/javascript">!function(){    Vue.util.extend(ONEBAIDU, {
+    // 用户相关
+    is_login: '0',
+    user_level: '',
+    pass_phone: '',
+    // 基本信息
+    end_time: '2016-02-29 23:59:59',
+    finish_time: '0000-00-00 00:00:00',
+    user_allow: '1',
+    online_status: '2',
+    product_id: '8e4368b5f50bfcad146897b5',
+    product_name: '北京烤鸭一枚',
+    short_title: '北京烤鸭',
+    price: '1',
+    category: '8',
+    // 图片描述
+    head_picurl: eval('["mock/image/image1.jpg","mock/image/image3.jpg","mock/image/image2.jpg",]'),
+    h5_description: eval('["mock/image/image1.jpg","mock/image/image3.jpg","mock/image/image2.jpg",]'),
+    // 中奖信息、类型等多项
+    category_type: '1',
+    specification: eval('[]'),
+    lotteryinfo: eval('[]'),
+    lottery_time: '',
+    participateThisPeriod: '',
+    product_type: '1',
+    left_time: '1天3小时10分7秒',
+    // 众筹商品
+    crowdfunding_current_period: parseInt(''),
+    crowdfunding_total_period: parseInt(''),
+    crowdfunding_period_user: parseInt(''),
+    crowdfunding_current_period_number: parseInt(''),
+    // 源泉商品
+    is_fountain: '',
+    fountain_coupon_participate: '',
+    activity_description: "",
+    activity_no: '',
+    // 默认门店
+    merchant: {
+        storename: '数据获取中...'
+        , address: '数据获取中...'
+        , location: ''
+        , phone: ''
+        , default: true
+    },
+    // 公告
+    announcement_url: '',
+    announcement_text: '本商品每人仅限一枚',
+    // 贴吧产品
+    tieba_url: '',
+    tieba_member: '',
+    /* 自定义成员变量 */
+    // 默认选中3个头图中第一个
+    picUrlSelectedIndex: 1,
+    // 往期中奖
+    crowdfundinglottery: [],
+    // 参与记录
+    crowdfunding: [],
+    // 默认选中tab
+    tabindex: 0,
+    tabData: ['产品详情', '往期中奖', '参与记录']
+});
+    /* ============================== 数据预处理 ============================== */
+    !function (d) {
+        // 减少图片加载
+        var k = 'h5_description';
+        var hps = d[k];
+        var l = hps.length;
+        d.h5DescriptionBackup = hps.slice(1, l);
+        d[k] = [hps.shift()];
+    }(ONEBAIDU);
+}();</script>
+<script src="static/js/statistic.min.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var _tjtag1 = 'wapdetail';
+        var _tjtag2 = '_0';
+        var _tjtag3 = '_';
+        var _tjtag4 = '_';
+        var _tjtag5 = '_8e4368b5f50bfcad146897b5';
+        var _tjtag6 = '_';
+
+        window._oneq = [];
+        _oneq.push(['_tracePage']);
+        _oneq.push(['_page', _tjtag1]);
+        _oneq.push(['_loginlv', _tjtag2.substr(1)]);
+        _oneq.push(['_from', _tjtag3.substr(1)]);
+        _oneq.push(['_icode', _tjtag4.substr(1)]);
+        _oneq.push(['_pid', _tjtag5.length != 1 ? _tjtag5.substr(1) : _tjtag6.substr(1)]);
+        _oneq.push(['_device', '_wap'.substr(1)]);
+        _oneq.push(['_ext', '_{\x22tieba_member\x22:null}'.substr(1)]);
+        _oneq.push(['_stime', '_1456663792263579'.substr(1)]);
+        _oneq.push(['_ctime', '_38586'.substr(1)]);
+
+        window['_biq'] = window['_biq'] || [];
+        window['_biq'].push(_oneq);
+
+        var _hmt = _hmt || [];
+        _hmt.push(['_setAccount', 'dcef1dfa21528cd8e539be0e3f804c18']);
+        var _tag = _tjtag1 + _tjtag2 + _tjtag3 + _tjtag4;
+
+        _tag = _tag + _tjtag5;
+
+        _hmt.push(['_setCustomVar', 1, 'loginlv', _tag, 3]);
+        var hm = this.createElement("script");
+        var oe = this.createElement("script");
+        oe.src = "static/one_wap/js/modules/onebi.js";
+        var s = this.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+        s.parentNode.insertBefore(oe, s);
+        // jump to baifubao.com
+        var img = new Image;
+        img.onload = img.onerror = function () {
+            img = null;
+        };
+    });
+</script>
+
+</html>

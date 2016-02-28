@@ -1,0 +1,220 @@
+html {
+    background-color:#4a4a4a
+}
+body:before {
+    display:block;
+    position:absolute;
+    top:100px;
+    text-align:center;
+    content:'该服务由百度钱包为您提供';
+    color:#ddd;
+    width:100%
+}
+.brand-dashboard {
+    overflow:hidden;
+    position:relative;
+    z-index:10;
+    background:#fff no-repeat center url(../images/home/brand_98d2d9c.gif);
+    background-size:100% 100%;
+    height:150px
+}
+.nav {
+    width:100%;
+    z-index:1;
+    top:0;
+    left:0;
+    position:relative
+}
+.nav-in {
+    -webkit-transform:scaleY(1)!important;
+    opacity:1!important
+}
+.nav-transition {
+    -webkit-transform:scaleY(0);
+    opacity:0;
+    -webkit-transition:all ease-out .3s
+}
+.nav-body {
+    background-color:#fff;
+    display:-webkit-box;
+    position:relative;
+    z-index:2
+}
+.nav-body .nav-item:first-child {
+    position:relative
+}
+.sub-nav {
+    background-color:rgba(255,255,255,.8);
+    -webkit-transition:.5s ease-out -webkit-transform;
+    -webkit-transform:translateY(0);
+    z-index:1;
+    text-align:center;
+    display:-webkit-box;
+    width:100%;
+    position:absolute
+}
+.nav .pipe {
+    color:#ddd;
+    font-size:.857rem;
+    position:absolute;
+    right:0;
+    top:.7em
+}
+.nav-item {
+    padding-top:.6em;
+    display:block;
+    -webkit-box-flex:1;
+    text-align:center
+}
+.sub-nav .nav-item {
+    font-size:.857em;
+    padding:.6em 0
+}
+.nav-item.active {
+    color:#e94643
+}
+.nav-item.active .nav-underline {
+    background:#e94643
+}
+.nav-underline {
+    height:2px;
+    margin:.6em auto 0;
+    overflow:hidden;
+    display:block;
+    background:#fff
+}
+.user-info {
+    line-height:44px;
+    height:44px;
+    padding:0 1rem;
+    width:100%;
+    position:absolute;
+    bottom:0;
+    color:#fff
+}
+.user-info .desc {
+    padding-left:.5rem;
+    overflow:hidden
+}
+.nav-avatar {
+    width:2.2rem;
+    border-radius:50%;
+    overflow:hidden;
+    margin-top:.35rem;
+    position:relative;
+    top:.2em
+}
+.user-info .notify {
+    background:#e94643;
+    display:block;
+    width:9px;
+    height:9px;
+    line-height:0;
+    overflow:hidden;
+    border-radius:9px;
+    position:absolute;
+    left:11%;
+    top:.3rem
+}
+.extra-link {
+    position:absolute;
+    right:1rem;
+    top:0
+}
+.translate-dashboard {
+    position:relative;
+    min-height:480px
+}
+.product-groups {
+    -webkit-transition-duration:0s;
+    -webkit-transition-timing-function:ease-in-out;
+    -webkit-transition-property:-webkit-transform,opacity;
+    position:absolute;
+    width:100%;
+    height:100%;
+    left:0;
+    top:0
+}
+.product-groups .group-item {
+    clear:both;
+    position:relative;
+    min-height:340px;
+    display:block;
+    opacity:1
+}
+.product-groups .thumbnail {
+    display:block;
+    width:100%;
+    height:100%;
+    background-color:#fff
+}
+.product-groups .solgan {
+    position:absolute;
+    left:1.5em;
+    top:0
+}
+.product-groups .thumbnail img,.product-groups .thumbnail .img {
+    display:block
+}
+.product-groups .thumbnail .img {
+    background:no-repeat center;
+    background-size:cover
+}
+.product-groups .caption {
+    padding:1em;
+    position:absolute;
+    width:100%;
+    background-color:rgba(255,255,255,.95);
+    bottom:0
+}
+.product-groups .btn {
+    margin-top:3px
+}
+.group-item .page-index {
+    position:absolute;
+    right:.5rem;
+    top:.5rem;
+    color:#fff
+}
+.product-groups .mask {
+    display:none;
+    background-color:rgba(0,0,0,.6);
+    position:absolute;
+    width:100%;
+    height:100%;
+    left:0;
+    top:0
+}
+.group-item.thumbnail-mode .mask {
+    display:block
+}
+.group-item.thumbnail-mode .solgan {
+    display:none
+}
+.group-item.thumbnail-mode .caption {
+    display:none
+}
+.sell-out {
+    width:125px;
+    position:absolute;
+    right:25px;
+    bottom:96px;
+    z-index:10
+}
+.footer {
+    color:#ccc;
+    padding-top:.2rem;
+    text-align:center
+}
+.qianbao-small-logo {
+    width:1em;
+    -webkit-transform:translateY(3px)
+}
+.view-in {
+    -webkit-transform:translateX(0) translateZ(0);
+    opacity:1
+}
+.view-out {
+    -webkit-transform:translateX(100%) translateZ(0);
+    opacity:0
+}

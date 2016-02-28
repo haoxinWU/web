@@ -1,0 +1,869 @@
+<!doctype html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0"/>
+    <meta name="keywords" content="百度钱包，百度钱包一分钱，一分钱专享，百度一分钱专享，1分钱专享，百度一分钱，百度1分钱，百度钱包1分钱，1分钱活动，百度1分钱活动"/>
+    <meta name="description"
+          content="百度钱包1分钱专享，依托百度钱包支付能力，给会员提供实体和虚拟福利，新用户1分钱超值活动，老用户1分钱抽奖，给予用户最直接的利益。"/>
+    <title>百度钱包&nbsp;－&nbsp;优惠专享</title>
+    <link rel="shortcut icon" type="image/x-icon" href="static/one_wap/images/icon/icon_72.png">
+    <link rel="icon" type="image/x-icon" href="static/one_wap/images/icon/icon_72.png">
+
+
+    <script>
+        window['statisticStartTime'] = +new Date;
+        window['statisticPageId'] = 'oneBaiduHomePage';
+    </script>
+
+    <link rel="stylesheet" type="text/css" href="static/one_wap/pkg/common.css"/><link rel="stylesheet" type="text/css" href="static/one_wap/css/home_77d05cd.css"/></head>
+<body>
+
+<script>
+    window['statisticWhiteScreenEndTime'] = +new Date;
+</script>
+<div id="loading" class="page-loading" ontouchmove="return false;">
+    <img src="static/one_wap/images/loading2.gif">
+</div>
+<div class="wrapper">
+    <div
+            class="brand-dashboard"
+            id="brand"
+            >
+        <div class="user-info clearfix">
+            <a class="pull-left" href="home.html">
+                <img id="userAvatar" class="nav-avatar pull-left" src="mock/head.jpg"/>
+                <div class="desc">
+                    12***4@qq.com
+                </div>
+            </a>
+            <a class="extra-link" bi="head|5|cardcoupon" href="https://wallet.baidu.com/yqcard/content/mywallet/h5/sdk_page/sdk_quan_manager.html">
+                <img width="16" style="-webkit-transform: translateY(1px)" src="static/one_wap/images/home/icon-ticket_ec307bb.gif" />
+                我的优惠券<img
+                    width="6"
+                    src="static/one_wap/images/home/arrow-right_e14a2df.gif" />
+            </a>
+        </div>
+    </div>
+    <nav class="nav nav-transition" id="nav" data-disable="touchmove">
+        <div class="nav-body">
+<span
+        bi="head|1|recommend"
+        data-view="recommend"
+        class="nav-item active">
+今日推荐<span class="nav-underline"></span>
+</span>
+<span
+        bi="head|2|wapwish"
+        data-view="wapwish"
+        class="nav-item">
+1元许愿<span class="nav-underline"></span>
+</span>
+<span
+        bi="head|3|wapveteran"
+        data-view="wapveteran"
+        class="nav-item">
+会员福利<span class="nav-underline"></span>
+</span>
+        </div>
+    </nav>
+    <div class="translate-dashboard clearfix" id="translateWrapper"></div>
+</div>
+<span class="back-to-top" id="back2top" data-disable="touchmove"></span>
+<script type="text/html" id="productTemplate">
+    <div class="group-item">
+        <div class="mask"></div>
+        {{if is_sell_out}}
+        <img class="sell-out pass-through"
+             onclick="{{img_url}}"
+             src="static/one_wap/images/home/icon-sell-out_1401d63.png"/>
+        {{/if}}
+        {{if category==='7'}}
+        <img class="solgan" src="static/one_wap/images/home/solgan_839430a.png" width="14%" alt=""/>
+        {{/if}}
+        {{if ext_info.fountain_product == '1' }}
+        <img class="solgan" src="static/one_wap/images/home/solgan-ticket_2e06445.png" width="14%" alt=""/>
+        {{/if}}
+        <img
+                class="thumbnail pass-through"
+                onclick="{{img_url}}"
+                data-picurl="{{head_picurl}}"
+                src="static/one_wap/images/blank_a5779c6.png"/>
+
+        <div class="caption clearfix">
+            <a class="{{button_class}}"
+               data-hover="active"
+               href="javascript:;"
+               onclick="{{button_url}}">
+                {{button_text}}
+            </a>
+
+            <h4 class="title">
+                {{if category === '7'}}
+                {{ext_info.crowdfunding_current_period}}期 -
+                {{/if}}
+                {{short_title}}
+            </h4>
+
+            {{if category === '7'}}
+            <div class="progress" style="max-width: 12rem">
+                <div
+                        class="progress-bar progress-bar-danger"
+                        style="{{width}}">
+                </div>
+            </div>
+            <p class="price text-gray text-small">
+                总需{{ext_info.crowdfunding_period_user}}/还剩{{ext_info.crowdfunding_period_user - ext_info.crowdfunding_current_period_number}}人次
+            </p>
+            {{else if category !== '5' && category !== '4'}}
+            <p class="price text-red">
+                &yen;<span class="text-xs-large">{{price/100}}</span>
+            </p>
+            {{/if}}
+        </div>
+    </div>
+</script>
+<script type="text/html" id="subnavTemplate">
+    <div class="nav-body sub-nav">
+        {{each list as value}}
+        <span class="nav-item" data-view="{{value.key}}">{{value.name}}</span>
+        {{/each}}
+    </div>
+</script>
+<script type="text/html" id="footerTemplate">
+    <footer class="footer">
+        {{if !inWalletApp}}
+        <div>
+            <p class="text-white">
+                <img class="qianbao-small-logo"
+                     src="static/one_wap/images/home/icon-qianbao-logo_c900b01.png"/>
+                精彩待续！
+            </p>
+
+            <p class="text-small" style="margin-bottom: .5rem">
+                优惠新商品每“周”持续不断
+            </p>
+        </div>
+        {{else}}
+        <p class="text-xs-small">
+            本服务由八戒为您提供
+        </p>
+
+        <p class="text-xs-small">
+            <a
+                    class="pass-through"
+                    style="text-decoration: underline"
+                    href="http://co.baifubao.com/content/mywallet/h5/1_baidu/crowdfunding.html">1元许愿活动规则说明</a>
+        </p>
+        {{/if}}
+    </footer>
+</script>
+<script src="http://co.baifubao.com/resource/script/util/bdp/bdp.min.js"></script>
+<script>
+    var ONEBAIDU = ONEBAIDU || {};
+    ONEBAIDU['recommend'] = [
+        {
+            product_id: 'e98587b82ace023765ea42b4',
+            head_picurl: 'https:\/\/1.baidu.com\/hiphotos_proxy\/pay-operone\/wh%3D640%2C680\/sign=5d587bb8ce177f3e1061f40b44ff17f1\/a044ad345982b2b75c32d0ca36adcbef76099b0b.jpg',
+            product_url: 'detail.html',
+            category: '7',
+            short_title: '1元许愿 乐视超级4k电视',
+            price: '100',
+            ext_info: {
+                crowdfunding_period_user:'5099',
+                crowdfunding_current_period_number:'2961',
+                crowdfunding_current_period:'32',
+                crowdfunding_total_period: '99',
+                fountain_product: ''
+            },
+            total_number: '177200',
+            buy_number: '161030',
+            user_allow:'1',
+            category_type:'1',
+            online_status:'2'
+        },
+        {
+            product_id: '4bebecee98139600743846b4',
+            head_picurl: 'https:\/\/1.baidu.com\/hiphotos_proxy\/pay-operone\/wh%3D640%2C680\/sign=c0d2505992cad1c8d0eef4214b0e4b3f\/0dd7912397dda1445da82cc4b5b7d0a20cf48627.jpg',
+            product_url: 'detail.html',
+            category: '7',
+            short_title: '1元许愿 小米电视2S',
+            price: '100',
+            ext_info: {
+                crowdfunding_period_user:'3859',
+                crowdfunding_current_period_number:'549',
+                crowdfunding_current_period:'11',
+                crowdfunding_total_period: '99',
+                fountain_product: ''
+            },
+            total_number: '59950',
+            buy_number: '39139',
+            user_allow:'1',
+            category_type:'1',
+            online_status:'2'
+        },
+        {
+            product_id: '8e4368b5f50bfcad146897b5',
+            head_picurl: 'https:\/\/1.baidu.com\/hiphotos_proxy\/pay-operone\/wh%3D640%2C680\/sign=9cf0d82cfa039245a1e0e909b3a488f4\/203fb80e7bec54e769ef34ffbf389b504ec26acb.jpg',
+            product_url: 'https:\/\/1.baidu.com\/wapproduct\/wapdetail?product_id=8e4368b5f50bfcad146897b5',
+            category: '8',
+            short_title: '贴吧超级会员',
+            price: '1',
+            ext_info: {
+                crowdfunding_period_user:'',
+                crowdfunding_current_period_number:'',
+                crowdfunding_current_period:'',
+                crowdfunding_total_period: '',
+                fountain_product: ''
+            },
+            total_number: '1000000',
+            buy_number: '82866',
+            user_allow:'1',
+            category_type:'1',
+            online_status:'2'
+        },
+        {
+            product_id: 'f13a52c29bce9e16c3844eb4',
+            head_picurl: 'https:\/\/1.baidu.com\/hiphotos_proxy\/pay-operone\/wh%3D640%2C680\/sign=eb5b289729dda3cc0bb1b02635d91537\/10dfa9ec8a136327c2bd733b968fa0ec08fac762.jpg',
+            product_url: 'https:\/\/1.baidu.com\/wapproduct\/wapdetail?product_id=f13a52c29bce9e16c3844eb4',
+            category: '7',
+            short_title: '1元许愿Beats Solo2头戴耳机',
+            price: '100',
+            ext_info: {
+                crowdfunding_period_user:'1588',
+                crowdfunding_current_period_number:'634',
+                crowdfunding_current_period:'10',
+                crowdfunding_total_period: '20',
+                fountain_product: ''
+            },
+            total_number: '30000',
+            buy_number: '14926',
+            user_allow:'1',
+            category_type:'1',
+            online_status:'2'
+        },
+        {
+            product_id: '5a49d73b52c29bce9e164db4',
+            head_picurl: 'https:\/\/1.baidu.com\/hiphotos_proxy\/pay-operone\/wh%3D640%2C680\/sign=1d352a19be389b5038aae854b105c9eb\/3c6d55fbb2fb431646c64a7d27a4462308f7d3df.jpg',
+            product_url: 'https:\/\/1.baidu.com\/wapproduct\/wapdetail?product_id=5a49d73b52c29bce9e164db4',
+            category: '7',
+            short_title: '1元许愿Galaxy S6 edge',
+            price: '100',
+            ext_info: {
+                crowdfunding_period_user:'4900',
+                crowdfunding_current_period_number:'1580',
+                crowdfunding_current_period:'30',
+                crowdfunding_total_period: '99',
+                fountain_product: ''
+            },
+            total_number: '150323',
+            buy_number: '143680',
+            user_allow:'1',
+            category_type:'1',
+            online_status:'2'
+        },
+        {
+            product_id: '3f7ba6dc7f48d73b52c24bb4',
+            head_picurl: 'https:\/\/1.baidu.com\/hiphotos_proxy\/pay-operone\/wh%3D640%2C680\/sign=621ad800d32a283443f33e0d6f85e5dc\/b8014a90f603738dab34c43fb41bb051f819ecb5.jpg',
+            product_url: 'https:\/\/1.baidu.com\/wapproduct\/wapdetail?product_id=3f7ba6dc7f48d73b52c24bb4',
+            category: '7',
+            short_title: '1元许愿iPhone6 Plus',
+            price: '100',
+            ext_info: {
+                crowdfunding_period_user:'4999',
+                crowdfunding_current_period_number:'529',
+                crowdfunding_current_period:'9',
+                crowdfunding_total_period: '99',
+                fountain_product: ''
+            },
+            total_number: '45000',
+            buy_number: '40521',
+            user_allow:'1',
+            category_type:'1',
+            online_status:'2'
+        },
+        {
+            product_id: 'b69347e1b90bd13764065cb4',
+            head_picurl: 'https:\/\/1.baidu.com\/hiphotos_proxy\/pay-operone\/wh%3D640%2C680\/sign=5ae87471a8c379317d3d8e2fdff49b73\/cdbf6c81800a19d89e26327234fa828ba61e469b.jpg',
+            product_url: 'https:\/\/1.baidu.com\/wapproduct\/wapdetail?product_id=b69347e1b90bd13764065cb4',
+            category: '7',
+            short_title: '1元许愿 戴尔灵越14笔记本电脑',
+            price: '100',
+            ext_info: {
+                crowdfunding_period_user:'3599',
+                crowdfunding_current_period_number:'948',
+                crowdfunding_current_period:'12',
+                crowdfunding_total_period: '99',
+                fountain_product: ''
+            },
+            total_number: '69992',
+            buy_number: '40537',
+            user_allow:'1',
+            category_type:'1',
+            online_status:'2'
+        },
+        {
+            product_id: '2f3665eaecee9813960045b4',
+            head_picurl: 'https:\/\/1.baidu.com\/hiphotos_proxy\/pay-operone\/wh%3D640%2C680\/sign=228dee75cf95d143da23ec2547c0ae34\/5d6034a85edf8db1ab397e120e23dd54564e74b4.jpg',
+            product_url: 'https:\/\/1.baidu.com\/wapproduct\/wapdetail?product_id=2f3665eaecee9813960045b4',
+            category: '7',
+            short_title: '1元许愿 联想G40-70AT笔记本电脑',
+            price: '100',
+            ext_info: {
+                crowdfunding_period_user:'3699',
+                crowdfunding_current_period_number:'2230',
+                crowdfunding_current_period:'12',
+                crowdfunding_total_period: '99',
+                fountain_product: ''
+            },
+            total_number: '74982',
+            buy_number: '42919',
+            user_allow:'1',
+            category_type:'1',
+            online_status:'2'
+        },
+        {
+            product_id: 'acb92ace023765eaecee43b4',
+            head_picurl: 'https:\/\/1.baidu.com\/hiphotos_proxy\/pay-operone\/wh%3D640%2C680\/sign=e3e2152b52fbb2fb347e50147b7a0c92\/0eb30f2442a7d9337299f905aa4bd11373f00196.jpg',
+            product_url: 'https:\/\/1.baidu.com\/wapproduct\/wapdetail?product_id=acb92ace023765eaecee43b4',
+            category: '7',
+            short_title: '1元许愿 小米移动电源16000mAh',
+            price: '100',
+            ext_info: {
+                crowdfunding_period_user:'159',
+                crowdfunding_current_period_number:'65',
+                crowdfunding_current_period:'63',
+                crowdfunding_total_period: '99',
+                fountain_product: ''
+            },
+            total_number: '19948',
+            buy_number: '9923',
+            user_allow:'1',
+            category_type:'1',
+            online_status:'2'
+        },
+        {
+            product_id: '06cf023765eaecee981344b4',
+            head_picurl: 'https:\/\/1.baidu.com\/hiphotos_proxy\/pay-operone\/wh%3D640%2C680\/sign=a2b1772633a85edffad9f6257d642515\/500fd9f9d72a60593badff6c2f34349b033bba02.jpg',
+            product_url: 'https:\/\/1.baidu.com\/wapproduct\/wapdetail?product_id=06cf023765eaecee981344b4',
+            category: '7',
+            short_title: '1元许愿 华为小天鹅蓝牙音箱',
+            price: '100',
+            ext_info: {
+                crowdfunding_period_user:'159',
+                crowdfunding_current_period_number:'83',
+                crowdfunding_current_period:'36',
+                crowdfunding_total_period: '99',
+                fountain_product: ''
+            },
+            total_number: '25000',
+            buy_number: '5648',
+            user_allow:'1',
+            category_type:'1',
+            online_status:'2'
+        },
+        {
+            product_id: '2ddd829247e1b90bd1375bb4',
+            head_picurl: 'https:\/\/1.baidu.com\/hiphotos_proxy\/pay-operone\/wh%3D640%2C680\/sign=dfb2d523044f78f0805e92f54d012663\/b2de9c82d158ccbf48defe4d1ed8bc3eb1354162.jpg',
+            product_url: 'https:\/\/1.baidu.com\/wapproduct\/wapdetail?product_id=2ddd829247e1b90bd1375bb4',
+            category: '7',
+            short_title: '1元许愿 捷波朗蓝牙耳机',
+            price: '100',
+            ext_info: {
+                crowdfunding_period_user:'1200',
+                crowdfunding_current_period_number:'611',
+                crowdfunding_current_period:'4',
+                crowdfunding_total_period: '4',
+                fountain_product: ''
+            },
+            total_number: '10000',
+            buy_number: '3266',
+            user_allow:'1',
+            category_type:'1',
+            online_status:'2'
+        },
+        {
+            product_id: '75c39bce9e16c38487b84fb4',
+            head_picurl: 'https:\/\/1.baidu.com\/hiphotos_proxy\/pay-operone\/wh%3D640%2C680\/sign=7d99c020b751f819f1700b4cee8466db\/c8177f3e6709c93d344448fc983df8dcd1005402.jpg',
+            product_url: 'https:\/\/1.baidu.com\/wapproduct\/wapdetail?product_id=75c39bce9e16c38487b84fb4',
+            category: '7',
+            short_title: '1元许愿Apple Watch 运动款',
+            price: '100',
+            ext_info: {
+                crowdfunding_period_user:'3000',
+                crowdfunding_current_period_number:'2208',
+                crowdfunding_current_period:'13',
+                crowdfunding_total_period: '99',
+                fountain_product: ''
+            },
+            total_number: '69950',
+            buy_number: '38208',
+            user_allow:'1',
+            category_type:'1',
+            online_status:'2'
+        },
+        {
+            product_id: '84c080208a48f1049bec8ab5',
+            head_picurl: 'https:\/\/1.baidu.com\/hiphotos_proxy\/pay-operone\/wh%3D640%2C680\/sign=042fc72858df8db1bc7b74623d13f162\/d8f9d72a6059252d8c65dbb4329b033b5bb5b914.jpg',
+            product_url: 'https:\/\/1.baidu.com\/wapproduct\/wapdetail?product_id=84c080208a48f1049bec8ab5',
+            category: '7',
+            short_title: '1元许愿 iPhone6',
+            price: '100',
+            ext_info: {
+                crowdfunding_period_user:'4866',
+                crowdfunding_current_period_number:'1047',
+                crowdfunding_current_period:'207',
+                crowdfunding_total_period: '999',
+                fountain_product: ''
+            },
+            total_number: '1023984',
+            buy_number: '1003443',
+            user_allow:'1',
+            category_type:'1',
+            online_status:'2'
+        },
+        {
+            product_id: '6317d2173c821c7aa6dc48b4',
+            head_picurl: 'https:\/\/1.baidu.com\/hiphotos_proxy\/pay-operone\/wh%3D640%2C680\/sign=66642021219759ee4a0568cd86cb6f20\/e7cd7b899e510fb361ba33bbde33c895d1430c7e.jpg',
+            product_url: 'https:\/\/1.baidu.com\/wapproduct\/wapdetail?product_id=6317d2173c821c7aa6dc48b4',
+            category: '7',
+            short_title: '1元许愿小米智能运动手环',
+            price: '100',
+            ext_info: {
+                crowdfunding_period_user:'138',
+                crowdfunding_current_period_number:'5',
+                crowdfunding_current_period:'98',
+                crowdfunding_total_period: '199',
+                fountain_product: ''
+            },
+            total_number: '39993',
+            buy_number: '13391',
+            user_allow:'1',
+            category_type:'1',
+            online_status:'2'
+        },
+        {
+            product_id: 'f3163c821c7aa6dc7f4849b4',
+            head_picurl: 'https:\/\/1.baidu.com\/hiphotos_proxy\/pay-operone\/wh%3D640%2C680\/sign=8e9c4cb459df8db1bc7b74623d13f162\/d8f9d72a6059252d06d65028339b033b5ab5b9dd.jpg',
+            product_url: 'https:\/\/1.baidu.com\/wapproduct\/wapdetail?product_id=f3163c821c7aa6dc7f4849b4',
+            category: '7',
+            short_title: '1元许愿小米家用净水器',
+            price: '100',
+            ext_info: {
+                crowdfunding_period_user:'1799',
+                crowdfunding_current_period_number:'590',
+                crowdfunding_current_period:'6',
+                crowdfunding_total_period: '50',
+                fountain_product: ''
+            },
+            total_number: '9993',
+            buy_number: '9585',
+            user_allow:'1',
+            category_type:'1',
+            online_status:'2'
+        },
+        {
+            product_id: 'c50f1f8157ff282f781365b4',
+            head_picurl: 'https:\/\/1.baidu.com\/hiphotos_proxy\/pay-operone\/wh%3D640%2C680\/sign=e6b01bfc307adab43d851345bfe49f2a\/c83d70cf3bc79f3de6754ce4bca1cd11738b2949.jpg',
+            product_url: 'https:\/\/1.baidu.com\/wapproduct\/wapdetail?product_id=c50f1f8157ff282f781365b4',
+            category: '3',
+            short_title: '醉品商城明前二级龙井茶30元直减券',
+            price: '1',
+            ext_info: {
+                crowdfunding_period_user:'',
+                crowdfunding_current_period_number:'',
+                crowdfunding_current_period:'',
+                crowdfunding_total_period: '',
+                fountain_product: ''
+            },
+            total_number: '14993',
+            buy_number: '11005',
+            user_allow:'1',
+            category_type:'1',
+            online_status:'3'
+        },
+        {
+            product_id: '5227d666fd3d4e010cfd9db5',
+            head_picurl: 'https:\/\/1.baidu.com\/hiphotos_proxy\/pay-operone\/wh%3D640%2C680\/sign=f58853c06d63f6241c083105b374c7ce\/f636afc379310a55b48e060db14543a9832610a4.jpg',
+            product_url: 'https:\/\/1.baidu.com\/wapproduct\/wapdetail?product_id=5227d666fd3d4e010cfd9db5',
+            category: '7',
+            short_title: '1元许愿杜蕾斯“光棍套装”15片装',
+            price: '100',
+            ext_info: {
+                crowdfunding_period_user:'56',
+                crowdfunding_current_period_number:'28',
+                crowdfunding_current_period:'254',
+                crowdfunding_total_period: '300',
+                fountain_product: ''
+            },
+            total_number: '25000',
+            buy_number: '14196',
+            user_allow:'1',
+            category_type:'1',
+            online_status:'2'
+        },
+        {
+            product_id: '152c81eb632c9eedd4e873b4',
+            head_picurl: 'https:\/\/1.baidu.com\/hiphotos_proxy\/pay-operone\/wh%3D640%2C680\/sign=7d07c5a6a30f4bfb8c859652377f54c6\/dc54564e9258d1094cdb038bd658ccbf6c814dcb.jpg',
+            product_url: 'https:\/\/1.baidu.com\/wapproduct\/wapdetail?product_id=152c81eb632c9eedd4e873b4',
+            category: '7',
+            short_title: '1元许愿霍尼韦尔进口空气净化器',
+            price: '100',
+            ext_info: {
+                crowdfunding_period_user:'4120',
+                crowdfunding_current_period_number:'3098',
+                crowdfunding_current_period:'3',
+                crowdfunding_total_period: '3',
+                fountain_product: ''
+            },
+            total_number: '12500',
+            buy_number: '11338',
+            user_allow:'1',
+            category_type:'1',
+            online_status:'2'
+        },
+        {
+            product_id: '80ecd4e84316d2173c8276b4',
+            head_picurl: 'https:\/\/1.baidu.com\/hiphotos_proxy\/pay-operone\/wh%3D640%2C680\/sign=21570e80a3c27d1ea57333c22fe58158\/2e2eb9389b504fc2200a0c21e2dde71190ef6db9.jpg',
+            product_url: 'https:\/\/1.baidu.com\/wapproduct\/wapdetail?product_id=80ecd4e84316d2173c8276b4',
+            category: '2',
+            short_title: 'EVGA GTX750Ti 2GB显卡带来超爽游戏体验（四期）',
+            price: '1',
+            ext_info: {
+                crowdfunding_period_user:'',
+                crowdfunding_current_period_number:'',
+                crowdfunding_current_period:'',
+                crowdfunding_total_period: '',
+                fountain_product: ''
+            },
+            total_number: '9994',
+            buy_number: '8761',
+            user_allow:'1',
+            category_type:'3',
+            online_status:'3'
+        },
+        {
+            product_id: '9dea632c9eedd4e8431674b4',
+            head_picurl: 'https:\/\/1.baidu.com\/hiphotos_proxy\/pay-operone\/wh%3D640%2C680\/sign=aafdb6c731d3d539c16807c50eb7c566\/b151f8198618367ab9a3e9e429738bd4b31ce5e5.jpg',
+            product_url: 'https:\/\/1.baidu.com\/wapproduct\/wapdetail?product_id=9dea632c9eedd4e8431674b4',
+            category: '7',
+            short_title: '1元许愿GoPro HERO4 Black 4K运动摄像机',
+            price: '100',
+            ext_info: {
+                crowdfunding_period_user:'4150',
+                crowdfunding_current_period_number:'3783',
+                crowdfunding_current_period:'3',
+                crowdfunding_total_period: '3',
+                fountain_product: ''
+            },
+            total_number: '12500',
+            buy_number: '12083',
+            user_allow:'1',
+            category_type:'1',
+            online_status:'2'
+        },
+        {
+            product_id: 'a5f2b5707614abde96767ab4',
+            head_picurl: 'https:\/\/1.baidu.com\/hiphotos_proxy\/pay-operone\/wh%3D640%2C680\/sign=923bac1745166d2238221d92721325c1\/43a7d933c895d1436a8bcfff75f082025baf0768.jpg',
+            product_url: 'https:\/\/1.baidu.com\/wapproduct\/wapdetail?product_id=a5f2b5707614abde96767ab4',
+            category: '3',
+            short_title: '茶香四溢！嗨茶网30元优惠券（满100元可用）',
+            price: '1',
+            ext_info: {
+                crowdfunding_period_user:'',
+                crowdfunding_current_period_number:'',
+                crowdfunding_current_period:'',
+                crowdfunding_total_period: '',
+                fountain_product: ''
+            },
+            total_number: '3000',
+            buy_number: '2996',
+            user_allow:'1',
+            category_type:'1',
+            online_status:'3'
+        },
+        {
+            product_id: '72e0b90bd13764064d1d5db4',
+            head_picurl: 'https:\/\/1.baidu.com\/hiphotos_proxy\/pay-operone\/wh%3D640%2C680\/sign=928228ffceea15ce41bbe80f823016c5\/3812b31bb051f81917a14530ddb44aed2f73e7c0.jpg',
+            product_url: 'https:\/\/1.baidu.com\/wapproduct\/wapdetail?product_id=72e0b90bd13764064d1d5db4',
+            category: '3',
+            short_title: '本来生活网20元优惠券（满100元可用）',
+            price: '1',
+            ext_info: {
+                crowdfunding_period_user:'',
+                crowdfunding_current_period_number:'',
+                crowdfunding_current_period:'',
+                crowdfunding_total_period: '',
+                fountain_product: ''
+            },
+            total_number: '3000',
+            buy_number: '975',
+            user_allow:'1',
+            category_type:'1',
+            online_status:'2'
+        },
+        {
+            product_id: '1e831c7aa6dc7f48d73b4ab4',
+            head_picurl: 'https:\/\/1.baidu.com\/hiphotos_proxy\/pay-operone\/wh%3D640%2C680\/sign=9797ce8cf103738dde1f0424872b9c67\/314e251f95cad1c889104d0b783e6709c93d5176.jpg',
+            product_url: 'https:\/\/1.baidu.com\/wapproduct\/wapdetail?product_id=1e831c7aa6dc7f48d73b4ab4',
+            category: '2',
+            short_title: '爱米优i8充电宝，解决充电难题！（土豪金）',
+            price: '1',
+            ext_info: {
+                crowdfunding_period_user:'',
+                crowdfunding_current_period_number:'',
+                crowdfunding_current_period:'',
+                crowdfunding_total_period: '',
+                fountain_product: ''
+            },
+            total_number: '10841',
+            buy_number: '10841',
+            user_allow:'1',
+            category_type:'3',
+            online_status:'4'
+        },
+        {
+            product_id: '271ccbd590433e81c1f3f1b5',
+            head_picurl: 'https:\/\/1.baidu.com\/hiphotos_proxy\/pay-operone\/wh%3D640%2C680\/sign=c7e61a88bd99a9013b60533029a5264d\/9345d688d43f87947c148eb2d71b0ef41ad53a47.jpg',
+            product_url: 'https:\/\/1.baidu.com\/wapproduct\/wapdetail?product_id=271ccbd590433e81c1f3f1b5',
+            category: '7',
+            short_title: '1元许愿iPad Air2 土豪金（16G）',
+            price: '100',
+            ext_info: {
+                crowdfunding_period_user:'3700',
+                crowdfunding_current_period_number:'938',
+                crowdfunding_current_period:'110',
+                crowdfunding_total_period: '150',
+                fountain_product: ''
+            },
+            total_number: '419651',
+            buy_number: '411798',
+            user_allow:'1',
+            category_type:'1',
+            online_status:'2'
+        },
+        {
+            product_id: 'cbe94316d2173c821c7a77b4',
+            head_picurl: 'https:\/\/1.baidu.com\/hiphotos_proxy\/pay-operone\/wh%3D640%2C680\/sign=369dcc4f514e9258a6618ee8a8b2fd6e\/359b033b5bb5c9ea2a7027c8d239b6003af3b31d.jpg',
+            product_url: 'https:\/\/1.baidu.com\/wapproduct\/wapdetail?product_id=cbe94316d2173c821c7a77b4',
+            category: '3',
+            short_title: 'Master达人兴趣课程100元优惠券（限京沪地区）',
+            price: '1',
+            ext_info: {
+                crowdfunding_period_user:'',
+                crowdfunding_current_period_number:'',
+                crowdfunding_current_period:'',
+                crowdfunding_total_period: '',
+                fountain_product: ''
+            },
+            total_number: '1000',
+            buy_number: '372',
+            user_allow:'1',
+            category_type:'1',
+            online_status:'3'
+        },
+        {
+            product_id: '5ccf35bc8e63c1102bca6fb4',
+            head_picurl: 'https:\/\/1.baidu.com\/hiphotos_proxy\/pay-operone\/wh%3D640%2C680\/sign=2d4235398c13632715b8ca35a5bf8cda\/b7fd5266d016092497850bfed20735fae7cd34b6.jpg',
+            product_url: 'https:\/\/1.baidu.com\/wapproduct\/wapdetail?product_id=5ccf35bc8e63c1102bca6fb4',
+            category: '7',
+            short_title: '1元许愿爱米优体感平衡车',
+            price: '100',
+            ext_info: {
+                crowdfunding_period_user:'4999',
+                crowdfunding_current_period_number:'2447',
+                crowdfunding_current_period:'9',
+                crowdfunding_total_period: '100',
+                fountain_product: ''
+            },
+            total_number: '49685',
+            buy_number: '42439',
+            user_allow:'1',
+            category_type:'1',
+            online_status:'2'
+        },
+        {
+            product_id: '0b0761190c14b5d16a1e8fb5',
+            head_picurl: 'https:\/\/1.baidu.com\/hiphotos_proxy\/pay-operone\/wh%3D640%2C680\/sign=b1f0fefcd709b3deebeaec6ef88f40b7\/5ab5c9ea15ce36d33287daa43cf33a87e850b1a7.jpg',
+            product_url: 'https:\/\/1.baidu.com\/wapproduct\/wapdetail?product_id=0b0761190c14b5d16a1e8fb5',
+            category: '3',
+            short_title: '震撼音效，豪韵音响30元优惠券（满31元可用）',
+            price: '1',
+            ext_info: {
+                crowdfunding_period_user:'',
+                crowdfunding_current_period_number:'',
+                crowdfunding_current_period:'',
+                crowdfunding_total_period: '',
+                fountain_product: ''
+            },
+            total_number: '18342',
+            buy_number: '14062',
+            user_allow:'1',
+            category_type:'1',
+            online_status:'3'
+        },
+        {
+            product_id: 'b3cf9e16c38487b82ace40b4',
+            head_picurl: 'https:\/\/1.baidu.com\/hiphotos_proxy\/pay-operone\/wh%3D640%2C680\/sign=7d58ce747ff0f736d8ab44073e659f2f\/9d82d158ccbf6c815636d4e3bb3eb13533fa40bc.jpg',
+            product_url: 'https:\/\/1.baidu.com\/wapproduct\/wapdetail?product_id=b3cf9e16c38487b82ace40b4',
+            category: '3',
+            short_title: '嗨茶网武夷山红茶抵茶优惠券（需付邮费）',
+            price: '1',
+            ext_info: {
+                crowdfunding_period_user:'',
+                crowdfunding_current_period_number:'',
+                crowdfunding_current_period:'',
+                crowdfunding_total_period: '',
+                fountain_product: ''
+            },
+            total_number: '5000',
+            buy_number: '3347',
+            user_allow:'1',
+            category_type:'1',
+            online_status:'2'
+        },
+        {
+            product_id: '3dbd8e63c1102bca3cc760b4',
+            head_picurl: 'https:\/\/1.baidu.com\/hiphotos_proxy\/pay-operone\/wh%3D640%2C680\/sign=b6fafe8c232dd42a5f5c09ad370b7783\/8b82b9014a90f603125d37a23f12b31bb151ed62.jpg',
+            product_url: 'https:\/\/1.baidu.com\/wapproduct\/wapdetail?product_id=3dbd8e63c1102bca3cc760b4',
+            category: '7',
+            short_title: '1元许愿Moto 360智能手表（46毫米款）',
+            price: '100',
+            ext_info: {
+                crowdfunding_period_user:'2420',
+                crowdfunding_current_period_number:'1242',
+                crowdfunding_current_period:'14',
+                crowdfunding_total_period: '100',
+                fountain_product: ''
+            },
+            total_number: '44845',
+            buy_number: '32702',
+            user_allow:'1',
+            category_type:'1',
+            online_status:'2'
+        },
+        {
+            product_id: 'de2852155d841b840e2d7fb4',
+            head_picurl: 'https:\/\/1.baidu.com\/hiphotos_proxy\/pay-operone\/wh%3D640%2C680\/sign=ff16c6385443fbf2c579ae25844ee6b6\/8601a18b87d6277fa765d1082f381f30e924fc8f.jpg',
+            product_url: 'https:\/\/1.baidu.com\/wapproduct\/wapdetail?product_id=de2852155d841b840e2d7fb4',
+            category: '3',
+            short_title: '天天网25元优惠券（满25元可用，仅限新用户）',
+            price: '1',
+            ext_info: {
+                crowdfunding_period_user:'',
+                crowdfunding_current_period_number:'',
+                crowdfunding_current_period:'',
+                crowdfunding_total_period: '',
+                fountain_product: ''
+            },
+            total_number: '20000',
+            buy_number: '20000',
+            user_allow:'1',
+            category_type:'1',
+            online_status:'4'
+        },
+        {
+            product_id: 'b717c38487b82ace023741b4',
+            head_picurl: 'https:\/\/1.baidu.com\/hiphotos_proxy\/pay-operone\/wh%3D640%2C680\/sign=71d1d0332f381f309e4c85af9d31603e\/c2cec3fdfc039245397603048094a4c27c1e25fe.jpg',
+            product_url: 'https:\/\/1.baidu.com\/wapproduct\/wapdetail?product_id=b717c38487b82ace023741b4',
+            category: '1',
+            short_title: '醉品商城铁观音礼盒35元直减券',
+            price: '1',
+            ext_info: {
+                crowdfunding_period_user:'',
+                crowdfunding_current_period_number:'',
+                crowdfunding_current_period:'',
+                crowdfunding_total_period: '',
+                fountain_product: ''
+            },
+            total_number: '900',
+            buy_number: '900',
+            user_allow:'1',
+            category_type:'1',
+            online_status:'4'
+        },
+        {
+            product_id: '0de434125bce35bc8e636db4',
+            head_picurl: 'https:\/\/1.baidu.com\/hiphotos_proxy\/pay-operone\/wh%3D640%2C680\/sign=c86e7cf1ad18972ba36f08ccd2fd57bf\/ae51f3deb48f8c548c9685ca3c292df5e1fe7f89.jpg',
+            product_url: 'https:\/\/1.baidu.com\/wapproduct\/wapdetail?product_id=0de434125bce35bc8e636db4',
+            category: '7',
+            short_title: '1元许愿Mac mini（1.4GHz 处理器、500 GB 存储）',
+            price: '100',
+            ext_info: {
+                crowdfunding_period_user:'3930',
+                crowdfunding_current_period_number:'3087',
+                crowdfunding_current_period:'4',
+                crowdfunding_total_period: '50',
+                fountain_product: ''
+            },
+            total_number: '20000',
+            buy_number: '14877',
+            user_allow:'1',
+            category_type:'1',
+            online_status:'2'
+        },
+    ];
+    ONEBAIDU['is_login'] = '1';
+    ONEBAIDU['user_level'] = '2';
+    ONEBAIDU['mt'] = '';
+    ONEBAIDU.inWalletApp = BDP.safe('wallet');
+    ONEBAIDU.inNative = BDP.safe('wallet') && BDP.os.ios;
+</script>
+
+</body><script type="text/javascript" src="static/one_wap/js/vendor/zepto_b7016d3.js"></script>
+<script type="text/javascript" src="static/one_wap/js/modules/home.js"></script>
+<script type="text/javascript">!function(){// 获取头像,onload之后再获取，因为再框内这条请求会一直pending
+    $(window).on( 'load' , function(){
+        $.getJSON("https://www.baifubao.com/portrait/0/get_portrait/0?callback=?", function (data) {
+            (data && data.head_url) && $('#userAvatar').attr('src', data.head_url);
+        });
+    });
+}();</script>
+<script src="https://www.baifubao.com/content/cashdesk/statistic.min.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var _tjtag1 = 'wapindex';
+        var _tjtag2 = '_2';
+        var _tjtag3 = '_';
+        var _tjtag4 = '_';
+        var _tjtag5 = '_';
+        var _tjtag6 = '_';
+
+        window._oneq = [];
+        _oneq.push(['_tracePage']);
+        _oneq.push(['_page', _tjtag1]);
+        _oneq.push(['_loginlv', _tjtag2.substr(1)]);
+        _oneq.push(['_from', _tjtag3.substr(1)]);
+        _oneq.push(['_icode', _tjtag4.substr(1)]);
+        _oneq.push(['_pid', _tjtag5.length != 1 ? _tjtag5.substr(1) : _tjtag6.substr(1)]);
+        _oneq.push(['_device', '_wap'.substr(1)]);
+        _oneq.push(['_ext', '_'.substr(1)]);
+        _oneq.push(['_stime', '_1456648643969870'.substr(1)]);
+        _oneq.push(['_ctime', '_64183'.substr(1)]);
+
+        window['_biq'] = window['_biq'] || [];
+        window['_biq'].push(_oneq);
+
+        var _hmt = _hmt || [];
+        _hmt.push(['_setAccount', 'dcef1dfa21528cd8e539be0e3f804c18']);
+        var _tag = _tjtag1 + _tjtag2 + _tjtag3 + _tjtag4;
+
+        _tag = _tag + '_';
+
+        _hmt.push(['_setCustomVar', 1, 'loginlv', _tag, 3]);
+        var hm = this.createElement("script");
+        var oe = this.createElement("script");
+        oe.src = "static/one_wap/js/modules/onebi.js";
+        var s = this.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+        s.parentNode.insertBefore(oe, s);
+        // jump to baifubao.com
+        var img = new Image;
+        img.onload = img.onerror = function () {
+            img = null;
+        };
+        img.src = 'https://baifubao.baidu.com/jump?uri=/content/mywallet/h5/red_package/jump.png';
+    });
+</script>
+
+</html>

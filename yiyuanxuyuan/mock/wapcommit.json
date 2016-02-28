@@ -1,0 +1,8 @@
+{
+  "errno": 0,
+  "msg": "",
+  "data": {
+    "is_lottery": false,
+    "url": "currency=1&expire_time=20160229072443&goods_name=1%D4%AA%D0%ED%D4%B8Beats+Solo2%CD%B7%B4%F7%B6%FA%BB%FA&goods_url=https%3A%2F%2F1.baidu.com%2Fwapproduct%2Fwapdetail%3Fproduct_id%3Df13a52c29bce9e16c3844eb4&input_charset=1&order_create_time=20160228182443&order_no=26528519998&page_url=https%3A%2F%2F1.baidu.com%2Fwappay%2Fwapreturn&pay_type=2&return_url=https%3A%2F%2F1.baidu.com%2Fpay%2Fnotify&service_code=1&sign_method=1&sp_no=1000334864&total_amount=100&version=2&sign=58f63d6256339612627c819f6db473b8"
+  }
+}

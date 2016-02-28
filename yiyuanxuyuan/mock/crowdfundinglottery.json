@@ -1,0 +1,81 @@
+{
+  "errno": 0,
+  "msg": "",
+  "data": {
+    "list": [
+      {
+        "user_name": "135****3598",
+        "sign": "94c55639",
+        "lottery_time": "2016-02-27 14:00:05",
+        "lottery_code": "letv00157895",
+        "period": "31"
+      },
+      {
+        "user_name": "188****9056",
+        "sign": "27568a66",
+        "lottery_time": "2016-02-25 11:30:03",
+        "lottery_code": "letv00152961",
+        "period": "30"
+      },
+      {
+        "user_name": "185****.com",
+        "sign": "97a43b2c",
+        "lottery_time": "2016-02-23 08:00:04",
+        "lottery_code": "letv00146573",
+        "period": "29"
+      },
+      {
+        "user_name": "8****0@qq.com",
+        "sign": "4e171c23",
+        "lottery_time": "2016-02-21 20:30:04",
+        "lottery_code": "letv00139015",
+        "period": "28"
+      },
+      {
+        "user_name": "185****8535",
+        "sign": "ceb4ad85",
+        "lottery_time": "2016-02-20 17:30:03",
+        "lottery_code": "letv00137204",
+        "period": "27"
+      },
+      {
+        "user_name": "li****11@163.com",
+        "sign": "c20db520",
+        "lottery_time": "2016-02-19 16:00:04",
+        "lottery_code": "letv00129055",
+        "period": "26"
+      },
+      {
+        "user_name": "135****2000",
+        "sign": "b5ceb835",
+        "lottery_time": "2016-02-18 15:30:03",
+        "lottery_code": "letv00122660",
+        "period": "25"
+      },
+      {
+        "user_name": "y****7@163.com",
+        "sign": "6b11ee02",
+        "lottery_time": "2016-02-16 21:00:04",
+        "lottery_code": "letv00121102",
+        "period": "24"
+      },
+      {
+        "user_name": "qi***ue@gmail.com",
+        "sign": "a9577f27",
+        "lottery_time": "2016-02-15 19:30:03",
+        "lottery_code": "letv00116936",
+        "period": "23"
+      },
+      {
+        "user_name": "s***p@163.com",
+        "sign": "5793bf2b",
+        "lottery_time": "2016-02-14 20:00:02",
+        "lottery_code": "letv00108741",
+        "period": "22"
+      }
+    ],
+    "total": 31,
+    "p": 0,
+    "pn": 10
+  }
+}
