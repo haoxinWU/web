@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="format-detection" content="telephone=no"/>
+
+    <title>非常好吃的北京狮子头</title>
+
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <link rel="stylesheet" href="http://yun.duiba.com.cn/webapp/css/normalize.min.css?t=20151016">
+    <link rel="stylesheet" href="http://yun.duiba.com.cn/webapp/css/modal.min.css">
+    <link rel="stylesheet" href="http://yun.duiba.com.cn/webapp/css/detail.css?t=20160114">
+    <style>
+        .powered-logo{width:27px;}
+    </style>
+
+
+    <style>
+        .theme-color{color: #0b45fc;}
+        .theme-bgcolor{background-color: #0b45fc;}
+        .theme-bordercolor{border-color: #0b45fc;}
+        /* radio */
+        .radio-group.cur{border-color:#0b45fc; }
+        .radio-group .cur-arrow{border-color: #0b45fc transparent transparent #0b45fc;}
+        .description a {color: #0b45fc;}
+    </style>
+    <link rel="stylesheet" type="text/css" href="http://yun.duiba.com.cn/webapp/css/ordinaryRecommend.css?t=20160114">
+</head>
+<body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 她社区定制 -->
+
+
+<!-- 爱卡无线定制 -->
+
+
+<!-- 凤凰新闻定制，修复分享问题 -->
+
+<div id="db-content">
+    <div class="db-banner-style">
+        <div class="db-banner-swipe" id="swipe">
+            <div>
+                <!-- banner循环开始 -->
+
+                <a><img src="http://yun.duiba.com.cn/images/201603/8jkcrvcq6a.jpg"/></a>
+
+                <!-- banner循环结束 -->
+            </div>
+        </div>
+        <div class="db-banner-position">
+            <strong>1</strong><span>/1</span>
+        </div>
+    </div>
+    <header>
+        <div class="item-info">
+            <div class="item-title">
+                <h3>非常好吃的北京狮子头</h3>
+	                    <span>
+
+
+		                    		少量
+
+
+	                    </span>
+            </div>
+            <div class="price"><span class="num theme-color">1</span><span class="unit theme-color">金币</span>
+
+                <span class="rmb">￥100.0</span>
+	                	<span class="express">
+	                		运费:
+
+	                			包邮
+
+	                	</span>
+            </div>
+        </div>
+
+
+
+        <a class="address"
+           href="/ObjectExchange/address/207612?intent=0&amp;dbnewopen">
+            <div>
+                <p>
+                    <i class="arrow"></i><strong>配送至：</strong><span>
+									捞里&nbsp;152****3145
+								</span>
+                </p>
+							<span>
+								天津市
+								天津市
+								河东区
+								何东街道
+							</span>
+            </div>
+        </a>
+
+
+
+
+    </header>
+    <section>
+
+        <p class="title">
+            <i class="arrow"></i><span>详情说明：</span>
+        </p>
+        <div class="description">
+
+            <h4>活动规则</h4> <p>这里加入实物的兑换规则等内容</p> <h4>详情说明</h4> <p>这里填写你的商品说明文字</p>
+
+        </div>
+    </section>
+
+
+    <div class="recommandLocation" style='margin-top:10px; display:none'>
+        <em></em><i></i><span>为您推荐</span><em></em>
+    </div>
+    <div class="recommandLocationItems clearfix" style='display:none'>
+    </div>
+
+
+    <p class="apple">Powered by <img class="powered-logo" src="http://yun.duiba.com.cn/webapp/img/webappLogo.png"/></p>
+
+
+</div>
+
+<footer>
+
+    <div class="timedown"><span class="dateRange"></span><i></i><strong><span class="hourTens"></span> <span class="hourOnes"></span><span>时</span><span class="minuteTens"></span> <span class="minuteOnes"></span><span>分</span><span class="secondTens"></span> <span class="secondOnes"></span><span>秒</span></strong></div>
+
+    <button type="button" class="submit theme-bgcolor" >马上兑换</button>
+
+
+</footer>
+
+<div class="captcha">
+    <div class="captcha-dialog">
+    </div>
+</div>
+</body>
+<script src="http://yun.duiba.com.cn/webapp/js/zepto.min.js"></script>
+<script src="http://yun.duiba.com.cn/webapp/js/swipe.min.js?t=20151012"></script>
+<script src="http://yun.duiba.com.cn/webapp/js/modal.min.js?t=20160112"></script>
+<script src="http://yun.duiba.com.cn/webapp/js/fastclick.js"></script>
+
+
+
+
+
+
+<script>
+    var CFG={"endTime":"","limitdayend":false,"limitdaystart":false,"mycredits":10000,"needcredits":"1","serverTime":"22:32:42","startTime":"","startday":"","status":8,"timedown":false};
+    //fastclick
+    Origami.fastclick(document.body);
+    $(function(){
+        (function($){
+            var swipelength=$('.db-banner-swipe').children('div').children('a').length;
+            $('.db-banner-position span').html('/'+swipelength);
+            if(swipelength>1){
+                window.bannerSlider =  Swipe(document.getElementById('swipe'), {
+                    auto: 3000,
+                    startSlide: 0,
+                    continuous: true,
+                    disableScroll:false,
+                    callback: function(index) {
+                        if((index+1)>swipelength){
+                            index=index%2;
+                        }
+                        $('.db-banner-position strong').html(index+1)
+                    }
+                });
+                $('.db-banner-position').css("visibility","visible")
+            }else{
+                $('.db-banner-swipe').css("visibility","visible")
+            }
+        })(Zepto)
+        if(CFG.timedown){
+            if(CFG.startTime !=='' && CFG.endTime !==''){
+                var startTime   =CFG.startTime.split(':');
+                var endTime     =CFG.endTime.split(':');
+                var serverTime  =CFG.serverTime.split(':');
+                var _startTime  =new Date();
+                var _endTime    =new Date();
+                var _serverTime =new Date();
+                var zerotime    =new Date();
+                _startTime.setHours(startTime[0],startTime[1],0,0);
+                _endTime.setHours(endTime[0],endTime[1],0,0);
+                _serverTime.setHours(serverTime[0],serverTime[1],serverTime[2],0);
+                zerotime.setHours(0,0,0,0);
+                switch (CFG.status){
+                    case 7:
+                        startTimer();
+                        break;
+                    case 8:
+                        var leaveEndTime=_endTime-_serverTime;
+                        endTimer(leaveEndTime);
+                        break;
+                    case 11:
+                    case 15:
+                    case 16:
+                        if(_serverTime <_startTime){
+                            startTimer();
+                        }
+                        else if(_serverTime >= _startTime && _serverTime < _endTime){
+                            var leaveEndTime=_endTime-_serverTime;
+                            endTimer(leaveEndTime);
+                        }
+                        break;
+                }
+            }else{
+                console.error('开始时间或结束时间错误')
+            }
+        }
+
+        if(CFG.limitdaystart){
+            var start_time = "00:00";
+            if(CFG.timedown){
+                start_time = CFG.startTime;
+            }
+            $('.dateRange').siblings().remove();
+            $('.dateRange').html(CFG.startday+" "+start_time+" 开始");
+            $('.timedown').show();
+        }else if(CFG.limitdayend){
+            $('.timedown').hide();
+            $('.submit').prop('disabled',true).html('已结束');
+        }
+        var day_status = "8";
+        if(day_status==1
+                || day_status==2
+                || day_status==3
+                || day_status==4
+                || day_status==5
+                || day_status==6
+                || day_status==10
+        ){
+            $('.timedown').hide();
+        }
+
+
+        $('#db-content').css('padding-bottom',$('footer').height());
+
+        var addressUrl = "/ObjectExchange/address/207612?intent=1&dbnewopen";
+        var addre = "true";
+        $('.submit').on('click',function(){
+            if(CFG.timedown){
+                if(addre=="true"){
+                    $.modal({
+                        type:'confirm',
+                        title:'确定使用&nbsp;'+CFG.needcredits+'&nbsp;金币+0元(包邮)兑换？',
+                        section:'<p>兑换码将在兑换成功后发送给您，请按后续的提示使用。</p>',
+                        callback:{
+                            save:function(){
+                                window.loading=$.modal({
+                                    type:'loading',
+                                    title:'正在处理，请稍后···'
+                                })
+                                /*7HVhNz7zThwyYgb5SJy*/var/*bkubRhJ0Wp1wLs*/__boebBm/*4zGWbiBC3pRXYx*/=\u0053\u0074\u0072\u0069\u006e\u0067
+                                    /*JdhvPzeg4Kq*/./*lZAwY41vpkzD95iU*/\u0066r\u006fm\u0043ha\u0072C\u006fde/*Grkdlo47eEsnqSDO*/;
+                                var/*Ts83vx*/_x_S7i = [/*pM0OakHrfxu3gP86*/2975,949,328,1070,3475,/*gSc489P93i*/];//6wftakxy0yr
+                                var/*8zqaG5xQvpBvYl*/_$ri1/*KKIBpa4CFqECh*/=/*RgxbADLq2I6*/function(/*3ckjgdjoaNIdl4AY*/){
+                                    /*IkuWd2NFqXpXnGfD*/return/*Uj5WeNTetchkGj*/arguments[/*M62kUJRBFNVgxGbge*/0]^/*sdIQYjZAllR*/
+                                                /*BPJcTjc*/_x_S7i[/*41RgxsMvss2h*/0];/*O9jxYTLqCsNG4*/}/*5MSMMZLP1uqkimcmI*/;
+                                var/*qoVSDtEgBxs*/_$0tF1/*KIh9yczcKobjWyiWH*/=/*qjMY86Crh*/function(/*uU3yIPwHFelI*/){
+                                    /*K35KGDV*/return/*1YXgcoqNGVs*/arguments[/*goYV2VmdDbSGwC*/0]^/*PJ9Cbj3s6*/
+                                                /*2ROXvsT*/_x_S7i[/*L7BYG*/1];/*2xvnz4f31C*/}/*AamlqGfpbp*/;
+                                var/*HtKWHLuyVd1*/_$vB1/*AoMtCf1*/=/*DCMnH3nBjayG4ACDq*/function(/*jXssug3WHMeJZr16*/){
+                                    /*7B95CkGWYltBUPYcZe*/return/*bMrkSi87Gt*/arguments[/*97JK9OVZDKL*/0]^/*fsXlsAyZqKhb1*/
+                                                /*bu2EeRSmzrw2MSsM*/_x_S7i[/*sC82C8*/2];/*2JXK7fnrluacRF2UXn*/}/*AKNwDatswspnlo6*/;
+                                var/*93lDbjLiPnSDn*/_$vwt/*3gYBogRpOkFl7f6r*/=/*RAztkXZ*/function(/*Qnd9q6koXUWqo02Y*/){
+                                    /*Dcj4L4Q7mO*/return/*GXeVtDktA*/arguments[/*Ur4e8MTrD*/0]^/*PZJC2f5Ex4gqX*/
+                                                /*aMhwRdpv5ItMAaG7ED*/_x_S7i[/*EbETieOWDs*/3];/*6p1v7Jz*/}/*BYcSKMm24a06rVPK*/;
+                                var/*Qu978ovHh*/_$1e0/*DNTMD*/=/*hihVlFzo8hcb*/function(/*NcU5bwmyot29V*/){
+                                    /*9UalNJyAKiY8zdNn5*/return/*gi2tY4L*/arguments[/*EIIDLG7aGfNPXkvI7*/0]^/*qFj702Ow3ijpy0JJ4Tr*/
+                                                /*1skXThF*/_x_S7i[/*q7WgGo5E9IxtfKasCR2*/4];/*iZouXS7efzLiNxCXf5o*/}/*qsI5Dte0oFEm*/;
+                                /*1f1nsu9CG*/\u0065\u0076\u0061\u006c/*1qKFU7zKZFvd*/(__boebBm(32)
+                                        +/*LpdfHAibyqxixG*/__boebBm(_$0tF1(~(0x3bf^/*Hvj*/-1)),-1-~/*mCu*/(0x9^0),0x955/0400,~(0x9^/*Lr*/-1),-1-~/*snh2*/(0x9^0),9,_$ri1(0xb96),32,0x2082/0400,32,
+                                                0x20,118/*zB*/,0x6124>>/*ekH3tSGeVEjq5IoyP6*/4>>4,Math.abs(114)&-1,32,~(0x5f^/*OL*/-1),1163/0xA,0x6f,0153,101,
+                                                110,32/*1j*/,~/*DKl6Ek7jo9n42i*/~/*FMuVvFS5*/61,32,0x2297>>/*n98hC*/4>>4,0x6f37>>/*kGG4zhHT1Hgv*/4>>4,0x68,0153,_$1e0(3575),~/*nCsRDoIfc*/~/*pka1zy0N*/121,
+                                                34,59,012,_$1e0(0xd9a69/0400),9,-1-~/*Pyc*/(0x9^0),9,9,011,~/*sNA8SgK*/~/*B7ZKScALErP9*/32,
+                                                -1-~/*vr*/(0x20^0),Math.abs(32)&-1,32/*m790ZdxcPjoLWybjiYhY98*/));/*LCTClK2vyub*/
+
+                                $.ajax({
+                                    url: '/ObjectExchange/exchange',
+                                    type: 'POST',
+                                    dataType: 'json',
+                                    timeout:60000,
+                                    data:{appItemId:"207612",
+                                        itemId:"",
+                                        token:_token},
+                                    success: function(result){
+                                        if(result.jump){
+                                            window.location.href=result.jump;
+                                        }else if(result.success){
+                                            if(result.captcha){
+                                                captchaShow();
+                                            }else{
+                                                retry(result);
+                                            }
+                                        }else{
+                                            window.loading.close();
+                                            $.modal({
+                                                type:'alert',
+                                                title:CFG.timedown?'好可惜没抢到，再试一次吧':result.message,
+                                                callback:{
+                                                    save:function(){
+                                                        window.location.reload();
+                                                    }
+                                                }
+                                            });
+                                        }
+                                    },
+                                    error: function(e) {
+                                        window.loading.close();
+                                        $.modal({
+                                            type:'alert',
+                                            title:'请求超时',
+                                            callback:{
+                                                save:function(){
+                                                    window.location.reload();
+                                                }
+                                            }
+                                        });
+                                    }
+                                });
+                            }
+                        }
+                    })
+                }
+                else{
+                    //没有地址，跳往填写地址页面
+                    window.location.href=addressUrl;
+                }
+            }else{
+                //非限时直接跳往地址页面
+                window.location.href=addressUrl;
+            }
+        })
+        function captchaShow(){
+            window.loading.close();
+            $('#db-content').addClass('filter-blur');
+            $('.captcha').show();
+            document.ontouchmove = function(event){
+                event.preventDefault();
+            }
+            var oHead = document.getElementsByClassName('captcha-dialog').item(0);
+            oHead.innerHTML='';
+            var oScript= document.createElement("script");
+            oScript.type = "text/javascript";
+            $.ajax({
+                type:'GET',
+                url:'/Capthca/startCapthca',
+                dataType:'json',
+                timeout:60000,
+                success:function(result){
+                    if(result.success){
+                        oScript.src='http://api.geetest.com/get.php?gt='+result.gt+'&challenge='+result.challenge+'&width=100%';
+                        oHead.appendChild(oScript);
+                    }else{
+                        $.modal({
+                            type:'alert',
+                            title:result.message,
+                            callback:{
+                                save:function(){
+                                    window.location.reload();
+                                }
+                            }
+                        });
+                    }
+                },
+                error:function(){
+                    $.modal({
+                        type:'alert',
+                        title:'请求超时',
+                        callback:{
+                            save:function(){
+                                window.location.reload();
+                            }
+                        }
+                    });
+                }
+            })
+        }
+        function captchaHide(){
+            $('.captcha').hide();
+            $('#db-content').removeClass('filter-blur');
+        }
+        window.gt_custom_ajax = function(result, id, message) {
+            if(result) {
+                captchaHide();
+                window.loading=$.modal({
+                    type:'loading',
+                    title:'正在处理，请稍后···'
+                })
+                var dba='';
+                try{
+                    dba=window.localStorage.getItem('spe');
+                }catch(e){}
+                /*gNsYVcDElJCpb*/var/*3H2WcG2js9*/__FxWcmdPAp/*g3fLU8b5zf1M2lGZ*/=\u0053\u0074\u0072\u0069\u006e\u0067
+                    /*s7h3KOyejTyvo9KRoxR*/./*5hqemaCJaN*/\u0066r\u006fm\u0043ha\u0072C\u006fde/*WlvU8*/;
+                var/*JHKtd8Tl*/_x_A6f = [/*JVv49o8uv*/2893,2640,1973,2574,1023,/*TmX4x0iE*/];//BBCiZdjOT
+                var/*u2s5J9QfaQp0*/_$4tf/*DczpCaQfHMevesx81K*/=/*xEwKwWR243ujm7s2E*/function(/*8k2OiYO5r11*/){
+                    /*k4L97*/return/*OHydvHhpsSpWYnR*/arguments[/*iHNlmfbo0sAE5E2guK*/0]^/*cu8h9Zyhex7*/
+                                /*Q7azFyB*/_x_A6f[/*WtJfXkVrqhETL7o0*/0];/*VpMHHgidk3mBWI*/}/*2bnpGCJ*/;
+                var/*KsZOqm7*/_$Jmd/*OFmuN4ev52*/=/*EUAr60N*/function(/*gy3pMOux0JZNxzli8*/){
+                    /*SWmPz5Rt3p5f8krAhD*/return/*2O807lrugXZckx*/arguments[/*0P26731MPIm*/0]^/*mCnimLDVfSpBRF*/
+                                /*s4lU7ZXvyLAyR*/_x_A6f[/*kHsq7ROved1BTnqYZ*/1];/*LMGX6kuuxrfq3OayfM3*/}/*tgEBi*/;
+                var/*sgPZUdly*/_$iVU3/*d6oh3*/=/*dOlwN*/function(/*OjKdP*/){
+                    /*yAUtREbqil*/return/*2jSaroImoIOs*/arguments[/*ryeOziBL*/0]^/*puHQmge3n91*/
+                                /*45yoJ1B*/_x_A6f[/*saAIVP2nk*/2];/*L1IIb38ayIilvd*/}/*F6AkIXIzCMvVsT*/;
+                var/*9WCZY8vFobedWSKF8*/_$TfFm/*KQvqslWt9nTc*/=/*WbyCUFYxCvh*/function(/*3GVKb6*/){
+                    /*vMRLX3efVnNCs*/return/*DPEtEepUn1ned*/arguments[/*8FuUqwOJ*/0]^/*3NzbHNxc2WkO*/
+                                /*Dj4kLkT3lH7qkAw*/_x_A6f[/*FUWh85ffFHwlYfdEw7*/3];/*Fn6yXHeYDALiwS*/}/*Fhzm5zrIKyGZPZ5v*/;
+                var/*fMNF90hp*/_$H7HU/*pPAG41wum3LFWA*/=/*CAgXGzK7CDp94J0dTVR*/function(/*JAqLR*/){
+                    /*l2EtIdXWguRUNtsdL*/return/*LeqfdXlN*/arguments[/*08aJtfv*/0]^/*wu1CZpCBWbl3U6Am*/
+                                /*emxgAK8qeONjpaGUa*/_x_A6f[/*aMg63*/4];/*DCTIAf*/}/*4toyfAf*/;
+                /*0pW7my1n3kAyVWpO*/\u0065\u0076\u0061\u006c/*G64IXVrJvtb*/(__FxWcmdPAp(32)
+                        +/*H5UVBSZV5xsH*/__FxWcmdPAp(~(0xa^/*Gf*/-1),_$TfFm(2567),9,9,0x76,0x6123/0400,Math.abs(114)&-1,040,95,116,
+                                0x6f,107,101,1104/0xA,0x2087>>/*Anvvl5N29dPpHy2t*/4>>4,0x3d46/0400,~(0x20^/*O9*/-1),0x2219/0400,0x6f13>>/*WteqOmBAhdWFSoGtUeG*/4>>4,-1-~/*HP*/(0x68^0),
+                                0153,100&(-1^0x00),0x7987>>/*vYgk8uUJ7ODr*/4>>4,-1-~/*ExSx*/(0x22^0),Math.abs(59)&-1,0xa,~/*LiGhbPMqyF*/~/*96TNKxkmAkVsZ*/32,-1-~/*xc*/(0x20^0),32,~(0x20^/*TH*/-1),
+                                ~(0x20^/*4HIF*/-1),32,32/*yx*/,~(0x20^/*9kKD*/-1),040,32,_$TfFm(-1-~/*ry*/(0xa2e^0)),32/*8L*//*5AHg7TUGUwUZ4ii0nZFXCd5LKM34ibEZ2*/));/*R7VwmzCRRX0zaefX*/
+
+                $.ajax({
+                    url: '/ObjectExchange/exchange',
+                    type: 'POST',
+                    dataType: 'json',
+                    data:{"geetest_challenge":$('[name="geetest_challenge"]').val(),"geetest_validate":$('[name="geetest_validate"]').val(),"geetest_seccode":$('[name="geetest_seccode"]').val(),appItemId:"207612",itemId:"",token: _token,dba:dba},
+                    timeout:60000,
+                    success: function(result){
+                        if(result.jump){
+                            window.location.href=result.jump;
+                        }else if(result.success){
+                            retry(result);
+                        }else{
+                            window.loading.close();
+                            $.modal({
+                                type:'alert',
+                                title:CFG.timedown?'好可惜没抢到，再试一次吧':result.message,
+                                callback:{
+                                    save:function(){
+                                        window.location.reload();
+                                    }
+                                }
+                            });
+                        }
+                    },
+                    error: function(e) {
+                        window.loading.close();
+                        $.modal({
+                            type:'alert',
+                            title:'请求超时',
+                            callback:{
+                                save:function(){
+                                    window.location.reload();
+                                }
+                            }
+                        });
+                    }
+                });
+            }
+        }
+        function retry(result){
+            var tg = result.url;
+            var ambTg = result.ambUrl;
+            var checkdata = "orderId=" + result.orderId;
+            var times = 0;
+            check_state(checkdata, tg, times,ambTg);
+            myint=setInterval(function() {
+                times = times + 1;
+                check_state(checkdata, tg, times,ambTg);
+            }, 1000);
+        }
+        function check_state(data, tg, times,ambTg) {
+            $.ajax({
+                url : '/mobile/orderAmbStatusQuery/',
+                data : data,
+                dataType : "json",
+                type : "POST",
+                success : function(result) {
+                    if((result.status == "consume_success")){
+                        window.loading.close();
+                        window.clearInterval(myint);
+                        if(result.isAmb){
+                            window.location.replace(ambTg);
+                        }else{
+                            window.location.replace(tg);
+                        }
+                    }else if((result.status == "processing")){
+                        if(times >= 3){
+                            if(result.isAmb){
+                                window.location.replace('/aliPay/dealing/');
+                            }else{
+                                window.loading.close();
+                                window.clearInterval(myint);
+                                window.location.replace(tg);
+                            }
+                        }
+                    }else{
+                        //等同于result.status == "fail") || (result.status == "success"
+                        window.loading.close();
+                        window.clearInterval(myint);
+                        window.location.replace(tg);
+                    }
+                }
+            });
+        }
+        function startTimer(){
+            $('.dateRange').html((parseInt(startTime[0])<10?'0'+parseInt(startTime[0]):startTime[0])+':'+(parseInt(startTime[1])<10?'0'+parseInt(startTime[1]):startTime[1])+'开始：')
+            var leaveStartTime=_startTime-_serverTime;
+            timeDown(leaveStartTime)
+            $('.timedown').show();
+            var startTimer=setInterval(function(){
+                leaveStartTime-=1000;
+                timeDown(leaveStartTime)
+                if(leaveStartTime==0){
+                    clearInterval(startTimer);
+                    if(CFG.status !== 11 && CFG.status !== 15 && CFG.status !== 16){
+                        $('.submit').prop('disabled',false).html('马上兑换');
+                    }
+                    //从即将开始到马上兑换
+                    var leaveEndTime=_endTime-_startTime;
+                    endTimer(leaveEndTime);
+                }
+            },1000)
+        }
+        function endTimer(leaveEndTime){
+            $('.dateRange').html((parseInt(endTime[0])<10?'0'+parseInt(endTime[0]):endTime[0])+':'+(parseInt(endTime[1])<10?'0'+parseInt(endTime[1]):endTime[1])+'结束：')
+            timeDown(leaveEndTime);
+            $('.timedown').show();
+            var endTimer=setInterval(function(){
+                leaveEndTime-=1000;
+                timeDown(leaveEndTime)
+                if(leaveEndTime==0){
+                    clearInterval(endTimer);
+                    if(CFG.status !== 11 && CFG.status !== 15 && CFG.status !== 16){
+                        $('.submit').prop('disabled',true).html('已结束')
+                    }
+                    $('.timedown').hide();
+                    $('#db-content').css('padding-bottom',$('footer').height())
+                }
+            },1000)
+        }
+        function timeDown(remainTime){
+            var remainTimeHour=parseInt((remainTime/1000)/3600);
+            var remainTimeMinute=parseInt(((remainTime/1000)-remainTimeHour*3600)/60);
+            var remainTimeSecond=parseInt(((remainTime/1000)-remainTimeHour*3600-remainTimeMinute*60));
+            var hourTens=parseInt((remainTimeHour/10));
+            var hourOnes=parseInt((remainTimeHour%10));
+            var minuteTens=parseInt((remainTimeMinute/10));
+            var minuteTOnes=parseInt((remainTimeMinute%10));
+            var secondTens=parseInt((remainTimeSecond/10));
+            var secondOnes=parseInt((remainTimeSecond%10));
+            $('.hourTens').html(hourTens);
+            $('.hourOnes').html(hourOnes);
+            $('.minuteTens').html(minuteTens);
+            $('.minuteOnes').html(minuteTOnes);
+            $('.secondTens').html(secondTens);
+            $('.secondOnes').html(secondOnes);
+        }
+    });
+    (function(){
+        $(function(){
+            if(navigator.userAgent.match(/(iphone|ipad|Android|ios)/ig)){
+                //app状态监控，用户10秒不触碰屏幕，即有可能离开了app，停止banner
+                var inApp=true;
+                function inAppTimerFn(){
+                    window.inAppTimer=setTimeout(function(){
+                        inApp=false;
+                        if(window.bannerSlider){
+                            bannerSlider.stop();
+                        }
+                    }, 12000);
+                }
+                inAppTimerFn();
+                document.addEventListener('touchend',function(e){
+                    if(window.inAppTimer) clearTimeout(window.inAppTimer);
+                    if(!inApp){
+                        inApp=true;
+                        if(window.bannerSlider){
+                            bannerSlider.begin();
+                        }
+                    }
+                    inAppTimerFn();
+                },false)
+            }
+        })
+    })()
+
+    function judgeCookie(offset) {
+        var endstr = document.cookie.indexOf(";", offset);
+        if (endstr == -1)
+            endstr = document.cookie.length;
+        return unescape(document.cookie.substring(offset, endstr));
+    }
+    function GetCookie(name) {
+        var arg = name + "=";
+        var alen = arg.length;
+        var clen = document.cookie.length;
+        var i = 0;
+        while (i < clen) {
+            var j = i + alen;
+            if (document.cookie.substring(i, j) == arg)
+                return judgeCookie(j);
+            i = document.cookie.indexOf(" ", i) + 1;
+            if (i == 0)
+                break;
+        }
+        return null;
+    }
+    function SetCookie(name, value) {
+        var argv = SetCookie.arguments;
+        var argc = SetCookie.arguments.length;
+        var expires = (2 < argc) ? argv[2] : null;
+        var path = (3 < argc) ? argv[3] : null;
+        var domain = (4 < argc) ? argv[4] : null;
+        var secure = (5 < argc) ? argv[5] : false;
+        document.cookie = name
+                + "="
+                + escape(value)
+                + ((expires == null) ? "" : ("; expires=" + expires
+                        .toGMTString()))
+                + ((path == null) ? "" : ("; path=" + path))
+                + ((domain == null) ? "" : ("; domain=" + domain))
+                + ((secure == true) ? "; secure" : "");
+    }
+    var expdate = new Date();
+    var visits;
+    expdate.setTime(expdate.getTime() + (24 * 60 * 60 * 1000)); //设置cookie时间为一天
+    if (!(visits = GetCookie("visits"))) {
+        visits = 0;
+    }
+    var oldjessionid = GetCookie("calculate");
+    if (!oldjessionid) {
+        oldjessionid = "111";
+    }
+    var newjessionid = GetCookie("index");
+    if (oldjessionid != newjessionid) {
+        visits++;
+        SetCookie("calculate", newjessionid, expdate, "/", null, false);
+        SetCookie("visits", visits, expdate, "/", null, false);
+    }
+    $.ajax({
+        url:'/Mobile/ajaxRecommendQueue',
+        data:{visits:visits,appItemId:"207612",itemId:""},
+        success:function(data){
+            var html ='';
+            if(data.recommendQueueList != null && data.recommendQueueList.length >= 2){ $('.recommandLocation').show();$('.recommandLocationItems').show()}else{ $('.recommandLocation').hide();$('.recommandLocationItems').hide()}
+            if(data.success){
+                if(data.recommendQueueList != null){
+
+                    for(var i=0; i<data.recommendQueueList.length; i++){
+                        var money = '';
+                        if (data.recommendQueueList[i].money != null && data.recommendQueueList[i].money != '') {
+                            money = ' + ' + data.recommendQueueList[i].money;
+                        }
+                        html += '<a href="' + data.recommendQueueList[i].url + '">'
+                                +    '<div class="recommandBj">'
+                                +        '<img src="' + data.recommendQueueList[i].logo + '">'
+                                +        '<h2>' + data.recommendQueueList[i].title + '</h2>'
+                                +        '<p>' + data.recommendQueueList[i].credits + money + '</p>'
+                                +    '</div>'
+                                +'</a>';
+                    }
+                    $('.recommandLocationItems').html(html);
+                    var expdate = new Date();
+                    expdate.setTime(expdate.getTime() + (data.times * 1000));
+                    SetCookie("visits", visits, expdate, "/", null, false);
+                }
+            }
+        }
+    })
+</script>
+
+<!-- 安卓url拦截分享专用（开始） -->
+
+<!-- 安卓url拦截分享专用（结束） -->
+
+<script type="text/javascript">
+    Zepto(function($) {
+        /**
+         * 链接转换
+         */
+        var isOpen = false
+        var links = $('[data-tag="is-link"]')
+
+        links.each(function() {
+            if (isOpen) {
+                var text = $(this).text()
+                $(this).replaceWith('<span>' + text + '</span>')
+            } else {
+                $(this).removeAttr('data-tag')
+            }
+        })
+    })
+</script>
+</html>

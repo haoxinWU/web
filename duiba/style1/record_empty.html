@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta content="telephone=no" name="format-detection"/>
+    <!-- 新浪新闻定制分享meta -->
+
+    <title>兑换记录</title>
+
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
+    <link rel="stylesheet" href="../css/normalize.min.css?t=20151016">
+    <link rel="stylesheet" href="../css/records-list-v1201.css?t=20151201">
+    <style>
+        .tooltip{color: #11c3bc;padding: 2px 5px;display:inline-block;background-color: #fff;border: solid #11c3bc 1px;font-size: 10px;position: relative;border-radius: 2px;font-style: normal;margin-left: 8px;}
+        .tooltip::after{content: '';display: block;position: absolute;left:-5px;top:50%;margin-top:-3px;border: solid transparent 3px; border-right-color:#fff; }
+        .tooltip::before{content: '';display: block;position: absolute;left:-6px;top:50%;margin-top:-3px;border: solid transparent 3px; border-right-color:#11c3bc; }
+    </style>
+    <!-- 她社区定制 -->
+
+    <!-- 凤凰网定制： 查看更多历史记录，导航条 -->
+
+</head>
+<body>
+<style>html{height:100%;}body{height:100%;}</style>
+<div class="noRecord">
+    <img src="http://yun.duiba.com.cn/img/app/noRecord.png"/>
+    <p>还没有您的记录哦~</p>
+    <p>快进行第一次兑换吧！</p>
+    <a href="/mobile/index?dbbackroot" class="goHome">去兑换</a>
+</div>
+<div id="db-content">
+    <div class="loading"><img src="http://yun.duiba.com.cn/webapp/img/loading.gif"></div>
+    <div class="nomore">已经没有更多了！</div>
+    <div class="retry">加载失败，点击重试</div>
+</div>
+</body>
+<script src="../js/zepto.min.js"></script>
+<script src="../js/fastclick.js"></script>
+<script>
+    $(function(){
+        //fastclick
+        Origami.fastclick(document.body);
+        var
+                NextPage=false,
+                devNextPage=true,
+                Page=1,
+                devPage=1,
+                IsLoading=false
+
+        if(9739 == 1502){
+            if(!NextPage && !devNextPage && false){
+                $('.nomore').show();
+            }
+        }else{
+            if(!NextPage && false){
+                $('.nomore').show();
+            }
+        }
+
+        if(false){
+            devPage = 2;
+        }
+
+        $(window).on('scroll',function(){
+            var ScrollTop=$(window).scrollTop();
+            var GroupHeight=$('.records-list').height();
+            var WinHeight=$(window).height();
+            if(9739 == 1502){
+                if(NextPage){
+                    if(ScrollTop+WinHeight+75>=GroupHeight && !IsLoading){
+                        Page++;
+                        GetRecords();
+                    }
+                }else{
+                    if(devNextPage){
+                        if(ScrollTop+WinHeight+75>=GroupHeight && !IsLoading){
+                            GetDevRecords();
+                            devPage++;
+                        }
+                    }
+                }
+            }else{
+                if(ScrollTop+WinHeight+75>=GroupHeight && !IsLoading && NextPage){
+                    Page++;
+                    GetRecords();
+                }
+            }
+
+
+        })
+        $('.retry').on('click',function(){
+            $(this).hide();
+            GetRecords();
+        })
+        $('.records-list').on('click','.record-group',function(){
+            $(this).find('.new-record').remove();
+        })
+        function GetRecords(){
+            IsLoading=true;
+            $('.loading').show()
+            $.ajax({
+                type:'POST',
+                url:'/crecord/getRecord',
+                dataType:'json',
+                data:{page:Page},
+                timeout:10000,
+                success:function(result){
+                    $('.loading').hide()
+                    if(result.success){
+                        IsLoading=false;
+                        NextPage=result.nextPage;
+                        if(!NextPage){
+                            if(9739 != 1502){
+                                $('.nomore').show();
+                            }
+                        }
+                        var HTML='';
+                        for(var i in result.records){
+                            HTML+='<a href="'+result.records[i].url+'">'
+                            if(result.records[i].invalid){
+                                HTML+='<div class="record-group invalid">'
+                            }else{
+                                HTML+='<div class="record-group">'
+                            }
+                            HTML+='<img src="'+result.records[i].img+'">'+
+                                    '<div class="item-info">';
+
+                            if(result.records[i].new){
+                                HTML+='<h2><i class="new-record"></i><span>'+result.records[i].title+'</span></h2>'
+                            }else{
+                                HTML+='<h2><span>'+result.records[i].title+'</span></h2>'
+                            }
+                            HTML+='<p>'+result.records[i].statusText+'</p>'+
+                                    '</div>'+
+                                    '</div>'+
+                                    '</a>'
+                        }
+                        $('.records-list').append(HTML);
+                    }else{
+                        $('.retry').show();
+                    }
+                },
+                error:function(){
+                    $('.loading').hide()
+                    $('.retry').show();
+                }
+            })
+        }
+        function GetDevRecords(){
+            IsLoading=true;
+            $('.loading').show()
+            $.ajax({
+                type:'POST',
+                url:'/crecord/getDevRecord',
+                dataType:'json',
+                data:{page:devPage},
+                timeout:10000,
+                success:function(result){
+                    $('.loading').hide()
+                    if(result.success){
+                        IsLoading=false;
+                        NextPage=result.nextPage;
+                        devNextPage=result.devNextPage
+                        if(!NextPage && !devNextPage){
+                            $('.nomore').show();
+                        }
+                        var HTML='';
+                        for(var i in result.records){
+                            HTML+='<a href="'+result.records[i].url+'">'
+                            if(result.records[i].invalid){
+                                HTML+='<div class="record-group invalid">'
+                            }else{
+                                HTML+='<div class="record-group">'
+                            }
+                            HTML+='<img src="'+result.records[i].img+'">'+
+                                    '<div class="item-info">';
+                            if(result.records[i].new){
+                                HTML+='<h2><i class="new-record"></i><span>'+result.records[i].title+'</span></h2>'
+                            }else{
+                                HTML+='<h2><span>'+result.records[i].title+'</span></h2>'
+                            }
+                            HTML+='<p>'+result.records[i].statusText+'</p>'+
+                                    '</div>'+
+                                    '</div>'+
+                                    '</a>'
+                        }
+                        $('.records-list').append(HTML);
+                    }else{
+                        $('.retry').show();
+                    }
+                },
+                error:function(){
+                    $('.loading').hide()
+                }
+            })
+        }
+    })
+</script>
+</html>
