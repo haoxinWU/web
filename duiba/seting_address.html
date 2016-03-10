@@ -28,9 +28,6 @@
                 <span class="num">1金币</span>
 
             		<span class="num" id="allPrice">
-
-
-
 	            	</span>
 	            	<span class="express" id="expressPrice">
 
@@ -167,63 +164,6 @@
         if(cbProvince !=''){ $('#province').val(cbProvince).trigger('change');}else{$('.province-val').html('选择省份<i></i>');}
         if(cbCity     !=''){ $('#city').val(cbCity).trigger('change');}else{$('.city-val').html('选择城市<i></i>');}
         if(cbArea     !=''){ $('#area').val(cbArea).trigger('change');}else{$('.area-val').html('选择区县<i></i>');}
-        //按钮初始化
-        $('#city').change(function(){
-            //针对运费模板的计算运费
-            var expressPrice = '';
-            var expressTemplateId = '';
-            window.province=$('#province').children('option:selected').val();
-            window.city=$('#city').children('option:selected').val();
-            window.area=$('#area').children('option:selected').val();
-            province =province=='请选择'?'':province;
-            city     =city=='请选择'?'':city;
-            area     =area=='请选择'?'':area;
-            if(expressTemplateId){
-                $.ajax({
-                    async:false,//使用同步的Ajax请求
-                    url: '/ObjectExchange/calcExpressPrice',
-                    type: 'POST',
-                    data:{
-                        'expressTemplateId':expressTemplateId,
-                        'addrProvince':province,
-                        'addrCity':city,
-                        'addrArea':area,
-                    },
-                    dataType: 'json',
-                    success:function(result){
-                        if(result.success){
-                            var salePrice = '0';
-                            expressPrice = result.expressPirce;
-                            if( salePrice > 0 || expressPrice > 0) {
-                                var allPrice = (salePrice == '' ? 0 : salePrice/100) + (expressPrice == '' ? 0 : expressPrice/100)+"";
-                                allPrice = allPrice+'元';
-                                $("#allPrice").text(allPrice);
-                                if(expressPrice >0 ){
-                                    $("#expressPrice").text('(含运费￥'+expressPrice/100+'元)');
-                                }
-                                if(expressPrice == 0){
-                                    $("#expressPrice").text('(包邮)');
-                                }
-                            }
-                            if(expressPrice == null){
-
-                                $("#expressPrice").text('(包邮)');
-                            }
-
-                        }else{
-                            $.modal({
-                                type:'alert',
-                                title:result.message
-                            });
-                        }
-                    },
-                    error:function(e){
-                        ajaxError(e);
-                    }
-                });
-            }
-        });
-
         //提交
         $('#submit').on('click',function(){
             var vaild=true;
@@ -266,34 +206,6 @@
             area     =area=='请选择'?'':area;
             //针对运费模板的计算运费
             var expressPrice = '';
-            var expressTemplateId = '';
-            if(expressTemplateId){
-                $.ajax({
-                    async:false,//使用同步的Ajax请求
-                    url: '/ObjectExchange/calcExpressPrice',
-                    type: 'POST',
-                    data:{
-                        'expressTemplateId':expressTemplateId,
-                        'addrProvince':province,
-                        'addrCity':city,
-                        'addrArea':area,
-                    },
-                    dataType: 'json',
-                    success:function(result){
-                        if(result.success){
-                            expressPrice = result.expressPirce;
-                        }else{
-                            $.modal({
-                                type:'alert',
-                                title:result.message,
-                            });
-                        }
-                    },
-                    error:function(e){
-                        ajaxError(e);
-                    }
-                });
-            }
             var appendHtml = "<br>支付价格：1金币&nbsp;";
             var salePrice = '0';
             if(salePrice >0 || expressPrice > 0){
@@ -319,134 +231,11 @@
                         window.loading=$.modal({
                             type:'loading',
                             title:'正在处理，请稍后···'
-                        })
-                    }
-                }
-            })
-        })
-
-
-        function captchaShow(){
-            var oHead = document.getElementsByClassName('captcha-dialog').item(0);
-            oHead.innerHTML='';
-            var oScript= document.createElement("script");
-            oScript.type = "text/javascript";
-            $.ajax({
-                type:'GET',
-                url:'/Capthca/startCapthca',
-                dataType:'json',
-                success:function(result){
-                    if(result.success){
-                        oScript.src='http://api.geetest.com/get.php?gt='+result.gt+'&challenge='+result.challenge+'&width=100%';
-                        oHead.appendChild( oScript);
-                        $('#db-content').addClass('filter-blur');
-                        $('.captcha').show();
-                        document.ontouchmove = function(event){
-                            event.preventDefault();
-                        }
-                    }else{
-                        window.loading.close();
-                        $.modal({
-                            type:'alert',
-                            title:false?'好可惜没抢到，再试一次吧':result.message,
-                            callback:{
-                                close:function(){
-                                    window.location.reload();
-                                }
-                            }
                         });
                     }
-                },
-                error:function(){
-                    window.loading.close();
-                    $.modal({
-                        type:'alert',
-                        title:false?'好可惜没抢到，再试一次吧':result.message,
-                        callback:{
-                            close:function(){
-                                window.location.reload();
-                            }
-                        }
-                    });
                 }
             })
-        }
-        function captchaHide(){
-            $('.captcha').hide();
-            $('#db-content').removeClass('filter-blur');
-            document.ontouchmove = null;
-        }
-        function retry(result){
-            var tg = result.url;
-            var ambTg = result.ambUrl;
-            var checkdata = "orderId=" + result.orderId;
-            console.info(ambTg);
-            var times = 0;
-            checkState(checkdata, tg, times,ambTg);
-            myint=setInterval(function() {
-                times = times + 1;
-                checkState(checkdata, tg, times,ambTg);
-            }, 1000);
-        }
-        function checkState(data, tg, times,ambTg) {
-            $.ajax({
-                url : '/mobile/orderAmbStatusQuery/',
-                data : data,
-                dataType : "json",
-                type : "POST",
-                success : function(result) {
-                    if((result.status == "consume_success")){
-                        window.loading.close();
-                        window.clearInterval(myint);
-                        if(result.isAmb){
-                            window.location.replace(ambTg);
-                        }else{
-                            window.location.replace(tg);
-                        }
-                    }else if((result.status == "processing")){
-                        if(times >= 3){
-                            if(result.isAmb){
-                                window.location.replace('/aliPay/dealing/');
-                            }else{
-                                window.loading.close();
-                                window.clearInterval(myint);
-                                window.location.replace(tg);
-                            }
-                        }
-                    }else{
-                        //等同于result.status == "fail") || (result.status == "success"
-                        window.loading.close();
-                        window.clearInterval(myint);
-                        window.location.replace(tg);
-                    }
-                }
-            });
-        }
-        function ajaxError(e){
-            window.loading.close();
-            if(CFG.timedown){
-                $.modal({
-                    type:'alert',
-                    title:'好可惜没抢到，再试一次吧',
-                });
-            }
-            else if(e.status==0){
-                $.modal({
-                    type:'alert',
-                    title:'网络连接失败，请检查网络',
-                });
-            }else if(e.status==404){
-                $.modal({
-                    type:'alert',
-                    title:'找不到服务器地址，请重试',
-                });
-            }else{
-                $.modal({
-                    type:'alert',
-                    title:'系统发生错误，请重试',
-                });
-            }
-        }
+        });
     })
 </script>
 </html>
