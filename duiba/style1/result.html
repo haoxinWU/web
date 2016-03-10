@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta content="telephone=no" name="format-detection"/>
+    <title>兑换结果</title>
+    <link rel="stylesheet" href="../css/normalize.min.css?t=20151026">
+    <link rel="stylesheet" href="../css/modal.min.css">
+    <link rel="stylesheet" href="../css/exchange-result.css?t=20160114">
+    <link rel="stylesheet" href="../css/ordinaryRecommend.css?t=20160114">
+
+    <style>
+        .theme-color{color: #63d23e;}
+        .theme-bgcolor{background-color: #63d23e;}
+        .theme-bordercolor{border-color: #63d23e;}
+        /* radio */
+        .radio-group.cur{border-color:#63d23e; }
+        .radio-group .cur-arrow{border-color: #63d23e transparent transparent #63d23e;}
+        .description a {color: #63d23e;}
+    </style>
+    <style>
+        /*主题色*/
+        footer a{color: #63d23e;border-color: #63d23e;}
+        footer a:active{background-color: #63d23e;color: #fff;}
+        .tel i{background-color:#63d23e; }
+        .use{background-color:#63d23e;}
+        .recommandLocationItems a .recommandBj p{color: #63d23e;}
+        /*主题色*/
+        .alipay-error{color:red;margin-left:10px;}
+
+        /*优惠券如果有效期*/
+        .dialog section .item-info .title h3{margin:5px 0 10px;}
+        /*优惠券如果有效期*/
+
+        .description{border-bottom: solid #ddd 1px;border-top: solid #ddd 1px;}
+    </style>
+
+</head>
+<body>
+<div id="db-content">
+    <script src="../js/GJNativeAPI.min.js"></script>
+    <script>
+        window.onload=function(){
+            $('body').on('click',"a",function(){
+                var openLink=$(this).attr('href');
+                if(openLink.indexOf('dbnewopen')!=-1){
+                    // 打开一个新的webview
+                    GJNativeAPI.invoke('createWebView', {
+                        url: openLink
+                    });
+                    return false;
+                }
+            })
+
+            // 注册一个back回调
+            GJNativeAPI.registerHandler('back', function (params, callback) {
+                //如果允许关闭当前的webview则返回:
+                callback({
+                    preventDefault: false
+                });
+            });
+
+            // 注册一个resume事件回调
+            GJNativeAPI.registerHandler('triggerEvent', function (params) {
+                if (params.name === 'onResume' && window.location.href.indexOf('chome/index')!==-1) {
+                    $.ajax({
+                        type:'GET',
+                        url:'/ctool/getCredits',
+                        dataType:'json',
+                        success:function(result){
+                            if(result.success){
+                                $('#db-credits-num').html(result.credits);
+                            }
+                        }
+                    })
+                }
+            });
+        }
+    </script>
+
+
+
+
+
+
+
+
+    <!-- 她社区定制 -->
+
+
+    <!-- 爱卡无线定制 -->
+
+
+    <!-- 凤凰新闻定制，修复分享问题 -->
+
+
+
+    <div class="dialog coupon success">
+
+
+
+        <section>
+
+            <div class="item-info">
+
+
+                <img class="item-icon" src="http://yun.duiba.com.cn/images/201602/9x34f34qad.png">
+
+
+                <div class="title">
+                    <h3>库尔勒香梨19.9元包邮&nbsp;&nbsp;</h3>
+
+
+                    <p>还剩12天（至2016-03-15）</p>
+
+
+                </div>
+            </div>
+
+
+            <div class="attribute">
+                <p>
+                    <span>兑换价格：</span>
+                    <strong>
+                        1积分
+
+                    </strong>
+                </p>
+
+                <!-- 不包含链接优惠券 -->
+
+
+            </div>
+
+            <div class="description"><h3 style="line-height: 22.2222px;"><b>全球农场直采，多仓发货，专业冷库，严控品质~花果山-带你去吃好水果，价值49.9元库尔勒香梨（3斤装），19.9包邮领！</b></h3><h3 style="line-height: 22.2222px;"><ul style="color: rgb(51, 51, 51); font-size: 14px; font-weight: normal; line-height: 22.2222px;"><li><a href="http://www.huaguoshan.com/?dbnewopen" data-tag="is-link">花果山</a>，提供高品质鲜果产品和个性化鲜果服务。精选全球鲜果美食，搭建从产地到消费者之间的直供平台，自建冷库，冷链物流。便利宅送，全年无休。主营中高端水果产品，包括进口鲜果和国内优质鲜果</li></ul></h3><h4 style="line-height: 22.2222px;">使用流程</h4><h3 style="line-height: 22.2222px;"><ol style="color: rgb(51, 51, 51); font-size: 14px; font-weight: normal; line-height: 22.2222px;"><li><span style="line-height: 26.6667px;">兑换成功后，点击领取</span></li><li><span style="line-height: 26.6667px;">进入领券页面，输入手机号后，点击“领取优惠券”</span></li><li><span style="line-height: 26.6667px;">点击领取优惠券下方【<a href="http://a.app.qq.com/o/simple.jsp?pkgname=com.huaguoshan.app&amp;dbnewopen" data-tag="is-link">下载App</a>】，下载<a href="http://a.app.qq.com/o/simple.jsp?pkgname=com.huaguoshan.app&amp;dbnewopen" data-tag="is-link">花果山App</a></span></li><li><span style="line-height: 26.6667px;">使用领券所用手机号登录花果山App（<span class="wysiwyg-color-red">若使用其他方式登录，则账户中没有这张券</span>）</span></li><li>点击30元优惠券，点击【立即购买】</li><li>完善收货信息，即可支付19.9元获得</li></ol></h3><h4 style="line-height: 22.2222px;">使用规则</h4><h3 style="line-height: 22.2222px;"><ul style="color: rgb(51, 51, 51); font-size: 14px; font-weight: normal; line-height: 22.2222px;"><li><span class="wysiwyg-color-red">仅限新用户领取一次</span></li><li><font color="#ff3428">该产品为小香梨，介意慎拍哦~</font></li><li>不可与其他优惠叠加使用，不兑现不找零</li><li><span class="wysiwyg-color-red">用户需支付19.9元</span></li><li><span class="wysiwyg-color-red">内蒙古、新疆、黑龙江、青海、甘肃、宁夏、辽宁、吉林、西藏、港澳台等地区不配送<br></span></li><li>商家客服热线：400-999-6026</li><li>请兑换后仔细阅读使用流程，若有疑问，可直接联系客服专线：400-084-6200或客服QQ：2850393282 （工作日9:30至18:30）</li></ul><img src="http://yun.duiba.com.cn/apk/1coltdubm3.jpg" style="color: rgb(51, 51, 51); font-size: 14px; font-weight: normal; line-height: 22.2222px;"><br style="color: rgb(51, 51, 51); font-size: 14px; font-weight: normal; line-height: 22.2222px;"><img src="http://yun.duiba.com.cn/apk/khai6bngcz.png" style="color: rgb(51, 51, 51); font-size: 14px; font-weight: normal; line-height: 22.2222px;"><br style="color: rgb(51, 51, 51); font-size: 14px; font-weight: normal; line-height: 22.2222px;"><img src="http://yun.duiba.com.cn/apk/3bbba2uv4z.png" style="color: rgb(51, 51, 51); font-size: 14px; font-weight: normal; line-height: 22.2222px;"><br style="color: rgb(51, 51, 51); font-size: 14px; font-weight: normal; line-height: 22.2222px;"><br style="color: rgb(51, 51, 51); font-size: 14px; font-weight: normal; line-height: 22.2222px;"><br style="color: rgb(51, 51, 51); font-size: 14px; font-weight: normal; line-height: 22.2222px;"><br style="color: rgb(51, 51, 51); font-size: 14px; font-weight: normal; line-height: 22.2222px;"><br style="color: rgb(51, 51, 51); font-size: 14px; font-weight: normal; line-height: 22.2222px;"><br style="color: rgb(51, 51, 51); font-size: 14px; font-weight: normal; line-height: 22.2222px;"><br style="color: rgb(51, 51, 51); font-size: 14px; font-weight: normal; line-height: 22.2222px;"></h3></div>
+
+
+
+
+
+            <div class="attribute">
+                <p><span>订单编号：</span><strong>2016030423335650200940908</strong></p>
+
+                <p><span>客服热线：</span><a class="tel theme-color" href="tel:400-084-6200"><i></i>400-084-6200</a></p>
+
+            </div>
+
+        </section>
+
+        <div class="recommandLocation" style='margin-top:10px; display:none'>
+            <em></em><i></i><span>为您推荐</span><em></em>
+        </div>
+        <div class="recommandLocationItems clearfix" style='display:none'>
+        </div>
+
+
+
+
+
+        <footer>
+
+            <a href="http://m.huaguoshan.com/RedPacket/Outlet_2016_03_01" class="use">点击领取</a>
+
+        </footer>
+
+
+
+
+    </div>
+</div>
+</body>
+<script src="../js/zepto.min.js"></script>
+<script src="../js/fastclick-v1.0.6.min.js"></script>
+<script src="../js/modal.min.js?t=20160112"></script>
+<script>
+    $(function(){
+        //倒计时
+        var remainTime = '';
+        function countDown(remainTimeStemp) {
+            var m = parseInt(remainTimeStemp / 1000 / 60);
+            var s = parseInt(remainTimeStemp / 1000 % 60);
+            m = (m < 10 && String(m).length < 2) ? '0'+m : m;
+            s = (s < 10 && String(s).length < 2) ? '0'+s : s;
+            $('.timedown').html(m + ':' + s);
+
+            if(remainTimeStemp==0){
+                clearInterval(timer);
+                $('.pay').addClass('disabled').html('支付超时');
+                $('.cancelOrder').hide();
+                if(remainTime!='00:00'){
+                    setTimeout(function(){
+                        window.location.reload();
+                    },10000)
+                }
+            }
+        }
+        var remainM = parseInt(remainTime.split(':')[0]);
+        var remainS = parseInt(remainTime.split(':')[1]);
+        var remainTimeStemp = remainM * 60 * 1000 + remainS * 1000;
+        countDown(remainTimeStemp);
+        if(remainTimeStemp>0){
+            var timer = setInterval(function() {
+                remainTimeStemp -= 1000;
+                countDown(remainTimeStemp);
+            }, 1000);
+        }
+
+        $('.cancelOrder').on('click',function(){
+            $.modal({
+                type:'confirm',
+                title:'取消订单',
+                section:'您确认要取消此订单？',
+                callback:{
+                    save:function(){
+                        $.ajax({
+                            type:'POST',
+                            url:'/crecord/cancelOrder/'+60738178,
+                            data:{},
+                            dataType:'json',
+                            success:function(result){
+                                if(result.success){
+                                    $.modal({
+                                        type:'alert',
+                                        title:'订单已被取消',
+                                        callback:{
+                                            save:function(){
+                                                window.location.reload();
+                                            }
+                                        }
+                                    })
+                                }else{
+                                    $.modal({
+                                        type:'alert',
+                                        title:result.message
+                                    })
+                                }
+                            },
+                            error:function(){
+                                $.modal({
+                                    type:'alert',
+                                    title:'网络解析错误'
+                                })
+                            }
+                        })
+                    }
+                }
+            })
+        })
+
+        $('.pay').on('click',function(){
+            if($(this).hasClass('disabled')){
+                return false;
+            }
+        })
+
+        FastClick.attach(document.body);
+        //responsive
+        var deviceWidth=$('body').width();
+        $('body').css('padding-bottom',$('footer').height());
+        $('.item-info').css('background-position-x',deviceWidth-parseInt($('.item-info').css('background-size'))-18).find('.title').css('width',deviceWidth-30-$('.item-icon').width()-10);
+        if($('footer a').length==0){$('footer').hide()}
+        $(".use").click(function(e) {
+            if(false){
+                $.modal({
+                    type:'confirm',
+                    title:"即将开始下载，是否继续",
+                    section:'',
+                    trueButton:"开始下载",
+                    falseButton:"取消",
+                    callback:{
+                        save:function(){
+                            ajax();
+                        }
+                    }
+                })
+            }else{
+                ajax();
+            }
+        });
+    });
+
+    $('.takeOver').on('click',function(){
+        $.modal({
+            type:'confirm',
+            title:'确认收货',
+            section:'您已经收到货并确认收货？',
+            callback:{
+                save:function(){
+                    $.ajax({
+                        type:'POST',
+                        url:'/crecord/confirmReceived/'+60738178,
+                        data:{},
+                        dataType:'json',
+                        success:function(result){
+                            if(result.success){
+                                $.modal({
+                                    type:'alert',
+                                    title:'收货成功'
+                                })
+                                $('.takeOver').hide();
+                            }else{
+                                $.modal({
+                                    type:'alert',
+                                    title:result.message
+                                })
+                            }
+                        },
+                        error:function(){
+                            $.modal({
+                                type:'alert',
+                                title:'网络解析错误'
+                            })
+                        }
+                    })
+                }
+            }
+        })
+    });
+
+    function ajax(){
+        $.ajax({
+            url : '/cburial/click?buId=1000&buValue=5555',
+            complete : function(msg) {
+                if(true){
+                    window.location = 'http://m.huaguoshan.com/RedPacket/Outlet_2016_03_01';
+                }
+                else if(false){
+                    window.location = 'http://m.huaguoshan.com/RedPacket/Outlet_2016_03_01';
+                }
+                else{
+                    var url="http://m.huaguoshan.com/RedPacket/Outlet_2016_03_01";
+                    window.location = url;
+                    var ifr = document.createElement('iframe');
+                    ifr.src = 'http://m.huaguoshan.com/RedPacket/Outlet_2016_03_01';
+                    ifr.style.display = 'none';
+                    window.setTimeout(function(){
+                        document.body.appendChild(ifr);
+                        //document.body.removeChild(ifr);
+                    },300)
+                }
+            }
+        });
+    }
+
+    //处理中的订单每隔3秒查询一次
+
+    //券码复制功能：安卓客户端，判断是否含有复制券码的方法，有的话执行显示复制按钮并通过js回调复制券码方法。
+    if( navigator.userAgent.toLowerCase().indexOf("android") > 0 ){
+        if(window.duiba_app && window.duiba_app.copyCode){
+            $('.copy').css('visibility','visible').on('click',function(){
+                duiba_app.copyCode($(this).siblings('strong').html());
+            });
+        }
+    }
+
+
+    function judgeCookie(offset) {
+        var endstr = document.cookie.indexOf(";", offset);
+        if (endstr == -1)
+            endstr = document.cookie.length;
+        return unescape(document.cookie.substring(offset, endstr));
+    }
+    function GetCookie(name) {
+        var arg = name + "=";
+        var alen = arg.length;
+        var clen = document.cookie.length;
+        var i = 0;
+        while (i < clen) {
+            var j = i + alen;
+            if (document.cookie.substring(i, j) == arg)
+                return judgeCookie(j);
+            i = document.cookie.indexOf(" ", i) + 1;
+            if (i == 0)
+                break;
+        }
+        return null;
+    }
+    function SetCookie(name, value) {
+        var argv = SetCookie.arguments;
+        var argc = SetCookie.arguments.length;
+        var expires = (2 < argc) ? argv[2] : null;
+        var path = (3 < argc) ? argv[3] : null;
+        var domain = (4 < argc) ? argv[4] : null;
+        var secure = (5 < argc) ? argv[5] : false;
+        document.cookie = name
+                + "="
+                + escape(value)
+                + ((expires == null) ? "" : ("; expires=" + expires
+                        .toGMTString()))
+                + ((path == null) ? "" : ("; path=" + path))
+                + ((domain == null) ? "" : ("; domain=" + domain))
+                + ((secure == true) ? "; secure" : "");
+    }
+    var expdate = new Date();
+    var visits;
+    expdate.setTime(expdate.getTime() + (24 * 60 * 60 * 1000)); //设置cookie时间为一天
+    if (!(visits = GetCookie("visits"))) {
+        visits = 0;
+    }
+    var oldjessionid = GetCookie("calculate");
+    if (!oldjessionid) {
+        oldjessionid = "111";
+    }
+    var newjessionid = GetCookie("index");
+    if (oldjessionid != newjessionid) {
+        visits++;
+        SetCookie("calculate", newjessionid, expdate, "/", null, false);
+        SetCookie("visits", visits, expdate, "/", null, false);
+    }
+    if(false || true){
+        $.ajax({
+            url:'/Mobile/ajaxRecommendQueue',
+            data:{visits:visits,appItemId:"206512",itemId:"5555"},
+            success:function(data){
+                var html ='';
+                if(data.recommendQueueList.length >= 2){ $('.recommandLocation').show();$('.recommandLocationItems').show()}else{ $('.recommandLocation').hide();$('.recommandLocationItems').hide()}
+                if(data.success){
+                    for(var i=0; i<data.recommendQueueList.length; i++){
+                        var money = '';
+                        if (data.recommendQueueList[i].money != null && data.recommendQueueList[i].money != '') {
+                            money = ' + ' + data.recommendQueueList[i].money;
+                        }
+                        html += '<a href="' + data.recommendQueueList[i].url + '">'
+                                +    '<div class="recommandBj">'
+                                +        '<img src="' + data.recommendQueueList[i].logo + '">'
+                                +        '<h2>' + data.recommendQueueList[i].title + '</h2>'
+                                +        '<p>' + data.recommendQueueList[i].credits + money + '</p>'
+                                +    '</div>'
+                                +'</a>';
+                    }
+                    $('.recommandLocationItems').html(html);
+                    var expdate = new Date();
+                    expdate.setTime(expdate.getTime() + (data.times * 1000));
+                    SetCookie("visits", visits, expdate, "/", null, false);
+                }
+            }
+        })
+    }
+
+</script>
+
+<script type="text/javascript">
+    Zepto(function($) {
+        /**
+         * 链接转换
+         */
+        var isOpen = false
+        var links = $('[data-tag="is-link"]')
+
+        links.each(function() {
+            if (isOpen) {
+                var text = $(this).text()
+                $(this).replaceWith('<span>' + text + '</span>')
+            } else {
+                $(this).removeAttr('data-tag')
+            }
+        })
+    })
+</script>
+</html>

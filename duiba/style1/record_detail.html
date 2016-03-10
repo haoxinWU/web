@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta content="telephone=no" name="format-detection"/>
+    <!-- 新浪新闻定制分享meta -->
+
+    <title>兑换结果</title>
+
+    <link rel="stylesheet" href="../css/normalize.min.css?t=20151026">
+    <link rel="stylesheet" href="../css/modal.min.css">
+    <link rel="stylesheet" href="../css/exchange-result.css?t=20160114">
+    <link rel="stylesheet" href="../css/ordinaryRecommend.css?t=20160114">
+
+    <style>
+        .theme-color{color: #0b45fc;}
+        .theme-bgcolor{background-color: #0b45fc;}
+        .theme-bordercolor{border-color: #0b45fc;}
+        /* radio */
+        .radio-group.cur{border-color:#0b45fc; }
+        .radio-group .cur-arrow{border-color: #0b45fc transparent transparent #0b45fc;}
+        .description a {color: #0b45fc;}
+    </style>
+    <style>
+        /*主题色*/
+        footer a{color: #0b45fc;border-color: #0b45fc;}
+        footer a:active{background-color: #0b45fc;color: #fff;}
+        .tel i{background-color:#0b45fc; }
+        .use{background-color:#0b45fc;}
+        .recommandLocationItems a .recommandBj p{color: #0b45fc;}
+        /*主题色*/
+        .alipay-error{color:red;margin-left:10px;}
+
+        /*优惠券如果有效期*/
+        .dialog section .item-info .title h3{margin:5px 0 10px;}
+        /*优惠券如果有效期*/
+
+        .description{border-bottom: solid #ddd 1px;border-top: solid #ddd 1px;}
+    </style>
+    <!-- 凤凰网定制导航条 -->
+
+</head>
+<body>
+<div id="db-content">
+
+    <div class="dialog coupon success">
+
+
+
+        <section>
+
+            <div class="item-info">
+
+                <img class="item-icon" src="http://yun.duiba.com.cn/images/35q7ezcx0v.png">
+
+
+                <div class="title">
+                    <h3>测试专用优惠券&nbsp;&nbsp;</h3>
+
+
+                    <p>还剩303天（至2016-12-31）</p>
+
+
+                </div>
+            </div>
+
+
+            <div class="attribute">
+                <p>
+                    <span>兑换价格：</span>
+                    <strong>
+                        1金币
+
+                    </strong>
+                </p>
+
+                <!-- 不包含链接优惠券 -->
+
+
+                <p><span>券码：</span><strong>dui3wm9dsrre</strong><em class="theme-color copy">复制</em></p>
+
+
+
+
+            </div>
+
+            <div class="description">测试下面的链接和马上使用按钮是否可正常跳转或下载，如果成功打开应用或跳转应用下载页面说明对接正常。
+                跳转或下载不正常解决办法如下：
+                建议使用兑吧的源码，如果自行接入，请设置WebView的DownloadListener，通过自己的DownloadListener来实现文件下载。详见兑吧积分系统文档中心（<a href="http://www.duiba.com.cn/docs/doc4">http://www.duiba.com.cn/docs/doc4</a> ），或联系产品对接人，QQ：2851653861
+                。测试链接：
+                <a href="http://weixin.qq.com/cgi-bin/download302?check=false&amp;lang=zh_CN&amp;url=android16">安卓下载</a>；<a href="https://itunes.apple.com/cn/app/wei/id414478124">iOS下载</a><br><br></div>
+
+
+
+
+
+            <div class="attribute">
+                <p><span>订单编号：</span><strong>2016030422592134100938325</strong></p>
+
+                <p><span>客服热线：</span><a class="tel theme-color" href="tel:400-084-6200"><i></i>400-084-6200</a></p>
+
+            </div>
+
+        </section>
+
+        <div class="recommandLocation" style='margin-top:10px; display:none'>
+            <em></em><i></i><span>为您推荐</span><em></em>
+        </div>
+        <div class="recommandLocationItems clearfix" style='display:none'>
+        </div>
+
+
+
+
+
+        <footer>
+
+
+
+
+        </footer>
+
+
+
+
+    </div>
+</div>
+</body>
+<script src="../js/zepto.min.js"></script>
+<script src="../js/fastclick-v1.0.6.min.js"></script>
+<script src="../js/modal.min.js?t=20160112"></script>
+<script>
+    $(function(){
+        //倒计时
+        var remainTime = '';
+        function countDown(remainTimeStemp) {
+            var m = parseInt(remainTimeStemp / 1000 / 60);
+            var s = parseInt(remainTimeStemp / 1000 % 60);
+            m = (m < 10 && String(m).length < 2) ? '0'+m : m;
+            s = (s < 10 && String(s).length < 2) ? '0'+s : s;
+            $('.timedown').html(m + ':' + s);
+
+            if(remainTimeStemp==0){
+                clearInterval(timer);
+                $('.pay').addClass('disabled').html('支付超时');
+                $('.cancelOrder').hide();
+                if(remainTime!='00:00'){
+                    setTimeout(function(){
+                        window.location.reload();
+                    },10000)
+                }
+            }
+        }
+        var remainM = parseInt(remainTime.split(':')[0]);
+        var remainS = parseInt(remainTime.split(':')[1]);
+        var remainTimeStemp = remainM * 60 * 1000 + remainS * 1000;
+        countDown(remainTimeStemp);
+        if(remainTimeStemp>0){
+            var timer = setInterval(function() {
+                remainTimeStemp -= 1000;
+                countDown(remainTimeStemp);
+            }, 1000);
+        }
+
+        $('.cancelOrder').on('click',function(){
+            $.modal({
+                type:'confirm',
+                title:'取消订单',
+                section:'您确认要取消此订单？',
+                callback:{
+                    save:function(){
+                        $.ajax({
+                            type:'POST',
+                            url:'/crecord/cancelOrder/'+60719749,
+                            data:{},
+                            dataType:'json',
+                            success:function(result){
+                                if(result.success){
+                                    $.modal({
+                                        type:'alert',
+                                        title:'订单已被取消',
+                                        callback:{
+                                            save:function(){
+                                                window.location.reload();
+                                            }
+                                        }
+                                    })
+                                }else{
+                                    $.modal({
+                                        type:'alert',
+                                        title:result.message
+                                    })
+                                }
+                            },
+                            error:function(){
+                                $.modal({
+                                    type:'alert',
+                                    title:'网络解析错误'
+                                })
+                            }
+                        })
+                    }
+                }
+            })
+        })
+
+        $('.pay').on('click',function(){
+            if($(this).hasClass('disabled')){
+                return false;
+            }
+        })
+
+        FastClick.attach(document.body);
+        //responsive
+        var deviceWidth=$('body').width();
+        $('body').css('padding-bottom',$('footer').height());
+        $('.item-info').css('background-position-x',deviceWidth-parseInt($('.item-info').css('background-size'))-18).find('.title').css('width',deviceWidth-30-$('.item-icon').width()-10);
+        if($('footer a').length==0){$('footer').hide()}
+        $(".use").click(function(e) {
+            if(false){
+                $.modal({
+                    type:'confirm',
+                    title:"即将开始下载，是否继续",
+                    section:'',
+                    trueButton:"开始下载",
+                    falseButton:"取消",
+                    callback:{
+                        save:function(){
+                            ajax();
+                        }
+                    }
+                })
+            }else{
+                ajax();
+            }
+        });
+    });
+
+    $('.takeOver').on('click',function(){
+        $.modal({
+            type:'confirm',
+            title:'确认收货',
+            section:'您已经收到货并确认收货？',
+            callback:{
+                save:function(){
+                    $.ajax({
+                        type:'POST',
+                        url:'/crecord/confirmReceived/'+60719749,
+                        data:{},
+                        dataType:'json',
+                        success:function(result){
+                            if(result.success){
+                                $.modal({
+                                    type:'alert',
+                                    title:'收货成功'
+                                })
+                                $('.takeOver').hide();
+                            }else{
+                                $.modal({
+                                    type:'alert',
+                                    title:result.message
+                                })
+                            }
+                        },
+                        error:function(){
+                            $.modal({
+                                type:'alert',
+                                title:'网络解析错误'
+                            })
+                        }
+                    })
+                }
+            }
+        })
+    });
+
+    function ajax(){
+        $.ajax({
+            url : '/cburial/click?buId=1000&buValue=191',
+            complete : function(msg) {
+                if(false){
+                    window.location = 'dui3wm9dsrre';
+                }
+                else if(false){
+                    window.location = 'dui3wm9dsrre';
+                }
+                else{
+                    var url="";
+                    window.location = url;
+                    var ifr = document.createElement('iframe');
+                    ifr.src = '';
+                    ifr.style.display = 'none';
+                    window.setTimeout(function(){
+                        document.body.appendChild(ifr);
+                        //document.body.removeChild(ifr);
+                    },300)
+                }
+            }
+        });
+    }
+
+    //处理中的订单每隔3秒查询一次
+
+    //券码复制功能：安卓客户端，判断是否含有复制券码的方法，有的话执行显示复制按钮并通过js回调复制券码方法。
+    if( navigator.userAgent.toLowerCase().indexOf("android") > 0 ){
+        if(window.duiba_app && window.duiba_app.copyCode){
+            $('.copy').css('visibility','visible').on('click',function(){
+                duiba_app.copyCode($(this).siblings('strong').html());
+            });
+        }
+    }
+
+
+    function judgeCookie(offset) {
+        var endstr = document.cookie.indexOf(";", offset);
+        if (endstr == -1)
+            endstr = document.cookie.length;
+        return unescape(document.cookie.substring(offset, endstr));
+    }
+    function GetCookie(name) {
+        var arg = name + "=";
+        var alen = arg.length;
+        var clen = document.cookie.length;
+        var i = 0;
+        while (i < clen) {
+            var j = i + alen;
+            if (document.cookie.substring(i, j) == arg)
+                return judgeCookie(j);
+            i = document.cookie.indexOf(" ", i) + 1;
+            if (i == 0)
+                break;
+        }
+        return null;
+    }
+    function SetCookie(name, value) {
+        var argv = SetCookie.arguments;
+        var argc = SetCookie.arguments.length;
+        var expires = (2 < argc) ? argv[2] : null;
+        var path = (3 < argc) ? argv[3] : null;
+        var domain = (4 < argc) ? argv[4] : null;
+        var secure = (5 < argc) ? argv[5] : false;
+        document.cookie = name
+                + "="
+                + escape(value)
+                + ((expires == null) ? "" : ("; expires=" + expires
+                        .toGMTString()))
+                + ((path == null) ? "" : ("; path=" + path))
+                + ((domain == null) ? "" : ("; domain=" + domain))
+                + ((secure == true) ? "; secure" : "");
+    }
+    var expdate = new Date();
+    var visits;
+    expdate.setTime(expdate.getTime() + (24 * 60 * 60 * 1000)); //设置cookie时间为一天
+    if (!(visits = GetCookie("visits"))) {
+        visits = 0;
+    }
+    var oldjessionid = GetCookie("calculate");
+    if (!oldjessionid) {
+        oldjessionid = "111";
+    }
+    var newjessionid = GetCookie("index");
+    if (oldjessionid != newjessionid) {
+        visits++;
+        SetCookie("calculate", newjessionid, expdate, "/", null, false);
+        SetCookie("visits", visits, expdate, "/", null, false);
+    }
+    if(false || true){
+        $.ajax({
+            url:'/Mobile/ajaxRecommendQueue',
+            data:{visits:visits,appItemId:"207393",itemId:"191"},
+            success:function(data){
+                var html ='';
+                if(data.recommendQueueList.length >= 2){ $('.recommandLocation').show();$('.recommandLocationItems').show()}else{ $('.recommandLocation').hide();$('.recommandLocationItems').hide()}
+                if(data.success){
+                    for(var i=0; i<data.recommendQueueList.length; i++){
+                        var money = '';
+                        if (data.recommendQueueList[i].money != null && data.recommendQueueList[i].money != '') {
+                            money = ' + ' + data.recommendQueueList[i].money;
+                        }
+                        html += '<a href="' + data.recommendQueueList[i].url + '">'
+                                +    '<div class="recommandBj">'
+                                +        '<img src="' + data.recommendQueueList[i].logo + '">'
+                                +        '<h2>' + data.recommendQueueList[i].title + '</h2>'
+                                +        '<p>' + data.recommendQueueList[i].credits + money + '</p>'
+                                +    '</div>'
+                                +'</a>';
+                    }
+                    $('.recommandLocationItems').html(html);
+                    var expdate = new Date();
+                    expdate.setTime(expdate.getTime() + (data.times * 1000));
+                    SetCookie("visits", visits, expdate, "/", null, false);
+                }
+            }
+        })
+    }
+
+</script>
+
+<script type="text/javascript">
+    Zepto(function($) {
+        /**
+         * 链接转换
+         */
+        var isOpen = false
+        var links = $('[data-tag="is-link"]')
+
+        links.each(function() {
+            if (isOpen) {
+                var text = $(this).text()
+                $(this).replaceWith('<span>' + text + '</span>')
+            } else {
+                $(this).removeAttr('data-tag')
+            }
+        })
+    })
+</script>
+</html>

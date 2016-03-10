@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta content="telephone=no" name="format-detection"/>
+    <title>兑换结果</title>
+
+    <link rel="stylesheet" href="../css/normalize.min.css?t=20151026">
+    <link rel="stylesheet" href="../css/modal.min.css">
+    <link rel="stylesheet" href="../css/exchange-result.css?t=20160114">
+    <link rel="stylesheet" href="../css/ordinaryRecommend.css?t=20160114">
+
+    <style>
+        .theme-color{color: #63d23e;}
+        .theme-bgcolor{background-color: #63d23e;}
+        .theme-bordercolor{border-color: #63d23e;}
+        /* radio */
+        .radio-group.cur{border-color:#63d23e; }
+        .radio-group .cur-arrow{border-color: #63d23e transparent transparent #63d23e;}
+        .description a {color: #63d23e;}
+    </style>
+    <style>
+        /*主题色*/
+        footer a{color: #63d23e;border-color: #63d23e;}
+        footer a:active{background-color: #63d23e;color: #fff;}
+        .tel i{background-color:#63d23e; }
+        .use{background-color:#63d23e;}
+        .recommandLocationItems a .recommandBj p{color: #63d23e;}
+        /*主题色*/
+        .alipay-error{color:red;margin-left:10px;}
+
+        .description{border-bottom: solid #ddd 1px;border-top: solid #ddd 1px;}
+    </style>
+    <!-- 凤凰网定制导航条 -->
+
+</head>
+<body>
+<div id="db-content">
+
+<script src="../js/GJNativeAPI.min.js"></script>
+    <script>
+        window.onload=function(){
+            $('body').on('click',"a",function(){
+                var openLink=$(this).attr('href');
+                if(openLink.indexOf('dbnewopen')!=-1){
+                    // 打开一个新的webview
+                    GJNativeAPI.invoke('createWebView', {
+                        url: openLink
+                    });
+                    return false;
+                }
+            })
+
+            // 注册一个back回调
+            GJNativeAPI.registerHandler('back', function (params, callback) {
+                //如果允许关闭当前的webview则返回:
+                callback({
+                    preventDefault: false
+                });
+            });
+
+            // 注册一个resume事件回调
+            GJNativeAPI.registerHandler('triggerEvent', function (params) {
+                if (params.name === 'onResume' && window.location.href.indexOf('chome/index')!==-1) {
+                    $.ajax({
+                        type:'GET',
+                        url:'/ctool/getCredits',
+                        dataType:'json',
+                        success:function(result){
+                            if(result.success){
+                                $('#db-credits-num').html(result.credits);
+                            }
+                        }
+                    })
+                }
+            });
+        }
+    </script>
+
+    <div class="dialog coupon failed">
+        <header>
+            <div class="title"><i></i><span>抱歉，您的兑换失败了</span></div>
+            <p>关注首页“兑换记录”，掌握订单最新状态~</p>
+            <i class="close"></i>
+        </header>
+        <section>
+            <div class="item-info">
+                <img class="item-icon" src="http://yun.duiba.com.cn/images/843juq05dt.png">
+                <div class="title">
+                    <h3>蚕丝面膜18元领&nbsp;&nbsp;</h3>
+                </div>
+            </div>
+            <div class="attribute">
+                <p>
+                    <span>兑换价格：</span>
+                    <strong>
+                        1积分
+
+                    </strong>
+                </p>
+
+                <p><span>订单状态：</span><strong class="failed">失败</strong></p>
+
+                <p><span>失败原因：</span><strong>兑换失败，兑换失败</strong></p>
+
+
+            </div>
+
+
+
+
+
+            <div class="attribute">
+                <p><span>订单编号：</span><strong>2016030423385028800941214</strong></p>
+
+                <p><span>客服热线：</span><a class="tel theme-color" href="tel:400-084-6200"><i></i>400-084-6200</a></p>
+
+            </div>
+
+        </section>
+
+        <div class="recommandLocation" style='margin-top:10px; display:none'>
+            <em></em><i></i><span>为您推荐</span><em></em>
+        </div>
+        <div class="recommandLocationItems clearfix" style='display:none'>
+        </div>
+
+
+
+
+
+        <footer>
+
+
+            <a href="/mobile/index?dbbackroot" class="back-home">回到首页</a>
+
+
+
+        </footer>
+
+
+
+
+    </div>
+</div>
+</body>
+<script src="../js/zepto.min.js"></script>
+<script src="../js/fastclick-v1.0.6.min.js"></script>
+<script src="../js/modal.min.js?t=20160112"></script>
+<script>
+    $(function(){
+        //倒计时
+        var remainTime = '';
+        function countDown(remainTimeStemp) {
+            var m = parseInt(remainTimeStemp / 1000 / 60);
+            var s = parseInt(remainTimeStemp / 1000 % 60);
+            m = (m < 10 && String(m).length < 2) ? '0'+m : m;
+            s = (s < 10 && String(s).length < 2) ? '0'+s : s;
+            $('.timedown').html(m + ':' + s);
+
+            if(remainTimeStemp==0){
+                clearInterval(timer);
+                $('.pay').addClass('disabled').html('支付超时');
+                $('.cancelOrder').hide();
+                if(remainTime!='00:00'){
+                    setTimeout(function(){
+                        window.location.reload();
+                    },10000)
+                }
+            }
+        }
+        var remainM = parseInt(remainTime.split(':')[0]);
+        var remainS = parseInt(remainTime.split(':')[1]);
+        var remainTimeStemp = remainM * 60 * 1000 + remainS * 1000;
+        countDown(remainTimeStemp);
+        if(remainTimeStemp>0){
+            var timer = setInterval(function() {
+                remainTimeStemp -= 1000;
+                countDown(remainTimeStemp);
+            }, 1000);
+        }
+
+        $('.cancelOrder').on('click',function(){
+            $.modal({
+                type:'confirm',
+                title:'取消订单',
+                section:'您确认要取消此订单？',
+                callback:{
+                    save:function(){
+                        $.ajax({
+                            type:'POST',
+                            url:'/crecord/cancelOrder/'+60740456,
+                            data:{},
+                            dataType:'json',
+                            success:function(result){
+                                if(result.success){
+                                    $.modal({
+                                        type:'alert',
+                                        title:'订单已被取消',
+                                        callback:{
+                                            save:function(){
+                                                window.location.reload();
+                                            }
+                                        }
+                                    })
+                                }else{
+                                    $.modal({
+                                        type:'alert',
+                                        title:result.message
+                                    })
+                                }
+                            },
+                            error:function(){
+                                $.modal({
+                                    type:'alert',
+                                    title:'网络解析错误'
+                                })
+                            }
+                        })
+                    }
+                }
+            })
+        })
+
+        $('.pay').on('click',function(){
+            if($(this).hasClass('disabled')){
+                return false;
+            }
+        })
+
+        FastClick.attach(document.body);
+        //responsive
+        var deviceWidth=$('body').width();
+        $('body').css('padding-bottom',$('footer').height());
+        $('.item-info').css('background-position-x',deviceWidth-parseInt($('.item-info').css('background-size'))-18).find('.title').css('width',deviceWidth-30-$('.item-icon').width()-10);
+        if($('footer a').length==0){$('footer').hide()}
+        $(".use").click(function(e) {
+            if(false){
+                $.modal({
+                    type:'confirm',
+                    title:"即将开始下载，是否继续",
+                    section:'',
+                    trueButton:"开始下载",
+                    falseButton:"取消",
+                    callback:{
+                        save:function(){
+                            ajax();
+                        }
+                    }
+                })
+            }else{
+                ajax();
+            }
+        });
+    });
+
+    $('.takeOver').on('click',function(){
+        $.modal({
+            type:'confirm',
+            title:'确认收货',
+            section:'您已经收到货并确认收货？',
+            callback:{
+                save:function(){
+                    $.ajax({
+                        type:'POST',
+                        url:'/crecord/confirmReceived/'+60740456,
+                        data:{},
+                        dataType:'json',
+                        success:function(result){
+                            if(result.success){
+                                $.modal({
+                                    type:'alert',
+                                    title:'收货成功'
+                                })
+                                $('.takeOver').hide();
+                            }else{
+                                $.modal({
+                                    type:'alert',
+                                    title:result.message
+                                })
+                            }
+                        },
+                        error:function(){
+                            $.modal({
+                                type:'alert',
+                                title:'网络解析错误'
+                            })
+                        }
+                    })
+                }
+            }
+        })
+    });
+
+    function ajax(){
+        $.ajax({
+            url : '/cburial/click?buId=1000&buValue=4697',
+            complete : function(msg) {
+                if(false){
+                    window.location = '59451235';
+                }
+                else if(false){
+                    window.location = '59451235';
+                }
+                else{
+                    var url="";
+                    window.location = url;
+                    var ifr = document.createElement('iframe');
+                    ifr.src = '';
+                    ifr.style.display = 'none';
+                    window.setTimeout(function(){
+                        document.body.appendChild(ifr);
+                        //document.body.removeChild(ifr);
+                    },300)
+                }
+            }
+        });
+    }
+    //券码复制功能：安卓客户端，判断是否含有复制券码的方法，有的话执行显示复制按钮并通过js回调复制券码方法。
+    if( navigator.userAgent.toLowerCase().indexOf("android") > 0 ){
+        if(window.duiba_app && window.duiba_app.copyCode){
+            $('.copy').css('visibility','visible').on('click',function(){
+                duiba_app.copyCode($(this).siblings('strong').html());
+            });
+        }
+    }
+    function judgeCookie(offset) {
+        var endstr = document.cookie.indexOf(";", offset);
+        if (endstr == -1)
+            endstr = document.cookie.length;
+        return unescape(document.cookie.substring(offset, endstr));
+    }
+    function GetCookie(name) {
+        var arg = name + "=";
+        var alen = arg.length;
+        var clen = document.cookie.length;
+        var i = 0;
+        while (i < clen) {
+            var j = i + alen;
+            if (document.cookie.substring(i, j) == arg)
+                return judgeCookie(j);
+            i = document.cookie.indexOf(" ", i) + 1;
+            if (i == 0)
+                break;
+        }
+        return null;
+    }
+    function SetCookie(name, value) {
+        var argv = SetCookie.arguments;
+        var argc = SetCookie.arguments.length;
+        var expires = (2 < argc) ? argv[2] : null;
+        var path = (3 < argc) ? argv[3] : null;
+        var domain = (4 < argc) ? argv[4] : null;
+        var secure = (5 < argc) ? argv[5] : false;
+        document.cookie = name
+                + "="
+                + escape(value)
+                + ((expires == null) ? "" : ("; expires=" + expires
+                        .toGMTString()))
+                + ((path == null) ? "" : ("; path=" + path))
+                + ((domain == null) ? "" : ("; domain=" + domain))
+                + ((secure == true) ? "; secure" : "");
+    }
+    var expdate = new Date();
+    var visits;
+    expdate.setTime(expdate.getTime() + (24 * 60 * 60 * 1000)); //设置cookie时间为一天
+    if (!(visits = GetCookie("visits"))) {
+        visits = 0;
+    }
+    var oldjessionid = GetCookie("calculate");
+    if (!oldjessionid) {
+        oldjessionid = "111";
+    }
+    var newjessionid = GetCookie("index");
+    if (oldjessionid != newjessionid) {
+        visits++;
+        SetCookie("calculate", newjessionid, expdate, "/", null, false);
+        SetCookie("visits", visits, expdate, "/", null, false);
+    }
+    if(false || true){
+        $.ajax({
+            url:'mock/ajaxRecommendQueue.json',
+            data:{visits:visits,appItemId:"196457",itemId:"4697"},
+            success:function(data){
+                var html ='';
+                if(data.recommendQueueList.length >= 2){ $('.recommandLocation').show();$('.recommandLocationItems').show()}else{ $('.recommandLocation').hide();$('.recommandLocationItems').hide()}
+                if(data.success){
+                    for(var i=0; i<data.recommendQueueList.length; i++){
+                        var money = '';
+                        if (data.recommendQueueList[i].money != null && data.recommendQueueList[i].money != '') {
+                            money = ' + ' + data.recommendQueueList[i].money;
+                        }
+                        html += '<a href="' + data.recommendQueueList[i].url + '">'
+                                +    '<div class="recommandBj">'
+                                +        '<img src="' + data.recommendQueueList[i].logo + '">'
+                                +        '<h2>' + data.recommendQueueList[i].title + '</h2>'
+                                +        '<p>' + data.recommendQueueList[i].credits + money + '</p>'
+                                +    '</div>'
+                                +'</a>';
+                    }
+                    $('.recommandLocationItems').html(html);
+                    var expdate = new Date();
+                    expdate.setTime(expdate.getTime() + (data.times * 1000));
+                    SetCookie("visits", visits, expdate, "/", null, false);
+                }
+            }
+        })
+    }
+</script>
+
+<script type="text/javascript">
+    Zepto(function($) {
+        /**
+         * 链接转换
+         */
+        var isOpen = false
+        var links = $('[data-tag="is-link"]')
+
+        links.each(function() {
+            if (isOpen) {
+                var text = $(this).text()
+                $(this).replaceWith('<span>' + text + '</span>')
+            } else {
+                $(this).removeAttr('data-tag')
+            }
+        })
+    })
+</script>
+</html>
