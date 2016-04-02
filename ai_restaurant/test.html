@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+<head>
+    <title>开始使用layer</title>
+</head>
+<body>
+<button id="test1">小小提示层</button>
+
+你必须先引入jQuery1.8或以上版本
+<!-- Path to Framework7 Library JS-->
+<script type="text/javascript" src="js/jquery-2.1.3.min.js?v=20150923"></script>
+<link rel="stylesheet" href="bower_components/layer/layer.js">
+<!-- Path to your app js-->
+
+<script>
+
+    $('#test1').on('click', function(){
+        layer.msg('Hello layer');
+    });
+
+</script>
+当然，你也可以写在外部的js文件
+</body>
+</html>   

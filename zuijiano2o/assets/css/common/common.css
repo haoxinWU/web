@@ -1,0 +1,84 @@
+.common-tab{
+    background: #FFFFFF;
+    line-height: 35px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.common-tab .tab{
+    font-size: 15px;
+    color: #666666;
+}
+
+.common-tab .tab.active{
+    color: #FD7C21;
+    border-bottom: 2px solid #FD7C21;
+}
+
+/*店铺列表*/
+.list-block li.media-item .item-link .item-title-row, .list-block.media-list .item-link .item-title-row{
+    padding:5px 0 5px 0;
+    background: #FFFFFF;
+}
+
+div.shop-list div.list-block{
+    font-size: 13px;
+}
+li.shop-item div.item-title.title{
+
+    font-size: 18px;
+    color: #333333;
+    font-weight: 100;
+    text-overflow: ellipsis;
+    width: 200px;
+}
+div.item-subtitle.second-line{
+    font-size: 14px;
+    color: #999999;
+    padding-top: 2px;
+}
+div.item-subtitle.second-line .money{
+    font-size: 34px;
+    color: #FD7C21;
+    font-weight: 300;
+}
+div.item-subtitle.second-line .score{
+    font-size: 18px;
+    color: #FD7C21;
+    font-weight: 200;
+}
+
+div.item-subtitle.second-line .pull-right{
+    line-height: 55px;
+    font-size: 16px;
+    font-weight: 100;
+    padding-top: 2px;
+    color: #999999;
+}
+
+div.shop-simple-info .shop-stars i.icon-star,.shop-stars i.icon-star-half{
+    color: #ffb611;
+    margin-left: 2px;
+    
+}
+
+div.shop-simple-info div.third-line{
+    font-size: 14px;
+    color: #999999;
+    padding-top: 8px;
+}
+div.shop-simple-info div.activity-simple-info.fourth-line div.activity-item span.badge.square{
+    font-size: 11px;
+}
+div.shop-simple-info div.activity-simple-info.fourth-line div.activity-item span.activity-desc{
+    font-size: 11px;
+    margin-top: 5px;
+    color: #999999;
+    padding-left: 10px;
+}
+div.shop-list  ul  li.shop-item{
+    border-bottom: 1px solid #D9D9D9;
+}
+div.shop-list  ul li .item-inner:after{
+    content : none;
+}

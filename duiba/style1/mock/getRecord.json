@@ -1,0 +1,30 @@
+{
+  "nextPage": false,
+  "records": [
+    {
+      "img": "http://yun.duiba.com.cn/images/35q7ezcx0v.png",
+      "invalid": true,
+      "new": true,
+      "statusText": "<span>有效期至：2016-12-31</span>",
+      "title": "测试专用优惠券",
+      "url": "/crecord/recordDetail/60718134?fromPage=record&dbnewopen"
+    },
+    {
+      "img": "http://yun.duiba.com.cn/images/35q7ezcx0v.png",
+      "invalid": false,
+      "new": false,
+      "statusText": "<span>有效期至：2016-12-31</span>",
+      "title": "测试专用优惠券",
+      "url": "/crecord/recordDetail/60718134?fromPage=record&dbnewopen"
+    },
+    {
+      "img": "http://yun.duiba.com.cn/images/35q7ezcx0v.png",
+      "invalid": false,
+      "new": false,
+      "statusText": "<span>有效期至：2016-12-31</span>",
+      "title": "测试专用优惠券",
+      "url": "/crecord/recordDetail/60718134?fromPage=record&dbnewopen"
+    }
+  ],
+  "success": true
+}

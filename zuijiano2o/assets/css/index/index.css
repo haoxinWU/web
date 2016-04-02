@@ -26,5 +26,9 @@
 }
 
 .top.menu .m_nav span{
-    color: #333333;
+    color: #666666;
+}
+
+.content-container{
+    padding-top: 20px;
 }

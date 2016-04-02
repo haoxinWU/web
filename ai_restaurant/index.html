@@ -107,8 +107,8 @@
                     </a>
                   </div>
                   <div class="col-50 option-item">
-                    <a href="comment-list.html" class="external">
-                      <i class="icon iconfont" style="background: #B1DD70;">&#xe605;</i>
+                    <a href="javascript:void(0);" class="external">
+                      <i class="icon iconfont layer" style="background: #B1DD70;">&#xe605;</i>
                       <h3>评价</h3>
                     </a>
                   </div>
@@ -144,8 +144,17 @@
 <script type="text/javascript" src="js/framework7.js?v=20150923"></script>
 <script type="text/javascript" src="assets/js/main.js?v=20150923"></script>
 <script type="text/javascript" src="assets/js/common/common.js?v=20150923"></script>
-<script type="text/javascript" src="assets/js/index/index.js?v=20150923"></script>
-<link rel="stylesheet" href="assets/js/common/loading.js">
+<script type="text/javascript" src="assets/js/common/loading.js"></script>
+<script type="text/javascript" src="bower_components/layer/layer.js"></script>
 <!-- Path to your app js-->
+<script type="text/javascript">
+  $(function () {
+    $(".layer").on('click', function () {
+      layer.tips('默认就是向右的','.layer',{
+        tips: [1, '#0FA6D8']
+      });
+    });
+  });
+</script>
 </body>
 </html>

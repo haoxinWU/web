@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta content="telephone=no" name="format-detection"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
+
+    <title>积分商城</title>
+    <link rel="stylesheet" href="../css/normalize.min.css">
+    <script>
+        var hexcase=0;var b64pad="";var chrsz=8;function hex_md5(s){return binl2hex(core_md5(str2binl(s),s.length*chrsz))}function b64_md5(s){return binl2b64(core_md5(str2binl(s),s.length*chrsz))}function str_md5(s){return binl2str(core_md5(str2binl(s),s.length*chrsz))}function hex_hmac_md5(key,data){return binl2hex(core_hmac_md5(key,data))}function b64_hmac_md5(key,data){return binl2b64(core_hmac_md5(key,data))}function str_hmac_md5(key,data){return binl2str(core_hmac_md5(key,data))}function md5_vm_test(){return hex_md5("abc")=="900150983cd24fb0d6963f7d28e17f72"}function core_md5(x,len){x[len>>5]|=128<<((len)%32);x[(((len+64)>>>9)<<4)+14]=len;var a=1732584193;var b=-271733879;var c=-1732584194;var d=271733878;for(var i=0;i<x.length;i+=16){var olda=a;var oldb=b;var oldc=c;var oldd=d;a=md5_ff(a,b,c,d,x[i+0],7,-680876936);d=md5_ff(d,a,b,c,x[i+1],12,-389564586);c=md5_ff(c,d,a,b,x[i+2],17,606105819);b=md5_ff(b,c,d,a,x[i+3],22,-1044525330);a=md5_ff(a,b,c,d,x[i+4],7,-176418897);d=md5_ff(d,a,b,c,x[i+5],12,1200080426);c=md5_ff(c,d,a,b,x[i+6],17,-1473231341);b=md5_ff(b,c,d,a,x[i+7],22,-45705983);a=md5_ff(a,b,c,d,x[i+8],7,1770035416);d=md5_ff(d,a,b,c,x[i+9],12,-1958414417);c=md5_ff(c,d,a,b,x[i+10],17,-42063);b=md5_ff(b,c,d,a,x[i+11],22,-1990404162);a=md5_ff(a,b,c,d,x[i+12],7,1804603682);d=md5_ff(d,a,b,c,x[i+13],12,-40341101);c=md5_ff(c,d,a,b,x[i+14],17,-1502002290);b=md5_ff(b,c,d,a,x[i+15],22,1236535329);a=md5_gg(a,b,c,d,x[i+1],5,-165796510);d=md5_gg(d,a,b,c,x[i+6],9,-1069501632);c=md5_gg(c,d,a,b,x[i+11],14,643717713);b=md5_gg(b,c,d,a,x[i+0],20,-373897302);a=md5_gg(a,b,c,d,x[i+5],5,-701558691);d=md5_gg(d,a,b,c,x[i+10],9,38016083);c=md5_gg(c,d,a,b,x[i+15],14,-660478335);b=md5_gg(b,c,d,a,x[i+4],20,-405537848);a=md5_gg(a,b,c,d,x[i+9],5,568446438);d=md5_gg(d,a,b,c,x[i+14],9,-1019803690);c=md5_gg(c,d,a,b,x[i+3],14,-187363961);b=md5_gg(b,c,d,a,x[i+8],20,1163531501);a=md5_gg(a,b,c,d,x[i+13],5,-1444681467);d=md5_gg(d,a,b,c,x[i+2],9,-51403784);c=md5_gg(c,d,a,b,x[i+7],14,1735328473);b=md5_gg(b,c,d,a,x[i+12],20,-1926607734);a=md5_hh(a,b,c,d,x[i+5],4,-378558);d=md5_hh(d,a,b,c,x[i+8],11,-2022574463);c=md5_hh(c,d,a,b,x[i+11],16,1839030562);b=md5_hh(b,c,d,a,x[i+14],23,-35309556);a=md5_hh(a,b,c,d,x[i+1],4,-1530992060);d=md5_hh(d,a,b,c,x[i+4],11,1272893353);c=md5_hh(c,d,a,b,x[i+7],16,-155497632);b=md5_hh(b,c,d,a,x[i+10],23,-1094730640);a=md5_hh(a,b,c,d,x[i+13],4,681279174);d=md5_hh(d,a,b,c,x[i+0],11,-358537222);c=md5_hh(c,d,a,b,x[i+3],16,-722521979);b=md5_hh(b,c,d,a,x[i+6],23,76029189);a=md5_hh(a,b,c,d,x[i+9],4,-640364487);d=md5_hh(d,a,b,c,x[i+12],11,-421815835);c=md5_hh(c,d,a,b,x[i+15],16,530742520);b=md5_hh(b,c,d,a,x[i+2],23,-995338651);a=md5_ii(a,b,c,d,x[i+0],6,-198630844);d=md5_ii(d,a,b,c,x[i+7],10,1126891415);c=md5_ii(c,d,a,b,x[i+14],15,-1416354905);b=md5_ii(b,c,d,a,x[i+5],21,-57434055);a=md5_ii(a,b,c,d,x[i+12],6,1700485571);d=md5_ii(d,a,b,c,x[i+3],10,-1894986606);c=md5_ii(c,d,a,b,x[i+10],15,-1051523);b=md5_ii(b,c,d,a,x[i+1],21,-2054922799);a=md5_ii(a,b,c,d,x[i+8],6,1873313359);d=md5_ii(d,a,b,c,x[i+15],10,-30611744);c=md5_ii(c,d,a,b,x[i+6],15,-1560198380);b=md5_ii(b,c,d,a,x[i+13],21,1309151649);a=md5_ii(a,b,c,d,x[i+4],6,-145523070);d=md5_ii(d,a,b,c,x[i+11],10,-1120210379);c=md5_ii(c,d,a,b,x[i+2],15,718787259);b=md5_ii(b,c,d,a,x[i+9],21,-343485551);a=safe_add(a,olda);b=safe_add(b,oldb);c=safe_add(c,oldc);d=safe_add(d,oldd)}return Array(a,b,c,d)}function md5_cmn(q,a,b,x,s,t){return safe_add(bit_rol(safe_add(safe_add(a,q),safe_add(x,t)),s),b)}function md5_ff(a,b,c,d,x,s,t){return md5_cmn((b&c)|((~b)&d),a,b,x,s,t)}function md5_gg(a,b,c,d,x,s,t){return md5_cmn((b&d)|(c&(~d)),a,b,x,s,t)}function md5_hh(a,b,c,d,x,s,t){return md5_cmn(b^c^d,a,b,x,s,t)}function md5_ii(a,b,c,d,x,s,t){return md5_cmn(c^(b|(~d)),a,b,x,s,t)}function core_hmac_md5(key,data){var bkey=str2binl(key);if(bkey.length>16){bkey=core_md5(bkey,key.length*chrsz)}var ipad=Array(16),opad=Array(16);for(var i=0;i<16;i++){ipad[i]=bkey[i]^909522486;opad[i]=bkey[i]^1549556828}var hash=core_md5(ipad.concat(str2binl(data)),512+data.length*chrsz);return core_md5(opad.concat(hash),512+128)}function safe_add(x,y){var lsw=(x&65535)+(y&65535);var msw=(x>>16)+(y>>16)+(lsw>>16);return(msw<<16)|(lsw&65535)}function bit_rol(num,cnt){return(num<<cnt)|(num>>>(32-cnt))}function str2binl(str){var bin=Array();var mask=(1<<chrsz)-1;for(var i=0;i<str.length*chrsz;i+=chrsz){bin[i>>5]|=(str.charCodeAt(i/chrsz)&mask)<<(i%32)}return bin}function binl2str(bin){var str="";var mask=(1<<chrsz)-1;for(var i=0;i<bin.length*32;i+=chrsz){str+=String.fromCharCode((bin[i>>5]>>>(i%32))&mask)}return str}function binl2hex(binarray){var hex_tab=hexcase?"0123456789ABCDEF":"0123456789abcdef";var str="";for(var i=0;i<binarray.length*4;i++){str+=hex_tab.charAt((binarray[i>>2]>>((i%4)*8+4))&15)+hex_tab.charAt((binarray[i>>2]>>((i%4)*8))&15)}return str}function binl2b64(binarray){var tab="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/";var str="";for(var i=0;i<binarray.length*4;i+=3){var triplet=(((binarray[i>>2]>>8*(i%4))&255)<<16)|(((binarray[i+1>>2]>>8*((i+1)%4))&255)<<8)|((binarray[i+2>>2]>>8*((i+2)%4))&255);
+            for(var j=0;j<4;j++){if(i*8+j*6>binarray.length*32){str+=b64pad}else{str+=tab.charAt((triplet>>6*(3-j))&63)}}}return str}(function(){if(!window.localStorage){return}var c=document.cookie.split(";");var cookieDeapMap={};var localDeapMap={};for(var i=0;i<c.length;i++){var v=c[i].split("=");if(v[0].trim()=="deap"){var deap=v[1];console.log("v1:"+deap);if(deap.indexOf('"')>-1){deap=deap.substring(1,deap.length-1)}console.log("v2:"+deap);cookieDeapMap=parseDeap(deap)}}if(window.localStorage.getItem("deap")!=null){localDeapMap=parseDeap(window.localStorage.getItem("deap"))}var writeCookieMap={};for(var p in cookieDeapMap){writeCookieMap[p]=cookieDeapMap[p]}var writeLocalMap={};for(var p in localDeapMap){writeLocalMap[p]=localDeapMap[p]}for(var p in localDeapMap){if(cookieDeapMap[p]){writeCookieMap[p]=localDeapMap[p]}}for(var p in cookieDeapMap){if(!localDeapMap[p]){writeLocalMap[p]=cookieDeapMap[p]}}var now=new Date();now.setDate(now.getDate()+10*365);var cookiedeap=toDeapString(writeCookieMap);if(cookiedeap.indexOf('"')<0&&cookiedeap.indexOf(",")>0){cookiedeap='"'+cookiedeap+'"'}document.cookie="deap="+cookiedeap+"; path=/;expires="+now.toString();window.localStorage.setItem("deap",toDeapString(writeLocalMap));function md5(arr){var arr=arr.split(",");Array.prototype._index=function(val){for(var i=0;i<this.length;i++){if(this[i]==val){return i}}return -1};Array.prototype.add=function(){var arr="";for(var i=0;i<this.length;i++){if(i==0){arr+=this[i]}else{arr+=","+this[i]}}return arr.trim()};for(var i=0;i<arr.length;i++){if(arr[i].substr(arr[i].length-5,5)==hex_md5(arr[i].substr(0,arr[i].length-5)).substr(0,5)){}else{arr.splice(arr._index(arr[i]),1)}}return arr.add()}function parseDeap(deap){var deapMap={};var ds=[];if(deap.indexOf(",")>0){ds=deap.split(",")}else{ds=[deap.trim()]}for(var m=0;m<ds.length;m++){var da=ds[m].trim();if(da.substr(da.length-5,5)==hex_md5(da.substr(0,da.length-5)).substr(0,5)){deapMap[da.split("-")[0]]=da.split("-")[1]}}return deapMap}function toDeapString(obj){var deapString="";for(var p in obj){if(p.length>0){var string=p+"-"+obj[p];if(deapString.length==0){deapString+=p+"-"+obj[p]}else{deapString+=","+p+"-"+obj[p]}}}return deapString}})();
+    </script>
+    <style>
+        .theme-color{color: #0b45fc;}
+        .theme-bgcolor{background-color: #0b45fc;}
+        .theme-bordercolor{border-color: #0b45fc;}
+        /* radio */
+        .radio-group.cur{border-color:#0b45fc; }
+        .radio-group .cur-arrow{border-color: #0b45fc transparent transparent #0b45fc;}
+        .description a {color: #0b45fc;}
+    </style>
+    <script src="../js/zepto.min.js"></script>
+    <script src="../js/swipe.min.js"></script>
+</head>
+<body>
+
+<div id="db-content">
+    <script>
+        !function(e,i){var t=e.documentElement,n=navigator.userAgent.match(/iphone|ipod|ipad/gi),a=n?Math.min(i.devicePixelRatio,3):1,m="orientationchange"in window?"orientationchange":"resize";t.dataset.dpr=a;for(var d,l,c=!1,o=e.getElementsByTagName("meta"),r=0;r<o.length;r++)l=o[r],"viewport"==l.name&&(c=!0,d=l);if(c)d.content="width=device-width,initial-scale=1.0,maximum-scale=1.0, minimum-scale=1.0,user-scalable=no";else{var o=e.createElement("meta");o.name="viewport",o.content="width=device-width,initial-scale=1.0,maximum-scale=1.0, minimum-scale=1.0,user-scalable=no",t.firstElementChild.appendChild(o)}var s=function(){var e=t.clientWidth;e/a>640&&(e=640*a),window.remScale=e/640,t.style.fontSize=200*(e/640)+"px"};s(),e.addEventListener&&i.addEventListener(m,s,!1)}(document,window);
+    </script>
+    <link rel="stylesheet" href="../css/8a3RI1458011212110.css">
+    <style>
+        .banner .banner-position li.cur{
+            background-color: #950101;
+        }
+        .banner .banner-position li{
+            background-color: rgba(193,193,193,0.4);
+        }
+    </style>
+    <div class="topBox">
+        <div class="creditsBox">
+            <div class="flowerLeft"></div>
+            <div class="flowerRight"></div>
+            <div class="credits creditsLeft">
+                <a href="javascript:;"><i></i><span class="myCredits" id="db-credits-num">10000</span>金币</a>
+            </div>
+            <div class="credits creditsRight">
+                <a href="/crecord/record?spm=9739.2.1.1&amp;dbnewopen"><i></i>兑换记录<span>></span><i  id="db-new-record"></i></a>
+            </div>
+        </div>
+
+        <div class="bannerBox">
+            <div class="banner">
+                <div class="banner-swipe">
+                    <div>
+
+                        <a href="/mobile/detail?itemId=3436&amp;spm=9739.2.2.1&amp;dbnewopen"><img alt="得力订书机" src="http://yun.duiba.com.cn/images/jofaj2vnnn.jpg" /></a>
+
+                        <a href="/mobile/detail?itemId=4951&amp;spm=9739.2.2.2&amp;dbnewopen"><img alt="铁木筷子（10对装）" src="http://yun.duiba.com.cn/images/201601/h3lse03svm.jpg" /></a>
+
+                        <a href="/mobile/detail?itemId=4836&amp;spm=9739.2.2.3&amp;dbnewopen"><img alt="毛球修剪器" src="http://yun.duiba.com.cn/images/201601/6b3r1yfskv.JPG" /></a>
+
+                    </div>
+                </div>
+                <div class="banner-position">
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="iconBox">
+        <div class="iconDecoration"></div>
+        <div class="icons">
+
+            <a href="/crecord/record?spm=9739.2.3.1&amp;dbnewopen"><li><i></i><p>兑换记录</p></li></a>
+
+            <a href="/button/items?type=cost&amp;spm=9739.2.3.2&amp;dbnewopen"><li><i></i><p>直充类</p></li></a>
+
+            <a href="/button/items?type=coupon&amp;spm=9739.2.3.3&amp;dbnewopen"><li><i></i><p>优惠券</p></li></a>
+
+            <a href="/button/items?type=object&amp;spm=9739.2.3.4&amp;dbnewopen"><li><i></i><p>实物</p></li></a>
+
+            <a href="/button/items?type=lottery&amp;spm=9739.2.3.5&amp;dbnewopen"><li><i></i><p>抽奖活动</p></li></a>
+
+            <a href="/button/items?type=all&amp;spm=9739.2.3.6&amp;dbnewopen"><li><i></i><p>所有兑换项</p></li></a>
+
+        </div>
+    </div>
+
+
+    <div class="title"><i></i></div>
+    <div class="itemOuter">
+
+        <a href="/mobile/detail?itemId=1514&amp;spm=9739.2.4.1&amp;dbnewopen" class="itemBox">
+            <i class="itemDecoration"></i>
+            <div class="item">
+                <img src="http://yun.duiba.com.cn/webapp/img/blank.jpg" data-original="http://yun.duiba.com.cn/images/201603/y5u387j915.jpg">
+                <p class="itemTitle">院线大片便宜看</p>
+
+                <p class="itemCredits"><span>1金币</span><i class="tag" style="background-color:"></i></p>
+
+            </div>
+        </a>
+
+        <a href="/mobile/detail?itemId=5700&amp;spm=9739.2.4.2&amp;dbnewopen" class="itemBox">
+            <i class="itemDecoration"></i>
+            <div class="item">
+                <img src="http://yun.duiba.com.cn/webapp/img/blank.jpg" data-original="http://yun.duiba.com.cn/images/201603/e7knrbn1jj.jpg">
+                <p class="itemTitle">焕然一新 告别脂肪</p>
+
+                <p class="itemCredits"><span>1金币</span><i class="tag" style="background-color:"></i></p>
+
+            </div>
+        </a>
+
+        <a href="/mobile/detail?itemId=5745&amp;spm=9739.2.4.3&amp;dbnewopen" class="itemBox">
+            <i class="itemDecoration"></i>
+            <div class="item">
+                <img src="http://yun.duiba.com.cn/webapp/img/blank.jpg" data-original="http://yun.duiba.com.cn/images/201603/lbxgmya1t5.jpg">
+                <p class="itemTitle">高钙全脂奶粉2袋装</p>
+
+                <p class="itemCredits"><span>1金币</span><i class="tag" style="background-color:"></i></p>
+
+            </div>
+        </a>
+
+        <a href="/mobile/detail?itemId=5756&amp;spm=9739.2.4.4&amp;dbnewopen" class="itemBox">
+            <i class="itemDecoration"></i>
+            <div class="item">
+                <img src="http://yun.duiba.com.cn/webapp/img/blank.jpg" data-original="http://yun.duiba.com.cn/images/201602/kra44ld5g7.jpg">
+                <p class="itemTitle">补水保湿芦荟胶</p>
+
+                <p class="itemCredits"><span>1金币</span><i class="tag" style="background-color:"></i></p>
+
+            </div>
+        </a>
+
+        <a href="/mobile/detail?itemId=5754&amp;spm=9739.2.4.5&amp;dbnewopen" class="itemBox">
+            <i class="itemDecoration"></i>
+            <div class="item">
+                <img src="http://yun.duiba.com.cn/webapp/img/blank.jpg" data-original="http://yun.duiba.com.cn/images/201603/okjuqpfbg5.jpg">
+                <p class="itemTitle">200元现金等你来拿</p>
+
+                <p class="itemCredits"><span>1金币</span><i class="tag" style="background-color:"></i></p>
+
+            </div>
+        </a>
+
+        <a href="/mobile/detail?itemId=5765&amp;spm=9739.2.4.6&amp;dbnewopen" class="itemBox">
+            <i class="itemDecoration"></i>
+            <div class="item">
+                <img src="http://yun.duiba.com.cn/webapp/img/blank.jpg" data-original="http://yun.duiba.com.cn/images/201512/r5wedk6x5l.jpg">
+                <p class="itemTitle">免费领140元洁面券</p>
+
+                <p class="itemCredits"><span>1金币</span><i class="tag" style="background-color:"></i></p>
+
+            </div>
+        </a>
+
+        <a href="/mobile/detail?itemId=5732&amp;spm=9739.2.4.7&amp;dbnewopen" class="itemBox">
+            <i class="itemDecoration"></i>
+            <div class="item">
+                <img src="http://yun.duiba.com.cn/webapp/img/blank.jpg" data-original="http://yun.duiba.com.cn/images/201603/od8sam68w0.jpg">
+                <p class="itemTitle">代表铁道部还你的利息</p>
+
+                <p class="itemCredits"><span>1金币</span><i class="tag" style="background-color:"></i></p>
+
+            </div>
+        </a>
+
+        <a href="/mobile/detail?itemId=5696&amp;spm=9739.2.4.8&amp;dbnewopen" class="itemBox">
+            <i class="itemDecoration"></i>
+            <div class="item">
+                <img src="http://yun.duiba.com.cn/webapp/img/blank.jpg" data-original="http://yun.duiba.com.cn/images/201603/bt3o2b4pcy.jpg">
+                <p class="itemTitle">买书立减10元</p>
+
+                <p class="itemCredits"><span>1金币</span><i class="tag" style="background-color:"></i></p>
+
+            </div>
+        </a>
+
+        <a href="/mobile/detail?itemId=5762&amp;spm=9739.2.4.9&amp;dbnewopen" class="itemBox">
+            <i class="itemDecoration"></i>
+            <div class="item">
+                <img src="http://yun.duiba.com.cn/webapp/img/blank.jpg" data-original="http://yun.duiba.com.cn/images/201603/qim4amw9y7.jpg">
+                <p class="itemTitle">大牌1元限量，抢抢抢</p>
+
+                <p class="itemCredits"><span>1金币</span><i class="tag" style="background-color:"></i></p>
+
+            </div>
+        </a>
+
+        <a href="/mobile/detail?itemId=5485&amp;spm=9739.2.4.10&amp;dbnewopen" class="itemBox">
+            <i class="itemDecoration"></i>
+            <div class="item">
+                <img src="http://yun.duiba.com.cn/webapp/img/blank.jpg" data-original="http://yun.duiba.com.cn/images/201602/p6l74u7g2o.jpg">
+                <p class="itemTitle">清肠减肥的果蔬汁</p>
+
+                <p class="itemCredits"><span>1金币</span><i class="tag" style="background-color:"></i></p>
+
+            </div>
+        </a>
+
+        <a href="/mobile/detail?itemId=5445&amp;spm=9739.2.4.11&amp;dbnewopen" class="itemBox">
+            <i class="itemDecoration"></i>
+            <div class="item">
+                <img src="http://yun.duiba.com.cn/webapp/img/blank.jpg" data-original="http://yun.duiba.com.cn/images/201603/fbx4fpbzem.jpg">
+                <p class="itemTitle">春季首次洗衣免费</p>
+
+                <p class="itemCredits"><span>1金币</span><i class="tag" style="background-color:"></i></p>
+
+            </div>
+        </a>
+
+        <a href="/mobile/detail?itemId=5813&amp;spm=9739.2.4.12&amp;dbnewopen" class="itemBox">
+            <i class="itemDecoration"></i>
+            <div class="item">
+                <img src="http://yun.duiba.com.cn/webapp/img/blank.jpg" data-original="http://yun.duiba.com.cn/images/201603/cpmxdbo8tr.jpg">
+                <p class="itemTitle">尽管嗨！0元保平安</p>
+
+                <p class="itemCredits"><span>1金币</span><i class="tag" style="background-color:"></i></p>
+
+            </div>
+        </a>
+
+        <a href="/mobile/detail?itemId=1148&amp;spm=9739.2.4.13&amp;dbnewopen" class="itemBox">
+            <i class="itemDecoration"></i>
+            <div class="item">
+                <img src="http://yun.duiba.com.cn/webapp/img/blank.jpg" data-original="http://yun.duiba.com.cn/images/201602/6twdom5fff.jpg">
+                <p class="itemTitle">看电影来抠电影</p>
+
+                <p class="itemCredits"><span>1金币</span><i class="tag" style="background-color:"></i></p>
+
+            </div>
+        </a>
+
+        <a href="/mobile/detail?itemId=5816&amp;spm=9739.2.4.14&amp;dbnewopen" class="itemBox">
+            <i class="itemDecoration"></i>
+            <div class="item">
+                <img src="http://yun.duiba.com.cn/webapp/img/blank.jpg" data-original="http://yun.duiba.com.cn/images/201603/mgeqvkyxgd.jpg">
+                <p class="itemTitle">购物7折，再减10元</p>
+
+                <p class="itemCredits"><span>1金币</span><i class="tag" style="background-color:"></i></p>
+
+            </div>
+        </a>
+
+        <a href="/mobile/detail?itemId=5817&amp;spm=9739.2.4.15&amp;dbnewopen" class="itemBox">
+            <i class="itemDecoration"></i>
+            <div class="item">
+                <img src="http://yun.duiba.com.cn/webapp/img/blank.jpg" data-original="http://yun.duiba.com.cn/images/201603/uwan8a50wk.jpg">
+                <p class="itemTitle">还你草莓味嘟嘟唇</p>
+
+                <p class="itemCredits"><span>1金币</span><i class="tag" style="background-color:"></i></p>
+
+            </div>
+        </a>
+
+        <a href="/mobile/detail?itemId=5221&amp;spm=9739.2.4.16&amp;dbnewopen" class="itemBox">
+            <i class="itemDecoration"></i>
+            <div class="item">
+                <img src="http://yun.duiba.com.cn/webapp/img/blank.jpg" data-original="http://yun.duiba.com.cn/images/201602/aao1ww714q.jpg">
+                <p class="itemTitle">交通保障险免费领</p>
+
+                <p class="itemCredits"><span>1金币</span><i class="tag" style="background-color:"></i></p>
+
+            </div>
+        </a>
+
+        <a href="/mobile/detail?itemId=5818&amp;spm=9739.2.4.17&amp;dbnewopen" class="itemBox">
+            <i class="itemDecoration"></i>
+            <div class="item">
+                <img src="http://yun.duiba.com.cn/webapp/img/blank.jpg" data-original="http://yun.duiba.com.cn/images/201603/o5hgc6uhec.jpg">
+                <p class="itemTitle">约会必备19.9元领</p>
+
+                <p class="itemCredits"><span>1金币</span><i class="tag" style="background-color:"></i></p>
+
+            </div>
+        </a>
+
+        <a href="/mobile/detail?itemId=5795&amp;spm=9739.2.4.18&amp;dbnewopen" class="itemBox">
+            <i class="itemDecoration"></i>
+            <div class="item">
+                <img src="http://yun.duiba.com.cn/webapp/img/blank.jpg" data-original="http://yun.duiba.com.cn/images/201603/rqs72w74yw.jpg">
+                <p class="itemTitle">高收益就选易通贷</p>
+
+                <p class="itemCredits"><span>1金币</span><i class="tag" style="background-color:"></i></p>
+
+            </div>
+        </a>
+
+        <a href="/mobile/detail?itemId=4836&amp;spm=9739.2.4.19&amp;dbnewopen" class="itemBox">
+            <i class="itemDecoration"></i>
+            <div class="item">
+                <img src="http://yun.duiba.com.cn/webapp/img/blank.jpg" data-original="http://yun.duiba.com.cn/images/201601/sq0zdkqavb.JPG">
+                <p class="itemTitle">毛球修剪器</p>
+
+                <p class="itemCredits"><span>27金币</span><i class="tag" style="background-color:"></i></p>
+
+            </div>
+        </a>
+
+        <a href="/mobile/detail?itemId=4830&amp;spm=9739.2.4.20&amp;dbnewopen" class="itemBox">
+            <i class="itemDecoration"></i>
+            <div class="item">
+                <img src="http://yun.duiba.com.cn/webapp/img/blank.jpg" data-original="http://yun.duiba.com.cn/images/201601/vhasabs4hh.jpg">
+                <p class="itemTitle">DIY创意相册</p>
+
+                <p class="itemCredits"><span>29金币</span><i class="tag" style="background-color:"></i></p>
+
+            </div>
+        </a>
+
+        <a href="/mobile/detail?itemId=4829&amp;spm=9739.2.4.21&amp;dbnewopen" class="itemBox">
+            <i class="itemDecoration"></i>
+            <div class="item">
+                <img src="http://yun.duiba.com.cn/webapp/img/blank.jpg" data-original="http://yun.duiba.com.cn/images/201601/wcf6462toq.JPG">
+                <p class="itemTitle">便携式收纳包</p>
+
+                <p class="itemCredits"><span>31金币</span><i class="tag" style="background-color:"></i></p>
+
+            </div>
+        </a>
+
+        <a href="/mobile/detail?itemId=4850&amp;spm=9739.2.4.22&amp;dbnewopen" class="itemBox">
+            <i class="itemDecoration"></i>
+            <div class="item">
+                <img src="http://yun.duiba.com.cn/webapp/img/blank.jpg" data-original="http://yun.duiba.com.cn/images/201601/ieyd7hiit6.jpg">
+                <p class="itemTitle">修眉套装</p>
+
+                <p class="itemCredits"><span>25金币</span><i class="tag" style="background-color:"></i></p>
+
+            </div>
+        </a>
+
+        <a href="/mobile/detail?itemId=4948&amp;spm=9739.2.4.23&amp;dbnewopen" class="itemBox">
+            <i class="itemDecoration"></i>
+            <div class="item">
+                <img src="http://yun.duiba.com.cn/webapp/img/blank.jpg" data-original="http://yun.duiba.com.cn/images/201601/e00h9qodi7.jpg">
+                <p class="itemTitle">彩色牛奶杯</p>
+
+                <p class="itemCredits"><span>28金币</span><i class="tag" style="background-color:"></i></p>
+
+            </div>
+        </a>
+
+        <a href="/mobile/detail?itemId=4951&amp;spm=9739.2.4.24&amp;dbnewopen" class="itemBox">
+            <i class="itemDecoration"></i>
+            <div class="item">
+                <img src="http://yun.duiba.com.cn/webapp/img/blank.jpg" data-original="http://yun.duiba.com.cn/images/201601/oio2s7z4iy.jpg">
+                <p class="itemTitle">铁木筷子（10对装）</p>
+
+                <p class="itemCredits"><span>24金币</span><i class="tag" style="background-color:"></i></p>
+
+            </div>
+        </a>
+
+        <a href="/mobile/detail?itemId=4949&amp;spm=9739.2.4.25&amp;dbnewopen" class="itemBox">
+            <i class="itemDecoration"></i>
+            <div class="item">
+                <img src="http://yun.duiba.com.cn/webapp/img/blank.jpg" data-original="http://yun.duiba.com.cn/images/201601/fvir74lh6c.jpg">
+                <p class="itemTitle">脚踏拉力器</p>
+
+                <p class="itemCredits"><span>30金币</span><i class="tag" style="background-color:"></i></p>
+
+            </div>
+        </a>
+
+        <a href="/mobile/detail?itemId=3436&amp;spm=9739.2.4.26&amp;dbnewopen" class="itemBox">
+            <i class="itemDecoration"></i>
+            <div class="item">
+                <img src="http://yun.duiba.com.cn/webapp/img/blank.jpg" data-original="http://yun.duiba.com.cn/images/238qh994q6.jpg">
+                <p class="itemTitle">得力订书机</p>
+
+                <p class="itemCredits"><span>17金币</span><i class="tag" style="background-color:"></i></p>
+
+            </div>
+        </a>
+
+        <a href="/mobile/detail?itemId=5501&amp;spm=9739.2.4.27&amp;dbnewopen" class="itemBox">
+            <i class="itemDecoration"></i>
+            <div class="item">
+                <img src="http://yun.duiba.com.cn/webapp/img/blank.jpg" data-original="http://yun.duiba.com.cn/images/201603/8xzn8t39dx.jpg">
+                <p class="itemTitle">精油植物皂免费送</p>
+
+                <p class="itemCredits"><span>1金币</span><i class="tag" style="background-color:"></i></p>
+
+            </div>
+        </a>
+
+        <a href="/mobile/detail?itemId=1162&amp;spm=9739.2.4.28&amp;dbnewopen" class="itemBox">
+            <i class="itemDecoration"></i>
+            <div class="item">
+                <img src="http://yun.duiba.com.cn/webapp/img/blank.jpg" data-original="http://yun.duiba.com.cn/images/h3vswendba.jpg">
+                <p class="itemTitle">你开房我付钱，约么</p>
+
+                <p class="itemCredits"><span>1金币</span><i class="tag" style="background-color:"></i></p>
+
+            </div>
+        </a>
+
+        <a href="/mobile/detail?itemId=191&amp;spm=9739.2.4.29&amp;dbnewopen" class="itemBox">
+            <i class="itemDecoration"></i>
+            <div class="item">
+                <img src="http://yun.duiba.com.cn/webapp/img/blank.jpg" data-original="http://yun.duiba.com.cn/images/dj17om7kho.jpg">
+                <p class="itemTitle">测试专用优惠券</p>
+
+                <p class="itemCredits"><span>1金币</span><i class="tag" style="background-color:"></i></p>
+
+            </div>
+        </a>
+
+        <a href="/mobile/detail?itemId=531&amp;spm=9739.2.4.30&amp;dbnewopen" class="itemBox">
+            <i class="itemDecoration"></i>
+            <div class="item">
+                <img src="http://yun.duiba.com.cn/webapp/img/blank.jpg" data-original="http://yun.duiba.com.cn/images/6brelcys6k.jpg">
+                <p class="itemTitle">0流量离线地图免费送</p>
+
+                <p class="itemCredits"><span>1金币</span><i class="tag" style="background-color:#aaa">兑完</i></p>
+
+            </div>
+        </a>
+
+    </div>
+
+    <script src="../js/zepto.lazyload.min.js"></script>
+    <script>
+        $(function (){
+            //滚动banner
+            (function(){
+                var $swipe=$('.banner-swipe'),
+                        $swipeWrap=$swipe.children('div'),
+                        $swipePosition=$('.banner-position'),
+                        bannerLength=$swipeWrap.children('a').length;
+                if(bannerLength>1){
+                    var swipePosition='';
+                    $swipeWrap.children('a').wrap('<div></div>');
+                    for(i=0;i<bannerLength;i++){
+                        if(i==0){
+                            swipePosition+='<li class="cur"></li>';
+                        }else{
+                            swipePosition+='<li></li>';
+                        }
+                    }
+                    $swipePosition.append(swipePosition);
+                    var bullets = $swipePosition.children('li');
+                    window.bannerSlider =  Swipe(document.getElementsByClassName('banner-swipe').item(0), {
+                        auto: 3000,
+                        startSlide: 0,
+                        continuous: true,
+                        disableScroll:false,
+                        callback: function(index) {
+                            if((index+1)>bullets.length){
+                                index=index%2;
+                            }
+                            bullets.attr('class','').eq(index).attr('class','cur');
+                        }
+                    });
+                }
+                else{
+                    $swipe.css('visibility','visible')
+                }
+            })();
+
+            //icon区自适应
+            if($('.icons a').length<4){
+                $('.icons a').css('width',(100/$('.icons a').length)+'%')
+            }
+
+            //懒加载
+            $(".itemBox img").lazyload({ threshold : 500 });
+
+            //item图片自适应
+            $(".itemBox img").height($(".itemBox img").width()*140/225);
+        })
+    </script>
+
+
+</div>
+</body>
+<script src="../js/fastclick.js"></script>
+<script src="../js/cookie.min.js"></script>
+
+
+<script>
+    (function(){
+        $(function(){
+            if(navigator.userAgent.match(/(iphone|ipad|Android|ios)/ig)){
+                //app状态监控，用户10秒不触碰屏幕，即有可能离开了app，停止banner
+                var inApp=true;
+                function inAppTimerFn(){
+                    window.inAppTimer=setTimeout(function(){
+                        inApp=false;
+                        if(window.bannerSlider){
+                            bannerSlider.stop();
+                        }
+                    }, 12000);
+                }
+                inAppTimerFn();
+                document.addEventListener('touchend',function(e){
+                    if(window.inAppTimer) clearTimeout(window.inAppTimer);
+                    if(!inApp){
+                        inApp=true;
+                        if(window.bannerSlider){
+                            bannerSlider.begin();
+                        }
+                    }
+                    inAppTimerFn();
+                },false)
+            }
+        })
+    })()
+    (function(){
+        Origami.fastclick(document.body);
+    })()
+</script>
+
+
+
+
+
+<script src="../js/crpto.min.js" type="text/javascript"></script>
+
+</html>
