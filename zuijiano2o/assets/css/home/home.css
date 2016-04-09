@@ -1,0 +1,42 @@
+
+#home .avatar-img{
+    border-radius: 100%;
+}
+
+#home ul li.user-info{
+
+}
+
+#home ul li.union-credit-info{
+    background: #2B2B2B;
+    color: #ffffff;
+    font-size: 14px;
+}
+#home ul li.user-info .item-inner:after{
+    display: none;
+}
+
+#home ul li.union-credit-info .item-media .union-icon{
+    background: #CBAB56;
+    color: #ffffff;
+    border-radius: 4px;
+    padding: 2px 5px;
+}
+
+#home ul li.union-credit-info .credit .name{
+    color: #ffffff;
+}
+#home ul li.union-credit-info .credit .value {
+    color: #CBAB56;
+}
+
+
+/*列表选项*/
+#home ul li .item-title{
+    color: #525252;
+}
+
+#home .home-menu li .item-media i{
+    color: #B9B9B9;
+}
+

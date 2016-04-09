@@ -34,3 +34,12 @@
     color: #E4E4E4;
     line-height: 16px;
 }
+
+.booking-icon{
+    background: rgba(253,123,33,0.03);
+    border: 1px solid #FD7C21;
+    border-radius: 3px;
+    font-size: 10px;
+    padding: 0px 5px;
+    color: #FD7C21;
+}

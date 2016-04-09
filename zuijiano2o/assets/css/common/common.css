@@ -21,9 +21,6 @@
     background: #FFFFFF;
 }
 
-div.shop-list div.list-block{
-    font-size: 13px;
-}
 li.shop-item div.item-title.title{
 
     font-size: 18px;
@@ -76,9 +73,39 @@ div.shop-simple-info div.activity-simple-info.fourth-line div.activity-item span
     color: #999999;
     padding-left: 10px;
 }
-div.shop-list  ul  li.shop-item{
+.shop-list  li.shop-item{
     border-bottom: 1px solid #D9D9D9;
 }
-div.shop-list  ul li .item-inner:after{
+.shop-list li .item-inner:after{
     content : none;
+}
+
+/*分享点击框*/
+.share-model{
+    background: #FDF8F4;
+    font-size: 14px;
+    color: #666666;
+    line-height: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+.share-model .pull-left{
+    padding-left: 15px;
+}
+.share-model .pull-right{
+    padding-right: 15px;
+}
+/*固定的大按钮*/
+.fix-large-button{
+    height: 65px;
+    background: #FFFFFF;
+}
+.fix-large-button a{
+    width: 100%;
+    text-align: center;
+}
+.fix-large-button .toolbar-inner{
+    height: initial;
+    bottom: 10px;
+    top: initial;
 }

@@ -1,0 +1,45 @@
+#order-list .order-list li{
+    border-bottom: 1px solid #E6E6E6;
+    padding: 4px 0px;
+}
+
+#order-list .order-list li .item-title.name{
+    font-size: 16px;
+    color: #333333;
+
+}
+
+#order-list .order-list li .item-after.status {
+    font-size: 12px;
+}
+#order-list .order-list li .item-after.status.not-used {
+    color: #FD7C21;
+}
+
+#order-list .order-list li .item-after.status.not-comment {
+    background: #FFFFFF;
+    border: 1px solid #FD7C21;
+    padding: 1px 6px;
+    line-height: 20px;
+    color: #FD7C21;
+}
+
+#order-list .order-list li .item-after.status.used,#order-list .order-list li .item-after.status.failed {
+    color: #9B9B9B;
+}
+
+#order-list .order-list li .item-subtitle{
+    padding-top: 5px;
+}
+
+#order-list .order-list li .item-subtitle .pull-right{
+    font-size: 13px;
+}
+
+#order-list .order-list li .item-subtitle .pull-right.date{
+    color: #9B9B9B;
+}
+
+#order-list .order-list li .item-inner:after{
+    display: none;
+}

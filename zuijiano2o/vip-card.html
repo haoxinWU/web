@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title>我的星巴克会员卡</title>
+    <link rel="stylesheet" href="framework/css/framework7.min.css">
+    <link rel="stylesheet" href="framework/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/common/common.css">
+    <link rel="stylesheet" href="assets/css/vip/common.css">
+</head>
+<body>
+<div class="statusbar-overlay"></div>
+<div class="panel-overlay"></div>
+<div class="views">
+    <div class="view view-main theme-orange">
+        <div class="pages toolbar-through">
+            <div data-page="vip-card" id="vip" class="page toolbar-fixed">
+                <div class="page-content">
+                    <div class="top">
+                        <div class="vip-card">
+                            <div class="qrcode" style="text-align: center;">
+                                <img src="images/qrcode.jpg" width="250px" height="250px">
+                            </div>
+                            <div class="vip-card-info">
+                                <div class="title">星巴克会员卡<i class="vip">vip</i></div>
+                                <div class="number">No.3225</div>
+                            </div>
+
+                            <div class="credits">
+                                <div class="row">
+                                    <div class="col-33">
+                                        <div class="name">余额</div>
+                                        <div class="value">¥45</div>
+                                    </div>
+                                    <div class="col-33">
+                                        <div class="name">赠额</div>
+                                        <div class="value">¥45</div>
+                                    </div>
+                                    <div class="col-33">
+                                        <div class="name">积分</div>
+                                        <div class="value">4782</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-menu list-block accordion-list margin-none">
+                        <ul>
+                            <li class="">
+                                <a href="#" class="item-content item-link external">
+                                    <div class="item-inner">
+                                        <div class="item-title">消费记录</div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="vip-card-use-info accordion-item"><a href="#" class="item-content item-link">
+                                <div class="item-inner">
+                                    <div class="item-title">会员卡使用介绍</div>
+                                </div></a>
+                                <div class="accordion-item-content">
+                                    <div class="content-block">
+                                        <p>店内员工以及家属请勿使用</p>
+                                            <p>仅限以下套餐使用</p>
+                                        <p>XXX鸡腿堡</p>
+                                        <p> XXXX牛肉煲</p>
+                                        <p> XXXX美式藤椒堡</p>
+                                    </div>
+                                </div>
+                            </li>
+
+                        </ul>
+                    </div>
+
+                </div>
+                <div class="toolbar tabbar tabbar-labels hard-toolbar">
+                    <div class="row">
+                        <a href="vip-card-recharge.html" class="external col-33 left recharge">充值</a>
+                        <a href="vip-card-use.html" class="external col-66 right use">使用</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="framework/js/jquery-2.1.3.min.js"></script>
+<script type="text/javascript" src="bower_components/layer/src/layer.js"></script>
+<script type="text/javascript" src="framework/js/framework7.js"></script>
+<script type="text/javascript" src="assets/js/main.js"></script>
+
+<script type="text/javascript">
+    $(function () {
+        mainFramework.accordionOpen(".vip-card-use-info");
+
+        var first = getQueryString("first");
+        if(first == "true"){
+            layer.msg("会员卡领取成功");
+        }
+    });
+
+    function getQueryString(name) {
+        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+        var r = window.location.search.substr(1).match(reg);
+        if (r != null) return unescape(r[2]); return null;
+    }
+</script>
+
+</body>
+</html>

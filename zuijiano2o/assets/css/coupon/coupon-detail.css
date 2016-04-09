@@ -1,0 +1,108 @@
+#coupon-detail .top{
+    background: #2A2A2B;
+    padding: 25px 35px;
+}
+
+#coupon-detail .hard-toolbar{
+    line-height: 50px;
+}
+#coupon-detail .hard-toolbar .row{
+    margin-right: -4%;
+}
+#coupon-detail .hard-toolbar .left.recharge{
+    opacity: 0.69;
+    background: #FF9500;
+    color: white;
+    padding-left: 20px;
+}
+#coupon-detail .hard-toolbar .right.use{
+    background: #FD7C21;
+    color: white;
+    margin-left: 0px;
+    text-align: center;
+    cursor: pointer;
+}
+
+#coupon-detail .hard-toolbar .left.recharge{
+    text-align: center;
+}
+
+
+#coupon-detail .coupon-detail{
+    background: #ffffff;
+    border-radius: 15px;
+    padding: 10px;
+}
+
+#coupon-detail .coupon-detail .coupon-info .title{
+    color: #333333;
+    font-size: 18px;
+}
+
+#coupon-detail .coupon-detail .coupon-info span.not-used{
+    font-size: 12px;
+    line-height: 18px;
+    color: #FFFFFF;
+    background: #FD7C21;
+    padding: 2px;
+    margin: 2px;
+}
+#coupon-detail .coupon-detail .coupon-info .desc{
+    padding-top: 3px;
+    font-size: 12px;
+    color: #ACACAC;
+}
+
+
+#coupon-detail .coupon-detail .qrcode img{
+
+}
+#coupon-detail .coupon-detail .logo{
+    border-radius:100%;
+    padding: 20px;
+}
+
+
+#coupon-detail .coupon-detail .coupon-info{
+    text-align: center;
+}
+
+#coupon-detail .coupon-detail .coupon-info.give{
+    padding: 10px;
+}
+#coupon-detail .coupon-detail .coupon-info .title.from{
+    color: #666666;
+    font-size: 14px;
+    padding: 10px;
+}
+
+#coupon-detail .coupon-detail .coupon-info .give-icon{
+    padding: 1px 3px;
+    background: rgba(253,123,33,0.03);
+    border: 1px solid #FD7C21;
+    border-radius: 4px;
+    font-size: 12px;
+    color: #FD7C21;
+}
+
+#coupon-detail .coupon-detail .cut-line-left{
+    padding: 12px;
+    background: #2A2A2B;
+    position: absolute;
+    border-radius: 100%;
+    left: 20px;
+}
+
+#coupon-detail .coupon-detail .cut-line{
+    margin-top: 12px;
+}
+
+#coupon-detail .coupon-detail .cut-line-right{
+    padding: 12px;
+    background: #2A2A2B;
+    position: absolute;
+    border-radius: 100%;
+    right: 20px;
+    margin-top: -20px;
+}
+

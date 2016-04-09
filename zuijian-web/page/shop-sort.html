@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta content="telephone=no,email=no" name="format-detection" />
+    <link href="http://cdn.bootcss.com/normalize/3.0.3/normalize.min.css" rel="stylesheet">
+    <link href="http://cdn.bootcss.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="http://cdn.bootcss.com/remodal/1.0.6/remodal.min.css" rel="stylesheet">
+    <link href="http://cdn.bootcss.com/remodal/1.0.6/remodal-default-theme.min.css" rel="stylesheet">
+    <link href="http://cdn.bootcss.com/sweetalert/1.1.3/sweetalert.min.css" rel="stylesheet">
+    <link href="../vender/responsiveSlides/responsiveslides.css" rel="stylesheet">
+    <link href="../css/main.css" rel="stylesheet">
+    <script src="http://cdn.bootcss.com/jquery/2.2.1/jquery.min.js"></script>
+    <script>/*让jQuery放弃使用$符号，局部使用jQuery调用JQuery方法，全局使用$调用zepto方法*/jQuery.noConflict();</script>
+    <script src="http://cdn.bootcss.com/zepto/1.1.6/zepto.min.js"></script>
+    <script src="http://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js"></script>
+    <script src="http://cdn.bootcss.com/remodal/1.0.6/remodal.min.js"></script>
+    <script src="http://cdn.bootcss.com/sweetalert/1.1.3/sweetalert.min.js"></script>
+    <script src="../vender/responsiveSlides/responsiveslides.min.js"></script>
+    <script>$(function(){FastClick.attach(document.body);});</script>
+    <script>/*miku-rem 1.0*/function mikuRem(){var dw=750;var mincw=320;var minfontsize=12;var rb=minfontsize/(mincw/dw);var cw;if(document.compatMode=="BackCompat"){cw=document.body.clientWidth}else{cw=document.documentElement.clientWidth}var currentRb=rb*(cw/dw);var htmlStyleText="font-size:"+currentRb+"px";var html=document.getElementsByTagName("html")[0];html.style.cssText=htmlStyleText}mikuRem();window.onresize=mikuRem;</script>
+    <title>商家排序</title>
+</head>
+<body>
+    <div class="modalwrap" id="shopSortModalwrap">
+    <div class="pb115">
+    <div>
+        <div id="shopSortbar" class="shop-sortbar">
+            <div class="select col1">
+                <span>全部商家</span>
+                <label><i class="fa fa-caret-down"></i></label>
+            </div>
+            <div class="select col2">
+                <span>智能排序</span>
+                <label><i class="fa fa-caret-down"></i></label>
+            </div>
+        </div>
+        <div class="relative-wrap">
+            <div id="shopSortoption" class="shop-sortoption" style="display:none;">
+                <a>
+                <div class="item row1 active">
+                    <span>智能排序</span>
+                </div>
+                </a>
+                <a>
+                <div class="item row2">
+                    <span>离我最近</span>
+                </div>
+                </a>
+                <a>
+                <div class="item row3">
+                    <span>好评优先</span>
+                </div>
+                </a>
+            </div>
+            <div class="modal" id="shopSortModal"></div>
+        </div>
+        <script>
+            $(function(){
+                $("#shopSortbar .select").click(function(event){
+                    //var ch = $modalWrap.height();
+                    if (document.compatMode == "BackCompat"){
+                        var ch = document.documentElement.clientHeight;
+                    }else{
+                        var ch = document.documentElement.clientHeight;
+                    }
+                    $("#shopSortModalwrap").height(ch);
+                    $("#shopSortModalwrap").addClass("showmodal");
+                    $("#shopSortModal").height(ch);
+                    $("#shopSortoption").show();
+                    $("#shopSortModal").show();
+                });
+                $("#shopSortoption .item").click(function(event){
+                    $("#shopSortModalwrap").removeClass("modal");
+                    $("#shopSortModalwrap").height("100%");
+                    $("#shopSortoption").hide();
+                    $("#shopSortModal").hide();
+                });
+            });
+        </script>
+    </div>
+        <div class="list bb-e5">
+            <div class="shoplist">
+                <div class="shopitem">
+    <a href="shop-detail.html">
+    <div class="cover"><img/></div>
+    <div class="info">
+        <div class="top"><span>3333肯德基(中华人民共和国上海人民广场店中华人民共和国上海人民广场店)</span></div>
+        <div class="mid">
+            <div class="starts">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+            </div>
+            <div class="price"><label>人均</label><span>23</span><label>元</label></div>
+        </div>
+        <div class="btm"><span>西式快餐</span><label>&nbsp;|&nbsp;</label><span>209</span><label>米</label></div>
+    </div>
+    </a>
+</div>
+                <div class="shopitem">
+    <a href="shop-detail.html">
+    <div class="cover"><img/></div>
+    <div class="info">
+        <div class="top"><span>3333肯德基(中华人民共和国上海人民广场店中华人民共和国上海人民广场店)</span></div>
+        <div class="mid">
+            <div class="starts">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+            </div>
+            <div class="price"><label>人均</label><span>23</span><label>元</label></div>
+        </div>
+        <div class="btm"><span>西式快餐</span><label>&nbsp;|&nbsp;</label><span>209</span><label>米</label></div>
+    </div>
+    </a>
+</div>
+                <div class="shopitem">
+                    <a href="shop-detail.html">
+                    <div class="cover"><img/></div>
+                    <div class="info">
+                        <div class="top"><span>3333肯德基(中华人民共和国上海人民广场店中华人民共和国上海人民广场店)</span></div>
+                        <div class="mid">
+                            <div class="starts">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                            </div>
+                            <div class="price"><label>人均</label><span>23</span><label>元</label></div>
+                        </div>
+                        <div class="btm"><span>西式快餐</span><label>&nbsp;|&nbsp;</label><span>209</span><label>米</label></div>
+                    </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="navbar">
+            <div class="wrap">
+                <a href="home.html">
+                <div class="home">
+                    <div class="icon"><i class="fa fa-home"></i></div>
+                    <div class="text"><span>首页</span></div>
+                </div>
+                </a>
+            </div>
+            <div class="wrap">
+                <a href="shop-sort.html">
+                <div class="shop active">
+                    <div class="icon"><i class="fa fa-shopping-cart"></i></div>
+                    <div class="text"><span>商家</span></div>
+                </div>
+                </a>
+            </div>
+            <div class="wrap">
+                <a>
+                <div class="my">
+                    <div class="icon"><i class="fa fa-user"></i></div>
+                    <div class="text"><span>我的</span></div>
+                </div>
+                </a>            
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

@@ -12,8 +12,6 @@
   <link rel="stylesheet" href="assets/css/common/common.css">
   <link rel="stylesheet" href="assets/css/index/index.css">
   <link rel="stylesheet" href="assets/css/index/menu.css">
-  <link rel="stylesheet" href="bower_components/layer/mobile/need/layer.css">
-
 </head>
 <body>
 <div class="statusbar-overlay"></div>
@@ -21,7 +19,7 @@
 <div class="views">
   <div class="view view-main theme-orange">
     <div class="pages toolbar-through">
-      <div data-page="index" class="page toolbar-fixed">
+      <div data-page="index" class="page toolbar-fixed" id="index">
         <div class="page-content">
           <div class="top-alert">
             <span class="pull-left"><i class="icon-map-marker">&nbsp;</i>江东区江南东路24号建国大厦</span>
@@ -70,10 +68,10 @@
           <div class="content-container">
             <!-- tab 栏-->
             <div class="tab-content">
-                <div class="list-block media-list margin-none shop-list">
-                  <ul>
+                <div class="list-block media-list margin-none">
+                  <ul class="shop-list">
                     <li class="shop-item" data-id="1" data-title="">
-                      <a href="#" class="item-link item-content">
+                      <a href="shop.html" class="item-link item-content external">
                         <div class="item-media shop-head-pic"><img src="images/kfc.jpg" width="100" height="90"></div>
                         <div class="item-inner">
                           <div class="item-title-row">
@@ -100,7 +98,7 @@
                       </a>
                     </li>
                     <li class="shop-item" data-id="1" data-title="">
-                      <a href="#" class="item-link item-content">
+                      <a href="good.html" class="item-link item-content external">
                         <div class="item-media shop-head-pic"><img src="images/kfc.jpg" width="100" height="90"></div>
                         <div class="item-inner">
                           <div class="item-title-row">
@@ -244,7 +242,7 @@
               <i class="icon-food icon-15x"></i>
               <span class="tabbar-label">商家</span>
             </a>
-            <a href="javascript:void(0);" data-title="个人中心" class="tab-link external">
+            <a href="home.html" data-title="个人中心" class="tab-link external">
               <i class="icon-user icon-15x"></i>
               <span class="tabbar-label">我的</span>
             </a>
@@ -263,6 +261,7 @@
 
 <script type="text/javascript">
   $(function () {
+
     $(".layer-tip").on("click", function () {
       layer.msg('玩命卖萌中', function(){
       //关闭后的操作
@@ -275,21 +274,21 @@
       name : "商家",
       active : true,
       callback : function () {
-
+        layer.msg("商家按钮被点击了...");
       }
     },{
       id : 2,
       name : "优惠券",
       active : false,
       callback : function () {
-
+        layer.msg("优惠券被点击了优惠券被点击了");
       }
     },{
       id : 3,
       name : "大家都在看",
       active : false,
       callback : function () {
-
+        layer.msg('加载中',{icon:1});
       }
     }],".content-container");
   });

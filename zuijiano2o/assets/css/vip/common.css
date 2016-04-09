@@ -1,0 +1,200 @@
+.top{
+    background: #2A2A2B;
+    padding: 25px 35px;
+}
+
+.hard-toolbar{
+    line-height: 50px;
+}
+.hard-toolbar .row{
+    margin-right: -4%;
+}
+.hard-toolbar .left.recharge{
+    opacity: 0.69;
+    background: #FF9500;
+    color: white;
+    padding-left: 20px;
+}
+.hard-toolbar .right.use{
+    background: #FD7C21;
+    color: white;
+    margin-left: 0px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.hard-toolbar .left.recharge{
+    text-align: center;
+}
+
+
+.vip-card{
+    background: #ffffff;
+    border-radius: 15px;
+    padding: 10px;
+}
+
+.vip-card .qrcode img{
+
+}
+
+.vip-card .vip-card-info{
+    text-align: center;
+
+
+}
+.vip-card .vip-card-info .title{
+    color: #333333;
+    font-size: 18px;
+}
+
+.vip-card .vip-card-info .number{
+    color: #333333;
+    font-size: 16px;
+    padding-top: 5px;
+}
+
+ i.vip{
+    background: #D0021B;
+    border-radius: 5px;
+    color: #ffffff;
+    padding: 0px 8px;
+    margin-left: 5px;
+    font-size: 12px;
+    line-height: 12px;
+}
+
+.vip-card .credits .name{
+    font-size: 15px;
+    color: #333333;
+    font-weight: 100;
+    padding: 3px;
+}
+.vip-card .credits .value{
+    font-size: 22px;
+    color: #FD7C21;
+    padding: 3px;
+}
+
+.card-menu .item-title{
+    color: #525252;
+}
+
+#union-vip .vip-card-info{
+    padding-bottom: 10px;
+}
+#union-vip .credits{
+    background: #CBAB56;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    padding-top: 10px;
+}
+
+
+#union-vip .vip-card{
+    padding: 0;
+}
+
+
+#union-vip .vip-card .credits .name{
+    font-size: 15px;
+    color: #ffffff;
+    font-weight: 100;
+    padding: 3px;
+}
+#union-vip .vip-card .credits .value{
+    font-size: 22px;
+    color: #ffffff;
+    padding: 3px;
+}
+
+
+#vip-card-recharge .credit-info{
+
+}
+
+#vip-card-recharge .credit-info .credit{
+    padding-left: 7px;
+    font-size: 14px;
+}
+
+#vip-card-recharge .credit-info .credit .name{
+    color: #666666;
+}
+
+#vip-card-recharge .credit-info .credit .value{
+    color: #FD7C21;
+}
+
+#vip-card-recharge li.header{
+    border-bottom: 1px solid #E6E6E6;
+}
+#vip-card-recharge li.header .avatar-img{
+    border-radius: 100%;
+}
+
+#vip-card-recharge li.header .item-title{
+    color: #525252;
+}
+
+#vip-card-recharge li.header .item-inner:after{
+    display: none;
+}
+
+#vip-card-recharge .recharge-amount-selector li .item-title{
+    color: #666666;
+}
+
+#vip-card-recharge .recharge-amount-selector li .item-title .tip{
+    padding-left: 20px;
+
+}
+
+#vip-card-recharge .amount-input .item-title{
+    color: #333333;
+}
+
+
+
+#vip-card-use-success .top-tip{
+    padding-top: 15px;
+    height: 130px;
+    background: #ffffff;
+    text-align: center;
+}
+
+#vip-card-use-success .top-tip .icon-tip i{
+    color: #FD7C21;
+    padding-top: 120px;
+}
+
+#vip-card-use-success .top-tip .text-tip{
+    font-size: 20px;
+    color: #FD7C21;
+    margin: 0;
+}
+
+#vip-card-use-success .item-title{
+    color: #333333;;
+}
+
+#vip-card-list .vip-card-list ul li a{
+    margin-top: 18px;
+    color: #ffffff;
+}
+
+#vip-card-list .credits .row .name,#vip-card-list .credits .row .value{
+    font-size: 13px;
+    line-height: 22px;
+    color: #ffffff;
+    opacity: 1;
+}
+#vip-card-list .credits{
+    background: #000000;
+    border-bottom-left-radius: 7px;
+    border-bottom-right-radius: 7px;
+    opacity: 0.5;
+    height: 26px;
+}
+
+

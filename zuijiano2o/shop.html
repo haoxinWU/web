@@ -8,7 +8,11 @@
     <title>肯德基-广场店</title>
     <link rel="stylesheet" href="framework/css/framework7.min.css">
     <link rel="stylesheet" href="framework/css/font-awesome.min.css">
+    <link rel="stylesheet" href="framework/css/zuijina-icon.css">
     <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/common/common.css">
+    <link rel="stylesheet" href="assets/css/shop/shop.css">
+    <link rel="stylesheet" href="assets/css/comment/comment-list.css">
 </head>
 <body>
 <div class="statusbar-overlay"></div>
@@ -16,9 +20,261 @@
 <div class="views">
     <div class="view view-main theme-orange">
         <div class="pages toolbar-through">
-            <div data-page="main" class="page">
+            <div data-page="main" class="page" id="shop">
                 <div class="page-content">
+                    <div class="content-block margin-none padding-none">
+                        <div class="share-model">
+                            <span class="pull-left">你已加入分享计划，推广商品被成功购买可获得奖励</span>
+                            <span class="pull-right"><i class=" icon-double-angle-right"></i></span>
+                        </div>
+                    </div>
+                    <div class="list-block media-list margin-none">
+                        <div class="item-content shop-info" style="background: #ffffff;">
+                            <div class="item-media shop-head-pic"><img src="images/kfc.jpg" width="100" height="90"></div>
+                            <div class="item-inner">
+                                <div class="item-title-row">
+                                    <div class="item-title title">肯德基宅急送(陈航店)<i class="zuijian-union"></i></div>
+                                </div>
+                                <div class="shop-simple-info">
+                                    <div class="item-subtitle second-line">
+                                        <span class="shop-stars">
+                                          <i class="icon-star"></i>
+                                          <i class="icon-star"></i>
+                                          <i class="icon-star"></i>
+                                          <i class="icon-star-half"></i>
+                                        </span>
+                                        <span class="sold-count">人均24元</span>
+                                    </div>
+                                    <div class="third-line">
+                                        <div class="pull-left">
+                                            <span class="comment-count">西餐</span>
+                                            |
+                                            <span class="sold-count">2.8千米</span>
+                                        </div>
+                                        <div class="pull-right">
+                                            <a class="collect-btn" href="#">点击收藏</a>
+                                            <a class="collect-btn active" href="#">已收藏</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
+                    <div class="shop-info-items">
+                        <div class="list-block margin-none">
+                            <ul>
+                                <li class="">
+                                    <a href="#" class="item-link item-content">
+                                        <div class="item-inner">
+                                            <div class="item-title">
+                                                <i class="icon-map-marker"></i>
+                                                <span class="title">上海市黄浦区南京东路432号</span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="">
+                                    <a href="tel:021-34245432" class="item-link item-content external">
+
+                                        <div class="item-inner">
+                                            <div class="item-title">
+                                                <i class="icon-phone"></i>
+                                                <span class="title">021-34245432</span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="list-block margin-15">
+                            <ul class="vip-card">
+                                <li class="item-content">
+                                    <div class="item-inner">
+                                        <div class="item-title">
+                                            <i class="vip empty">vip</i>
+                                            <span class="title">
+                                                您尚未领取本店会员卡
+                                            </span>
+                                        </div>
+                                        <a href="javascript:void(0);" class="item-after external">
+                                            <a href="shop-vip-get.html" class="pull-right external get-vip-button">马上领取</a>
+                                        </a>
+                                    </div>
+                                </li>
+                                <li class="item-content">
+                                    <div class="item-inner">
+                                        <div class="item-title">
+                                            <i class="vip active">vip</i>
+                                            <span class="credit-info">
+                                                <span class="credit money">
+                                                    <span class="name">余额:</span>
+                                                    <span class="value">¥50000</span>
+                                                </span>
+                                                <span class="credit z-money">
+                                                    <span class="name">赠额:</span>
+                                                    <span class="value">¥50000</span>
+                                                </span>
+                                                <span class="credit score">
+                                                    <span class="name">积分:</span>
+                                                    <span class="value">265500.00</span>
+                                                </span>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="list-block margin-15">
+                            <ul>
+                                <li class="item-content">
+                                    <div class="item-inner">
+                                        <div class="item-title">商家信息</div>
+                                    </div>
+                                </li>
+                                <li class="">
+                                    <div class="shop-extra-list row">
+                                        <div class="col-33">
+                                            <i class="zuijian-wifi"></i> <span class="text">WIFI</span>
+                                        </div>
+                                        <div class="col-33">
+                                            <i class="zuijian-park"></i> <span class="text">停车</span>
+                                        </div>
+                                        <div class="col-33">
+                                            <i class="zuijian-box"></i> <span class="text">包厢</span>
+                                        </div>
+                                        <div class="col-33">
+                                            <i class="zuijian-wifi"></i> <span class="text">WIFI</span>
+                                        </div>
+                                        <div class="col-33">
+                                            <i class="zuijian-park"></i> <span class="text">停车</span>
+                                        </div>
+                                        <div class="col-33">
+                                            <i class="zuijian-box"></i> <span class="text">包厢</span>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="item-content">
+                                    <div class="item-inner">
+                                        <div class="item-title">营业时间:
+                                            <span class="value">11:00 - 22:00</span>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="list-block margin-15">
+                            <ul class="favourable-list">
+                                <li class="list-nav">
+                                    <a href="#" class="item-link item-content">
+                                        <div class="item-inner">
+                                            <div class="item-title">优惠信息</div>
+                                            <div class="item-after">查看所有优惠</div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="shop-item media-item" data-id="1" data-title="">
+                                    <a href="#" class="item-link item-content">
+                                        <div class="item-media shop-head-pic"><img src="images/kfc.jpg" width="80" height="70"></div>
+                                        <div class="item-inner">
+                                            <div class="item-title-row">
+                                                <div class="item-title title">便利店午餐券</div>
+                                            </div>
+                                            <div class="shop-simple-info">
+                                                <div class="item-subtitle second-line">
+                                                  <span class="pull-left">
+                                                      <span class="money">500</span>
+                                                        <span class="score">积分</span>
+                                                  </span>
+                                                  <span class="pull-right">
+                                                    <span class="sold-count">2323</span>人购买
+                                                  </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="shop-item media-item" data-id="1" data-title="">
+                                    <a href="#" class="item-link item-content">
+                                        <div class="item-media shop-head-pic"><img src="images/kfc.jpg" width="80" height="70"></div>
+                                        <div class="item-inner">
+                                            <div class="item-title-row">
+                                                <div class="item-title title">便利店午餐券</div>
+                                            </div>
+                                            <div class="shop-simple-info">
+                                                <div class="item-subtitle second-line">
+                                                  <span class="pull-left">
+                                                    <span class="money">¥5</span>
+                                                    <span class="score">+ 积分5000</span>
+                                                  </span>
+                                                  <span class="pull-right">
+                                                    <span class="sold-count">2323</span>人购买
+                                                  </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+
+
+                        <div class="list-block margin-15">
+                            <ul class="comment-list">
+                                <li class="list-nav">
+                                    <a href="#" class="item-link item-content">
+                                        <div class="item-inner">
+                                            <div class="item-title">点评信息</div>
+                                            <div class="item-after">查看所有点评</div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="media-item">
+                                    <div class="item-content">
+                                        <div class="item-media">
+                                            <img class="head-image" src="http://wx.qlogo.cn/mmopen/UJYVT6zQYdNsl8bxqCZu3o9X45guEHxELym6uQGLY0Ev2CVFBUTQxWq7KZvRrq654SX1JKj1rngicicwtM1J7aBsrDtINBd1pe/0" width="44"></div>
+                                        <div class="item-inner">
+                                            <div class="item-title-row">
+                                                <div class="item-title">
+                                                    <span class="commenter-name">猫宁</span>
+                                                <span class="stars">
+                                                   <i class="icon-star"></i>
+                                          <i class="icon-star"></i>
+                                          <i class="icon-star"></i>
+                                          <i class="icon-star-half"></i>
+                                                </span>
+                                                </div>
+
+                                            </div>
+                                            <div class="item-subtitle comment-content">
+                                                <div class="pull-left content">味道差</div>
+                                                <div class="pull-right date">2015-01-02</div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="vip-card">
+
+                    </div>
+
+                    <div class="sold-on">
+
+                    </div>
+
+                    <div class="comment"></div>
+                </div>
+                <div class="fix-large-button toolbar tabbar tabbar-labels">
+                    <div class="toolbar-inner theme-orange">
+                        <a href="javascript:void(0);" class="button button-big button-fill submit-comment">立即预约</a>
+                    </div>
                 </div>
             </div>
         </div>

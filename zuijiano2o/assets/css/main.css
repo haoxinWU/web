@@ -3,6 +3,13 @@ body{
     font-size: 14px;
     background-color: #efeff4;
 }
+
+.list-block ul:before,.list-block ul:after,.list-block .item-inner:after{
+    background-color: #E6E6E6;
+}
+.list-block .item-content{
+    padding-left: 10px;
+}
 /*隐藏*/
 .hide{
     display: none !important;   /*隐藏内容*/
@@ -91,3 +98,40 @@ div[class*="col-"] {
     font-size:21px;
     line-height: 80px;
 }
+#index{
+    padding-bottom: 60px;
+}
+
+.tabbar.theme-orange a.active, .tabbar.theme-orange a.active i, .theme-orange .tabbar a.active, .theme-orange .tabbar a.active i{
+    color: #FD7C21;
+}
+.button.button-fill.color-orange, .theme-orange .button.button-fill{
+    background: #FD7C21;
+}
+.swiper-pagination.color-orange .swiper-pagination-bullet-active, .theme-orange .swiper-pagination .swiper-pagination-bullet-active{
+    background-color: #FD7C21;
+}
+
+.theme-orange .item-link.list-button, .theme-orange a{
+    color: #FD7C21;
+}
+
+.theme-orange label.label-checkbox input[type=checkbox]:checked+.item-media i.icon-form-checkbox, .theme-orange label.label-checkbox input[type=radio]:checked+.item-media i.icon-form-checkbox{
+    color: #FD7C21;
+    background-color: #FD7C21;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

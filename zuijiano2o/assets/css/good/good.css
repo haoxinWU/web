@@ -1,0 +1,128 @@
+#good .good-info-items{
+
+}
+#good .good-info-items i{
+    color: #D4D4D4;
+}
+#good .good-info-items .item-title{
+    font-size: 16px;
+    color: #525252;
+    padding-left: 5px;
+}
+#good .good-info-items .list-block ul:before,.good-info-items .list-block ul:after{
+    background-color:#e6e6e6;
+}
+#good .good-info-items .item-inner:after{
+    background-color: #e6e6e6;
+}
+#good .good-info-items  .item-inner:after{
+    display: none;
+}
+#good .good-info-items li{
+    border-bottom: 1px solid #e6e6e6;
+}
+
+#good .description{
+    font-weight: 100;
+    padding: 0px 10px;
+}
+
+#good .sold-count{
+    font-size: 12px;
+    color: #999999;
+}
+
+#good .shop-info{
+    padding: 3px 0px;
+}
+#good .shop-info .item-title-row{
+    padding: 3px 0px;
+}
+
+#good .shop-info .stars{
+    padding-left: 5px;
+}
+#good .shop-info .phone-icon{
+    padding-left: 30px;
+    padding-right: 30px;
+    font-size: 25px;
+    color: #FD7C21;
+    border-left: 1px solid #D1D1D1;
+}
+#good .shop-info .distance{
+    font-size: 12px;
+    padding-left: 10px;
+    color: #999999;
+}
+
+#good .good-images{
+    position: relative;
+}
+#good .good-images .title{
+    position: absolute;
+    top: 170px;
+    width: 100%;
+    color: #ffffff;
+    text-align: left;
+    padding-left: 20px;
+    font-size: 18px;
+    font-weight: 100;
+    line-height: 30px;
+    height: 30px;
+    opacity: 0.5;
+    background: #000000;
+}
+
+#good .price-info{
+    height: 50px;
+    background: #ffffff;
+}
+
+#good .price-info .price{
+    line-height: 50px;
+    color: #FD7C21;
+    padding-left: 15px;
+}
+
+#good .price-info .price .money{
+    font-size: 30px;
+}
+
+#good .price-info .price .score{
+    font-size: 15px;
+}
+
+#good .price-info .price .market-price{
+    font-size: 14px;
+    color: #B1B1B1;
+    padding-left: 10px;
+}
+
+
+#good .price-info .pull-right{
+    line-height: 50px;
+    padding-right: 20px;
+}
+
+#good .buy-button{
+    background: #FD7C21;
+    border-radius: 3px;
+    color: #ffffff;
+    font-size: 14px;
+    padding: 5px 10px;
+}
+
+#good .share-model{
+    height: 30px;
+    line-height: 20px;
+}
+
+
+
+
+
+
+
+
+
+

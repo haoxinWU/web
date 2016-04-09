@@ -11,11 +11,12 @@
 .top-alert{
     padding-bottom: 10px;
     padding-top: 10px;
-    border-bottom: 1px solid #D9D9D9;
+    border-bottom: 1px solid #DBDBDB;
     height: 14px;
     font-size: 14px;
     line-height: 14px;
     color: #999999;
+    background: #F9F9F9;
 }
 
 .top-alert .pull-left{

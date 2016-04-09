@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title>菜单确认</title>
+    <link rel="stylesheet" href="css/framework7.min.css?v=20150923.1.1">
+    <link rel="stylesheet" href="css/framework7.ios.colors.min.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css?v=20150923.1.1">
+    <link rel="stylesheet" href="assets/font/iconfont.css?v=20150923.1.1.1.1">
+    <link rel="stylesheet" href="assets/css/main.css?v=20150923.1.1">
+    <link rel="stylesheet" href="assets/css/common/common.css?v=2015092.1.1.2">
+    <link rel="stylesheet" href="assets/css/record/record-detail.css">
+    <link rel="stylesheet" href="assets/css/menu/menu-confirm.css">
+</head>
+<body>
+<!-- Status bar overlay for fullscreen mode-->
+<div class="statusbar-overlay"></div>
+<!-- Panels overlay-->
+<div class="panel-overlay"></div>
+<!-- Views-->
+<div class="views">
+    <!-- Your main view, should have "view-main" class-->
+    <div class="view view-main">
+        <!-- Pages, because we need fixed-through navbar and toolbar, it has additional appropriate classes-->
+        <div class="pages">
+            <!-- Page, data-page contains page name-->
+            <div data-page="index" class="page">
+                <!-- Scrollable page content-->
+                <div class="page-content">
+                    <div class="head-tip">
+                        <span class="pull-left">当前桌号:<span>A32</span> 共<span class="person-count">2</span>人，已点<span class="food-count">8</span>道菜</span>
+                        <span class="pull-right "><a href="order.html" class="external"><< 点击返回点餐</a></span>
+                    </div>
+                    <div class="content-block item-list">
+                        <div class="row item">
+                            <div class="col-15">
+                                <img class="head-image" src="mock/head.jpg">
+                            </div>
+                            <div class="col-85">
+                                <div class="user">
+                                    <div class="row">
+                                        <div class="col-66 nickname">我</div>
+                                        <div class="col-33 subtotal">小计:98元</div>
+                                    </div>
+                                </div>
+                                <div class="menu">
+                                    <div class="row">
+                                        <div class="col-50">皇家鸡腿堡套餐</div>
+                                        <div class="col-25">X1</div>
+                                        <div class="col-25 price">￥34</div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-50">炫辣鸡腿堡套餐</div>
+                                        <div class="col-25">X1</div>
+                                        <div class="col-25 price">￥34</div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-50">薯条</div>
+                                        <div class="col-25">X2</div>
+                                        <div class="col-25 price">￥6</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row item">
+                            <div class="col-15">
+                                <img class="head-image" src="mock/head.jpg">
+                            </div>
+                            <div class="col-85">
+                                <div class="user">
+                                    <div class="row">
+                                        <div class="col-66 nickname">我</div>
+                                        <div class="col-33 subtotal">小计:98元</div>
+                                    </div>
+                                </div>
+                                <div class="menu">
+                                    <div class="row">
+                                        <div class="col-50">皇家鸡腿堡套餐</div>
+                                        <div class="col-25">X1</div>
+                                        <div class="col-25 price">￥34</div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-50">炫辣鸡腿堡套餐</div>
+                                        <div class="col-25">X1</div>
+                                        <div class="col-25 price">￥34</div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-50">薯条</div>
+                                        <div class="col-25">X2</div>
+                                        <div class="col-25 price">￥6</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row total-amount">
+                            <div class="row">
+                                <div class="pull-right amount">总计: <span class="number">￥208</span></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="content-block-title">请选择就餐人数和就餐时间</div>
+                    <div class="list-block pay-method theme-orange">
+                        <ul>
+                            <li>
+                                <a href="#" class="item-link smart-select" data-back-on-select="true" data-page-title="就餐人数" data-form-theme="orange">
+                                    <select name="booking_person_count">
+                                        <option value="2" selected>2人</option>
+                                        <option value="5">5人</option>
+                                        <option value="10">10人</option>
+                                    </select>
+                                    <div class="item-content">
+                                        <div class="item-inner">
+                                            <div class="item-title">就餐人数</div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="item-link smart-select" data-back-on-select="true"  data-page-title="就餐时间" data-form-theme="orange">
+                                    <select name="booking_time">
+                                            <option value="10:00" selected>10:00</option>
+                                            <option value="12:00">12:00</option>
+                                            <option value="13:00">13:00</option>
+                                            <option value="10:00" selected>10:00</option>
+                                            <option value="23:00">23:00</option>
+                                            <option value="22:00">22:00</option>
+                                    </select>
+                                    <div class="item-content">
+                                        <div class="item-inner">
+                                            <div class="item-title">就餐时间</div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+                <div class="toolbar tabbar tabbar-labels confirm-toolbar">
+                    <div class="row">
+                        <div class="col-50 left">支付: ¥<span class="confirm-amount">288</span></div>
+                        <div class="col-50 right success">确认预约并支付</div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Path to Framework7 Library JS-->
+<script type="text/javascript" src="js/jquery-2.1.3.min.js?v=20150923"></script>
+<script type="text/javascript" src="js/framework7.js?v=20150923"></script>
+<script type="text/javascript" src="assets/js/main.js?v=20150923"></script>
+<script type="text/javascript" src="assets/js/common/common.js?v=20150923"></script>
+<script type="text/javascript" src="assets/js/record/record-detail.js"></script>
+<script type="text/javascript" src="assets/js/menu/menu-confirm.js"></script>
+<!-- Path to your app js-->
+<script type="text/javascript">
+    $(function () {
+        menuConfirm.init();
+    });
+</script>
+</body>
+</html>
