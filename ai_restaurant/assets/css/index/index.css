@@ -59,7 +59,14 @@ section.notice-info i{
 .option-buttons .option-item{
     padding-bottom: 20px;
 }
-.option-buttons i{
+.option-buttons .col-33.option-item i{
+    font-size: 40px;
+    color: white;
+    width: 60px;
+    height: 60px;
+    border-radius: 35px;
+}
+.option-buttons .col-50.option-item i{
     font-size: 60px;
     color: white;
     width: 80px;
