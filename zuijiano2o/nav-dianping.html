@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <link rel="Shortcut Icon" href="http://i3.dpfile.com/s/res/favicon.5ff777c11d7833e57e01c9d192b7e427.ico" type="image/x-icon" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="format-detection" content="email=no" />
+    <meta name="apple-mobile-web-app-title" content="大众点评" />
+    <meta name="theme-color" content="#f2991b" />
+    <link rel="stylesheet" href="//www.dpfile.com/concat/~mod~app-m-style~2.2.1~css~shoplist.css" type="text/css" />
+    <title>上海美食,上海餐厅餐饮,上海团购,上海生活,优惠券-大众点评网</title>
+    <meta name="Keywords" content="上海美食,上海餐厅,团购,上海优惠券,大众点评网" />
+    <meta name="Description" content="根据合理的商区、地标和详细的商户分类系统，为你提供上海的餐饮美食、婚庆、住宿酒店、美容美发等消费场所，并通过海量亲身消费者的点评聚合，以各种评分、星级的标准让你选择。" />
+    <meta name="location" content="province=上海;city=上海" />
+    <script src="framework/js/jquery-2.1.3.min.js"></script>
+    <script src="bower_components/iscroll/build/iscroll.js"></script>
+    <script type="text/javascript" id="filter-template">
+        <nav class="list-nav">
+            <div class="cat Fix">
+                {{each data as filter i}}
+                <a href="javascript:void(0)" data-id="{{i+1}}" class="item J_trigger">{{filter.name}}<i class="drop"></i></a>
+                {{/each}}
+            </div>
+
+            {{each data as filter i}}
+            <section data-id="{{i+1}}" class="selector J_selector Hide">
+
+                {{if filter.mode == 'double_twin'}}
+                <div class="second-nav">
+                    {{each filter.content as nav nav_i}}
+                    <div class="item {{if nav.default == 1}}on{{/if}}">
+                        {{nav.title}}
+                    </div>
+                    {{/each}}
+                </div>
+
+                {{each filter.content as nav nav_i}}
+                <div class="second-selector" data-name="{{nav.title}}">
+                    <div class="menu main">
+                        <div>
+                            <div>
+                                {{each nav.content as left i}}
+                                <div>
+                                    <p data-id="{{i + 1}}" data-type="{{left.type}}" data-param="{{left.param}}" data-value="{{left.value}}" class="item Fix {{if left.default == 1}}on{{/if}}">
+                                        {{if left.icon}}
+                                        <span class="{{left.icon}}"></span>
+                                        {{/if}}
+                                        {{left.name}}
+                                    </p>
+                                </div>
+                                {{/each}}
+                            </div>
+                        </div>
+                    </div>
+                    {{each nav.content as left i}}
+                    <div data-pid="{{i + 1}}" data-default="{{left.default}}" class="menu sub Hide" style="left: 45%; width: 55%;">
+                        <div>
+                            {{each left.children as right i}}
+                            <p data-id="{{i + 1}}" data-type="{{right.type}}" data-param="{{right.param}}" data-value="{{right.value}}" class="item Fix">{{right.name}}</p>
+                            {{/each}}
+                        </div>
+                    </div>
+                    {{/each}}
+                </div>
+                {{/each}}
+                {{/if}}
+
+
+
+                {{if filter.mode == 'single'}}
+                <div class="menu main full">
+                    <div>
+                        {{each filter.content as item i}}
+                        <div>
+                            <p data-id="{{i + 1}}" data-value="{{item.value}}" data-param="{{item.param}}" data-type="{{item.type}}" class="item Fix" href="">{{item.name}}</p>
+                        </div>
+                        {{/each}}
+                    </div>
+                </div>
+                {{/if}}
+
+                {{if filter.mode == 'twin'}}
+                <div class="menu main">
+                    <div>
+                        <div>
+                            {{each filter.content as left i}}
+                            <div>
+                                <p data-id="{{i + 1}}" data-type="{{left.type}}" class="item Fix {{if left.default == 1}}on{{/if}}">
+                                    {{if left.icon}}
+                                    <span class="{{left.icon}}"></span>
+                                    {{/if}}
+                                    {{left.name}}
+                                </p>
+                            </div>
+                            {{/each}}
+                        </div>
+                    </div>
+                </div>
+                {{each filter.content as left i}}
+                <div data-pid="{{i + 1}}" data-default="{{left.default}}" data-param="{{left.param}}" data-value="{{left.value}}" class="menu sub Hide" style="left: 45%; width: 55%;">
+                    <div>
+                        {{each left.children as right i}}
+                        <p data-id="{{i + 1}}" data-param="{{right.param}}" data-value="{{right.value}}" class="item Fix " href="">{{right.name}}</p>
+                        {{/each}}
+                    </div>
+                </div>
+                {{/each}}
+                {{/if}}
+            </section>
+            {{/each}}
+        </nav>
+    </script>
+    <script src="assets/js/filter/template.js"></script>
+    <script src="assets/js/filter/filter.js"></script>
+</head>
+<body>
+<div class="loading_pic" style="display: none;"></div>
+<div id="backup-insert"></div>
+<header class="list-head">
+    <a class="newback" href="/"></a>
+    <div class="list-type-cnt">
+        <div class="list-type">
+            <a href="/shoplist/1/r/801/c/0/s/s_3" class="on" onclick="_hip.push(['mv',{module:'2_shoplist_tab',action:'click',title:'商户'}])">商户</a>
+            <a href="/tuan/shanghai?sc=0&amp;sr=801" onclick="_hip.push(['mv',{module:'2_shoplist_tab',action:'click',title:'闪惠团购'}])">闪惠团购 </a>
+        </div>
+    </div>
+    <div class="newsearch J_search_trigger" onclick="_hip.push(['mv', {module:'shoplist_search',action:'click'}]);"></div>
+</header>
+<div id="nav">
+
+</div>
+<ul class="search-list J_list">
+    <li> <a class="item Fix " href="/shop/3891889" onclick="_hip.push(['mv', {module: 'shop_list_new', action: 'click',index:'3891889'}]);">
+        <div class="pic">
+            <img src="http://i2.s2.dpfile.com/pc/f4c408206f5906e6fea754086b9a56a2(120c120)/thumb.jpg" />
+        </div>
+        <div class="content">
+            <div class="name">
+                <h3 class="shopname"><span class="shop_name" style="max-width: 281px;">丽思卡尔顿酒店</span><span class="mark-booking mark-tag"></span></h3>
+            </div>
+            <div class="comment">
+                <span class="star star-50"></span>
+                <span>￥1834/人</span>
+            </div>
+            <div class="intro Fix">
+                <span>陆家嘴</span>
+                <span class="type">豪华型</span>
+                <span class="dis"></span>
+            </div>
+        </div></a></li>
+    <li> <a class="item Fix " href="/shop/5331155" onclick="_hip.push(['mv', {module: 'shop_list_new', action: 'click',index:'5331155'}]);">
+        <div class="pic">
+            <img src="http://p0.meituan.net/hotel/4fd9c85fd0a9d6722110471b956f4668602102.png%40120w_120h_1e_1c_1l%7Cwatermark%3D1%26%26object%3DL2RwZGVhbC9hMWQ4Yzc5ZjUxZGVlNWZjOGM5MzkwYTBjZDNjODIyZDgxOTIucG5nQDIwUA%3D%3D%26p%3D9%26x%3D20%26y%3D2" />
+        </div>
+        <div class="content">
+            <div class="name">
+                <h3 class="shopname"><span class="shop_name" style="max-width: 281px;">文华东方酒店</span><span class="mark-booking mark-tag"></span></h3>
+            </div>
+            <div class="comment">
+                <span class="star star-50"></span>
+                <span>￥1806/人</span>
+            </div>
+            <div class="intro Fix">
+                <span>陆家嘴</span>
+                <span class="type">豪华型</span>
+                <span class="dis"></span>
+            </div>
+        </div></a></li>
+    <li> <a class="item Fix " href="/shop/14901528" onclick="_hip.push(['mv', {module: 'shop_list_new', action: 'click',index:'14901528'}]);">
+        <div class="pic">
+            <img src="http://i3.s2.dpfile.com/pc/f95b3ef11387bbde3ba468c819616489(120c120)/thumb.jpg" />
+        </div>
+        <div class="content">
+            <div class="name">
+                <h3 class="shopname"><span class="shop_name" style="max-width: 281px;">香格俪莱</span><span class="mark-promo mark-tag"></span></h3>
+            </div>
+            <div class="comment">
+                <span class="star star-50"></span>
+                <span>消费:￥845</span>
+            </div>
+            <div class="intro Fix">
+                <span>陆家嘴</span>
+                <span class="type">美发</span>
+                <span class="dis"></span>
+            </div>
+        </div></a></li>
+    <li> <a class="item Fix " href="/shop/22948918" onclick="_hip.push(['mv', {module: 'shop_list_new', action: 'click',index:'22948918'}]);">
+        <div class="pic">
+            <img src="http://i1.s2.dpfile.com/pc/a05b11376c03cc97c168a01bbde2a41f(120c120)/thumb.jpg" />
+        </div>
+        <div class="content">
+            <div class="name">
+                <h3 class="shopname"><span class="shop_name" style="max-width: 241px;">H&amp;Z美丽定制</span><span class="mark-promo mark-tag"></span><span class="mark-group mark-tag"></span><span class="mark-hui mark-tag"></span></h3>
+            </div>
+            <div class="comment">
+                <span class="star star-50"></span>
+                <span>消费:￥356</span>
+            </div>
+            <div class="intro Fix">
+                <span>陆家嘴</span>
+                <span class="type">美发</span>
+                <span class="dis"></span>
+            </div>
+        </div></a></li>
+    <li> <a class="item Fix " href="/shop/24788617" onclick="_hip.push(['mv', {module: 'shop_list_new', action: 'click',index:'24788617'}]);">
+        <div class="pic">
+            <img src="http://i3.s2.dpfile.com/pc/09f0be5a638ce28eb4bf00220ab98ca2(120c120)/thumb.jpg" />
+        </div>
+        <div class="content">
+            <div class="name">
+                <h3 class="shopname"><span class="shop_name" style="max-width: 261px;">卡尔沙龙</span><span class="mark-group mark-tag"></span><span class="mark-hui mark-tag"></span></h3>
+            </div>
+            <div class="comment">
+                <span class="star star-50"></span>
+                <span>消费:￥403</span>
+            </div>
+            <div class="intro Fix">
+                <span>陆家嘴</span>
+                <span class="type">美发</span>
+                <span class="dis"></span>
+            </div>
+        </div></a></li>
+    <li> <a class="item Fix " href="/shop/24034105" onclick="_hip.push(['mv', {module: 'shop_list_new', action: 'click',index:'24034105'}]);">
+        <div class="pic">
+            <img src="http://i1.s2.dpfile.com/pc/aa0ea0d9277bc46fe3db3150ac8c31c5(120c120)/thumb.jpg" />
+        </div>
+        <div class="content">
+            <div class="name">
+                <h3 class="shopname"><span class="shop_name" style="max-width: 301px;">CLUXTA松下&middot;智美体验空间</span></h3>
+            </div>
+            <div class="comment">
+                <span class="star star-50"></span>
+                <span>消费:￥45</span>
+            </div>
+            <div class="intro Fix">
+                <span>陆家嘴</span>
+                <span class="type">美容/SPA</span>
+                <span class="dis"></span>
+            </div>
+        </div></a></li>
+    <li> <a class="item Fix " href="/shop/22022048" onclick="_hip.push(['mv', {module: 'shop_list_new', action: 'click',index:'22022048'}]);">
+        <div class="pic">
+            <img src="http://i2.s2.dpfile.com/pc/ed31f8f4c012b88011a648e0a4eacdd4(120c120)/thumb.jpg" />
+        </div>
+        <div class="content">
+            <div class="name">
+                <h3 class="shopname"><span class="shop_name" style="max-width: 261px;">塑魅丰胸美胸护理中心</span><span class="mark-group mark-tag"></span><span class="mark-hui mark-tag"></span></h3>
+            </div>
+            <div class="comment">
+                <span class="star star-50"></span>
+                <span>消费:￥391</span>
+            </div>
+            <div class="intro Fix">
+                <span>陆家嘴</span>
+                <span class="type">美容/SPA</span>
+                <span class="dis"></span>
+            </div>
+        </div></a></li>
+    <li> <a class="item Fix " href="/shop/4074133" onclick="_hip.push(['mv', {module: 'shop_list_new', action: 'click',index:'4074133'}]);">
+        <div class="pic">
+            <img src="http://qcloud.dpfile.com/pc/J9wYZThy5oy8y-E92tevWqO8Nwyny5PYF8fGR2T8HP2DrHx3403SEg5dUJI6XFid_Es9AvUr0sesLal2G0zjJA.jpg" />
+        </div>
+        <div class="content">
+            <div class="name">
+                <h3 class="shopname"><span class="shop_name" style="max-width: 301px;">百丽宫影城</span></h3>
+            </div>
+            <div class="comment">
+                <span class="star star-50"></span>
+                <span>￥65/人</span>
+            </div>
+            <div class="intro Fix">
+                <span>陆家嘴</span>
+                <span class="type">电影院</span>
+                <span class="dis"></span>
+            </div>
+        </div></a></li>
+    <li> <a class="item Fix " href="/shop/24739587" onclick="_hip.push(['mv', {module: 'shop_list_new', action: 'click',index:'24739587'}]);">
+        <div class="pic">
+            <img src="//www.dpfile.com/mod/app-m-dianping/1.4.2/css/img/picpre.png" lazy-src="http://i2.s2.dpfile.com/pc/e0c406af43bdcc4bd9d6975b4d900c3f(120c120)/thumb.jpg" />
+        </div>
+        <div class="content">
+            <div class="name">
+                <h3 class="shopname"><span class="shop_name" style="max-width: 281px;">White Wedding 国际顶级婚纱礼服会所</span><span class="mark-group mark-tag"></span></h3>
+            </div>
+            <div class="comment">
+                <span class="star star-50"></span>
+                <span>￥15146</span>
+            </div>
+            <div class="intro Fix">
+                <span>陆家嘴</span>
+                <span class="type">女士婚纱</span>
+                <span class="dis"></span>
+            </div>
+        </div></a></li>
+    <li> <a class="item Fix " href="/shop/1928641" onclick="_hip.push(['mv', {module: 'shop_list_new', action: 'click',index:'1928641'}]);">
+        <div class="pic">
+            <img src="//www.dpfile.com/mod/app-m-dianping/1.4.2/css/img/picpre.png" lazy-src="http://i3.s2.dpfile.com/pc/609967b7454fa783343cbc55a419d146(120c120)/thumb.jpg" />
+        </div>
+        <div class="content">
+            <div class="name">
+                <h3 class="shopname"><span class="shop_name" style="max-width: 281px;">香格里拉大酒店</span><span class="mark-booking mark-tag"></span></h3>
+            </div>
+            <div class="comment">
+                <span class="star star-50"></span>
+                <span>￥1110/人</span>
+            </div>
+            <div class="intro Fix">
+                <span>陆家嘴</span>
+                <span class="type">五星级酒店</span>
+                <span class="dis"></span>
+            </div>
+        </div></a></li>
+    <li> <a class="item Fix " href="/shop/32551509" onclick="_hip.push(['mv', {module: 'shop_list_new', action: 'click',index:'32551509'}]);">
+        <div class="pic">
+            <img src="//www.dpfile.com/mod/app-m-dianping/1.4.2/css/img/picpre.png" lazy-src="http://i2.s2.dpfile.com/pc/2172a354b7c16153e89e2b1ee6e8d72a(120c120)/thumb.jpg" />
+        </div>
+        <div class="content">
+            <div class="name">
+                <h3 class="shopname"><span class="shop_name" style="max-width: 261px;">Sweet fitness运动糖果健身私教</span><span class="mark-promo mark-tag"></span><span class="mark-group mark-tag"></span></h3>
+            </div>
+            <div class="comment">
+                <span class="star star-50"></span>
+                <span>￥57/人</span>
+            </div>
+            <div class="intro Fix">
+                <span>陆家嘴</span>
+                <span class="type">健身中心</span>
+                <span class="dis"></span>
+            </div>
+        </div></a></li>
+    <li> <a class="item Fix " href="/shop/5606435" onclick="_hip.push(['mv', {module: 'shop_list_new', action: 'click',index:'5606435'}]);">
+        <div class="pic">
+            <img src="//www.dpfile.com/mod/app-m-dianping/1.4.2/css/img/picpre.png" lazy-src="http://i3.s2.dpfile.com/pc/8c632df84e9784c58f4f0f18041d814a(120c120)/thumb.jpg" />
+        </div>
+        <div class="content">
+            <div class="name">
+                <h3 class="shopname"><span class="shop_name" style="max-width: 281px;">震旦博物馆</span><span class="mark-group mark-tag"></span></h3>
+            </div>
+            <div class="comment">
+                <span class="star star-50"></span>
+                <span>￥55/人</span>
+            </div>
+            <div class="intro Fix">
+                <span>陆家嘴</span>
+                <span class="type">博物馆</span>
+                <span class="dis"></span>
+            </div>
+        </div></a></li>
+    <li> <a class="item Fix " href="/shop/23416337" onclick="_hip.push(['mv', {module: 'shop_list_new', action: 'click',index:'23416337'}]);">
+        <div class="pic">
+            <img src="//www.dpfile.com/mod/app-m-dianping/1.4.2/css/img/picpre.png" lazy-src="http://i1.s2.dpfile.com/pc/38db0992339f6e578cf7523fc012d10e(120c120)/thumb.jpg" />
+        </div>
+        <div class="content">
+            <div class="name">
+                <h3 class="shopname"><span class="shop_name" style="max-width: 301px;">红领巾轰趴馆</span></h3>
+            </div>
+            <div class="comment">
+                <span class="star star-50"></span>
+                <span>￥81/人</span>
+            </div>
+            <div class="intro Fix">
+                <span>陆家嘴</span>
+                <span class="type">轰趴馆</span>
+                <span class="dis"></span>
+            </div>
+        </div></a></li>
+    <li> <a class="item Fix " href="/shop/3510547" onclick="_hip.push(['mv', {module: 'shop_list_new', action: 'click',index:'3510547'}]);">
+        <div class="pic">
+            <img src="//www.dpfile.com/mod/app-m-dianping/1.4.2/css/img/picpre.png" lazy-src="http://i2.s2.dpfile.com/pc/2b7f5d3493df9d167908e25113776b32(120c120)/thumb.jpg" />
+        </div>
+        <div class="content">
+            <div class="name">
+                <h3 class="shopname"><span class="shop_name" style="max-width: 261px;">印像玩家影像中心</span><span class="mark-group mark-tag"></span><span class="mark-hui mark-tag"></span></h3>
+            </div>
+            <div class="comment">
+                <span class="star star-50"></span>
+                <span>￥50</span>
+            </div>
+            <div class="intro Fix">
+                <span>陆家嘴</span>
+                <span class="type">快照</span>
+                <span class="dis"></span>
+            </div>
+        </div></a></li>
+    <li> <a class="item Fix " href="/shop/19330288" onclick="_hip.push(['mv', {module: 'shop_list_new', action: 'click',index:'19330288'}]);">
+        <div class="pic">
+            <img src="//www.dpfile.com/mod/app-m-dianping/1.4.2/css/img/picpre.png" lazy-src="http://qcloud.dpfile.com/pc/QpFzfMpAlGQ3bPzt0G7S9ie8_eBZem4YzZTNj70QeoqAbJwRhTXw_RewgCzq1Ugy_Es9AvUr0sesLal2G0zjJA.jpg" />
+        </div>
+        <div class="content">
+            <div class="name">
+                <h3 class="shopname"><span class="shop_name" style="max-width: 301px;">雷诺瓦正大店&times;葛乐蒂咖啡馆</span></h3>
+            </div>
+            <div class="comment">
+                <span class="star star-50"></span>
+                <span>￥41/人</span>
+            </div>
+            <div class="intro Fix">
+                <span>陆家嘴</span>
+                <span class="type">DIY手工坊</span>
+                <span class="dis"></span>
+            </div>
+        </div></a></li>
+    <li> <a class="item Fix " href="/shop/4118273" onclick="_hip.push(['mv', {module: 'shop_list_new', action: 'click',index:'4118273'}]);">
+        <div class="pic">
+            <img src="//www.dpfile.com/mod/app-m-dianping/1.4.2/css/img/picpre.png" lazy-src="http://i1.s2.dpfile.com/pc/0f4720967a3ffb1f8727e716a990f41a(120c120)/thumb.jpg" />
+        </div>
+        <div class="content">
+            <div class="name">
+                <h3 class="shopname"><span class="shop_name" style="max-width: 281px;">GIMIWEAR 基米尔男士西服高级定制</span><span class="mark-group mark-tag"></span></h3>
+            </div>
+            <div class="comment">
+                <span class="star star-50"></span>
+                <span>￥3058</span>
+            </div>
+            <div class="intro Fix">
+                <span>陆家嘴</span>
+                <span class="type">男士礼服</span>
+                <span class="dis"></span>
+            </div>
+        </div></a></li>
+    <li> <a class="item Fix " href="/shop/23685029" onclick="_hip.push(['mv', {module: 'shop_list_new', action: 'click',index:'23685029'}]);">
+        <div class="pic">
+            <img src="//www.dpfile.com/mod/app-m-dianping/1.4.2/css/img/picpre.png" lazy-src="http://i3.s2.dpfile.com/pc/4aa6eec9f46357e3a6f50bdf725958bb(120c120)/thumb.jpg" />
+        </div>
+        <div class="content">
+            <div class="name">
+                <h3 class="shopname"><span class="shop_name" style="max-width: 261px;">爱睫物语</span><span class="mark-group mark-tag"></span><span class="mark-hui mark-tag"></span></h3>
+            </div>
+            <div class="comment">
+                <span class="star star-50"></span>
+                <span>消费:￥307</span>
+            </div>
+            <div class="intro Fix">
+                <span>陆家嘴</span>
+                <span class="type">美睫</span>
+                <span class="dis"></span>
+            </div>
+        </div></a></li>
+    <li> <a class="item Fix " href="/shop/18721096" onclick="_hip.push(['mv', {module: 'shop_list_new', action: 'click',index:'18721096'}]);">
+        <div class="pic">
+            <img src="//www.dpfile.com/mod/app-m-dianping/1.4.2/css/img/picpre.png" lazy-src="http://i1.s2.dpfile.com/pc/830493e18e9fdd15da586eaeae38bb88(120c120)/thumb.jpg" />
+        </div>
+        <div class="content">
+            <div class="name">
+                <h3 class="shopname"><span class="shop_name" style="max-width: 261px;">卡尔沙龙</span><span class="mark-group mark-tag"></span><span class="mark-hui mark-tag"></span></h3>
+            </div>
+            <div class="comment">
+                <span class="star star-50"></span>
+                <span>消费:￥267</span>
+            </div>
+            <div class="intro Fix">
+                <span>陆家嘴</span>
+                <span class="type">美发</span>
+                <span class="dis"></span>
+            </div>
+        </div></a></li>
+    <li> <a class="item Fix " href="/shop/5454478" onclick="_hip.push(['mv', {module: 'shop_list_new', action: 'click',index:'5454478'}]);">
+        <div class="pic">
+            <img src="//www.dpfile.com/mod/app-m-dianping/1.4.2/css/img/picpre.png" lazy-src="http://i1.s2.dpfile.com/pc/0b7e03cb5a948a7464ecfc56c4d435a7(120c120)/thumb.jpg" />
+        </div>
+        <div class="content">
+            <div class="name">
+                <h3 class="shopname"><span class="shop_name" style="max-width: 301px;">天天果园</span></h3>
+            </div>
+            <div class="comment">
+                <span class="star star-50"></span>
+                <span>消费:￥127</span>
+            </div>
+            <div class="intro Fix">
+                <span>陆家嘴</span>
+                <span class="type">食品保健</span>
+                <span class="dis"></span>
+            </div>
+        </div></a></li>
+    <li> <a class="item Fix " href="/shop/5386310" onclick="_hip.push(['mv', {module: 'shop_list_new', action: 'click',index:'5386310'}]);">
+        <div class="pic">
+            <img src="//www.dpfile.com/mod/app-m-dianping/1.4.2/css/img/picpre.png" lazy-src="http://i2.s2.dpfile.com/pc/65fd4c996dd119fcbe32fccf0b7c90fb(120c120)/thumb.jpg" />
+        </div>
+        <div class="content">
+            <div class="name">
+                <h3 class="shopname"><span class="shop_name" style="max-width: 281px;">和良形象</span><span class="mark-group mark-tag"></span></h3>
+            </div>
+            <div class="comment">
+                <span class="star star-50"></span>
+                <span>消费:￥567</span>
+            </div>
+            <div class="intro Fix">
+                <span>陆家嘴</span>
+                <span class="type">美发</span>
+                <span class="dis"></span>
+            </div>
+        </div></a></li>
+    <li> <a class="item Fix " href="/shop/4074148" onclick="_hip.push(['mv', {module: 'shop_list_new', action: 'click',index:'4074148'}]);">
+        <div class="pic">
+            <img src="//www.dpfile.com/mod/app-m-dianping/1.4.2/css/img/picpre.png" lazy-src="http://qcloud.dpfile.com/pc/lHt-8TvNo1nanwlLTqWosMbIgYcxXmBj9NUn4aHIoFlK3IRWkjvhwdbevh0id74V_Es9AvUr0sesLal2G0zjJA.jpg" />
+        </div>
+        <div class="content">
+            <div class="name">
+                <h3 class="shopname"><span class="shop_name" style="max-width: 301px;">国金中心商场</span></h3>
+            </div>
+            <div class="comment">
+                <span class="star star-50"></span>
+                <span>消费:￥639</span>
+            </div>
+            <div class="intro Fix">
+                <span>陆家嘴</span>
+                <span class="type">综合商场</span>
+                <span class="dis"></span>
+            </div>
+        </div></a></li>
+    <li> <a class="item Fix " href="/shop/24711882" onclick="_hip.push(['mv', {module: 'shop_list_new', action: 'click',index:'24711882'}]);">
+        <div class="pic">
+            <img src="//www.dpfile.com/mod/app-m-dianping/1.4.2/css/img/picpre.png" lazy-src="http://i2.s2.dpfile.com/pc/afc9f646d086711ed5fc77b95dd1fcae(120c120)/thumb.jpg" />
+        </div>
+        <div class="content">
+            <div class="name">
+                <h3 class="shopname"><span class="shop_name" style="max-width: 241px;">MiMi！韩式定妆半永久韩式眉纹绣纹眉纹眼线</span><span class="mark-promo mark-tag"></span><span class="mark-group mark-tag"></span><span class="mark-hui mark-tag"></span></h3>
+            </div>
+            <div class="comment">
+                <span class="star star-50"></span>
+                <span>消费:￥1962</span>
+            </div>
+            <div class="intro Fix">
+                <span>陆家嘴</span>
+                <span class="type">纹绣</span>
+                <span class="dis"></span>
+            </div>
+        </div></a></li>
+    <li> <a class="item Fix " href="/shop/5930150" onclick="_hip.push(['mv', {module: 'shop_list_new', action: 'click',index:'5930150'}]);">
+        <div class="pic">
+            <img src="//www.dpfile.com/mod/app-m-dianping/1.4.2/css/img/picpre.png" lazy-src="http://i1.s2.dpfile.com/pc/10855f673317db72954203fd14251f18(120c120)/thumb.jpg" />
+        </div>
+        <div class="content">
+            <div class="name">
+                <h3 class="shopname"><span class="shop_name" style="max-width: 261px;">JeniuX life</span><span class="mark-promo mark-tag"></span><span class="mark-hui mark-tag"></span></h3>
+            </div>
+            <div class="comment">
+                <span class="star star-50"></span>
+                <span>消费:￥16827</span>
+            </div>
+            <div class="intro Fix">
+                <span>陆家嘴</span>
+                <span class="type">瑜伽</span>
+                <span class="dis"></span>
+            </div>
+        </div></a></li>
+    <li> <a class="item Fix " href="/shop/8075967" onclick="_hip.push(['mv', {module: 'shop_list_new', action: 'click',index:'8075967'}]);">
+        <div class="pic">
+            <img src="//www.dpfile.com/mod/app-m-dianping/1.4.2/css/img/picpre.png" lazy-src="http://i1.s2.dpfile.com/pc/770610ce903c835efac0939aaa335b22(120c120)/thumb.jpg" />
+        </div>
+        <div class="content">
+            <div class="name">
+                <h3 class="shopname"><span class="shop_name" style="max-width: 281px;">TWM-Fitness运动生活馆</span><span class="mark-group mark-tag"></span></h3>
+            </div>
+            <div class="comment">
+                <span class="star star-50"></span>
+                <span>￥342/人</span>
+            </div>
+            <div class="intro Fix">
+                <span>陆家嘴</span>
+                <span class="type">健身中心</span>
+                <span class="dis"></span>
+            </div>
+        </div></a></li>
+    <li> <a class="item Fix " href="/shop/18040877" onclick="_hip.push(['mv', {module: 'shop_list_new', action: 'click',index:'18040877'}]);">
+        <div class="pic">
+            <img src="//www.dpfile.com/mod/app-m-dianping/1.4.2/css/img/picpre.png" lazy-src="http://i2.s2.dpfile.com/pc/fd3bad768c75160507d371f4582aac03(120c120)/thumb.jpg" />
+        </div>
+        <div class="content">
+            <div class="name">
+                <h3 class="shopname"><span class="shop_name" style="max-width: 301px;">上海中心大厦</span></h3>
+            </div>
+            <div class="comment">
+                <span class="star star-50"></span>
+                <span></span>
+            </div>
+            <div class="intro Fix">
+                <span>陆家嘴</span>
+                <span class="type">城市观光</span>
+                <span class="dis"></span>
+            </div>
+        </div></a></li>
+</ul>
+<div class="load-wrap">
+    <div class="loading-img"></div>
+    <span>正在加载...</span>
+</div>
+<a class="gift" href="/gift/userGift"></a>
+<div class="J_search_container search_container" style="display:none ;">
+    <form class="J_form" method="post" action="/shoplist/1/search">
+        <div class="head_cnt">
+            <div class="head_cnt_input">
+                <input type="text" name="keyword" class="search J_search_input" autocomplete="off" />
+                <i class="clear" data-role="clear"></i>
+                <input type="submit" />
+            </div>
+            <a class="cancel J_cancel" href="javascript:;">取消</a>
+        </div>
+        <div class="J_key_list key_list Fix">
+            <a href="javascript:void(0)" data-id="">大悦城</a>
+            <a href="javascript:void(0)" data-id="">徐家汇</a>
+            <a href="javascript:void(0)" data-id="">虹口 龙之梦</a>
+            <a href="javascript:void(0)" data-id="">极乐汤</a>
+            <a href="javascript:void(0)" data-id="">纽斯</a>
+            <a href="javascript:void(0)" data-id="">小南国</a>
+            <a href="javascript:void(0)" data-id="">火锅</a>
+            <a href="javascript:void(0)" data-id="">自助餐</a>
+            <a href="javascript:void(0)" data-id="">美甲</a>
+        </div>
+        <div class="J_history_list key_list Fix">
+            <div class="J_history_title">
+                搜索记录
+            </div>
+            <div class="history_list"></div>
+        </div>
+        <a class="J_history_clear link-btn" href="javascript:;">清除搜索记录</a>
+        <ul class="J_suggest_list suggest_list">
+        </ul>
+    </form>
+</div>
+<a onclick="window.scrollTo(0,0)" class="top-box">
+    <div class="arrow-ent"></div></a>
+<div class="overlay"></div>
+<footer class="footer">
+    <a href="/my">我的</a>
+    <em>|</em>
+    <a href="/history">最近浏览</a>
+    <em>|</em>
+    <a href="http://evt.dianping.com/synthesislink/6513.html">添加商户</a>
+    <em>|</em>
+    <a href="/feedback">意见反馈</a>
+    <br />
+    <a id="j-computer" href="http://www.dianping.com" title="">电脑版</a>
+    <em>|</em>
+    <a onclick="document.cookie='wapredirecttom=1; domain=.dianping.com; path=/';" href="http://wap.dianping.com" title="">标准版</a>
+    <em>|</em>
+    <a id="F_download" href="javascript:void(0)" title="">客户端</a>
+    <br />
+    <p class="copyright">copyright &copy;2014 dianping.com</p>
+</footer>
+</body>
+</html>

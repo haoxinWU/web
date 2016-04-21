@@ -1,0 +1,346 @@
+{
+  "status" : 200,
+  "message" : "success",
+  "data" : [
+    {
+      "mode" : "double_twin",
+      "name" : "全部商圈",
+      "content" : [
+        {
+          "title" : "商区",
+          "default" : 1,
+          "content" : [
+            {
+              "type" : "menu",
+              "name" : "附近",
+              "param" : "",
+              "value" : "",
+              "icon" : "",
+              "rank" : 1,
+              "default" : 1,
+              "children" : [
+                {
+                  "type" : "href",
+                  "name" : "附近(智能范围)",
+                  "icon" : "",
+                  "value" : "1",
+                  "param" : "zn"
+                },
+                {
+                  "type" : "href",
+                  "name" : "500米",
+                  "icon" : "",
+                  "value" : "500",
+                  "param" : "distance"
+                },
+                {
+                  "type" : "href",
+                  "name" : "1000米",
+                  "icon" : "",
+                  "value" : "1000",
+                  "param" : "distance"
+                },
+                {
+                  "type" : "href",
+                  "name" : "1000米",
+                  "icon" : "",
+                  "value" : "1000",
+                  "param" : "distance"
+                },
+                {
+                  "type" : "href",
+                  "name" : "2000米",
+                  "icon" : "",
+                  "value" : "2000",
+                  "param" : "distance"
+                }
+              ]
+            },
+            {
+              "type" : "menu",
+              "name" : "热门商圈",
+              "icon" : "",
+              "param" : "",
+              "value" : "",
+              "rank" : 2,
+              "children" : [
+                {
+                  "type" : "href",
+                  "name" : "奉贤区",
+                  "icon" : "",
+                  "value" : "1",
+                  "param" : "area"
+                },
+                {
+                  "type" : "href",
+                  "name" : "闵行区",
+                  "icon" : "",
+                  "value" : "2",
+                  "param" : "area"
+                },
+                {
+                  "type" : "href",
+                  "name" : "浦东新区",
+                  "icon" : "",
+                  "value" : "3",
+                  "param" : "area"
+                }
+              ]
+            },
+            {
+              "type" : "menu",
+              "name" : "闵行区",
+              "icon" : "",
+              "param" : "",
+              "value" : "",
+              "rank" : 3,
+              "children" : [
+                {
+                  "type" : "href",
+                  "name" : "莘庄",
+                  "icon" : "",
+                  "value" : "4",
+                  "param" : "area"
+                },
+                {
+                  "type" : "href",
+                  "name" : "浦江镇",
+                  "icon" : "",
+                  "value" : "3",
+                  "param" : "area"
+                },
+                {
+                  "type" : "href",
+                  "name" : "周浦镇",
+                  "icon" : "",
+                  "value" : "6",
+                  "param" : "area"
+                }
+              ]
+            },
+            {
+              "type" : "menu",
+              "name" : "浦东区",
+              "icon" : "",
+              "param" : "",
+              "value" : "",
+              "rank" : 3,
+              "children" : [
+                {
+                  "type" : "href",
+                  "name" : "临沂新村",
+                  "icon" : "",
+                  "value" : "4",
+                  "param" : "area"
+                },
+                {
+                  "type" : "href",
+                  "name" : "浦江镇",
+                  "icon" : "",
+                  "value" : "3",
+                  "param" : "area"
+                },
+                {
+                  "type" : "href",
+                  "name" : "周浦镇",
+                  "icon" : "",
+                  "value" : "6",
+                  "param" : "area"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title" : "地铁",
+          "default" : 0,
+          "content" : [
+            {
+              "type": "menu",
+              "name": "1号线",
+              "icon": "",
+              "param": "",
+              "value": "",
+              "rank": 3,
+              "default" : 1,
+              "children": [
+                {
+                  "type": "href",
+                  "name": "莘庄站",
+                  "icon": "",
+                  "value": "4",
+                  "param": "subway"
+                },
+                {
+                  "type": "href",
+                  "name": "浦江镇地铁站",
+                  "icon": "",
+                  "value": "3",
+                  "param": "subway"
+                },
+                {
+                  "type": "href",
+                  "name": "周浦镇地铁站",
+                  "icon": "",
+                  "value": "6",
+                  "param": "subway"
+                }
+              ]
+            },
+            {
+              "type": "menu",
+              "name": "2号线",
+              "icon": "",
+              "param": "",
+              "value": "",
+              "rank": 3,
+              "children": [
+                {
+                  "type": "href",
+                  "name": "真北路地铁站",
+                  "icon": "",
+                  "value": "4",
+                  "param": "subway"
+                },
+                {
+                  "type": "href",
+                  "name": "中山公园地铁站",
+                  "icon": "",
+                  "value": "3",
+                  "param": "subway"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "mode" : "twin",
+      "name" : "全部分类",
+      "content" : [
+        {
+          "type" : "href",
+          "name" : "全部分类",
+          "icon" : "",
+          "param" : "distribute",
+          "value" : "all",
+          "rank" : 1,
+          "children" : [
+
+          ]
+        },
+        {
+          "type" : "menu",
+          "name" : "美食",
+          "icon" : "",
+          "default" : 1,
+          "param" : "distribute",
+          "value" : "all",
+          "rank" : 1,
+          "children" : [
+            {
+              "type" : "href",
+              "name" : "全部美食",
+              "icon" : "",
+              "value" : "4",
+              "param" : "distribute"
+            },
+            {
+              "type" : "href",
+              "name" : "小吃快餐",
+              "icon" : "",
+              "value" : "3",
+              "param" : "distribute"
+            },
+            {
+              "type" : "href",
+              "name" : "火锅",
+              "icon" : "",
+              "value" : "6",
+              "param" : "distribute"
+            },
+            {
+              "type" : "href",
+              "name" : "小吃快餐",
+              "icon" : "",
+              "value" : "3",
+              "param" : "distribute"
+            },
+            {
+              "type" : "href",
+              "name" : "火锅",
+              "icon" : "",
+              "value" : "6",
+              "param" : "distribute"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "mode" : "single",
+      "name" : "智能排序",
+      "content" : [
+        {
+          "type" : "href",
+          "name" : "智能排序",
+          "icon" : "",
+          "default" : 1,
+          "value" : "ai",
+          "param" : "sort",
+          "rank" : 1,
+          "children" : [
+
+          ]
+        },
+        {
+          "type" : "href",
+          "name" : "离我最近",
+          "icon" : "",
+          "value" : "distance",
+          "param" : "sort",
+          "rank" : 1,
+          "children" : [
+
+          ]
+        },
+        {
+          "type" : "href",
+          "name" : "人气最高",
+          "icon" : "",
+          "value" : "collection",
+          "param" : "sort",
+          "rank" : 1,
+          "children" : [
+
+          ]
+        },
+        {
+          "type" : "href",
+          "name" : "评价最好",
+          "icon" : "",
+          "value" : "hot",
+          "param" : "sort",
+          "rank" : 1,
+          "children" : [
+
+          ]
+        },
+        {
+          "type" : "href",
+          "name" : "人均最高",
+          "icon" : "",
+          "value" : "hot",
+          "param" : "sort",
+          "rank" : 1,
+          "children" : [
+
+          ]
+
+        }
+      ]
+    }
+  ]
+}
+

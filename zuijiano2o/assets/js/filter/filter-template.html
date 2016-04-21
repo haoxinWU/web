@@ -1,0 +1,96 @@
+<script type="text/javascript" id="filter-template">
+    <nav class="list-nav">
+        <div class="cat Fix">
+            {{each data as filter i}}
+                <a href="javascript:void(0)" data-id="{{i+1}}" class="item J_trigger">{{filter.name}}<i class="drop"></i></a>
+            {{/each}}
+        </div>
+
+        {{each data as filter i}}
+        <section data-id="{{i+1}}" class="selector J_selector Hide">
+
+            {{if filter.mode == 'double_twin'}}
+                <div class="second-nav">
+                    {{each filter.content as nav nav_i}}
+                    <div class="item {{if nav.default == 1}}on{{/if}}">
+                        {{nav.title}}
+                    </div>
+                    {{/each}}
+                </div>
+
+                {{each filter.content as nav nav_i}}
+                    <div class="second-selector" data-name="{{nav.title}}">
+                        <div class="menu main">
+                            <div>
+                                <div>
+                                    {{each nav.content as left i}}
+                                    <div>
+                                        <p data-id="{{i + 1}}" data-type="{{left.type}}" data-param="{{left.param}}" data-value="{{left.value}}" class="item Fix {{if left.default == 1}}on{{/if}}">
+                                            {{if left.icon}}
+                                            <span class="{{left.icon}}"></span>
+                                            {{/if}}
+                                            {{left.name}}
+                                        </p>
+                                    </div>
+                                    {{/each}}
+                                </div>
+                            </div>
+                        </div>
+                        {{each nav.content as left i}}
+                        <div data-pid="{{i + 1}}" data-default="{{left.default}}" class="menu sub Hide" style="left: 45%; width: 55%;">
+                            <div>
+                                {{each left.children as right i}}
+                                <p data-id="{{i + 1}}" data-type="{{right.type}}" data-param="{{right.param}}" data-value="{{right.value}}" class="item Fix">{{right.name}}</p>
+                                {{/each}}
+                            </div>
+                        </div>
+                        {{/each}}
+                    </div>
+                {{/each}}
+            {{/if}}
+
+
+
+            {{if filter.mode == 'single'}}
+                <div class="menu main full">
+                    <div>
+                        {{each filter.content as item i}}
+                            <div>
+                                <p data-id="{{i + 1}}" data-value="{{item.value}}" data-param="{{item.param}}" data-type="{{item.type}}" class="item Fix" href="">{{item.name}}</p>
+                            </div>
+                        {{/each}}
+                    </div>
+                </div>
+            {{/if}}
+
+            {{if filter.mode == 'twin'}}
+                <div class="menu main">
+                    <div>
+                        <div>
+                            {{each filter.content as left i}}
+                            <div>
+                                <p data-id="{{i + 1}}" data-type="{{left.type}}" class="item Fix {{if left.default == 1}}on{{/if}}">
+                                    {{if left.icon}}
+                                        <span class="{{left.icon}}"></span>
+                                    {{/if}}
+                                    {{left.name}}
+                                </p>
+                            </div>
+                            {{/each}}
+                        </div>
+                    </div>
+                </div>
+                {{each filter.content as left i}}
+                    <div data-pid="{{i + 1}}" data-default="{{left.default}}" data-param="{{left.param}}" data-value="{{left.value}}" class="menu sub Hide" style="left: 45%; width: 55%;">
+                        <div>
+                            {{each left.children as right i}}
+                                <p data-id="{{i + 1}}" data-param="{{right.param}}" data-value="{{right.value}}" class="item Fix " href="">{{right.name}}</p>
+                            {{/each}}
+                        </div>
+                    </div>
+                {{/each}}
+            {{/if}}
+        </section>
+        {{/each}}
+    </nav>
+</script>
